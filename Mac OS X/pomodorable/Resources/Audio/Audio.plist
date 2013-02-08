@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Completions</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>complete_tomatoTimer.mp3</string>
+			<key>name</key>
+			<string>Tomato alarm</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_eggTimer.mp3</string>
+			<key>name</key>
+			<string>Egg timer</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_wallClock.mp3</string>
+			<key>name</key>
+			<string>Wall clock chime</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_cuckoo.mp3</string>
+			<key>name</key>
+			<string>Cuckoo clock</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_80sAlarmClock.mp3</string>
+			<key>name</key>
+			<string>80&apos;s wakeup call</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_firebell.mp3</string>
+			<key>name</key>
+			<string>Fire bell</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_schoolBell.mp3</string>
+			<key>name</key>
+			<string>School Bell</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_trainBell.mp3</string>
+			<key>name</key>
+			<string>Train Bell</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_trolly.mp3</string>
+			<key>name</key>
+			<string>Trolley Bell</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_carDoor.mp3</string>
+			<key>name</key>
+			<string>Car Door</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>complete_cashRegister.mp3</string>
+			<key>name</key>
+			<string>Cash Register</string>
+		</dict>
+	</array>
+	<key>Ticks</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>tick_tomatoTimer.aiff</string>
+			<key>name</key>
+			<string>Tomato timer</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tick_wristwatch.aiff</string>
+			<key>name</key>
+			<string>Wristwatch</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tick_wallClock.aiff</string>
+			<key>name</key>
+			<string>Wall clock</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tick_grandfatherClock.aiff</string>
+			<key>name</key>
+			<string>Grandfather clock</string>
+		</dict>
+	</array>
+</dict>
+</plist>
