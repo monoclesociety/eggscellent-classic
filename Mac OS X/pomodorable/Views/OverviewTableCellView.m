@@ -198,6 +198,8 @@
     ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
     ribbonView.completePomodoroCount = (int)[a.completedPomodoros count];
     [ribbonView setNeedsDisplay:YES];
+    
+    [a save];
 }
 
 #pragma mark - IBActions
