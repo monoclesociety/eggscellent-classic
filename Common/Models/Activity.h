@@ -21,7 +21,7 @@ typedef enum
     
 }ActivitySource;
 
-@class Pomodoro;
+@class Egg;
 @class EggTimer;
 @interface Activity : MSManagedObject
 {
@@ -36,9 +36,9 @@ typedef enum
 @property (nonatomic, strong) NSNumber * completed;
 @property (nonatomic, strong) NSNumber * removed;
 @property (nonatomic, strong) NSNumber * plannedCount;
-@property (nonatomic, strong) NSSet *pomodoros;
-@property (nonatomic, strong) NSArray *completedPomodoros;
-@property (nonatomic, strong) NSArray *invalidatedPomodoros;
+@property (nonatomic, strong) NSSet *eggs;
+@property (nonatomic, strong) NSArray *completedEggs;
+@property (nonatomic, strong) NSArray *invalidatedEggs;
 
 + (Activity *)currentActivity;
 + (void)setCurrentActivity:(Activity *)act;
@@ -58,8 +58,8 @@ typedef enum
 
 @interface Activity (CoreDataGeneratedAccessors)
 
-- (void)addPomodorosObject:(Pomodoro *)value;
-- (void)removePomodorosObject:(Pomodoro *)value;
+- (void)addPomodorosObject:(Egg *)value;
+- (void)removePomodorosObject:(Egg *)value;
 - (void)addPomodoros:(NSSet *)values;
 - (void)removePomodoros:(NSSet *)values;
 

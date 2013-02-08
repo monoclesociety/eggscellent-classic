@@ -6,11 +6,11 @@
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
 
-#import "Pomodoro.h"
+#import "Egg.h"
 #import "Activity.h"
 #import "ModelStore.h"
 
-@implementation Pomodoro
+@implementation Egg
 @dynamic currentState;
 @dynamic outcome;
 @dynamic internalInterruptions;
@@ -21,22 +21,22 @@
 
 #pragma mark - Helper Methods
 
-+ (Pomodoro *)lastPomodoro;
++ (Egg *)lastPomodoro;
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pomodoro" inManagedObjectContext:[ModelStore sharedStore].managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Egg" inManagedObjectContext:[ModelStore sharedStore].managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     [request setFetchLimit:1];
-    int pomodoroCount = (int)[[[ModelStore sharedStore] allWithClassName:@"Pomodoro"] count];
+    int pomodoroCount = (int)[[[ModelStore sharedStore] allWithClassName:@"Egg"] count];
     [request setFetchOffset:pomodoroCount - 1];
     
     NSArray *results = [[ModelStore sharedStore].managedObjectContext executeFetchRequest:request error:NULL];
     return [results objectAtIndex:0];
 }
 
-+ (Pomodoro *)newPomodoro;
++ (Egg *)newPomodoro;
 {
-    Pomodoro *result = [[ModelStore sharedStore] newModelWithClassName:@"Pomodoro"];
+    Egg *result = [[ModelStore sharedStore] newModelWithClassName:@"Egg"];
     result.outcome = [NSNumber numberWithInt:PomodoroOutcomeInvalidated];
 
     return result;

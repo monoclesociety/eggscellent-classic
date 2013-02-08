@@ -34,7 +34,7 @@
     
     [ribbonView bind:@"completePomodoroCount"
             toObject:self
-         withKeyPath:@"objectValue.completedPomodoros.@count"
+         withKeyPath:@"objectValue.completedEggs.@count"
              options:nil];
     
     [ribbonView bind:@"completed"
@@ -196,7 +196,7 @@
     
     //set ribbon value
     ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-    ribbonView.completePomodoroCount = (int)[a.completedPomodoros count];
+    ribbonView.completePomodoroCount = (int)[a.completedEggs count];
     [ribbonView setNeedsDisplay:YES];
     
     [a save];
@@ -217,7 +217,7 @@
 - (IBAction)externalInterruptionSelected:(id)sender;
 {
     Activity *a = (Activity *)self.objectValue;
-    Pomodoro *p = [[a.pomodoros allObjects] lastObject];
+    Egg *p = [[a.eggs allObjects] lastObject];
     
     NSNumber *newInterruptionCount = [NSNumber numberWithInt:[p.externalInterruptions intValue] + 1];
     p.externalInterruptions = newInterruptionCount;
@@ -227,7 +227,7 @@
 - (IBAction)internalInterruptionSelected:(id)sender;
 {
     Activity *a = (Activity *)self.objectValue;
-    Pomodoro *p = [[a.pomodoros allObjects] lastObject];
+    Egg *p = [[a.eggs allObjects] lastObject];
     p.internalInterruptions = [NSNumber numberWithInt:[p.internalInterruptions intValue] + 1];
     internalInterruptionLabel.stringValue = [[a internalInterruptionCount] stringValue];
 }

@@ -181,7 +181,7 @@
 
 - (void)updatePomodoroCount
 {
-    pomodoroCount.stringValue = [NSString stringWithFormat:@"%d", (int)[[Activity currentActivity].completedPomodoros count], nil];
+    pomodoroCount.stringValue = [NSString stringWithFormat:@"%d", (int)[[Activity currentActivity].completedEggs count], nil];
     plannedPomodoroCount.stringValue = [[Activity currentActivity].plannedCount stringValue];
 }
 
@@ -271,7 +271,7 @@
     
     //populate ribbon view
     ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-    ribbonView.completePomodoroCount = (int)[a.completedPomodoros count];
+    ribbonView.completePomodoroCount = (int)[a.completedEggs count];
     [ribbonView setNeedsDisplay:YES];
     
     //populate pomodoro counts
@@ -337,7 +337,7 @@
         //update ribbon UI
         Activity *a = [Activity currentActivity];
         ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-        ribbonView.completePomodoroCount = (int)[a.completedPomodoros count];
+        ribbonView.completePomodoroCount = (int)[a.completedEggs count];
         ribbonView.completed = [a.completed boolValue];
 
         [ribbonView setNeedsDisplay:YES];

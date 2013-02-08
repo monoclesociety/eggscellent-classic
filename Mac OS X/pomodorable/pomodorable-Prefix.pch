@@ -5,7 +5,7 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
     #import "Activity.h"
-    #import "Pomodoro.h"
+    #import "Egg.h"
     #import "EggTimer.h"
 
     #import "network.h"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C3012" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3012" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Activity" representedClassName="Activity" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
@@ -12,15 +12,15 @@
         <attribute name="source" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="sourceID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unplanned" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="pomodoros" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Pomodoro" syncable="YES"/>
-        <fetchedProperty name="completedPomodoros" optional="YES" transient="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Pomodoro" predicateString="outcome == 1 AND activity == $FETCH_SOURCE"/>
+        <relationship name="eggs" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Egg" syncable="YES"/>
+        <fetchedProperty name="completedEggs" optional="YES" transient="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Egg" predicateString="outcome == 1 AND activity == $FETCH_SOURCE"/>
         </fetchedProperty>
-        <fetchedProperty name="invalidatedPomodoros" optional="YES" transient="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Pomodoro" predicateString="outcome == 2 AND activity == $FETCH_SOURCE"/>
+        <fetchedProperty name="invalidatedEggs" optional="YES" transient="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Egg" predicateString="outcome == 2 AND activity == $FETCH_SOURCE"/>
         </fetchedProperty>
     </entity>
-    <entity name="Pomodoro" representedClassName="Pomodoro" syncable="YES">
+    <entity name="Egg" representedClassName="Egg" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="currentState" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="externalInterruptions" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -32,7 +32,7 @@
         <relationship name="activity" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="269"/>
-        <element name="Pomodoro" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="Activity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Egg" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

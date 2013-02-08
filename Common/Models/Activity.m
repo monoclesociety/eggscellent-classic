@@ -7,7 +7,7 @@
 //
 
 #import "Activity.h"
-#import "Pomodoro.h"
+#import "Egg.h"
 #import "EggTimer.h"
 #import "ModelStore.h"
 
@@ -29,9 +29,9 @@
 @dynamic completed;
 @dynamic removed;
 @dynamic plannedCount;
-@dynamic pomodoros;
-@dynamic completedPomodoros;
-@dynamic invalidatedPomodoros;
+@dynamic eggs;
+@dynamic completedEggs;
+@dynamic invalidatedEggs;
 
 #pragma mark - class helper methods
 static Activity *singleton;
@@ -60,22 +60,22 @@ static Activity *singleton;
 - (NSNumber *)internalInterruptionCount;
 {
     int theSum = 0;
-    for (Pomodoro *pomodoro in self.pomodoros)
-        theSum += [pomodoro.internalInterruptions intValue];
+    for (Egg *egg in self.eggs)
+        theSum += [egg.internalInterruptions intValue];
     return [NSNumber numberWithInt:theSum];
 }
 
 - (NSNumber *)externalInterruptionCount;
 {
     int theSum = 0;
-    for (Pomodoro *pomodoro in self.pomodoros)
-        theSum += [pomodoro.externalInterruptions intValue];
+    for (Egg *egg in self.eggs)
+        theSum += [egg.externalInterruptions intValue];
     return [NSNumber numberWithInt:theSum];
 }
 
 - (EggTimer *)startAPomodoro
 {
-    Pomodoro *p = [Pomodoro newPomodoro];
+    Egg *p = [Egg newPomodoro];
     [self addPomodorosObject:p];
     [Activity setCurrentActivity:self];
     

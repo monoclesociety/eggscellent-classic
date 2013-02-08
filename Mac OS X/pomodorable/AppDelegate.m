@@ -211,7 +211,7 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)externalInterruptionKeyed:(id)sender;
 {   
     Activity *a = [Activity currentActivity];
-    Pomodoro *p = [[a.pomodoros allObjects] lastObject];
+    Egg *p = [[a.eggs allObjects] lastObject];
     p.externalInterruptions = [NSNumber numberWithInt:[p.externalInterruptions intValue] + 1];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"externalInterruptionKeyed" object:nil];
     
@@ -222,7 +222,7 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)internalInterruptionKeyed:(id)sender;
 {
     Activity *a = [Activity currentActivity];
-    Pomodoro *p = [[a.pomodoros allObjects] lastObject];
+    Egg *p = [[a.eggs allObjects] lastObject];
     p.internalInterruptions = [NSNumber numberWithInt:[p.internalInterruptions intValue] + 1];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"internalInterruptionKeyed" object:nil];
     
@@ -448,7 +448,7 @@ void *kContextActivePanel = &kContextActivePanel;
         }
 
         //TODO: fix possible bug here with tracking pomodoros
-        Pomodoro *pomodoro = [Pomodoro lastPomodoro];
+        Egg *pomodoro = [Egg lastPomodoro];
         
         pomodoro.timeElapsed = [NSNumber numberWithInt:pomo.timeElapsed];
         pomodoro.timeEstimated = [NSNumber numberWithInt:pomo.timeEstimated];
@@ -459,7 +459,7 @@ void *kContextActivePanel = &kContextActivePanel;
         
         //if you just met the requirements for auto-complete, then auto-complete!
         Activity *a = [Activity currentActivity];
-        if([a.completedPomodoros count] == [a.plannedCount intValue] && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoCompleteTasks"])
+        if([a.completedEggs count] == [a.plannedCount intValue] && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoCompleteTasks"])
             a.completed = [NSNumber numberWithBool:YES];
             
         [[Activity currentActivity] save];

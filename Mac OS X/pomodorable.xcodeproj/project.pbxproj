@@ -74,7 +74,7 @@
 		3DFBE65715A26CA30006ABB2 /* ribbon8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */; };
 		F4015F8814943ED1000CF4AB /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F7F14943ED1000CF4AB /* Activity.m */; };
 		F4015F8914943ED1000CF4AB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8114943ED1000CF4AB /* ModelStore.m */; };
-		F4015F8B14943ED1000CF4AB /* Pomodoro.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8514943ED1000CF4AB /* Pomodoro.m */; };
+		F4015F8B14943ED1000CF4AB /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8514943ED1000CF4AB /* Egg.m */; };
 		F4015F8C14943ED1000CF4AB /* EggTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8714943ED1000CF4AB /* EggTimer.m */; };
 		F4104BC6147C15E10077D272 /* NotificationsPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4104BC4147C15E10077D272 /* NotificationsPreferencesViewController.m */; };
 		F4104BC7147C15E10077D272 /* NotificationsPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4104BC5147C15E10077D272 /* NotificationsPreferencesViewController.xib */; };
@@ -561,8 +561,8 @@
 		F4015F7F14943ED1000CF4AB /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		F4015F8014943ED1000CF4AB /* ModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStore.h; sourceTree = "<group>"; };
 		F4015F8114943ED1000CF4AB /* ModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStore.m; sourceTree = "<group>"; };
-		F4015F8414943ED1000CF4AB /* Pomodoro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro.h; sourceTree = "<group>"; };
-		F4015F8514943ED1000CF4AB /* Pomodoro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pomodoro.m; sourceTree = "<group>"; };
+		F4015F8414943ED1000CF4AB /* Egg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Egg.h; sourceTree = "<group>"; };
+		F4015F8514943ED1000CF4AB /* Egg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Egg.m; sourceTree = "<group>"; };
 		F4015F8614943ED1000CF4AB /* EggTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggTimer.h; sourceTree = "<group>"; };
 		F4015F8714943ED1000CF4AB /* EggTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggTimer.m; sourceTree = "<group>"; };
 		F4104BC3147C15E10077D272 /* NotificationsPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsPreferencesViewController.h; sourceTree = "<group>"; };
@@ -1160,8 +1160,8 @@
 				F4B3177914CA0B1700BB4855 /* MSManagedObject.m */,
 				F4015F7E14943ED1000CF4AB /* Activity.h */,
 				F4015F7F14943ED1000CF4AB /* Activity.m */,
-				F4015F8414943ED1000CF4AB /* Pomodoro.h */,
-				F4015F8514943ED1000CF4AB /* Pomodoro.m */,
+				F4015F8414943ED1000CF4AB /* Egg.h */,
+				F4015F8514943ED1000CF4AB /* Egg.m */,
 				F4015F8614943ED1000CF4AB /* EggTimer.h */,
 				F4015F8714943ED1000CF4AB /* EggTimer.m */,
 			);
@@ -2608,7 +2608,7 @@
 				F4391DD7148B082D0051CACC /* WelcomeWindowController.m in Sources */,
 				F4015F8814943ED1000CF4AB /* Activity.m in Sources */,
 				F4015F8914943ED1000CF4AB /* ModelStore.m in Sources */,
-				F4015F8B14943ED1000CF4AB /* Pomodoro.m in Sources */,
+				F4015F8B14943ED1000CF4AB /* Egg.m in Sources */,
 				F4015F8C14943ED1000CF4AB /* EggTimer.m in Sources */,
 				F499885D1495A5A000D356DB /* GCDAsyncSocket.m in Sources */,
 				F4AE65F214A3ABC500842F56 /* ColorView.m in Sources */,
