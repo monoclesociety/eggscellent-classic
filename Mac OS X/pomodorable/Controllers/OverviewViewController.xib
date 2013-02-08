@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12C3012</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSArrayController</string>
@@ -139,7 +139,7 @@
 										<string key="NSFrameSize">{320.5, 463}</string>
 										<reference key="NSSuperview" ref="798014002"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="921643476"/>
+										<reference key="NSNextKeyView" ref="207742086"/>
 										<string key="NSReuseIdentifierKey">_NS:1828</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -271,7 +271,7 @@
 						<string key="NSFrame">{{1, 41}, {320, 463}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="207742086"/>
+						<reference key="NSNextKeyView" ref="798014002"/>
 						<string key="NSReuseIdentifierKey">_NS:1824</string>
 						<int key="NSsFlags">150160</int>
 						<reference key="NSVScroller" ref="207742086"/>
@@ -315,39 +315,6 @@
 							</object>
 							<string key="NSAlternateContents"/>
 							<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
-							<int key="NSPeriodicDelay">400</int>
-							<int key="NSPeriodicInterval">75</int>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
-					<object class="NSButton" id="465795139">
-						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{12, 544}, {24, 24}}</string>
-						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="137241969"/>
-						<string key="NSReuseIdentifierKey">_NS:2466</string>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="743597489">
-							<int key="NSCellFlags">-2080374784</int>
-							<int key="NSCellFlags2">167804928</int>
-							<string key="NSContents"/>
-							<reference key="NSSupport" ref="892582779"/>
-							<string key="NSCellIdentifier">_NS:2466</string>
-							<reference key="NSControlView" ref="465795139"/>
-							<int key="NSButtonFlags">139214848</int>
-							<int key="NSButtonFlags2">268435590</int>
-							<object class="NSCustomResource" key="NSNormalImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">note</string>
-							</object>
-							<object class="NSCustomResource" key="NSAlternateImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">note-down</string>
-							</object>
-							<string key="NSAlternateContents"/>
-							<string key="NSKeyEquivalent">n</string>
 							<int key="NSPeriodicDelay">400</int>
 							<int key="NSPeriodicInterval">75</int>
 						</object>
@@ -525,7 +492,7 @@
 						<string key="NSFrame">{{1, 504}, {320, 84}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="465795139"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:2141</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="113615498">
@@ -550,7 +517,6 @@
 						<string key="NSFrame">{{110, -24}, {100, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="51660543">
@@ -849,14 +815,6 @@
 						<reference key="destination" ref="351998138"/>
 					</object>
 					<int key="connectionID">455</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">noteSelected:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="465795139"/>
-					</object>
-					<int key="connectionID">463</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1689,7 +1647,6 @@
 							<reference ref="675748327"/>
 							<reference ref="803341555"/>
 							<reference ref="348321348"/>
-							<reference ref="465795139"/>
 							<reference ref="614923619"/>
 							<reference ref="137241969"/>
 						</array>
@@ -2006,20 +1963,6 @@
 						<reference key="parent" ref="561729141"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">460</int>
-						<reference key="object" ref="465795139"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="743597489"/>
-						</array>
-						<reference key="parent" ref="1005"/>
-						<string key="objectName">Notes Button</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">461</int>
-						<reference key="object" ref="743597489"/>
-						<reference key="parent" ref="465795139"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">477</int>
 						<reference key="object" ref="614923619"/>
 						<array class="NSMutableArray" key="children">
@@ -2314,16 +2257,6 @@
 				<string key="410.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="411.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="418.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<object class="NSMutableDictionary" key="460.IBAttributePlaceholdersKey">
-					<string key="NS.key.0">ToolTip</string>
-					<object class="IBToolTipAttribute" key="NS.object.0">
-						<string key="name">ToolTip</string>
-						<reference key="object" ref="465795139"/>
-						<string key="toolTip">Open notes window</string>
-					</object>
-				</object>
-				<string key="460.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="461.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="477.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="478.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="479.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2418,9 +2351,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="actualCount">NSTextField</string>
-						<string key="backgroundClip">NSImageView</string>
 						<string key="decreasePomodoroCountButton">NSButton</string>
-						<string key="editContainerView">NSView</string>
 						<string key="externalInterruptionLabel">NSTextField</string>
 						<string key="increasePomodoroCountButton">NSButton</string>
 						<string key="internalInterruptionLabel">NSTextField</string>
@@ -2434,17 +2365,9 @@
 							<string key="name">actualCount</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="backgroundClip">
-							<string key="name">backgroundClip</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="decreasePomodoroCountButton">
 							<string key="name">decreasePomodoroCountButton</string>
 							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="editContainerView">
-							<string key="name">editContainerView</string>
-							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="externalInterruptionLabel">
 							<string key="name">externalInterruptionLabel</string>
@@ -2491,11 +2414,9 @@
 						<string key="debugSelected:">id</string>
 						<string key="decreasePomodoroCountForSelectedRow:">id</string>
 						<string key="increasePomodoroCountForSelectedRow:">id</string>
-						<string key="noteSelected:">id</string>
 						<string key="openPreferences:">id</string>
 						<string key="pinPanel:">id</string>
 						<string key="quitApplication:">id</string>
-						<string key="removeItem:">id</string>
 						<string key="showAboutMenu:">id</string>
 						<string key="showHelpMenu:">id</string>
 						<string key="showOptionsMenu:">id</string>
@@ -2530,10 +2451,6 @@
 							<string key="name">increasePomodoroCountForSelectedRow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="noteSelected:">
-							<string key="name">noteSelected:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="openPreferences:">
 							<string key="name">openPreferences:</string>
 							<string key="candidateClassName">id</string>
@@ -2544,10 +2461,6 @@
 						</object>
 						<object class="IBActionInfo" key="quitApplication:">
 							<string key="name">quitApplication:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="removeItem:">
-							<string key="name">removeItem:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showAboutMenu:">
@@ -2654,8 +2567,6 @@
 			<string key="button-start-down">{56, 28}</string>
 			<string key="footer">{320, 41}</string>
 			<string key="header-with_point">{320, 84}</string>
-			<string key="note">{24, 24}</string>
-			<string key="note-down">{24, 24}</string>
 			<string key="prefs">{24, 24}</string>
 			<string key="prefs-down">{24, 24}</string>
 			<string key="pullOutBackground">{320, 100}</string>

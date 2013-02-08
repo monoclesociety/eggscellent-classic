@@ -29,12 +29,6 @@
     NSInteger state = ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoLogin"]) ? NSOnState : NSOffState;
     [autoLoginCheckbox setState:state];
     
-    if(!NSClassFromString(@"NSUserNotification"))
-    {
-        [notesSelection setHidden:YES];
-        [notesLabel setHidden:YES];
-    }
-    
     NSNumber *floatWindow = [[NSUserDefaults standardUserDefaults] objectForKey:@"monitorWindowOnTop"];
 
     if(!floatWindow)
