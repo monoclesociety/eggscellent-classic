@@ -11,7 +11,7 @@
 	<key>CFBundleHelpBookName</key>
 	<string>com.monoclesociety.eggscellentosx.help</string>
 	<key>CFBundleIconFile</key>
-	<string>beta.icns</string>
+	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.monoclesociety.eggscellentosx</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -20,7 +20,6 @@
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
 		3DB7924B160A4E2D00CA5D24 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
 		3DB7924E160A528D00CA5D24 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
-		3DB79250160A572600CA5D24 /* beta.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7924F160A572600CA5D24 /* beta.iconset */; };
 		3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */; };
 		3DD48E6115BA545F00492EF4 /* tick_grandfatherClock.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */; };
 		3DD48E6215BA545F00492EF4 /* tick_tomatoTimer.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5E15BA545F00492EF4 /* tick_tomatoTimer.aiff */; };
@@ -502,7 +501,6 @@
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiddenLogo.png; sourceTree = "<group>"; };
 		3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "pomodorable/Vendor/HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
-		3DB7924F160A572600CA5D24 /* beta.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = beta.iconset; path = Resources/beta.iconset; sourceTree = "<group>"; };
 		3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick_grandfatherClock.aiff; sourceTree = "<group>"; };
 		3DD48E5E15BA545F00492EF4 /* tick_tomatoTimer.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick_tomatoTimer.aiff; sourceTree = "<group>"; };
@@ -1172,7 +1170,6 @@
 		F4104BBA147C14720077D272 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3DB7924F160A572600CA5D24 /* beta.iconset */,
 				3D38EFC015A375A0003C1224 /* icon.iconset */,
 				3DFBE61215A26C890006ABB2 /* retina */,
 				F459AA34153FDE8700563C88 /* welcome */,
@@ -2554,7 +2551,6 @@
 				3DD48E6415BA545F00492EF4 /* tick_wallClock.aiff in Resources */,
 				3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */,
 				3D58D99C15E2CD71002B3F84 /* Eggscellent.help in Resources */,
-				3DB79250160A572600CA5D24 /* beta.iconset in Resources */,
 				3DD633B4160F8CA7001F9661 /* button-resume-down.png in Resources */,
 				3DD633B5160F8CA7001F9661 /* button-resume-down@2x.png in Resources */,
 				3DD633B6160F8CA7001F9661 /* button-resume.png in Resources */,
