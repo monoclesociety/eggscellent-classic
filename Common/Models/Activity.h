@@ -58,7 +58,7 @@ typedef enum
 
 @interface Activity (CoreDataGeneratedAccessors)
 
-- (void)addPomodorosObject:(Egg *)value;
+- (void)addEggsObject:(Egg *)value;
 - (void)removePomodorosObject:(Egg *)value;
 - (void)addPomodoros:(NSSet *)values;
 - (void)removePomodoros:(NSSet *)values;

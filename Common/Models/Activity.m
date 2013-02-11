@@ -76,7 +76,7 @@ static Activity *singleton;
 - (EggTimer *)startAPomodoro
 {
     Egg *p = [Egg newPomodoro];
-    [self addPomodorosObject:p];
+    [self addEggsObject:p];
     [Activity setCurrentActivity:self];
     
     EggTimer *result = [[EggTimer alloc] initWithType:TimerTypePomodoro];
