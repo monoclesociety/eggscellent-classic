@@ -300,7 +300,7 @@ void *kContextActivePanel = &kContextActivePanel;
     Activity *a = [Activity currentActivity];
     if(a)
     {
-        EggTimer *pomo = [a startAPomodoro];
+        EggTimer *pomo = [a crackAnEgg];
         [pomo startAfterDelay:EGG_REQUEST_DELAY];
     }
     else 
@@ -495,7 +495,7 @@ void *kContextActivePanel = &kContextActivePanel;
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextPomodoro"])
         {
             Activity *a = [Activity currentActivity];
-            EggTimer *pomo = [a startAPomodoro];
+            EggTimer *pomo = [a crackAnEgg];
             [pomo startAfterDelay:EGG_REQUEST_DELAY];
         }
         else

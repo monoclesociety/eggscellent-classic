@@ -386,7 +386,7 @@
             
             Activity *a = [arrayController.arrangedObjects objectAtIndex:selectedIndex];
             
-            EggTimer *pomo = [a startAPomodoro];
+            EggTimer *pomo = [a crackAnEgg];
             [pomo startAfterDelay:EGG_REQUEST_DELAY];
             break;
     }

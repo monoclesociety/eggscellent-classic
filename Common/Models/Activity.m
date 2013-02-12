@@ -73,7 +73,7 @@ static Activity *singleton;
     return [NSNumber numberWithInt:theSum];
 }
 
-- (EggTimer *)startAPomodoro
+- (EggTimer *)crackAnEgg
 {
     Egg *p = [Egg newPomodoro];
     [self addEggsObject:p];

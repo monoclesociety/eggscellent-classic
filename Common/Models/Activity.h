@@ -36,9 +36,9 @@ typedef enum
 @property (nonatomic, strong) NSNumber * completed;
 @property (nonatomic, strong) NSNumber * removed;
 @property (nonatomic, strong) NSNumber * plannedCount;
-@property (nonatomic, strong) NSSet *eggs;
-@property (nonatomic, strong) NSArray *completedEggs;
-@property (nonatomic, strong) NSArray *invalidatedEggs;
+@property (nonatomic, strong) NSSet    * eggs;
+@property (nonatomic, strong) NSArray  * completedEggs;
+@property (nonatomic, strong) NSArray  * invalidatedEggs;
 
 + (Activity *)currentActivity;
 + (void)setCurrentActivity:(Activity *)act;
@@ -46,7 +46,7 @@ typedef enum
 + (Activity *)activity;
 + (NSArray *)activities;
 
-- (EggTimer *)startAPomodoro;
+- (EggTimer *)crackAnEgg;
 
 - (NSNumber *)internalInterruptionCount;
 - (NSNumber *)externalInterruptionCount;
@@ -59,8 +59,8 @@ typedef enum
 @interface Activity (CoreDataGeneratedAccessors)
 
 - (void)addEggsObject:(Egg *)value;
-- (void)removePomodorosObject:(Egg *)value;
-- (void)addPomodoros:(NSSet *)values;
-- (void)removePomodoros:(NSSet *)values;
+- (void)removeEggsObject:(Egg *)value;
+- (void)addEggs:(NSSet *)values;
+- (void)removeEggs:(NSSet *)values;
 
 @end
