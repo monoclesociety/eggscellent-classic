@@ -50,8 +50,8 @@
     
     
     //BIND: interruption Label values
-    increasePomodoroCountButton.toolTip = @"increase pomodoro count (⌘ →)";
-    decreasePomodoroCountButton.toolTip = @"decrease pomodoro count (⌘ ←)";
+    increasePomodoroCountButton.toolTip = @"increase egg count (⌘ →)";
+    decreasePomodoroCountButton.toolTip = @"decrease egg count (⌘ ←)";
 }
 
 - (void)dealloc

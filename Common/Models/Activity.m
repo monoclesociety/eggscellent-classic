@@ -75,7 +75,7 @@ static Activity *singleton;
 
 - (EggTimer *)crackAnEgg
 {
-    Egg *p = [Egg newPomodoro];
+    Egg *p = [Egg newEgg];
     [self addEggsObject:p];
     [Activity setCurrentActivity:self];
     

@@ -159,7 +159,7 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
-//    [[self panelController] openPanel];
+    
 }
 
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window 
@@ -448,11 +448,11 @@ void *kContextActivePanel = &kContextActivePanel;
         }
 
         //TODO: fix possible bug here with tracking pomodoros
-        Egg *pomodoro = [Egg lastPomodoro];
+        Egg *pomodoro = [Egg lastEgg];
         
         pomodoro.timeElapsed = [NSNumber numberWithInt:pomo.timeElapsed];
         pomodoro.timeEstimated = [NSNumber numberWithInt:pomo.timeEstimated];
-        pomodoro.outcome = [NSNumber numberWithInt:PomodoroOutcomeCompleted];
+        pomodoro.outcome = [NSNumber numberWithInt:EggOutcomeCompleted];
         
         [[ModelStore sharedStore] save];
         [[Activity currentActivity] refresh];

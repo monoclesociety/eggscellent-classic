@@ -18,7 +18,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
     // Check if main app is already running; if yes, do nothing and terminate helper app
     BOOL alreadyRunning = NO;
     NSArray *running = [[NSWorkspace sharedWorkspace] runningApplications];
@@ -42,6 +41,7 @@
         [pathComponents addObject:@"MacOS"];
         [pathComponents addObject:@"Eggscellent"];
         NSString *newPath = [NSString pathWithComponents:pathComponents];
+        NSLog(@"Final Path: %@", newPath);
         [[NSWorkspace sharedWorkspace] launchApplication:newPath];
     }
     [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];

@@ -13,9 +13,9 @@
 
 typedef enum
 {
-    PomodoroOutcomeInvalidated = 0,
-    PomodoroOutcomeCompleted = 1
-}PomodoroOutcome;
+    EggOutcomeInvalidated = 0,
+    EggOutcomeCompleted = 1
+}EggOutcome;
 
 @class Activity;
 @interface Egg : MSManagedObject
@@ -30,7 +30,7 @@ typedef enum
 @property (nonatomic, strong) NSNumber * timeElapsed;
 @property (nonatomic, strong) Activity *activity;
 
-+ (Egg *)lastPomodoro;
-+ (Egg *)newPomodoro;
++ (Egg *)lastEgg;
++ (Egg *)newEgg;
 
 @end

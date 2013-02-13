@@ -21,7 +21,7 @@
 
 #pragma mark - Helper Methods
 
-+ (Egg *)lastPomodoro;
++ (Egg *)lastEgg;
 {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Egg" inManagedObjectContext:[ModelStore sharedStore].managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -34,10 +34,10 @@
     return [results objectAtIndex:0];
 }
 
-+ (Egg *)newPomodoro;
++ (Egg *)newEgg;
 {
     Egg *result = [[ModelStore sharedStore] newModelWithClassName:@"Egg"];
-    result.outcome = [NSNumber numberWithInt:PomodoroOutcomeInvalidated];
+    result.outcome = [NSNumber numberWithInt:EggOutcomeInvalidated];
 
     return result;
 }

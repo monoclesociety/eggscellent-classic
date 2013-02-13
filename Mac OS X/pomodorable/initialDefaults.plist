@@ -26,8 +26,6 @@
 	<false/>
 	<key>displayMonitorWindow</key>
 	<true/>
-	<key>filterUnsizedTasks</key>
-	<false/>
 	<key>autoCompleteTasks</key>
 	<false/>
 	<key>HOTKEY_EXTERNAL_INTERRUPTION</key>

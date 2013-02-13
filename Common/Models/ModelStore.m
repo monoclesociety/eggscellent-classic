@@ -85,8 +85,17 @@
 
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
 {
+    //create the Date for 12am today
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [calendar setLocale:[NSLocale currentLocale]];
+    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    today = [calendar dateFromComponents:nowComponents];
+    
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -94,14 +103,32 @@
     NSSortDescriptor *completedDescriptor = [[NSSortDescriptor alloc] initWithKey:@"completed" ascending:YES];
     NSSortDescriptor *createdDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:completedDescriptor, createdDescriptor, nil];
-    NSDate *weekAgo = [NSDate dateWithTimeIntervalSinceNow:-604800];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((removed == 0) AND (completed == 0)) OR (completed == 1 AND modified > %@ and removed == 0)", weekAgo, nil];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((removed == 0) AND (completed == 0)) OR (completed == 1 AND modified > %@ and removed == 0)", today, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     [fetchRequest setPredicate:predicate];
     
     
     return fetchRequest;
+}
+
+- (BOOL)activityExistsForSourceID:(NSString *)sourceID
+{
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setIncludesPropertyValues:NO];
+    [fetchRequest setIncludesSubentities:NO];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID like[cd] %@", sourceID, nil]];
+    
+    NSError *error = nil;
+    NSUInteger count = [self.managedObjectContext countForFetchRequest: fetchRequest error: &error];
+    
+    return (count != 0);
 }
 
 #pragma mark - core data stack
@@ -211,5 +238,68 @@
     
     return __managedObjectContext;
 }
+
+//- (NSManagedObjectContext *)managedObjectContext
+//{
+//    NSThread *cThread = [NSThread currentThread];
+//    
+//    NSManagedObjectContext *moc = [[cThread threadDictionary] objectForKey:@"ManagedObjectContext"];
+//    if (moc)
+//    {
+//        return moc;
+//    }
+//    
+//    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+//    if (!coordinator)
+//    {
+//        return nil;
+//    }
+//    moc = [[NSManagedObjectContext alloc] init];
+//    [moc setPersistentStoreCoordinator:coordinator];
+//    
+//    if(![cThread isMainThread])
+//    {
+//        [moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+//    }
+//    
+//    [[cThread threadDictionary] setObject:moc forKey:@"ManagedObjectContext"];
+//    
+//    return moc;
+//}
+//
+//-(BOOL)save;
+//{
+//    //If the object graph has no changes, simply return success.
+//    if (![[self managedObjectContext] hasChanges])
+//    {
+//        return YES;
+//    }
+//    
+//    //Save and catch any error.
+//    NSError *error = nil;
+//    [[self managedObjectContext] save:&error];
+//    return (!error);
+//}
+//
+//- (NSManagedObjectContext *)mainObjectContext
+//{
+//    NSThread *mainThread = [NSThread mainThread];
+//    return [[mainThread threadDictionary] objectForKey:@"ManagedObjectContext"];
+//}
+//
+//- (void)contextHasChanged:(NSNotification*)notification
+//{
+//    //This method takes muliple contexts across threads and merges them down to the main context, this is usefule for saving objects created in another thread.
+//    if ([notification object] == [self mainObjectContext])
+//        return;
+//    
+//    if (![NSThread isMainThread])
+//    {
+//        [self performSelectorOnMainThread:@selector(contextHasChanged:) withObject:notification waitUntilDone:YES];
+//        return;
+//    }
+//    
+//    [[self mainObjectContext] mergeChangesFromContextDidSaveNotification:notification];
+//}
 
 @end

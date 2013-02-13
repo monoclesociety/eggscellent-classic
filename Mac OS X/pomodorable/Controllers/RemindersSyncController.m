@@ -64,7 +64,7 @@
          {
              NSString *ID = reminder.calendarItemExternalIdentifier;//.calendarItemIdentifier;
              NSString *name = reminder.title;
-             NSNumber *plannedCount = [NSNumber numberWithInt:1];
+             NSNull *plannedCount = [NSNull null];
              NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
              NSNumber *status = [NSNumber numberWithBool:reminder.completed];
              

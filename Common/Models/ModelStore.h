@@ -24,6 +24,7 @@
 - (NSArray *)allWithClassName:(NSString *)className;
 
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
+- (BOOL)activityExistsForSourceID:(NSString *)sourceID;
 - (NSInteger)countForEntityType:(NSString *)entityType withPredicate:(NSPredicate *)predicate;
 
 @end

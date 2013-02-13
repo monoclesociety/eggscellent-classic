@@ -48,10 +48,7 @@
 
 }
 
-
-
 #pragma mark - helper methods
-
 
 - (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;
 {
@@ -68,32 +65,26 @@
             }
         }
     }
-    [[ModelStore sharedStore] save];
 }
 
 - (BOOL)syncWithDictionary:(NSDictionary *)dictionary
 {
     //TODO: need to do a check for source in this predicate, just to make sure
     BOOL result;
-    BOOL filterUnsizedTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"filterUnsizedTasks"];
     
     NSNumber *status            = [dictionary objectForKey:@"status"];
     NSString *ID                = [dictionary objectForKey:@"ID"];
     NSString *name              = [dictionary objectForKey:@"name"];
-    NSNumber *plannedValue      = [dictionary objectForKey:@"plannedCount"];
+    id plannedValue             = [dictionary objectForKey:@"plannedCount"];
     NSNumber *source            = [dictionary objectForKey:@"source"];
-        
+    
+    int plannedCount = 0;
+    if(plannedValue != [NSNull null])
+        plannedCount = [plannedValue intValue];
+    
     //do a check to see if the item already exists
-    NSArray *idArray = [activities filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"sourceID like[cd] %@", ID, nil]];
-    if(![idArray count])
+    if(![[ModelStore sharedStore] activityExistsForSourceID:ID])
     {
-        int plannedCount = [plannedValue intValue];
-        
-        //TODO: there should also be a check here to see if we're over the max pomodoro count for an Activity
-        if(filterUnsizedTasks && plannedCount == 0)
-            return NO;
-        
-        //if plannedCount is 0, then default to 1.
         plannedCount = (plannedCount == 0) ? 1 : plannedCount;
 
         Activity *newActivity = [Activity activity];
@@ -108,14 +99,8 @@
     }
     else 
     {
-        Activity *existingActivity = [idArray objectAtIndex:0];
-        int plannedCount = [plannedValue intValue];
-        if(filterUnsizedTasks && plannedCount == 0)
-        {
-            existingActivity.removed = [NSNumber numberWithBool:YES];
-            return NO;
-        }
-        
+        Activity *existingActivity = [[activities filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"sourceID like[cd] %@", ID, nil]] objectAtIndex:0];
+
         //if plannedCount is 0, then we'll stick with our last size thankyouverymuch
         plannedCount = (plannedCount == 0) ? [existingActivity.plannedCount intValue] : plannedCount;
         
