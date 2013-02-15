@@ -395,7 +395,7 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)PomodoroTimeStarted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [statusItem setLength:STATUS_ITEM_VIEW_EGG_WIDTH];
         BOOL playSound = [[NSUserDefaults standardUserDefaults] boolForKey:@"playTickSound"];
@@ -407,7 +407,7 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)PomodoroClockTicked:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"playTickSound"] && ![self.tickSound isPlaying])
         {
@@ -431,10 +431,10 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)PomodoroTimeCompleted:(NSNotification *)note
 {
-    EggTimer *pomo = [note object];
+    EggTimer *egg = [note object];
     [self.tickSound stop];    
     
-    if(pomo.type == TimerTypePomodoro)
+    if(egg.type == TimerTypeEgg)
     {
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"playCompleteSound"])
             [self.pomodoroCompleteSound play];
@@ -442,23 +442,25 @@ void *kContextActivePanel = &kContextActivePanel;
         if(NSClassFromString(@"NSUserNotification"))
         {
             NSUserNotification *userNotification = [[NSUserNotification alloc] init];
-            userNotification.title = NSLocalizedString(@"Pomodoro Completed", @"Pomodoro Completed");
+            userNotification.title = NSLocalizedString(@"Egg Completed", @"Egg Completed");
             userNotification.subtitle = [Activity currentActivity].name;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
 
         //TODO: fix possible bug here with tracking pomodoros
-        Egg *pomodoro = [Egg lastEgg];
+        Egg *e = [Egg lastEgg];
         
-        pomodoro.timeElapsed = [NSNumber numberWithInt:pomo.timeElapsed];
-        pomodoro.timeEstimated = [NSNumber numberWithInt:pomo.timeEstimated];
-        pomodoro.outcome = [NSNumber numberWithInt:EggOutcomeCompleted];
+        e.timeElapsed = [NSNumber numberWithInt:egg.timeElapsed];
+        e.timeEstimated = [NSNumber numberWithInt:egg.timeEstimated];
+        e.outcome = [NSNumber numberWithInt:EggOutcomeCompleted];
         
         [[ModelStore sharedStore] save];
         [[Activity currentActivity] refresh];
         
         //if you just met the requirements for auto-complete, then auto-complete!
         Activity *a = [Activity currentActivity];
+                
+//        int completedCount = (int)[[a.eggs filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"outcome == 1", nil]] count];
         if([a.completedEggs count] == [a.plannedCount intValue] && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoCompleteTasks"])
             a.completed = [NSNumber numberWithBool:YES];
             
@@ -479,7 +481,7 @@ void *kContextActivePanel = &kContextActivePanel;
         return;
     }
     
-    if(pomo.type == TimerTypeLongBreak || pomo.type == TimerTypeShortBreak)
+    if(egg.type == TimerTypeLongBreak || egg.type == TimerTypeShortBreak)
     {
         if(NSClassFromString(@"NSUserNotification"))
         {
@@ -495,8 +497,8 @@ void *kContextActivePanel = &kContextActivePanel;
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextPomodoro"])
         {
             Activity *a = [Activity currentActivity];
-            EggTimer *pomo = [a crackAnEgg];
-            [pomo startAfterDelay:EGG_REQUEST_DELAY];
+            EggTimer *e = [a crackAnEgg];
+            [e startAfterDelay:EGG_REQUEST_DELAY];
         }
         else
         {
@@ -515,7 +517,7 @@ void *kContextActivePanel = &kContextActivePanel;
     [statusView setNeedsDisplay:YES];
     
     EggTimer *pomo = [note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
 #ifdef __MAC_10_8
         NSUserNotification *userNotification = [[NSUserNotification alloc] init];

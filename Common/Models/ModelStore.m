@@ -43,8 +43,11 @@
         return YES;
     }
     
-    NSError *error = nil;
-    [[self managedObjectContext] save:&error];
+    __block NSError *error = nil;
+
+    [__managedObjectContext performBlock:^{
+        [__managedObjectContext save:&error];
+        }];
     return (!error);
 }
 
@@ -123,7 +126,7 @@
     [fetchRequest setEntity:entity];
     [fetchRequest setIncludesPropertyValues:NO];
     [fetchRequest setIncludesSubentities:NO];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID like[cd] %@", sourceID, nil]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID == %@", sourceID, nil]];
     
     NSError *error = nil;
     NSUInteger count = [self.managedObjectContext countForFetchRequest: fetchRequest error: &error];
@@ -233,73 +236,10 @@
     {
         return nil;
     }
-    __managedObjectContext = [[NSManagedObjectContext alloc] init];
+    __managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [__managedObjectContext setPersistentStoreCoordinator:coordinator];
     
     return __managedObjectContext;
 }
-
-//- (NSManagedObjectContext *)managedObjectContext
-//{
-//    NSThread *cThread = [NSThread currentThread];
-//    
-//    NSManagedObjectContext *moc = [[cThread threadDictionary] objectForKey:@"ManagedObjectContext"];
-//    if (moc)
-//    {
-//        return moc;
-//    }
-//    
-//    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-//    if (!coordinator)
-//    {
-//        return nil;
-//    }
-//    moc = [[NSManagedObjectContext alloc] init];
-//    [moc setPersistentStoreCoordinator:coordinator];
-//    
-//    if(![cThread isMainThread])
-//    {
-//        [moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-//    }
-//    
-//    [[cThread threadDictionary] setObject:moc forKey:@"ManagedObjectContext"];
-//    
-//    return moc;
-//}
-//
-//-(BOOL)save;
-//{
-//    //If the object graph has no changes, simply return success.
-//    if (![[self managedObjectContext] hasChanges])
-//    {
-//        return YES;
-//    }
-//    
-//    //Save and catch any error.
-//    NSError *error = nil;
-//    [[self managedObjectContext] save:&error];
-//    return (!error);
-//}
-//
-//- (NSManagedObjectContext *)mainObjectContext
-//{
-//    NSThread *mainThread = [NSThread mainThread];
-//    return [[mainThread threadDictionary] objectForKey:@"ManagedObjectContext"];
-//}
-//
-//- (void)contextHasChanged:(NSNotification*)notification
-//{
-//    //This method takes muliple contexts across threads and merges them down to the main context, this is usefule for saving objects created in another thread.
-//    if ([notification object] == [self mainObjectContext])
-//        return;
-//    
-//    if (![NSThread isMainThread])
-//    {
-//        [self performSelectorOnMainThread:@selector(contextHasChanged:) withObject:notification waitUntilDone:YES];
-//        return;
-//    }
-//    
-//    [[self mainObjectContext] mergeChangesFromContextDidSaveNotification:notification];
-//}
 
 @end

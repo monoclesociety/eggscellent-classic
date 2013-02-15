@@ -155,7 +155,7 @@
     [self.window setIgnoresMouseEvents:NO];
     EggTimer *currentTimer = [EggTimer currentTimer];
     TimerStatus timerStatus = [currentTimer status];
-    if((timerStatus == TimerStatusRunning || timerStatus == TimerStatusPaused) && currentTimer.type == TimerTypePomodoro)
+    if((timerStatus == TimerStatusRunning || timerStatus == TimerStatusPaused) && currentTimer.type == TimerTypeEgg)
     {
         [self replaceView:normalView withView:mouseoverView];
     }
@@ -295,7 +295,7 @@
 - (void)PomodoroTimeStarted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [self.window makeKeyAndOrderFront:nil];
 
@@ -325,7 +325,7 @@
 - (void)PomodoroTimeCompleted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {   
         //invalidate animation timers
         [animationTimer invalidate];
@@ -368,7 +368,7 @@
 - (void)PomodoroStopped:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [animationTimer invalidate];
         animationTimer = nil;

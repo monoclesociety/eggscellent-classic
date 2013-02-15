@@ -29,10 +29,6 @@
 
 - (void)superSync;
 {
-    NSFetchRequest *fetchRequest = [[ModelStore sharedStore] fetchRequestForFilteredActivities];
-    NSError *error;
-	activities = [[ModelStore sharedStore].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
     self.importedIDs = [NSMutableDictionary dictionary];
     
     // Get the appropriate calendar

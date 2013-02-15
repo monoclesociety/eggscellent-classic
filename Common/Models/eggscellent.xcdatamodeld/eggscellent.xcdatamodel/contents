@@ -32,7 +32,7 @@
         <relationship name="activity" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Egg" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Activity" positionX="0" positionY="0" width="128" height="269"/>
+        <element name="Egg" positionX="0" positionY="0" width="128" height="180"/>
     </elements>
 </model>

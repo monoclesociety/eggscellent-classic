@@ -79,7 +79,7 @@ static Activity *singleton;
     [self addEggsObject:p];
     [Activity setCurrentActivity:self];
     
-    EggTimer *result = [[EggTimer alloc] initWithType:TimerTypePomodoro];
+    EggTimer *result = [[EggTimer alloc] initWithType:TimerTypeEgg];
     [EggTimer setCurrentTimer:result];
     
     return result;

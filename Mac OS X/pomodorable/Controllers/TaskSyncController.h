@@ -16,7 +16,6 @@
 
 @interface TaskSyncController : NSObject
 {
-    NSArray *activities;
     NSMutableDictionary *importedIDs;
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;

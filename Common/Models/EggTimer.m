@@ -23,7 +23,7 @@
     if(self = [super init])
     {
         NSString *timerTypeKey = nil;
-        if(timerType == TimerTypePomodoro)
+        if(timerType == TimerTypeEgg)
             timerTypeKey = @"pomodoroMinutes";
         if(timerType == TimerTypeShortBreak)
             timerTypeKey = @"smallBreakMinutes";
@@ -143,7 +143,7 @@ static EggTimer *currentTimer;
 {
     NSNumber *pauseAmount = [[NSUserDefaults standardUserDefaults] valueForKey:@"pomodoroPauseSeconds"];
     int makingUpShit = [pauseAmount intValue];
-    if(self.type > TimerTypePomodoro || self.status == TimerStatusPaused || makingUpShit == 0)
+    if(self.type > TimerTypeEgg || self.status == TimerStatusPaused || makingUpShit == 0)
         return;
     
     savedTimeElapsed    = timeElapsed;

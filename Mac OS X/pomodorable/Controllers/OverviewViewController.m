@@ -112,7 +112,7 @@
     [itemsTableView becomeFirstResponder];
     
     EggTimer *currentTimer = [EggTimer currentTimer];
-    if(currentTimer && currentTimer.status == TimerStatusRunning && currentTimer.type == TimerTypePomodoro)
+    if(currentTimer && currentTimer.status == TimerStatusRunning && currentTimer.type == TimerTypeEgg)
     {
         Activity *currentActivity = [Activity currentActivity];
         if(!currentActivity)
@@ -449,7 +449,7 @@
 {
     [startButton setEnabled:YES];
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [self changeButtonToStart:NO];
     }
@@ -458,7 +458,7 @@
 - (void)PomodoroTimeCompleted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {    
         [self changeButtonToStart:YES];
         //TODO: change title of start button here
@@ -468,7 +468,7 @@
 - (void)PomodoroStopped:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {    
         [self changeButtonToStart:YES];
         //TODO: change title of start button here

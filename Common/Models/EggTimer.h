@@ -18,7 +18,7 @@
 
 typedef enum 
 {
-    TimerTypePomodoro = 0,
+    TimerTypeEgg = 0,
     TimerTypeShortBreak = 1,
     TimerTypeLongBreak = 2
 } TimerType;

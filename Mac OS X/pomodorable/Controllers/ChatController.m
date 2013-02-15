@@ -32,7 +32,7 @@
 - (void)PomodoroStarted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [self setStatusToBusy];
     }
@@ -41,7 +41,7 @@
 - (void)PomodoroTimeCompleted:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [self setStatusToAvailable];
     }
@@ -50,7 +50,7 @@
 - (void)PomodoroStopped:(NSNotification *)note
 {
     EggTimer *pomo = (EggTimer *)[note object];
-    if(pomo.type == TimerTypePomodoro)
+    if(pomo.type == TimerTypeEgg)
     {
         [self setStatusToAvailable];
     }
