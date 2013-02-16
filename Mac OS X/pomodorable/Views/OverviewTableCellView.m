@@ -26,6 +26,8 @@
                                                  name:NSControlTextDidEndEditingNotification 
                                                object:self.textField];
     
+//    id wtf = [self.objectValue valueForKeyPath:@"objectValue.completedEggs"];
+    
     //BIND: ribbon view values
     [ribbonView bind:@"plannedPomodoroCount"
             toObject:self

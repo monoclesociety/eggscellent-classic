@@ -453,14 +453,14 @@ void *kContextActivePanel = &kContextActivePanel;
         e.timeElapsed = [NSNumber numberWithInt:egg.timeElapsed];
         e.timeEstimated = [NSNumber numberWithInt:egg.timeEstimated];
         e.outcome = [NSNumber numberWithInt:EggOutcomeCompleted];
+        e.activity = [Activity currentActivity];
         
         [[ModelStore sharedStore] save];
         [[Activity currentActivity] refresh];
         
         //if you just met the requirements for auto-complete, then auto-complete!
         Activity *a = [Activity currentActivity];
-                
-//        int completedCount = (int)[[a.eggs filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"outcome == 1", nil]] count];
+        
         if([a.completedEggs count] == [a.plannedCount intValue] && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoCompleteTasks"])
             a.completed = [NSNumber numberWithBool:YES];
             
@@ -486,7 +486,7 @@ void *kContextActivePanel = &kContextActivePanel;
         if(NSClassFromString(@"NSUserNotification"))
         {
             NSUserNotification *userNotification = [[NSUserNotification alloc] init];
-            userNotification.title = NSLocalizedString(@"Pomodoro Break Completed", @"Pomodoro Break Completed");
+            userNotification.title = NSLocalizedString(@"Egg Break Completed", @"Egg Break Completed");
             userNotification.subtitle = [Activity currentActivity].name;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
@@ -552,7 +552,7 @@ void *kContextActivePanel = &kContextActivePanel;
             [idleAlert addButtonWithTitle:@"Yes Please"];
             [idleAlert addButtonWithTitle:@"No Thanks"];
             [idleAlert setMessageText:@"Welcome Back!"];
-            [idleAlert setInformativeText:@"Would you like to start work on another pomodoro?"];
+            [idleAlert setInformativeText:@"Would you like to start work on another task?"];
             [idleAlert setShowsSuppressionButton:YES];
             [idleAlert setAlertStyle:NSInformationalAlertStyle];
         }

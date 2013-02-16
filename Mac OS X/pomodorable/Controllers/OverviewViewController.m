@@ -65,8 +65,13 @@
         [listScrollView.contentView addSubview:imv];
         
         //Filter for removed activities, or ones that are completed but over a week old.
-        NSDate *weekAgo = [NSDate dateWithTimeIntervalSinceNow:-4838400];
-        arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed == 1 AND modified > %@ AND removed == 0)", weekAgo, nil];
+        NSDate *today = [NSDate date];
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        [calendar setLocale:[NSLocale currentLocale]];
+        [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+        NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+        today = [calendar dateFromComponents:nowComponents];
+        arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed == 1 AND modified > %@ AND removed == 0)", today, nil];
 
         //set target and action of double click to this class
         [itemsTableView setTarget:self];

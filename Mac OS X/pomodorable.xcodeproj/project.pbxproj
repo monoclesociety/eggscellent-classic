@@ -145,17 +145,6 @@
 		F45A4BEE152F70BA0010AB45 /* complete_wallClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F45A4BDE152F70BA0010AB45 /* complete_wallClock.mp3 */; };
 		F46DF74C1506A10200A20D48 /* HiddenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F46DF74B1506A10200A20D48 /* HiddenButton.m */; };
 		F47AE3A114EEDBDD00DFAE19 /* status.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39514EEDBDD00DFAE19 /* status.png */; };
-		F47AE3A214EEDBDD00DFAE19 /* status0.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39614EEDBDD00DFAE19 /* status0.png */; };
-		F47AE3A314EEDBDD00DFAE19 /* status1.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39714EEDBDD00DFAE19 /* status1.png */; };
-		F47AE3A414EEDBDD00DFAE19 /* status2.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39814EEDBDD00DFAE19 /* status2.png */; };
-		F47AE3A514EEDBDD00DFAE19 /* status3.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39914EEDBDD00DFAE19 /* status3.png */; };
-		F47AE3A614EEDBDD00DFAE19 /* status4.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39A14EEDBDD00DFAE19 /* status4.png */; };
-		F47AE3A714EEDBDD00DFAE19 /* status5.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39B14EEDBDD00DFAE19 /* status5.png */; };
-		F47AE3A814EEDBDD00DFAE19 /* status6.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39C14EEDBDD00DFAE19 /* status6.png */; };
-		F47AE3A914EEDBDD00DFAE19 /* status7.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39D14EEDBDD00DFAE19 /* status7.png */; };
-		F47AE3AA14EEDBDD00DFAE19 /* status8.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39E14EEDBDD00DFAE19 /* status8.png */; };
-		F47AE3AB14EEDBDD00DFAE19 /* status9.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39F14EEDBDD00DFAE19 /* status9.png */; };
-		F47AE3AC14EEDBDD00DFAE19 /* status10.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE3A014EEDBDD00DFAE19 /* status10.png */; };
 		F47AE3AE14EEDF0D00DFAE19 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE3AD14EEDF0D00DFAE19 /* tomato.png */; };
 		F47CC65C14B1413400CA239C /* NSButton+TextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CC65B14B1413400CA239C /* NSButton+TextColor.m */; };
 		F480844114E71CE900D7B291 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F480844014E71CE900D7B291 /* close.png */; };
@@ -656,17 +645,6 @@
 		F46DF74A1506A10200A20D48 /* HiddenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiddenButton.h; sourceTree = "<group>"; };
 		F46DF74B1506A10200A20D48 /* HiddenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiddenButton.m; sourceTree = "<group>"; };
 		F47AE39514EEDBDD00DFAE19 /* status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status.png; path = "Resources/status icons/status.png"; sourceTree = "<group>"; };
-		F47AE39614EEDBDD00DFAE19 /* status0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status0.png; path = "Resources/status icons/status0.png"; sourceTree = "<group>"; };
-		F47AE39714EEDBDD00DFAE19 /* status1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status1.png; path = "Resources/status icons/status1.png"; sourceTree = "<group>"; };
-		F47AE39814EEDBDD00DFAE19 /* status2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status2.png; path = "Resources/status icons/status2.png"; sourceTree = "<group>"; };
-		F47AE39914EEDBDD00DFAE19 /* status3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status3.png; path = "Resources/status icons/status3.png"; sourceTree = "<group>"; };
-		F47AE39A14EEDBDD00DFAE19 /* status4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status4.png; path = "Resources/status icons/status4.png"; sourceTree = "<group>"; };
-		F47AE39B14EEDBDD00DFAE19 /* status5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status5.png; path = "Resources/status icons/status5.png"; sourceTree = "<group>"; };
-		F47AE39C14EEDBDD00DFAE19 /* status6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status6.png; path = "Resources/status icons/status6.png"; sourceTree = "<group>"; };
-		F47AE39D14EEDBDD00DFAE19 /* status7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status7.png; path = "Resources/status icons/status7.png"; sourceTree = "<group>"; };
-		F47AE39E14EEDBDD00DFAE19 /* status8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status8.png; path = "Resources/status icons/status8.png"; sourceTree = "<group>"; };
-		F47AE39F14EEDBDD00DFAE19 /* status9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status9.png; path = "Resources/status icons/status9.png"; sourceTree = "<group>"; };
-		F47AE3A014EEDBDD00DFAE19 /* status10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status10.png; path = "Resources/status icons/status10.png"; sourceTree = "<group>"; };
 		F47AE3AD14EEDF0D00DFAE19 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tomato.png; path = pomodorable/Resources/selected_item_pull_out/tomato.png; sourceTree = SOURCE_ROOT; };
 		F47CC65A14B1413400CA239C /* NSButton+TextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+TextColor.h"; path = "Other Sources/Categories/NSButton+TextColor.h"; sourceTree = "<group>"; };
 		F47CC65B14B1413400CA239C /* NSButton+TextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+TextColor.m"; path = "Other Sources/Categories/NSButton+TextColor.m"; sourceTree = "<group>"; };
@@ -1387,17 +1365,6 @@
 			isa = PBXGroup;
 			children = (
 				F47AE39514EEDBDD00DFAE19 /* status.png */,
-				F47AE39614EEDBDD00DFAE19 /* status0.png */,
-				F47AE39714EEDBDD00DFAE19 /* status1.png */,
-				F47AE39814EEDBDD00DFAE19 /* status2.png */,
-				F47AE39914EEDBDD00DFAE19 /* status3.png */,
-				F47AE39A14EEDBDD00DFAE19 /* status4.png */,
-				F47AE39B14EEDBDD00DFAE19 /* status5.png */,
-				F47AE39C14EEDBDD00DFAE19 /* status6.png */,
-				F47AE39D14EEDBDD00DFAE19 /* status7.png */,
-				F47AE39E14EEDBDD00DFAE19 /* status8.png */,
-				F47AE39F14EEDBDD00DFAE19 /* status9.png */,
-				F47AE3A014EEDBDD00DFAE19 /* status10.png */,
 			);
 			name = "status icons";
 			sourceTree = "<group>";
@@ -2468,17 +2435,6 @@
 				F49C24BD14D8BBBB00C34218 /* DevicesPreferencesViewController.xib in Resources */,
 				F480844114E71CE900D7B291 /* close.png in Resources */,
 				F47AE3A114EEDBDD00DFAE19 /* status.png in Resources */,
-				F47AE3A214EEDBDD00DFAE19 /* status0.png in Resources */,
-				F47AE3A314EEDBDD00DFAE19 /* status1.png in Resources */,
-				F47AE3A414EEDBDD00DFAE19 /* status2.png in Resources */,
-				F47AE3A514EEDBDD00DFAE19 /* status3.png in Resources */,
-				F47AE3A614EEDBDD00DFAE19 /* status4.png in Resources */,
-				F47AE3A714EEDBDD00DFAE19 /* status5.png in Resources */,
-				F47AE3A814EEDBDD00DFAE19 /* status6.png in Resources */,
-				F47AE3A914EEDBDD00DFAE19 /* status7.png in Resources */,
-				F47AE3AA14EEDBDD00DFAE19 /* status8.png in Resources */,
-				F47AE3AB14EEDBDD00DFAE19 /* status9.png in Resources */,
-				F47AE3AC14EEDBDD00DFAE19 /* status10.png in Resources */,
 				F47AE3AE14EEDF0D00DFAE19 /* tomato.png in Resources */,
 				F4E2F2C714FB302100700D09 /* lightswitch.png in Resources */,
 				F4E2F2C914FB302B00700D09 /* gear.png in Resources */,
