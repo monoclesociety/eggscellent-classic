@@ -154,11 +154,12 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     [super drawRect:dirtyRect];
-    if(!_selected)
-    {
+//    if(!_selected)
+//    {
         CGFloat maxY = NSMaxY(self.frame);
         CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-        CGColorRef black = CGColorCreateGenericRGB(0, 0, 0, 1);
+        
+        CGColorRef black = CGColorCreateGenericRGB(.6f, .6f, .6f, 1);
         CGContextSetStrokeColorWithColor(c, black);
         CGContextBeginPath(c);
         CGContextMoveToPoint(c, 0.0f, maxY - 2.5f);
@@ -167,21 +168,21 @@
         CGContextSetLineCap(c, kCGLineCapSquare);
         CGContextClosePath(c);
         CGContextStrokePath(c);
+        CGColorRelease(black);
         
-        CGColorRef lightGrey = CGColorCreateGenericRGB(.8, .8, .8, 1);
+        CGColorRef lightGrey = CGColorCreateGenericRGB(1, 1, 1, 1);
         CGContextSetStrokeColorWithColor(c, lightGrey);
         CGContextTranslateCTM(c, 0, 1);
         CGContextBeginPath(c);
-        CGContextMoveToPoint(c, 0.0f, maxY - 4.0f);
-        CGContextAddLineToPoint(c, 320.0f, maxY - 4.0f);
-        CGContextSetLineWidth(c, .2);
+        CGContextMoveToPoint(c, 0.0f, maxY - 4.5f);
+        CGContextAddLineToPoint(c, 320.0f, maxY - 4.5f);
+        CGContextSetLineWidth(c, 1);
         CGContextSetLineCap(c, kCGLineCapSquare);
         CGContextClosePath(c);
-        CGContextStrokePath(c);
-        
+        CGContextStrokePath(c);        
         CGColorRelease(lightGrey);
-        CGColorRelease(black);
-    }
+//
+//    }
 }
 
 #pragma mark - Custom methods

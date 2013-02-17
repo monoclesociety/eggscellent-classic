@@ -9,6 +9,11 @@
 #import "MonitorWindowController.h"
 #import "AppDelegate.h"
 
+
+// EGG animation
+// height: 150
+// width: 180
+
 @implementation MonitorWindowController
 
 #pragma mark - 

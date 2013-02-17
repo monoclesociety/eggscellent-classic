@@ -11,6 +11,8 @@
 		3D1564EA15697C9700D70EBB /* OmniFocusSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E915697C9700D70EBB /* OmniFocusSyncController.m */; };
 		3D1564ED15697CA600D70EBB /* RemindersSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564EC15697CA600D70EBB /* RemindersSyncController.m */; };
 		3D29146415BB0A0200F19BED /* InstantMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D29146315BB0A0200F19BED /* InstantMessage.framework */; };
+		3D2932A516D0102E0072F829 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2932A316D0102E0072F829 /* egg.png */; };
+		3D2932A616D0102E0072F829 /* egg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2932A416D0102E0072F829 /* egg@2x.png */; };
 		3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D29F971169655DF00681346 /* eggscellent.xcdatamodeld */; };
 		3D38EFC115A375A0003C1224 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 3D38EFC015A375A0003C1224 /* icon.iconset */; };
 		3D45F6D615D8B10E006C085B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45F6D515D8B10D006C085B /* NSAttributedString+Hyperlink.m */; };
@@ -37,6 +39,7 @@
 		3DD633B7160F8CA7001F9661 /* button-resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD633B3160F8CA7001F9661 /* button-resume@2x.png */; };
 		3DDF88E615A2862D009AEFFC /* focus-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF88E515A2862D009AEFFC /* focus-card@2x.png */; };
 		3DF3F46A158A505100691B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3F468158A505100691B97 /* MainMenu.xib */; };
+		3DF9349D16D021C500A98287 /* status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF9349C16D021C500A98287 /* status@2x.png */; };
 		3DFBE63615A26CA30006ABB2 /* focus-card-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */; };
 		3DFBE63715A26CA30006ABB2 /* pullOutBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */; };
 		3DFBE63815A26CA30006ABB2 /* ribbon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61615A26CA30006ABB2 /* ribbon1@2x.png */; };
@@ -44,7 +47,6 @@
 		3DFBE63A15A26CA30006ABB2 /* ribbon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61815A26CA30006ABB2 /* ribbon3@2x.png */; };
 		3DFBE63B15A26CA30006ABB2 /* ribbonOverdue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61915A26CA30006ABB2 /* ribbonOverdue@2x.png */; };
 		3DFBE63C15A26CA30006ABB2 /* squirrel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61A15A26CA30006ABB2 /* squirrel@2x.png */; };
-		3DFBE63D15A26CA30006ABB2 /* tomato@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61B15A26CA30006ABB2 /* tomato@2x.png */; };
 		3DFBE63E15A26CA30006ABB2 /* button-add-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61C15A26CA30006ABB2 /* button-add-down@2x.png */; };
 		3DFBE63F15A26CA30006ABB2 /* button-add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61D15A26CA30006ABB2 /* button-add@2x.png */; };
 		3DFBE64015A26CA30006ABB2 /* button-minus-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61E15A26CA30006ABB2 /* button-minus-down@2x.png */; };
@@ -145,7 +147,6 @@
 		F45A4BEE152F70BA0010AB45 /* complete_wallClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F45A4BDE152F70BA0010AB45 /* complete_wallClock.mp3 */; };
 		F46DF74C1506A10200A20D48 /* HiddenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F46DF74B1506A10200A20D48 /* HiddenButton.m */; };
 		F47AE3A114EEDBDD00DFAE19 /* status.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39514EEDBDD00DFAE19 /* status.png */; };
-		F47AE3AE14EEDF0D00DFAE19 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE3AD14EEDF0D00DFAE19 /* tomato.png */; };
 		F47CC65C14B1413400CA239C /* NSButton+TextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CC65B14B1413400CA239C /* NSButton+TextColor.m */; };
 		F480844114E71CE900D7B291 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F480844014E71CE900D7B291 /* close.png */; };
 		F481A37A14FDA3B700AAF2E8 /* NoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481A37914FDA3B700AAF2E8 /* NoteWindowController.m */; };
@@ -480,6 +481,8 @@
 		3D1564EB15697CA600D70EBB /* RemindersSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersSyncController.h; sourceTree = "<group>"; };
 		3D1564EC15697CA600D70EBB /* RemindersSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersSyncController.m; sourceTree = "<group>"; };
 		3D29146315BB0A0200F19BED /* InstantMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstantMessage.framework; path = System/Library/Frameworks/InstantMessage.framework; sourceTree = SDKROOT; };
+		3D2932A316D0102E0072F829 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egg.png; path = pomodorable/Resources/selected_item_pull_out/egg.png; sourceTree = SOURCE_ROOT; };
+		3D2932A416D0102E0072F829 /* egg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egg@2x.png"; path = "pomodorable/Resources/selected_item_pull_out/egg@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D29F972169655DF00681346 /* eggscellent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eggscellent.xcdatamodel; sourceTree = "<group>"; };
 		3D38EFC015A375A0003C1224 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = icon.iconset; path = Resources/icon.iconset; sourceTree = "<group>"; };
 		3D40841D15712DFF00A8469B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -505,11 +508,12 @@
 		3DD61E67158A4A55001947B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3DD61E71158A4CC9001947B1 /* helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = helper.entitlements; sourceTree = "<group>"; };
 		3DD633B0160F8CA7001F9661 /* button-resume-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-resume-down.png"; sourceTree = "<group>"; };
-		3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-resume-down@2x.png"; sourceTree = "<group>"; };
+		3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-resume-down@2x.png"; path = "Resources/window/button-resume-down@2x.png"; sourceTree = "<group>"; };
 		3DD633B2160F8CA7001F9661 /* button-resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-resume.png"; sourceTree = "<group>"; };
-		3DD633B3160F8CA7001F9661 /* button-resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-resume@2x.png"; sourceTree = "<group>"; };
+		3DD633B3160F8CA7001F9661 /* button-resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-resume@2x.png"; path = "Resources/window/button-resume@2x.png"; sourceTree = "<group>"; };
 		3DDF88E515A2862D009AEFFC /* focus-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card@2x.png"; path = "Resources/window/focus-card@2x.png"; sourceTree = "<group>"; };
 		3DF3F469158A505100691B97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3DF9349C16D021C500A98287 /* status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status@2x.png"; path = "Resources/status icons/status@2x.png"; sourceTree = "<group>"; };
 		3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card-hover@2x.png"; path = "Resources/window/focus-card-hover@2x.png"; sourceTree = "<group>"; };
 		3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pullOutBackground@2x.png"; path = "Resources/selected_item_pull_out/pullOutBackground@2x.png"; sourceTree = "<group>"; };
 		3DFBE61615A26CA30006ABB2 /* ribbon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon1@2x.png"; path = "Resources/ribbons/ribbon1@2x.png"; sourceTree = "<group>"; };
@@ -517,7 +521,6 @@
 		3DFBE61815A26CA30006ABB2 /* ribbon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon3@2x.png"; path = "Resources/ribbons/ribbon3@2x.png"; sourceTree = "<group>"; };
 		3DFBE61915A26CA30006ABB2 /* ribbonOverdue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbonOverdue@2x.png"; path = "Resources/ribbons/ribbonOverdue@2x.png"; sourceTree = "<group>"; };
 		3DFBE61A15A26CA30006ABB2 /* squirrel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "squirrel@2x.png"; path = "Resources/selected_item_pull_out/squirrel@2x.png"; sourceTree = "<group>"; };
-		3DFBE61B15A26CA30006ABB2 /* tomato@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tomato@2x.png"; path = "Resources/selected_item_pull_out/tomato@2x.png"; sourceTree = "<group>"; };
 		3DFBE61C15A26CA30006ABB2 /* button-add-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-add-down@2x.png"; path = "Resources/window/button-add-down@2x.png"; sourceTree = "<group>"; };
 		3DFBE61D15A26CA30006ABB2 /* button-add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-add@2x.png"; path = "Resources/window/button-add@2x.png"; sourceTree = "<group>"; };
 		3DFBE61E15A26CA30006ABB2 /* button-minus-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-minus-down@2x.png"; path = "Resources/window/button-minus-down@2x.png"; sourceTree = "<group>"; };
@@ -645,7 +648,6 @@
 		F46DF74A1506A10200A20D48 /* HiddenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiddenButton.h; sourceTree = "<group>"; };
 		F46DF74B1506A10200A20D48 /* HiddenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiddenButton.m; sourceTree = "<group>"; };
 		F47AE39514EEDBDD00DFAE19 /* status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status.png; path = "Resources/status icons/status.png"; sourceTree = "<group>"; };
-		F47AE3AD14EEDF0D00DFAE19 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tomato.png; path = pomodorable/Resources/selected_item_pull_out/tomato.png; sourceTree = SOURCE_ROOT; };
 		F47CC65A14B1413400CA239C /* NSButton+TextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+TextColor.h"; path = "Other Sources/Categories/NSButton+TextColor.h"; sourceTree = "<group>"; };
 		F47CC65B14B1413400CA239C /* NSButton+TextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+TextColor.m"; path = "Other Sources/Categories/NSButton+TextColor.m"; sourceTree = "<group>"; };
 		F480844014E71CE900D7B291 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -1053,13 +1055,6 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		3DBC80151694E7CE00B1BF4E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		3DD61E5A158A4A55001947B1 /* helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1095,7 +1090,6 @@
 				3DFBE61815A26CA30006ABB2 /* ribbon3@2x.png */,
 				3DFBE61915A26CA30006ABB2 /* ribbonOverdue@2x.png */,
 				3DFBE61A15A26CA30006ABB2 /* squirrel@2x.png */,
-				3DFBE61B15A26CA30006ABB2 /* tomato@2x.png */,
 				3DFBE61C15A26CA30006ABB2 /* button-add-down@2x.png */,
 				3DFBE61D15A26CA30006ABB2 /* button-add@2x.png */,
 				3DFBE61E15A26CA30006ABB2 /* button-minus-down@2x.png */,
@@ -1117,6 +1111,9 @@
 				3DFBE62E15A26CA30006ABB2 /* pom_count-on@2x.png */,
 				3DFBE62F15A26CA30006ABB2 /* prefs-down@2x.png */,
 				3DFBE63015A26CA30006ABB2 /* prefs@2x.png */,
+				3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */,
+				3DD633B3160F8CA7001F9661 /* button-resume@2x.png */,
+				3D2932A416D0102E0072F829 /* egg@2x.png */,
 				3DFBE63115A26CA30006ABB2 /* ribbon4@2x.png */,
 				3DFBE63215A26CA30006ABB2 /* ribbon5@2x.png */,
 				3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */,
@@ -1237,12 +1234,10 @@
 		F43937ED14AA8D1500FA1244 /* window */ = {
 			isa = PBXGroup;
 			children = (
+				3D2932A316D0102E0072F829 /* egg.png */,
 				3DD633B0160F8CA7001F9661 /* button-resume-down.png */,
-				3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */,
 				3DD633B2160F8CA7001F9661 /* button-resume.png */,
-				3DD633B3160F8CA7001F9661 /* button-resume@2x.png */,
 				3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */,
-				F47AE3AD14EEDF0D00DFAE19 /* tomato.png */,
 				F480844014E71CE900D7B291 /* close.png */,
 				F48DB05E14AD230600A22267 /* focus-card-hover.png */,
 				F48DB05F14AD230600A22267 /* focus-card.png */,
@@ -1364,6 +1359,7 @@
 		F47AE39314EEDB3500DFAE19 /* status icons */ = {
 			isa = PBXGroup;
 			children = (
+				3DF9349C16D021C500A98287 /* status@2x.png */,
 				F47AE39514EEDBDD00DFAE19 /* status.png */,
 			);
 			name = "status icons";
@@ -2042,7 +2038,6 @@
 				F4E7E7D8147C8FB900815B66 /* Helpers */,
 				F48A5B461465F38500BFD7B2 /* AppDelegate.h */,
 				F48A5B471465F38500BFD7B2 /* AppDelegate.m */,
-				3DBC80151694E7CE00B1BF4E /* New Group */,
 				F48A5B491465F38600BFD7B2 /* MainMenu.xib */,
 				F48A5B401465F38500BFD7B2 /* main.m */,
 				F431159D14968C8700412621 /* network.h */,
@@ -2435,7 +2430,6 @@
 				F49C24BD14D8BBBB00C34218 /* DevicesPreferencesViewController.xib in Resources */,
 				F480844114E71CE900D7B291 /* close.png in Resources */,
 				F47AE3A114EEDBDD00DFAE19 /* status.png in Resources */,
-				F47AE3AE14EEDF0D00DFAE19 /* tomato.png in Resources */,
 				F4E2F2C714FB302100700D09 /* lightswitch.png in Resources */,
 				F4E2F2C914FB302B00700D09 /* gear.png in Resources */,
 				F4E2F2CD14FB30F100700D09 /* sync.png in Resources */,
@@ -2472,7 +2466,6 @@
 				3DFBE63A15A26CA30006ABB2 /* ribbon3@2x.png in Resources */,
 				3DFBE63B15A26CA30006ABB2 /* ribbonOverdue@2x.png in Resources */,
 				3DFBE63C15A26CA30006ABB2 /* squirrel@2x.png in Resources */,
-				3DFBE63D15A26CA30006ABB2 /* tomato@2x.png in Resources */,
 				3DFBE63E15A26CA30006ABB2 /* button-add-down@2x.png in Resources */,
 				3DFBE63F15A26CA30006ABB2 /* button-add@2x.png in Resources */,
 				3DFBE64015A26CA30006ABB2 /* button-minus-down@2x.png in Resources */,
@@ -2511,6 +2504,9 @@
 				3DD633B5160F8CA7001F9661 /* button-resume-down@2x.png in Resources */,
 				3DD633B6160F8CA7001F9661 /* button-resume.png in Resources */,
 				3DD633B7160F8CA7001F9661 /* button-resume@2x.png in Resources */,
+				3D2932A516D0102E0072F829 /* egg.png in Resources */,
+				3D2932A616D0102E0072F829 /* egg@2x.png in Resources */,
+				3DF9349D16D021C500A98287 /* status@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2741,7 +2737,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Kyle Kinkade (VG5A3N9WM5)";
+				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
@@ -2751,7 +2747,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
 				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "DA7FB9B7-3F10-4045-B110-EA792C87143C";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2761,7 +2757,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Kyle Kinkade (VG5A3N9WM5)";
+				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2772,7 +2768,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
 				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "DA7FB9B7-3F10-4045-B110-EA792C87143C";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

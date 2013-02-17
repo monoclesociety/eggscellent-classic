@@ -37,7 +37,7 @@
     
     NSImage *icon = self.image;
     CGFloat iconX = 0;
-    CGFloat iconY = 4;
+    CGFloat iconY = 3;
     NSPoint iconPoint = NSMakePoint(iconX, iconY);
     
     CGRect f = self.frame;

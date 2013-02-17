@@ -75,7 +75,7 @@ void *kContextActivePanel = &kContextActivePanel;
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_DEFAULT_WIDTH];
     statusView = [[StatusItemView alloc] initWithStatusItem:statusItem];
-    statusView.image = [NSImage imageNamed:@"status9"];
+    statusView.image = [NSImage imageNamed:@"status"];
     statusView.target = self;
     statusView.action = @selector(togglePanel:);
     

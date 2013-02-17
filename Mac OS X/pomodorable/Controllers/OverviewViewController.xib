@@ -115,11 +115,8 @@
 								</object>
 							</object>
 							<object class="NSColor" key="NSTextColor">
-								<int key="NSColorSpace">3</int>
-								<bytes key="NSWhite">MC43NQA</bytes>
-								<object class="NSColorSpace" key="NSCustomColorSpace">
-									<int key="NSID">2</int>
-								</object>
+								<int key="NSColorSpace">2</int>
+								<bytes key="NSRGB">MC41OTIxNTY4NjI3IDAuNTkyMTU2ODYyNyAwLjU5MjE1Njg2MjcAA</bytes>
 							</object>
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -207,7 +204,7 @@
 										<double key="NSIntercellSpacingHeight">0.0</double>
 										<object class="NSColor" key="NSBackgroundColor">
 											<int key="NSColorSpace">2</int>
-											<bytes key="NSRGB">MC4xODAzOTIxNjEgMC4xODAzOTIxNjEgMC4xODAzOTIxNjEAA</bytes>
+											<bytes key="NSRGB">MC45MDU4ODIzNTI5IDAuOTA1ODgyMzUyOSAwLjkwNTg4MjM1MjkAA</bytes>
 										</object>
 										<object class="NSColor" key="NSGridColor">
 											<int key="NSColorSpace">4</int>
@@ -233,7 +230,7 @@
 								<reference key="NSDocView" ref="883960675"/>
 								<object class="NSColor" key="NSBGColor">
 									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4xODAzOTIxNjEgMC4xODAzOTIxNjEgMC4xODAzOTIxNjEAA</bytes>
+									<bytes key="NSRGB">MC45MDU4ODIzNTI5IDAuOTA1ODgyMzUyOSAwLjkwNTg4MjM1MjkAA</bytes>
 								</object>
 								<int key="NScvFlags">2</int>
 							</object>
@@ -492,7 +489,7 @@
 						<string key="NSFrame">{{1, 504}, {320, 84}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="137241969"/>
 						<string key="NSReuseIdentifierKey">_NS:2141</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="113615498">
@@ -500,7 +497,7 @@
 							<int key="NSCellFlags2">33554432</int>
 							<object class="NSCustomResource" key="NSContents">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">header-with_point</string>
+								<string key="NSResourceName">header-with_point@2x</string>
 							</object>
 							<string key="NSCellIdentifier">_NS:2141</string>
 							<int key="NSAlign">0</int>
@@ -1204,7 +1201,7 @@
 												<int key="NSCellFlags2">33554432</int>
 												<object class="NSCustomResource" key="NSContents">
 													<string key="NSClassName">NSImage</string>
-													<string key="NSResourceName">tomato</string>
+													<string key="NSResourceName">egg</string>
 												</object>
 												<string key="NSCellIdentifier">_NS:2141</string>
 												<int key="NSAlign">0</int>
@@ -1357,7 +1354,7 @@
 								</object>
 								<object class="NSBox" id="1072189388">
 									<reference key="NSNextResponder" ref="921643476"/>
-									<int key="NSvFlags">13</int>
+									<int key="NSvFlags">-2147483635</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSView" id="568269803">
 											<reference key="NSNextResponder" ref="1072189388"/>
@@ -2565,15 +2562,15 @@
 			<string key="button-plus-down">{26, 27}</string>
 			<string key="button-start">{56, 28}</string>
 			<string key="button-start-down">{56, 28}</string>
+			<string key="egg">{32, 32}</string>
 			<string key="footer">{320, 41}</string>
-			<string key="header-with_point">{320, 84}</string>
+			<string key="header-with_point@2x">{320, 84}</string>
 			<string key="prefs">{24, 24}</string>
 			<string key="prefs-down">{24, 24}</string>
 			<string key="pullOutBackground">{320, 100}</string>
 			<string key="pullOutBackgroundClip">{320, 3}</string>
 			<string key="shadow">{320, 7}</string>
 			<string key="squirrel">{32, 32}</string>
-			<string key="tomato">{32, 32}</string>
 		</dictionary>
 	</data>
 </archive>
