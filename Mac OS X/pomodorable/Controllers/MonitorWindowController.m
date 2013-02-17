@@ -68,14 +68,16 @@
     NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[self.window frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:self userInfo:nil];
     [containerView addTrackingArea:area];
 
-    //set up awesome tomato layer!
-    NSView *mainView = (NSView *)self.window.contentView;
-    [mainView setWantsLayer:YES];
-    tomatoLayer = [CALayer layer];
-    tomatoLayer.frame = mainView.frame;
-    [mainView.layer addSublayer:tomatoLayer];
+    //set up Animation Layer (temporarily added pic)
+    [animationView setWantsLayer:YES];
+    NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:@"7_egg_tick_Q3_042.png"];
+    NSImage *i = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    animationView.layer.contents = (id)i;
+    tomatoLayer = nil; //tomatoLayer = animationView.layer;
     
     //create shadow for view
+    NSView *mainView = (NSView *)self.window.contentView;
+    [mainView setWantsLayer:YES];
     CGColorRef shadowColor = CGColorCreateGenericRGB(0, 0, 0, 1);
     mainView.layer.shadowRadius = 5;
     mainView.layer.shadowOpacity = .5;
@@ -83,7 +85,6 @@
     CGColorRelease(shadowColor);
 
     //set up normal layer
-    [selectedBox setSelected:YES];
     [containerView addSubview:normalView];
     
     //set up backgroundImages for views
