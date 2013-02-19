@@ -55,7 +55,7 @@
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSCustomView" id="364314759">
+						<object class="NSCustomView" id="51735889">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{87, 87}, {180, 155}}</string>
@@ -80,7 +80,7 @@
 							<string key="NSFrame">{{20, 71}, {50, 52}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="364314759"/>
+							<reference key="NSNextKeyView" ref="51735889"/>
 							<string key="NSReuseIdentifierKey">_NS:1192</string>
 							<string key="NSClassName">PomodoroBadgeView</string>
 						</object>
@@ -472,7 +472,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="967689610"/>
 			</object>
-			<object class="NSButton" id="282608664">
+			<object class="NSButton" id="383704921">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{82, 32}</string>
@@ -480,13 +480,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 				<reference key="NSWindow"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="NSEnabled">YES</bool>
-				<object class="NSButtonCell" key="NSCell" id="314797415">
+				<object class="NSButtonCell" key="NSCell" id="439344101">
 					<int key="NSCellFlags">67108864</int>
 					<int key="NSCellFlags2">134217728</int>
 					<string key="NSContents">Button</string>
 					<reference key="NSSupport" ref="426220286"/>
 					<string key="NSCellIdentifier">_NS:9</string>
-					<reference key="NSControlView" ref="282608664"/>
+					<reference key="NSControlView" ref="383704921"/>
 					<int key="NSButtonFlags">-2038284288</int>
 					<int key="NSButtonFlags2">129</int>
 					<string key="NSAlternateContents"/>
@@ -624,7 +624,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">animationView</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="364314759"/>
+						<reference key="destination" ref="51735889"/>
 					</object>
 					<int key="connectionID">232</int>
 				</object>
@@ -674,7 +674,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="993760293"/>
 							<reference ref="126246119"/>
-							<reference ref="364314759"/>
+							<reference ref="51735889"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -877,21 +877,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">229</int>
-						<reference key="object" ref="282608664"/>
+						<reference key="object" ref="383704921"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="314797415"/>
+							<reference ref="439344101"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">230</int>
-						<reference key="object" ref="314797415"/>
-						<reference key="parent" ref="282608664"/>
+						<reference key="object" ref="439344101"/>
+						<reference key="parent" ref="383704921"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">231</int>
-						<reference key="object" ref="364314759"/>
+						<reference key="object" ref="51735889"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 				</object>

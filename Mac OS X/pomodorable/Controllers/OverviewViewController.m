@@ -94,7 +94,7 @@
         stopString  = [[NSMutableAttributedString alloc] initWithString:@"Stop"  attributes:txtDict];
         resumeString = [[NSMutableAttributedString alloc] initWithString:@"Resume" attributes:txtDict];
         
-        startButton.toolTip = @"Start a Pomodoro (⌘ Enter)";
+        startButton.toolTip = @"Start a Task (⌘ Enter)";
         addTaskButton.toolTip = @"Add a new task (⌘ N)";
         
         [startButton setAttributedTitle:startString];
@@ -485,7 +485,7 @@
     [startButton setAttributedTitle:resumeString];
     startButton.image = [NSImage imageNamed:@"button-resume"];
     startButton.alternateImage = [NSImage imageNamed:@"button-resume-down"];
-    startButton.toolTip = NSLocalizedString(@"Resume Pomodoro (⌘ Enter)", nil);
+    startButton.toolTip = NSLocalizedString(@"Resume Task (⌘ Enter)", nil);
 }
 
 - (void)pomodoroResume:(NSNotificationCenter *)note
@@ -523,14 +523,14 @@
         [startButton setAttributedTitle:startString];
         startButton.image = [NSImage imageNamed:@"button-start"];
         startButton.alternateImage = [NSImage imageNamed:@"button-start-down"];
-        startButton.toolTip = NSLocalizedString(@"Start a Pomodoro (⌘ Enter)", nil);
+        startButton.toolTip = NSLocalizedString(@"Start a Task (⌘ Enter)", nil);
     }
     else
     {
         [startButton setAttributedTitle:stopString];
         startButton.image = [NSImage imageNamed:@"button-stop"];
         startButton.alternateImage = [NSImage imageNamed:@"button-stop-down"];
-        startButton.toolTip = NSLocalizedString(@"Stop a Pomodoro (⌘ Enter)", nil);
+        startButton.toolTip = NSLocalizedString(@"Stop a Task (⌘ Enter)", nil);
     }
 }
 

@@ -72,7 +72,7 @@ static CGColorRef kAboutWindowCreditsFadeColor2 = NULL;
 	NSString *versionFormat = NSLocalizedString(@"Version %@ (%@)", nil);
 	NSString *versionString = [NSString stringWithFormat:versionFormat, self.applicationVersionString, self.applicationBuildNumberString];
 	self.applicationNameLabel.stringValue = self.applicationNameString;
-	self.punchLineLabel.stringValue = NSLocalizedString(@"Based on The Pomodoro Technique® by Francesco Crillo", nil);
+	self.punchLineLabel.stringValue = NSLocalizedString(@"Time based productivity application for OS X", nil);
 	self.creditsView.layer = self.creditsRootLayer;
 	self.creditsView.wantsLayer = YES;
 	[self.applicationVersionLabel.cell setPlaceholderString:versionString];
