@@ -42,7 +42,7 @@
     int pCount = [plannedCount intValue];
     while(i < pCount)
     {
-        CGFloat iconX = ((i * iconSize.width) + (i * 5)) + 5;
+        CGFloat iconX = ((i * iconSize.width) + (i * 2));
         inRect.origin = NSMakePoint(iconX, 0);
         [self.pomodoroImage drawInRect:inRect fromRect:fromRect operation:NSCompositeSourceOver fraction:1];
         i++;
@@ -56,7 +56,7 @@
         int ii = 0;
         while(ii < remaining)
         {
-            CGFloat iconX = ((i * iconSize.width) + (i * 5)) + 5;
+            CGFloat iconX = ((i * iconSize.width) + (i * 2));
             inRect.origin = NSMakePoint(iconX, 0);
 
             [self.unfilledPomodoroImage drawInRect:inRect fromRect:fromRect operation:NSCompositeSourceOver fraction:1];
