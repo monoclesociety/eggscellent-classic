@@ -54,6 +54,9 @@
     //BIND: interruption Label values
     increasePomodoroCountButton.toolTip = @"increase egg count (⌘ →)";
     decreasePomodoroCountButton.toolTip = @"decrease egg count (⌘ ←)";
+    
+    //set coverupview
+    coverupView.backgroundColor = [NSColor colorWithCalibratedWhite:.88 alpha:1];
 }
 
 - (void)dealloc
@@ -118,10 +121,9 @@
 
 - (void)setSelected:(BOOL)selected
 {
-    [selection setSelected:selected];
     //get the selection height used for all of this
     CGFloat selectionHeight = [OverviewTableCellView heightForTitle:self.textField.stringValue selected:NO];
-        
+    [coverupView setHidden:!selected];
     if(selected)
     {
         //change UI for selection box
@@ -129,12 +131,12 @@
         [self.textField setEditable:YES];
         
         //change frame of selection box
-        CGRect r = selection.frame;
+        CGRect r = coverupView.frame;
         
         selectionHeight -= 6;
         r.size.height = selectionHeight;
-        r.origin.y = NSMaxY(self.frame) - selectionHeight - 3;
-        selection.frame = r;
+        r.origin.y = 0;// NSMaxY(self.frame) - selectionHeight - 3;
+        coverupView.frame = r;
         
         BOOL tofu = [((Activity *)self.objectValue).completed boolValue];        
         editContainerView.hidden = tofu;
@@ -154,8 +156,6 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     [super drawRect:dirtyRect];
-//    if(!_selected)
-//    {
         CGFloat maxY = NSMaxY(self.frame);
         CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
         
@@ -181,8 +181,6 @@
         CGContextClosePath(c);
         CGContextStrokePath(c);        
         CGColorRelease(lightGrey);
-//
-//    }
 }
 
 #pragma mark - Custom methods

@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PomodoroCounterView.h"
 #import "RoundedBox.h"
+#import "ColorView.h"
 
 @class PomodoroBadgeView;
 @interface OverviewTableCellView : NSTableCellView
@@ -21,7 +22,7 @@
 
     //selection status elements
     IBOutlet NSImageView    *__weak backgroundClip;
-    IBOutlet RoundedBox     *selection;
+    IBOutlet ColorView      *coverupView;
     
     //slide out
     IBOutlet NSView         *__weak editContainerView;

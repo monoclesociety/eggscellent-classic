@@ -179,7 +179,7 @@
 		defaultLineHeight = 14.0;
 	NSRect lineRect = NSMakeRect(0,rect.origin.y-defaultLineHeight,0,defaultLineHeight);
 	NSRange glyphRange = [self glyphRangeForRect:rect];
-	unsigned i = glyphRange.location;
+	NSUInteger i = glyphRange.location;
 	
 	[lineColor set];
 	
