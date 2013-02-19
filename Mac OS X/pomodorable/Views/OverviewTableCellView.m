@@ -111,7 +111,7 @@
         height = 52;
     
     if(selected)
-        height += 96;
+        height += 100;
     
     return height;
 }

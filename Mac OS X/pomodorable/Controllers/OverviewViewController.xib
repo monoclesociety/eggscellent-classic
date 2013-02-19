@@ -1047,7 +1047,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSCustomView" id="542309460">
 									<reference key="NSNextResponder" ref="921643476"/>
-									<int key="NSvFlags">-2147479531</int>
+									<int key="NSvFlags">-2147479532</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSTextField" id="15915397">
 											<reference key="NSNextResponder" ref="542309460"/>
@@ -1297,7 +1297,7 @@
 												<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 												<string>NeXT TIFF v4.0 pasteboard type</string>
 											</set>
-											<string key="NSFrame">{{0, -2}, {320, 103}}</string>
+											<string key="NSFrameSize">{320, 100}</string>
 											<reference key="NSSuperview" ref="542309460"/>
 											<reference key="NSNextKeyView" ref="1022829668"/>
 											<bool key="NSEnabled">YES</bool>
@@ -1308,10 +1308,10 @@
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">pullOutBackground</string>
 												</object>
-												<int key="NSAlign">0</int>
-												<int key="NSScale">0</int>
+												<int key="NSAlign">5</int>
+												<int key="NSScale">2</int>
 												<int key="NSStyle">0</int>
-												<bool key="NSAnimates">YES</bool>
+												<bool key="NSAnimates">NO</bool>
 											</object>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<bool key="NSEditable">YES</bool>
@@ -2413,11 +2413,9 @@
 						<string key="debugSelected:">id</string>
 						<string key="decreasePomodoroCountForSelectedRow:">id</string>
 						<string key="increasePomodoroCountForSelectedRow:">id</string>
-						<string key="noteSelected:">id</string>
 						<string key="openPreferences:">id</string>
 						<string key="pinPanel:">id</string>
 						<string key="quitApplication:">id</string>
-						<string key="removeItem:">id</string>
 						<string key="showAboutMenu:">id</string>
 						<string key="showHelpMenu:">id</string>
 						<string key="showOptionsMenu:">id</string>
@@ -2452,10 +2450,6 @@
 							<string key="name">increasePomodoroCountForSelectedRow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="noteSelected:">
-							<string key="name">noteSelected:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="openPreferences:">
 							<string key="name">openPreferences:</string>
 							<string key="candidateClassName">id</string>
@@ -2466,10 +2460,6 @@
 						</object>
 						<object class="IBActionInfo" key="quitApplication:">
 							<string key="name">quitApplication:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="removeItem:">
-							<string key="name">removeItem:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showAboutMenu:">
