@@ -10,12 +10,10 @@
 
 @interface PomodoroCounterView : NSView
 {
-    NSImage     *pomodoroImage;
     NSImage     *unfilledPomodoroImage;
     
     NSNumber    *plannedCount;
 }
-@property (nonatomic, strong) NSImage   *pomodoroImage;
 @property (nonatomic, strong) NSImage   *unfilledPomodoroImage;
 @property (nonatomic, strong) NSNumber  *plannedCount;
 

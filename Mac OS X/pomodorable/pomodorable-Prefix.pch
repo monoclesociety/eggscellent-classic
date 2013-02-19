@@ -11,7 +11,7 @@
     #import "network.h"
 
     #define EGG_REQUEST_DELAY 2
-    #define MAX_EGG_COUNT 7.0f
+    #define MAX_EGG_COUNT 8.0f
     #define STATUS_ITEM_VIEW_DEFAULT_WIDTH 18.0
     #define STATUS_ITEM_VIEW_EGG_WIDTH 60.0
 

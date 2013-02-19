@@ -9,14 +9,12 @@
 #import "PomodoroCounterView.h"
 
 @implementation PomodoroCounterView
-@synthesize pomodoroImage;
 @synthesize unfilledPomodoroImage;
 @synthesize plannedCount;
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];    
-    self.pomodoroImage = [NSImage imageNamed:@"pom_count-on"];
     self.unfilledPomodoroImage = [NSImage imageNamed:@"pom_count-off"];
 }
 
@@ -30,8 +28,8 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     [super drawRect:dirtyRect];
-    
-    NSSize iconSize = self.pomodoroImage.size;
+
+    NSSize iconSize = NSSizeFromString(@"16,16");//self.pomodoroImage.size;
     int i = 0;
     
     CGRect inRect = self.frame;
@@ -42,9 +40,13 @@
     int pCount = [plannedCount intValue];
     while(i < pCount)
     {
+        NSString *s  = [NSString stringWithFormat:@"egg_count-%d", i + 1, nil];
+        NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:s];
+        NSImage *img = [[NSImage alloc] initWithContentsOfFile:imagePath];
+        
         CGFloat iconX = ((i * iconSize.width) + (i * 2));
         inRect.origin = NSMakePoint(iconX, 0);
-        [self.pomodoroImage drawInRect:inRect fromRect:fromRect operation:NSCompositeSourceOver fraction:1];
+        [img drawInRect:inRect fromRect:fromRect operation:NSCompositeSourceOver fraction:1];
         i++;
     }
     
