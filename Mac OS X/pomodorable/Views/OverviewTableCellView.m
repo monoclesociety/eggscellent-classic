@@ -126,8 +126,7 @@
     [coverupView setHidden:!selected];
     if(selected)
     {
-        //change UI for selection box
-        self.textField.textColor = [NSColor colorWithCalibratedWhite:.05 alpha:1];
+        
         [self.textField setEditable:YES];
         
         //change frame of selection box
@@ -143,8 +142,6 @@
     }
     else
     {
-        //change ui just in case it was selected
-        self.textField.textColor = [NSColor colorWithCalibratedWhite:.52 alpha:1];
         [self.textField setEditable:NO];    
         
         //hide selector box

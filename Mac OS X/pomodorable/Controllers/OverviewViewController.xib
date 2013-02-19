@@ -135,7 +135,7 @@
 										<string key="NSFrameSize">{320.5, 463}</string>
 										<reference key="NSSuperview" ref="798014002"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="921643476"/>
+										<reference key="NSNextKeyView" ref="207742086"/>
 										<string key="NSReuseIdentifierKey">_NS:1828</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -267,7 +267,7 @@
 						<string key="NSFrame">{{1, 41}, {320, 463}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="207742086"/>
+						<reference key="NSNextKeyView" ref="798014002"/>
 						<string key="NSReuseIdentifierKey">_NS:1824</string>
 						<int key="NSsFlags">150160</int>
 						<reference key="NSVScroller" ref="207742086"/>
@@ -1416,8 +1416,8 @@
 										<bool key="NSDrawsBackground">YES</bool>
 										<reference key="NSBackgroundColor" ref="892533482"/>
 										<object class="NSColor" key="NSTextColor">
-											<int key="NSColorSpace">2</int>
-											<bytes key="NSRGB">MC41OTIxNTY4ODcxIDAuNTkyMTU2ODg3MSAwLjU5MjE1Njg4NzEAA</bytes>
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MC40AA</bytes>
 										</object>
 									</object>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
