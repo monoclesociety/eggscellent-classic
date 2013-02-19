@@ -56,7 +56,7 @@
     decreasePomodoroCountButton.toolTip = @"decrease egg count (⌘ ←)";
     
     //set coverupview
-    coverupView.backgroundColor = [NSColor colorWithCalibratedWhite:.88 alpha:1];
+    coverupView.backgroundColor = [NSColor colorWithCalibratedWhite:0.9254901961f alpha:1];
 }
 
 - (void)dealloc
@@ -155,8 +155,8 @@
     [super drawRect:dirtyRect];
         CGFloat maxY = NSMaxY(self.frame);
         CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-        
-        CGColorRef black = CGColorCreateGenericRGB(.6f, .6f, .6f, 1);
+    
+        CGColorRef black = CGColorCreateGenericRGB(0.7411764706f, 0.7411764706f, 0.7411764706f, 1);
         CGContextSetStrokeColorWithColor(c, black);
         CGContextBeginPath(c);
         CGContextMoveToPoint(c, 0.0f, maxY - 2.5f);
