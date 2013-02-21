@@ -9,11 +9,18 @@
 #import "NSAnimatedImageView.h"
 
 @implementation NSAnimatedImageView
+@synthesize frames;
+@synthesize isPlaying = _isPlaying;
 
 - (void)awakeFromNib
 {
-    NSLog(@"SHIIIIIII--");
-    minFrameInterval = 1.0/30; //30fps default
+    [self setWantsLayer:YES];
+    
+    frames = [NSMutableArray arrayWithCapacity:168];
+    [frames addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/10_egg_hatch"]];
+    [frames addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/11_egg_out"]];
+    
+    frameRate = 1.0/30; //30fps default
     
     // TODO: move this to start method or something.
     // Create a display link capable of being used with all active displays
@@ -21,8 +28,16 @@
     
     // Set the renderer output callback function
     CVDisplayLinkSetOutputCallback(displayLink, MyDisplayLinkCallback, (__bridge void *)self);
+    
     CVDisplayLinkStart(displayLink);
 }
+
+- (void)dealloc
+{
+    CVDisplayLinkRelease(displayLink);
+}
+
+#pragma mark - CVDisplayLink setup
 
 static CVReturn MyDisplayLinkCallback (CVDisplayLinkRef displayLink,
                                 const CVTimeStamp *inNow,
@@ -46,9 +61,9 @@ CVTimeStamp oldTime;
     double timeStampDelta = pht - oht;
     timeStampDelta = timeStampDelta / NSEC_PER_SEC;
     
-    if (fabsf( timeStampDelta ) > minFrameInterval)
+    if (fabsf( timeStampDelta ) > frameRate)
     {
-        [self frameWithDuration:timeStampDelta];
+        [self performSelectorOnMainThread:@selector(frameWithDuration) withObject:nil waitUntilDone:NO];
         oldTime = outputTime;
     }
     else
@@ -59,14 +74,60 @@ CVTimeStamp oldTime;
     return kCVReturnSuccess;
 }
 
-- (void)frameWithDuration:(float)dt
+- (void)drawRect:(NSRect)dirtyRect
 {
+    int nextFrame = lastFrame + 1;
     
+    if ([frames count] == nextFrame)
+    {
+        nextFrame = 0;
+    }
+    
+    NSString *s = [frames objectAtIndex:nextFrame];
+    NSImage *i = [[NSImage alloc] initWithContentsOfFile:s];
+    
+    self.layer.contents = (id)i;
+    
+    lastFrame = nextFrame;
 }
 
-- (void)dealloc
+- (void)frameWithDuration
 {
-    CVDisplayLinkRelease(displayLink);
+    int nextFrame = lastFrame + 1;
+    if ([frames count] == nextFrame)
+        [self stop];
+    
+    NSString *s = [frames objectAtIndex:nextFrame];
+    NSImage *i = [[NSImage alloc] initWithContentsOfFile:s];
+    
+    self.layer.contents = (id)i;
+    
+    lastFrame = nextFrame;
+}
+
+#pragma mark - Settings
+
+- (void)setFrameRate:(double)aFrameRate
+{
+    frameRate = 1.0 / aFrameRate;
+}
+
+#pragma mark - Playback methods
+
+- (void)play;
+{
+    CVDisplayLinkStart(displayLink);
+}
+
+- (void)pause;
+{
+    CVDisplayLinkStop(displayLink);
+}
+
+- (void)stop;
+{
+    CVDisplayLinkStop(displayLink);
+    lastFrame = 0;
 }
 
 @end
