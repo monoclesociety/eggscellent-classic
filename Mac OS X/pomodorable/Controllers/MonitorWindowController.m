@@ -33,7 +33,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(floatLevelChanged:) name:@"monitorWindowOnTop" object:nil];
-        growmatoFrame = 0;
     }
     return self;
 }
@@ -67,13 +66,6 @@
     //add tracking area to containerView, so we can do the swap thingy 
     NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[self.window frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:self userInfo:nil];
     [containerView addTrackingArea:area];
-
-    //set up Animation Layer (temporarily added pic)
-    [animationView setWantsLayer:YES];
-    NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:@"7_egg_tick_Q3_042.png"];
-    NSImage *i = [[NSImage alloc] initWithContentsOfFile:imagePath];
-    animationView.layer.contents = (id)i;
-    tomatoLayer = nil; //tomatoLayer = animationView.layer;
     
     //create shadow for view
     NSView *mainView = (NSView *)self.window.contentView;
@@ -206,61 +198,6 @@
     return breatheAnimation;
 }
 
-#pragma mark - Animation Methods
-
-- (void)startGrowmato
-{
-    if(growmatoFrame == 30)
-    {
-        [animationTimer invalidate];
-        animationTimer = nil;
-        growmatoFrame = 0;
-        return;
-    }
-    
-    NSString *s  = [NSString stringWithFormat:@"growmato start_%04d.png", growmatoFrame, nil];
-    
-    NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:s];
-    NSImage *i = [[NSImage alloc] initWithContentsOfFile:imagePath];
-    tomatoLayer.contents = (id)i;
-    growmatoFrame++; 
-}
-
-- (void)retractGrowmato
-{
-    if(growmatoFrame == 43)
-    {
-        [tomatomationTimer invalidate];
-        tomatomationTimer = nil;
-        growmatoFrame = 0;
-        return;
-    }
-    
-    NSString *s  = [NSString stringWithFormat:@"growmato retract_%04d.png", growmatoFrame, nil];
-    
-    NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:s];
-    NSImage *i = [[NSImage alloc] initWithContentsOfFile:imagePath];
-    tomatoLayer.contents = (id)i;
-    
-    growmatoFrame++;
-}
-
-- (void)growGrowmato
-{
-    if(growmatoFrame == 150)
-    {
-        return;
-    }
-    NSString *s  = [NSString stringWithFormat:@"growmato_%04d.png", growmatoFrame, nil];
-    
-    NSString *imagePath = [[NSBundle mainBundle] pathForImageResource:s];
-    NSImage *i = [[NSImage alloc] initWithContentsOfFile:imagePath];
-    tomatoLayer.contents = (id)i;
-    
-//    tomatoLayer.contents = (id)[NSImage imageNamed:s];
-    growmatoFrame++;
-}
-
 #pragma mark - Notification Methods
 
 - (void)PomodoroRequested:(NSNotification *)note
@@ -288,14 +225,12 @@
     externalInterruptionLabel.stringValue = [[[Activity currentActivity] externalInterruptionCount] stringValue];
 
     [containerView.layer removeAllAnimations];
-    growmatoFrame = 0;
-    animationTimer = [NSTimer timerWithTimeInterval:.0334
-                                    target:self 
-                                  selector:@selector(startGrowmato)
-                                  userInfo:nil 
-                                   repeats:YES];
     
-    [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSRunLoopCommonModes];
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:168];
+    [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/1_egg_in"]];
+    [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
+    animationView.frames = arr;
+    [animationView start];
 }
 
 - (void)PomodoroTimeStarted:(NSNotification *)note
@@ -305,13 +240,21 @@
     {
         [self.window makeKeyAndOrderFront:nil];
 
-        //should be accurate, we'll see
-        EggTimer *pomo = (EggTimer *)[note object];        
-        float intervalRate = pomo.timeEstimated / 150.0f;
+        NSMutableArray *arr = [NSMutableArray array];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/3_egg_tick_Q1"]];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/5_egg_tick_Q2"]];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/7_egg_tick_Q3"]];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/9_egg_tick_Q4"]];
         
-        animationTimer = [NSTimer timerWithTimeInterval:intervalRate target:self selector:@selector(growGrowmato) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:animationTimer forMode:NSRunLoopCommonModes];
-        [animationTimer fire];
+        [animationView stop];
+        animationView.frames = arr;
+        
+        double countedFrames = (double)[arr count];
+        double secondsEstimated = (float)pomo.timeEstimated;
+        double frameRate = countedFrames / secondsEstimated;
+        animationView.frameRate = frameRate;
+        
+        [animationView start];
     }
 }
 
@@ -333,12 +276,6 @@
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
     {   
-        //invalidate animation timers
-        [animationTimer invalidate];
-        animationTimer = nil;
-        [tomatomationTimer invalidate];
-        tomatomationTimer = nil;
-        growmatoFrame = 0;
         
         //update ribbon UI
         Activity *a = [Activity currentActivity];
@@ -349,17 +286,16 @@
         [ribbonView setNeedsDisplay:YES];
         [self updatePomodoroCount];
         
-        //kick off retract tomato animation
-        tomatomationTimer = [NSTimer timerWithTimeInterval:.0334 
-                                                    target:self 
-                                                  selector:@selector(retractGrowmato) 
-                                                  userInfo:nil 
-                                                   repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:tomatomationTimer forMode:NSRunLoopCommonModes];
-        [tomatomationTimer fire];
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:60];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/10_egg_hatch"]];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/11_egg_out"]];
+
+        [animationView stop];
+        animationView.frames = arr;
+        animationView.frameRate = 30.0f;
+        [animationView start];
         [self mouseExited:nil];
 
-        
         //TODO: make this count up after a pomodoro has been completed
         [activityNameLabel.layer addAnimation:[self breatheAnimation] forKey:@"opacity"];
     }
@@ -376,19 +312,15 @@
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
     {
-        [animationTimer invalidate];
-        animationTimer = nil;
-        
-        [tomatomationTimer invalidate];
-        tomatomationTimer = nil;
-        growmatoFrame = 0;
-        
+        [animationView stop];
         [self.window close];
     }
 }
 
 - (void)pomodoroPaused:(NSNotification *)note
 {
+    [animationView pause];
+    
     [stopButton setAttributedTitle:resumeString];
     stopButton.image = [NSImage imageNamed:@"button-resume"];
     stopButton.alternateImage = [NSImage imageNamed:@"button-resume-down"];
@@ -396,6 +328,8 @@
 
 - (void)pomodoroResume:(NSNotificationCenter *)note
 {
+    [animationView start];
+    
     [stopButton setAttributedTitle:stopString];
     stopButton.image = [NSImage imageNamed:@"button-stop"];
     stopButton.alternateImage = [NSImage imageNamed:@"button-stop-down"];

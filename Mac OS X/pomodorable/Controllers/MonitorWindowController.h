@@ -14,11 +14,11 @@
 #import "RoundedBox.h"
 #import "PomodoroBadgeView.h"
 #import "BackgroundView.h"
+#import "NSAnimatedImageView.h"
 
 @interface MonitorWindowController : NSWindowController
 {
     //general items
-    CALayer                         *tomatoLayer;
     IBOutlet NSView                 *growmatoView;
     IBOutlet NSView                 *containerView;
     IBOutlet PomodoroBadgeView      *ribbonView;
@@ -36,16 +36,13 @@
     //non-mouseover view items
     IBOutlet BackgroundView         *normalView;
     IBOutlet NSTextField            *activityNameLabel;
-    IBOutlet NSView                 *animationView;
+    IBOutlet NSAnimatedImageView    *animationView;
     
     NSAttributedString              *stopString;
     NSAttributedString              *resumeString;
     
     //non view members
-    NSTimer                         *animationTimer; //TODO: look into other options
-    NSTimer                         *tomatomationTimer;
     Activity                        *currentActivity;
-    int                              growmatoFrame;
 }
 
 - (IBAction)addExternalInterruption:(id)sender;

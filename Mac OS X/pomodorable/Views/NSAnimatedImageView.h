@@ -10,15 +10,15 @@
 @interface NSAnimatedImageView : NSView
 {
     NSMutableArray *frames;
-    float frameRate;
     int lastFrame;
     
     CVDisplayLinkRef displayLink;
 }
 @property (readonly) BOOL isPlaying;
 @property (strong) NSArray *frames;
+@property (nonatomic) double frameRate;
 
-- (void)play;
+- (void)start;
 - (void)pause;
 - (void)stop;
 

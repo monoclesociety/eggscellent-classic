@@ -61,7 +61,6 @@
 							<string key="NSFrame">{{87, 87}, {180, 155}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">NSAnimatedImageView</string>
 						</object>
@@ -108,7 +107,6 @@
 						<string key="NSFrame">{{60, 12}, {241, 80}}</string>
 						<reference key="NSSuperview" ref="9695598"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -281,7 +279,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<string key="NSFrame">{{282, 8}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:2510</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="144939393">
@@ -481,7 +478,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 				<string key="NSFrameSize">{82, 32}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="NSEnabled">YES</bool>
 				<object class="NSButtonCell" key="NSCell" id="439344101">
@@ -1131,7 +1127,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSTextField</string>
-							<string>NSView</string>
+							<string>NSAnimatedImageView</string>
 							<string>NSView</string>
 							<string>NSTextField</string>
 							<string>NSView</string>
@@ -1171,7 +1167,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">animationView</string>
-								<string key="candidateClassName">NSView</string>
+								<string key="candidateClassName">NSAnimatedImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">containerView</string>
