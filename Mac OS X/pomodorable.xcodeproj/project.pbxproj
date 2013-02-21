@@ -20,6 +20,8 @@
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
 		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
+		3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
+		3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
 		3DAA1E4416D408C200287DA8 /* egg_count-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E3416D408C100287DA8 /* egg_count-1.png */; };
 		3DAA1E4516D408C200287DA8 /* egg_count-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E3516D408C100287DA8 /* egg_count-1@2x.png */; };
 		3DAA1E4616D408C200287DA8 /* egg_count-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E3616D408C200287DA8 /* egg_count-2.png */; };
@@ -287,6 +289,8 @@
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
+		3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbonComplete.png; sourceTree = "<group>"; };
+		3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbonComplete@2x.png"; path = "Resources/ribbons/ribbonComplete@2x.png"; sourceTree = "<group>"; };
 		3DAA1E3416D408C100287DA8 /* egg_count-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-1.png"; sourceTree = "<group>"; };
 		3DAA1E3516D408C100287DA8 /* egg_count-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-1@2x.png"; sourceTree = "<group>"; };
 		3DAA1E3616D408C200287DA8 /* egg_count-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-2.png"; sourceTree = "<group>"; };
@@ -710,6 +714,7 @@
 				3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */,
 				3DFBE63415A26CA30006ABB2 /* ribbon7@2x.png */,
 				3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */,
+				3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */,
 			);
 			name = retina;
 			sourceTree = "<group>";
@@ -811,6 +816,7 @@
 		F422AFB914AA6FBA002A20ED /* ribbons */ = {
 			isa = PBXGroup;
 			children = (
+				3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */,
 				F422AFC114AA6FBA002A20ED /* ribbon1.png */,
 				F422AFBB14AA6FBA002A20ED /* ribbon2.png */,
 				F422AFBC14AA6FBA002A20ED /* ribbon3.png */,
@@ -1661,6 +1667,8 @@
 				3DAA1E5216D408C200287DA8 /* egg_count-8.png in Resources */,
 				3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */,
 				3D9CAB4816D67858004604B6 /* egg_sequences in Resources */,
+				3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */,
+				3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

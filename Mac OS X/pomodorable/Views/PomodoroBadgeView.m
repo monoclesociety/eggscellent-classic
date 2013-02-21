@@ -28,12 +28,6 @@
 
 - (NSImage *)ribbonForPercentageComplete
 {
-    float ribbonNumberTag = 1;
-    float divisionalSlice = 1.0f / MAX_EGG_COUNT;
-    if(self.plannedPomodoroCount)
-        ribbonNumberTag = ((float)self.completePomodoroCount / (float)self.plannedPomodoroCount) / divisionalSlice;
-    
-    ribbonNumberTag = MAX(ribbonNumberTag, 1);
     NSString *imageName = nil;
     if(self.completePomodoroCount > self.plannedPomodoroCount)
     {
@@ -41,11 +35,9 @@
     }
     else
     {
-        //round off 
-        int ribbonNumber = ((int)(ribbonNumberTag * 100 + 0.5)) / 100.0;
-        imageName = [NSString stringWithFormat:@"ribbon%d", (int)ribbonNumber];
+        imageName = [NSString stringWithFormat:@"ribbon%d", (int)self.plannedPomodoroCount];
     }
-    
+
     return [NSImage imageNamed:imageName];
 }
 
@@ -107,7 +99,7 @@
     }
     else
     {
-        [[NSImage imageNamed:@"ribbon8"] drawInRect:r fromRect:r operation:NSCompositeSourceOver fraction:1];
+        [[NSImage imageNamed:@"ribbonComplete"] drawInRect:r fromRect:r operation:NSCompositeSourceOver fraction:1];
         
         //draw the check mark
         NSDictionary *d = [self attributesForFontName:@"Helvetica" withSize:24];
