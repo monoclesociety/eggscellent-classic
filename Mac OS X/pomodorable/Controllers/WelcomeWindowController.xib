@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12C3012</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSButton</string>
@@ -50,7 +50,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{432, 263}, {640, 400}}</string>
 				<int key="NSWTFlags">544735232</int>
-				<string key="NSWindowTitle">Pomodorable Setup</string>
+				<string key="NSWindowTitle">Eggscellent Setup</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
@@ -533,7 +533,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<object class="NSTextFieldCell" key="NSCell" id="909791500">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">272629760</int>
-							<string key="NSContents">To make the most of Eggscellent™ and the Eggscellent Method™, there are a couple of options we'd like to help run you through. </string>
+							<string key="NSContents">To make the most of Eggscellent™, there are a couple of options we'd like to help run you through. </string>
 							<object class="NSFont" key="NSSupport" id="1061448692">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
@@ -839,7 +839,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="NSTextField" id="191075666">
 						<reference key="NSNextResponder" ref="609406934"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{205, 86}, {64, 17}}</string>
+						<string key="NSFrame">{{195, 201}, {64, 17}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="621629917"/>
@@ -870,7 +870,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="NSTextField" id="621629917">
 						<reference key="NSNextResponder" ref="609406934"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{284, 86}, {53, 17}}</string>
+						<string key="NSFrame">{{274, 201}, {53, 17}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="833386750"/>
@@ -891,7 +891,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="NSTextField" id="1001781916">
 						<reference key="NSNextResponder" ref="609406934"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{40, 129}, {221, 17}}</string>
+						<string key="NSFrame">{{30, 244}, {221, 17}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1042317970"/>
@@ -909,52 +909,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 					</object>
-					<object class="NSTextField" id="112580515">
-						<reference key="NSNextResponder" ref="609406934"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{40, 190}, {261, 17}}</string>
-						<reference key="NSSuperview" ref="609406934"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="119459354"/>
-						<string key="NSReuseIdentifierKey">_NS:1505</string>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="937148735">
-							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">The Official Pomodoro Cheat Sheet (PDF)</string>
-							<reference key="NSSupport" ref="1046476089"/>
-							<string key="NSCellIdentifier">_NS:1505</string>
-							<reference key="NSControlView" ref="112580515"/>
-							<reference key="NSBackgroundColor" ref="33075216"/>
-							<reference key="NSTextColor" ref="675274945"/>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
-					<object class="NSTextField" id="92519392">
-						<reference key="NSNextResponder" ref="609406934"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{40, 210}, {217, 17}}</string>
-						<reference key="NSSuperview" ref="609406934"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="112580515"/>
-						<string key="NSReuseIdentifierKey">_NS:1505</string>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="315875529">
-							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">The Official Pomodoro Book (PDF)</string>
-							<reference key="NSSupport" ref="1046476089"/>
-							<string key="NSCellIdentifier">_NS:1505</string>
-							<reference key="NSControlView" ref="92519392"/>
-							<reference key="NSBackgroundColor" ref="33075216"/>
-							<reference key="NSTextColor" ref="675274945"/>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
 					<object class="NSTextField" id="119459354">
 						<reference key="NSNextResponder" ref="609406934"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{27, 154}, {446, 17}}</string>
+						<string key="NSFrame">{{17, 269}, {446, 17}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1001781916"/>
@@ -976,7 +934,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="NSTextField" id="1042317970">
 						<reference key="NSNextResponder" ref="609406934"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{27, 86}, {336, 17}}</string>
+						<string key="NSFrame">{{17, 201}, {336, 17}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="191075666"/>
@@ -990,28 +948,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference key="NSSupport" ref="1061448692"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="1042317970"/>
-							<reference key="NSBackgroundColor" ref="33075216"/>
-							<reference key="NSTextColor" ref="675274945"/>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
-					<object class="NSTextField" id="65427229">
-						<reference key="NSNextResponder" ref="609406934"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{27, 235}, {405, 51}}</string>
-						<reference key="NSSuperview" ref="609406934"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="92519392"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<string key="NSAntiCompressionPriority">{250, 750}</string>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="864020727">
-							<int key="NSCellFlags">67108864</int>
-							<int key="NSCellFlags2">272629760</int>
-							<string key="NSContents">Eggscellent™ is based on the Eggscellent Method™ by Monocle Society for time management. If you are unfamiliar with the Eggscellent Method™, here are some helpful resources:</string>
-							<reference key="NSSupport" ref="1061448692"/>
-							<string key="NSCellIdentifier">_NS:9</string>
-							<reference key="NSControlView" ref="65427229"/>
 							<reference key="NSBackgroundColor" ref="33075216"/>
 							<reference key="NSTextColor" ref="675274945"/>
 						</object>
@@ -1046,7 +982,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<string key="NSFrameSize">{525, 306}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="65427229"/>
+				<reference key="NSNextKeyView" ref="119459354"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">NSView</string>
 			</object>
@@ -1119,22 +1055,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<reference key="destination" ref="282189044"/>
 					</object>
 					<int key="connectionID">138</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">pomodoroBookLink</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="92519392"/>
-					</object>
-					<int key="connectionID">146</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">pomodoroCheatSheetLink</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="112580515"/>
-					</object>
-					<int key="connectionID">149</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1466,12 +1386,9 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<reference key="object" ref="609406934"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="833386750"/>
-							<reference ref="65427229"/>
-							<reference ref="92519392"/>
-							<reference ref="112580515"/>
+							<reference ref="1042317970"/>
 							<reference ref="119459354"/>
 							<reference ref="1001781916"/>
-							<reference ref="1042317970"/>
 							<reference ref="621629917"/>
 							<reference ref="191075666"/>
 						</array>
@@ -1604,19 +1521,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<reference key="parent" ref="20680191"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">134</int>
-						<reference key="object" ref="65427229"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="864020727"/>
-						</array>
-						<reference key="parent" ref="609406934"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">135</int>
-						<reference key="object" ref="864020727"/>
-						<reference key="parent" ref="65427229"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">136</int>
 						<reference key="object" ref="282189044"/>
 						<array class="NSMutableArray" key="children">
@@ -1628,32 +1532,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<int key="objectID">137</int>
 						<reference key="object" ref="321563157"/>
 						<reference key="parent" ref="282189044"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">144</int>
-						<reference key="object" ref="92519392"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="315875529"/>
-						</array>
-						<reference key="parent" ref="609406934"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">145</int>
-						<reference key="object" ref="315875529"/>
-						<reference key="parent" ref="92519392"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">147</int>
-						<reference key="object" ref="112580515"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="937148735"/>
-						</array>
-						<reference key="parent" ref="609406934"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">148</int>
-						<reference key="object" ref="937148735"/>
-						<reference key="parent" ref="112580515"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">150</int>
@@ -1755,14 +1633,8 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="134.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="135.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="136.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="137.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="144.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="145.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="147.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="148.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="150.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="151.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="152.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1915,7 +1787,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
 			<string key="NSSwitch">{15, 15}</string>
-			<string key="welcomeBackground">{384, 240}</string>
+			<string key="welcomeBackground">{1600, 1000}</string>
 		</dictionary>
 	</data>
 </archive>

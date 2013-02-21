@@ -205,6 +205,7 @@
             [dr.backgroundClip setHidden:YES];
         }
     }
+    
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:rowIndex];
     if([a.completed boolValue])
         return YES;

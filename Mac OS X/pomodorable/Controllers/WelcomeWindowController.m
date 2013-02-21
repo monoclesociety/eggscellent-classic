@@ -76,24 +76,16 @@
 
 - (void)populateMoreInformation
 {
-//    //setup pomodoro book pdf link
-//    [self setupURL:[NSURL URLWithString:@"http://www.pomodorotechnique.com/resources/ThePomodoroTechnique_v1-3.pdf"]
-//      forTextField:pomodoroBookLink];
-//    
-//    //setup pomdoro cheat sheet pdf link
-//    [self setupURL:[NSURL URLWithString:@"http://www.pomodorotechnique.com/resources/EGG_cheat_sheet.pdf"]
-//      forTextField:pomodoroCheatSheetLink];
-    
     //setup pomodorable Feedback and Support link
     [self setupURL:[NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/support"]
       forTextField:pomodorableFeedbackAndSupportLink];
     
     //setup pomdorable facebook link
-    [self setupURL:[NSURL URLWithString:@"http://www.facebook.com/eggscellent"]
+    [self setupURL:[NSURL URLWithString:@"http://www.facebook.com/eggscellentapp"]
       forTextField:pomodorableFacebookLink];
     
     //setup pomodorable twitter link
-    [self setupURL:[NSURL URLWithString:@"http://www.twitter.com/eggscellent"]
+    [self setupURL:[NSURL URLWithString:@"http://www.twitter.com/eggscellentapp"]
       forTextField:pomodorableTwitterLink];
 }
 

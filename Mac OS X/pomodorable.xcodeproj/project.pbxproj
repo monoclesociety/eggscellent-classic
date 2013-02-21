@@ -312,6 +312,7 @@
 		3DAA1E5116D408C200287DA8 /* egg_count-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4116D408C200287DA8 /* egg_count-7@2x.png */; };
 		3DAA1E5216D408C200287DA8 /* egg_count-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4216D408C200287DA8 /* egg_count-8.png */; };
 		3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
+		3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */; };
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
 		3DB7924B160A4E2D00CA5D24 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
 		3DB7924E160A528D00CA5D24 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
@@ -1077,6 +1078,8 @@
 		3DAA1E4116D408C200287DA8 /* egg_count-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-7@2x.png"; sourceTree = "<group>"; };
 		3DAA1E4216D408C200287DA8 /* egg_count-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-8.png"; sourceTree = "<group>"; };
 		3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-8@2x.png"; sourceTree = "<group>"; };
+		3DAA1E5416D4278500287DA8 /* NSAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAnimatedImageView.h; sourceTree = "<group>"; };
+		3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAnimatedImageView.m; sourceTree = "<group>"; };
 		3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiddenLogo.png; sourceTree = "<group>"; };
 		3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "pomodorable/Vendor/HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
 		3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -2476,6 +2479,8 @@
 				F46DF74B1506A10200A20D48 /* HiddenButton.m */,
 				F450098B151FB5F1003F46F4 /* GradientView.h */,
 				F450098C151FB5F1003F46F4 /* GradientView.m */,
+				3DAA1E5416D4278500287DA8 /* NSAnimatedImageView.h */,
+				3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3855,6 +3860,7 @@
 				3D1564ED15697CA600D70EBB /* RemindersSyncController.m in Sources */,
 				3D45F6D615D8B10E006C085B /* NSAttributedString+Hyperlink.m in Sources */,
 				3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */,
+				3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
