@@ -52,7 +52,8 @@
 
 - (void)threadSync
 {
-    @autoreleasepool {
+    @autoreleasepool
+    {
         NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:@"ThingsGetTodos"];
 
         if(!ed)
@@ -109,11 +110,13 @@
             {
                 [tagArray addObject:[[itemTags descriptorAtIndex:x] stringValue]];
             }
-            NSNumber *plannedCount = [NSNumber numberWithInt:[self getThingsPlannedCountInTagArray:tagArray]];
-            if(!plannedCount)
-                plannedCount = [NSNumber numberWithInt:0];
-            else
-                plannedCount = [NSNumber numberWithInt:MIN([plannedCount intValue], 7)];
+            
+//            NSNumber *plannedCount = [NSNumber numberWithInt:[self getThingsPlannedCountInTagArray:tagArray]];
+//            if(!plannedCount)
+//                plannedCount = [NSNumber numberWithInt:0];
+//            else
+//                plannedCount = [NSNumber numberWithInt:MIN([plannedCount intValue], 7)];
+            NSNull *plannedCount = [NSNull null];
             
             //set up source and piece it all together
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceThings];

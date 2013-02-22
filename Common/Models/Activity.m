@@ -50,11 +50,6 @@ static Activity *singleton;
     return [[ModelStore sharedStore] newModelWithClassName:@"Activity"];
 }
 
-+ (NSArray *)activities;
-{
-    return [[ModelStore sharedStore] allWithClassName:@"Activity"];
-}
-
 #pragma mark - model operation methods
 
 - (NSNumber *)internalInterruptionCount;

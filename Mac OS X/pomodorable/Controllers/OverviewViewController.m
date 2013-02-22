@@ -312,6 +312,9 @@
 {
     
     NSInteger selectedIndex = [itemsTableView selectedRow];
+    if(selectedIndex >= [arrayController.arrangedObjects count])
+        return;
+    
     Activity *a = [arrayController.arrangedObjects objectAtIndex:selectedIndex];
     if([Activity currentActivity] == a && [startButton.attributedTitle isEqualToAttributedString:stopString])
         return;
@@ -325,6 +328,7 @@
     a.removed = [NSNumber numberWithBool:YES];
     [a save];
     
+    //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
 //    NSIndexSet *selectedIndexes = [itemsTableView selectedRowIndexes];
 //    
 //    [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {

@@ -74,16 +74,6 @@
     return array;
 }
 
-- (NSInteger)countForEntityType:(NSString *)entityType withPredicate:(NSPredicate *)predicate;
-{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.entity = [self entityForModelType:entityType];
-    fetchRequest.sortDescriptors = nil;
-    fetchRequest.predicate = predicate;
-    
-    return [self.managedObjectContext countForFetchRequest:fetchRequest error:NULL];
-}
-
 #pragma mark - Type Specific methods
 
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
@@ -128,8 +118,11 @@
     [fetchRequest setIncludesSubentities:NO];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID == %@", sourceID, nil]];
     
-    NSError *error = nil;
-    NSUInteger count = [self.managedObjectContext countForFetchRequest: fetchRequest error: &error];
+    __block NSUInteger count = -1;
+    [self.managedObjectContext performBlockAndWait:^{
+        NSError *error = nil;
+        count = [self.managedObjectContext countForFetchRequest: fetchRequest error: &error];
+    }];
     
     return (count != 0);
 }

@@ -103,9 +103,8 @@
             result = YES;
             
         }];
-
     }
-    else 
+    else
     {
         [moc performBlockAndWait:^{
             

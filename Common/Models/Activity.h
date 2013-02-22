@@ -44,7 +44,6 @@ typedef enum
 + (void)setCurrentActivity:(Activity *)act;
 
 + (Activity *)activity;
-+ (NSArray *)activities;
 
 - (EggTimer *)crackAnEgg;
 

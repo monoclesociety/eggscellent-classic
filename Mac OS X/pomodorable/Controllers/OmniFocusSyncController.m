@@ -84,18 +84,18 @@
             NSNumber *status = [NSNumber numberWithBool:NO]; //for now defaulting to incomplete
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
 
-            NSString *minutesString = [[minutes descriptorAtIndex:i] stringValue];
-            int minutes = [minutesString intValue];        
-            NSNumber *pomodoroMinutes = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroMinutes"];
-
-            int minutesPlannedCount = 0;
-            if(minutes)
-                minutesPlannedCount = minutes / [pomodoroMinutes intValue];
+//            NSString *minutesString = [[minutes descriptorAtIndex:i] stringValue];
+//            int minutes = [minutesString intValue];
+//            NSNumber *pomodoroMinutes = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroMinutes"];
+//            int minutesPlannedCount = 0;
+//            if(minutes)
+//                minutesPlannedCount = minutes / [pomodoroMinutes intValue];
+//            
+//            minutesPlannedCount = MIN(minutes, MAX_EGG_COUNT);
+//            
+//            NSNumber *plannedCount = [NSNumber numberWithInt:minutesPlannedCount];
             
-            minutesPlannedCount = MIN(minutes, 7);
-            
-            NSNumber *plannedCount = [NSNumber numberWithInt:minutesPlannedCount];
-            
+            NSNull *plannedCount = [NSNull null];
             NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
             
             [self syncWithDictionary:syncDictionary];
