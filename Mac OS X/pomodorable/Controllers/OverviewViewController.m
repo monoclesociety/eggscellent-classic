@@ -193,42 +193,19 @@
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex
 {
-    int prevRowIndex = (int)[aTableView selectedRow];
-    int clippedIndex = prevRowIndex + 1;
-    
-    if(prevRowIndex >= 0 && clippedIndex < [arrayController.arrangedObjects count]) 
-    {
-        NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
-        if(rowView)
-        {
-            OverviewTableCellView *dr = (OverviewTableCellView *)[rowView viewAtColumn:0];
-            [dr.backgroundClip setHidden:YES];
-        }
-    }
+    previousSelectedRow = (int)[aTableView selectedRow];
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:rowIndex];
     if([a.completed boolValue])
         return YES;
     
-    clippedIndex = (int)rowIndex + 1;
-    if(clippedIndex < [arrayController.arrangedObjects count])
-    {
-        NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
-        if(rowView)
-        {
-            OverviewTableCellView *dr = (OverviewTableCellView *)[rowView viewAtColumn:0];
-            [dr.backgroundClip setHidden:NO];
-            currentClippedRow = clippedIndex;
-        }
-    }
-
     return YES;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
     doubleClicked = NO;
-    
+
     NSIndexSet *selectedIndexSet = [itemsTableView selectedRowIndexes];
     if([selectedIndexSet count] < 2)
     {
@@ -251,6 +228,30 @@
         }
         return;   
     }
+    
+    int clippedIndex = previousSelectedRow + 1;
+    if(previousSelectedRow >= 0 && clippedIndex < [arrayController.arrangedObjects count])
+    {
+        NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
+        if(rowView)
+        {
+            OverviewTableCellView *dr = (OverviewTableCellView *)[rowView viewAtColumn:0];
+            [dr.backgroundClip setHidden:YES];
+        }
+    }
+    
+    clippedIndex = (int)sr + 1;
+    if(clippedIndex < [arrayController.arrangedObjects count])
+    {
+        NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
+        if(rowView)
+        {
+            OverviewTableCellView *dr = (OverviewTableCellView *)[rowView viewAtColumn:0];
+            [dr.backgroundClip setHidden:NO];
+            currentClippedRow = clippedIndex;
+        }
+    }
+
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:sr];
     if([a class] == [Activity class])

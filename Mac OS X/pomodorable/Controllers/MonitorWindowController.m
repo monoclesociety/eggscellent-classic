@@ -226,6 +226,8 @@
 
     [containerView.layer removeAllAnimations];
     
+    [animationView stop];
+    animationView.frameRate = 30;
     NSMutableArray *arr = [NSMutableArray arrayWithCapacity:168];
     [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/1_egg_in"]];
     [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];

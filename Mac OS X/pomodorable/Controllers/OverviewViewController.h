@@ -21,6 +21,7 @@
     IBOutlet NSScrollView           *listScrollView;
     
     int                              currentClippedRow;
+    int                              previousSelectedRow;
     BOOL                             doubleClicked;
     BOOL                             firstRun;
     
