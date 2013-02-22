@@ -330,7 +330,7 @@
 
 - (void)pomodoroResume:(NSNotificationCenter *)note
 {
-    [animationView start];
+    [animationView resume];
     
     [stopButton setAttributedTitle:stopString];
     stopButton.image = [NSImage imageNamed:@"button-stop"];

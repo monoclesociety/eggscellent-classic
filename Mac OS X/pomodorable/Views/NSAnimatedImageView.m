@@ -68,11 +68,8 @@ CVTimeStamp oldTime;
 {
     int nextFrame = lastFrame + 1;
 
-    if ([frames count] == nextFrame)
-    {
-        [self stop];
+    if ([frames count] == nextFrame || (!_isPlaying))
         return;
-    }
     
     NSString *s = [frames objectAtIndex:nextFrame];
     NSImage *i = [[NSImage alloc] initWithContentsOfFile:s];
@@ -93,18 +90,26 @@ CVTimeStamp oldTime;
 
 - (void)start;
 {
+    lastFrame = 0;
+    _isPlaying = YES;
     CVDisplayLinkStart(displayLink);
 }
 
 - (void)pause;
 {
-    CVDisplayLinkStop(displayLink);
+    _isPlaying = NO;
+}
+
+- (void)resume;
+{
+    _isPlaying = YES;
 }
 
 - (void)stop;
 {
-    CVDisplayLinkStop(displayLink);
+    _isPlaying = NO;
     lastFrame = 0;
+    CVDisplayLinkStop(displayLink);
 }
 
 @end
