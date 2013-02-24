@@ -56,7 +56,7 @@
 - (void)populatePopUpButtons;
 {
     [self populatePopUpButton:tickSelection withList:ticks forPreference:@"tickAudioPath"];
-    [self populatePopUpButton:pomodoroCompletion withList:completions forPreference:@"pomodoroAudioPath"];
+    [self populatePopUpButton:pomodoroCompletion withList:completions forPreference:@"timerCompleteAudioPath"];
     [self populatePopUpButton:breakCompletion withList:completions forPreference:@"breakAudioPath"];
 }
 
@@ -227,7 +227,7 @@
     
     if(sender == pomodoroCompletion)
     {
-        [self registerSound:audioPath forPreference:@"pomodoroAudioPath"];
+        [self registerSound:audioPath forPreference:@"timerCompleteAudioPath"];
     }
     else
     {

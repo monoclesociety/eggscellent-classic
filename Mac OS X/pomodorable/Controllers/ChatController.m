@@ -60,7 +60,7 @@
 
 - (void)setStatusToBusy;
 {
-    NSString *statusMessage = [[NSUserDefaults standardUserDefaults] stringForKey:@"pomodoroStatusMessage"];
+    NSString *statusMessage = [[NSUserDefaults standardUserDefaults] stringForKey:@"statusMessage"];
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"skypeIntegration"])
         

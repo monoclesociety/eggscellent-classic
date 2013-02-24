@@ -24,7 +24,7 @@
     {
         NSString *timerTypeKey = nil;
         if(timerType == TimerTypeEgg)
-            timerTypeKey = @"pomodoroMinutes";
+            timerTypeKey = @"timerMinutes";
         if(timerType == TimerTypeShortBreak)
             timerTypeKey = @"smallBreakMinutes";
         if(timerType == TimerTypeLongBreak)

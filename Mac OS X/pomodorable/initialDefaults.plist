@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>pomodoroMinutes</key>
+	<key>timerMinutes</key>
 	<integer>25</integer>
 	<key>smallBreakMinutes</key>
 	<integer>5</integer>
@@ -18,11 +18,11 @@
 	<false/>
 	<key>adiumIntegration</key>
 	<false/>
-	<key>pomodoroStatusMessage</key>
+	<key>statusMessage</key>
 	<string>Eggscellent</string>
 	<key>taskManagerType</key>
 	<integer>0</integer>
-	<key>autoStartNextPomodoro</key>
+	<key>autoStartNextTimer</key>
 	<false/>
 	<key>displayMonitorWindow</key>
 	<true/>
@@ -76,8 +76,8 @@
 	<true/>
 	<key>tickAudioPath</key>
 	<string>tick_tomatoTimer.aif</string>
-	<key>pomodoroAudioPath</key>
-	<string>complete_tomatoTimer.mp3</string>
+	<key>timerCompleteAudioPath</key>
+	<string>10_egg_hatch.aif</string>
 	<key>breakAudioPath</key>
 	<string>complete_trolly.mp3</string>
 	<key>notesType</key>

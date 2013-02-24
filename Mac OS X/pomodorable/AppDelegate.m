@@ -484,7 +484,7 @@ void *kContextActivePanel = &kContextActivePanel;
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"playBreakCompleteSound"])
             [self.breakCompleteSound play];
         
-        if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextPomodoro"])
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextTimer"])
         {
             Activity *a = [Activity currentActivity];
             EggTimer *e = [a crackAnEgg];
@@ -582,7 +582,7 @@ void *kContextActivePanel = &kContextActivePanel;
         self.tickSound = [AVAudioPlayer soundForPreferenceKey:prefKey];
         self.tickSound.numberOfLoops = 1e100;
     }
-    else if([prefKey isEqualToString:@"pomodoroAudioPath"])
+    else if([prefKey isEqualToString:@"timerCompleteAudioPath"])
     {
         [self.pomodoroCompleteSound stop];
         self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:prefKey];
@@ -689,7 +689,7 @@ void *kContextActivePanel = &kContextActivePanel;
     self.tickSound = [AVAudioPlayer soundForPreferenceKey:@"tickAudioPath"];
     self.tickSound.numberOfLoops = 1e100;
     
-    self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"pomodoroAudioPath"];    
+    self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"timerCompleteAudioPath"];    
     self.breakCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"breakAudioPath"];
 }
 

@@ -40,7 +40,7 @@
     }
     
     //setup pomodoro book pdf link
-    [self setupURL:[NSURL URLWithString:@"http://www.monoclesociety.com/r/pomodorable/task"]
+    [self setupURL:[NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/task"]
       forTextField:taskLearnMore];
 }
 
@@ -92,15 +92,13 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"taskManagerTypeChanged" object:newlySelectedTag];
-    
-    
 }
 
 #pragma mark NSTextField Delegate Methods
 
 - (void)textDidChange:(NSNotification *)aNotification
 {
-    BOOL konamiCode = [taskAwayMessage.stringValue isEqualToString:@"Carr0tFlowers"];
+    BOOL konamiCode = [taskAwayMessage.stringValue isEqualToString:@"primer"];
     [[NSUserDefaults standardUserDefaults] setBool:konamiCode forKey:@"konami code"];
 }
 

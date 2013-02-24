@@ -329,7 +329,7 @@
     
     if(pomo.type == TimerTypeLongBreak || pomo.type == TimerTypeShortBreak)
     {
-        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextPomodoro"])
+        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"autoStartNextTimer"])
             [self.window close];
     }
 }

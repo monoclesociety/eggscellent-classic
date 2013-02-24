@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12C3012</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSBox</string>
@@ -1087,35 +1087,35 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.autoStartNextPomodoro</string>
+						<string key="label">value: values.autoStartNextTimer</string>
 						<reference key="source" ref="764266794"/>
 						<reference key="destination" ref="589793791"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="764266794"/>
 							<reference key="NSDestination" ref="589793791"/>
-							<string key="NSLabel">value: values.autoStartNextPomodoro</string>
+							<string key="NSLabel">value: values.autoStartNextTimer</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.autoStartNextPomodoro</string>
+							<string key="NSKeyPath">values.autoStartNextTimer</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">125</int>
+					<int key="connectionID">272</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedTag: values.pomodoroMinutes</string>
+						<string key="label">selectedTag: values.timerMinutes</string>
 						<reference key="source" ref="442302435"/>
 						<reference key="destination" ref="589793791"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="442302435"/>
 							<reference key="NSDestination" ref="589793791"/>
-							<string key="NSLabel">selectedTag: values.pomodoroMinutes</string>
+							<string key="NSLabel">selectedTag: values.timerMinutes</string>
 							<string key="NSBinding">selectedTag</string>
-							<string key="NSKeyPath">values.pomodoroMinutes</string>
+							<string key="NSKeyPath">values.timerMinutes</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">163</int>
+					<int key="connectionID">271</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1811,7 +1811,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">270</int>
+			<int key="maxID">272</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
