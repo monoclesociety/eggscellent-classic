@@ -229,6 +229,7 @@
         return;   
     }
     
+    Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:sr];
     int clippedIndex = previousSelectedRow + 1;
     if(previousSelectedRow >= 0 && clippedIndex < [arrayController.arrangedObjects count])
     {
@@ -241,19 +242,18 @@
     }
     
     clippedIndex = (int)sr + 1;
-    if(clippedIndex < [arrayController.arrangedObjects count])
+    if(clippedIndex < [arrayController.arrangedObjects count] && !([a.completed boolValue]))
     {
         NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
         if(rowView)
         {
             OverviewTableCellView *dr = (OverviewTableCellView *)[rowView viewAtColumn:0];
+            
             [dr.backgroundClip setHidden:NO];
             currentClippedRow = clippedIndex;
         }
     }
 
-    
-    Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:sr];
     if([a class] == [Activity class])
     {
         if([[startButton attributedTitle] isEqualToAttributedString:startString])

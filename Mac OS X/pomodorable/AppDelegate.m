@@ -139,6 +139,11 @@ void *kContextActivePanel = &kContextActivePanel;
     {
         [self performSelector:@selector(displayWelcome) withObject:nil afterDelay:.1];
     }
+    
+    NSString *lul = [[NSBundle mainBundle] pathForResource:@"2_egg_wind" ofType:@"aif"];
+    NSData *fileData = [NSData dataWithContentsOfFile:lul];
+    windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
+    windUpSound.volume = .1;
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -320,6 +325,7 @@ void *kContextActivePanel = &kContextActivePanel;
         Activity *a = [Activity activity];
         a.name = NSLocalizedString(@"Open Eggscellent for the first time", @"Open Eggscellent for the first time");
         a.completed = [NSNumber numberWithBool:YES];
+        a.plannedCount = [NSNumber numberWithInt:1];
         
         [[ModelStore sharedStore] save];;
     }
@@ -692,11 +698,6 @@ void *kContextActivePanel = &kContextActivePanel;
     
     self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"timerCompleteAudioPath"];    
     self.breakCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"breakAudioPath"];
-    
-    NSString *lul = [[NSBundle mainBundle] pathForResource:@"2_egg_wind" ofType:@"aif"];
-    NSData *fileData = [NSData dataWithContentsOfFile:lul];
-    windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    windUpSound.volume = .1;
 }
 
 - (void)loadHelperWindow:(BOOL)shouldLoad withNormalSize:(BOOL)normalSize;

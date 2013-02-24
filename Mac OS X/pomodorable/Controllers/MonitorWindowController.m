@@ -190,7 +190,7 @@
     {
         //animate opacity for now
         breatheAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-        breatheAnimation.toValue = [NSNumber numberWithFloat:0.5];
+        breatheAnimation.toValue = [NSNumber numberWithFloat:0.75f];
         breatheAnimation.duration = 1.5;
         breatheAnimation.repeatCount = 1e10f;
         breatheAnimation.autoreverses = YES;
@@ -205,7 +205,6 @@
 {
     if(animationView.animationTag == 1337) //get it?! it means elite in hacker from like 15 years ago! omg i'm old.
     {
-        animationView.delegate = nil;
         animationView.frameRate = 30;
         NSMutableArray *arr = [NSMutableArray arrayWithCapacity:30];
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
@@ -214,9 +213,17 @@
         
         AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
         [appDelegate.windUpSound play];
-
-        animationView.animationTag = 0;
     }
+    
+    if(animationView.animationTag == 8008135)
+    {
+        //TODO: make this count up after a pomodoro has been completed
+        NSView *mainView = (NSView *)self.window.contentView;
+        [mainView.layer addAnimation:[self breatheAnimation] forKey:@"opacity"];
+    }
+
+    animationView.animationTag = 0;
+    animationView.delegate = nil;
 }
 
 #pragma mark - Notification Methods
@@ -228,7 +235,8 @@
     Activity *a = [Activity currentActivity];
     
     //remove all animations
-    [activityNameLabel.layer removeAllAnimations]; 
+    NSView *mainView = (NSView *)self.window.contentView;
+    [mainView.layer removeAllAnimations]; 
     
     //populate activity name
     activityNameLabel.stringValue = a.name;
@@ -315,13 +323,12 @@
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/11_egg_out"]];
 
         [animationView stop];
+        animationView.animationTag = 8008135;
+        animationView.delegate = self;
         animationView.frames = arr;
         animationView.frameRate = 30.0f;
         [animationView start];
         [self mouseExited:nil];
-
-        //TODO: make this count up after a pomodoro has been completed
-        [activityNameLabel.layer addAnimation:[self breatheAnimation] forKey:@"opacity"];
     }
     
     if(pomo.type == TimerTypeLongBreak || pomo.type == TimerTypeShortBreak)

@@ -28,7 +28,7 @@
 
 - (NSImage *)ribbonForPercentageComplete
 {
-    NSString *imageName = nil;
+    NSString *imageName = @"ribbon1";
     if(self.completePomodoroCount > self.plannedPomodoroCount)
     {
         imageName = @"ribbonOverdue";
@@ -37,7 +37,7 @@
     {
         imageName = [NSString stringWithFormat:@"ribbon%d", (int)self.plannedPomodoroCount];
     }
-
+    
     return [NSImage imageNamed:imageName];
 }
 
