@@ -47,6 +47,7 @@
     SGHotKey    *hotKeyToggleNoteWindow;
     
     int         breakCounter;
+    AVAudioPlayer     *windUpSound;
     AVAudioPlayer     *tickSound;
     AVAudioPlayer     *pomodoroCompleteSound;
     AVAudioPlayer     *breakCompleteSound;
@@ -65,6 +66,7 @@
 @property (nonatomic, strong) SGHotKey *hotKeyToggleHoverWindow;
 @property (nonatomic, strong) SGHotKey *hotKeyToggleNoteWindow;
 
+@property (nonatomic, strong) AVAudioPlayer *windUpSound;
 @property (nonatomic, strong) AVAudioPlayer *tickSound;
 @property (nonatomic, strong) AVAudioPlayer *pomodoroCompleteSound;
 @property (nonatomic, strong) AVAudioPlayer *breakCompleteSound;

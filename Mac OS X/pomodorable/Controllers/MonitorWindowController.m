@@ -100,11 +100,6 @@
     stopString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Stop", @"Stop") attributes:txtDict];
     resumeString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Resume",@"Resume") attributes:txtDict];
     [stopButton setAttributedTitle:stopString];
-    
-    NSString *lul = [[NSBundle mainBundle] pathForResource:@"2_egg_wind" ofType:@"aif"];
-    NSData *fileData = [NSData dataWithContentsOfFile:lul];
-    sfx = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    sfx.volume = .1;
 }
 
 #pragma mark - IBActions
@@ -217,7 +212,9 @@
         animationView.frames = arr;
         [animationView start];
         
-        [sfx play];
+        AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+        [appDelegate.windUpSound play];
+
         animationView.animationTag = 0;
     }
 }

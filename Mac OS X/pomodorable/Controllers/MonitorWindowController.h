@@ -46,8 +46,6 @@
     
     //non view members
     Activity                        *currentActivity;
-    
-    AVAudioPlayer                   *sfx;
 }
 
 - (IBAction)addExternalInterruption:(id)sender;

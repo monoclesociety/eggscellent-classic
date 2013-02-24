@@ -34,6 +34,7 @@ void *kContextActivePanel = &kContextActivePanel;
 @synthesize hotKeyToggleStatusItemWindow;
 @synthesize hotKeyToggleHoverWindow;
 @synthesize hotKeyToggleNoteWindow;
+@synthesize windUpSound;
 @synthesize tickSound;
 @synthesize pomodoroCompleteSound;
 @synthesize breakCompleteSound;
@@ -691,6 +692,11 @@ void *kContextActivePanel = &kContextActivePanel;
     
     self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"timerCompleteAudioPath"];    
     self.breakCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"breakAudioPath"];
+    
+    NSString *lul = [[NSBundle mainBundle] pathForResource:@"2_egg_wind" ofType:@"aif"];
+    NSData *fileData = [NSData dataWithContentsOfFile:lul];
+    windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
+    windUpSound.volume = .1;
 }
 
 - (void)loadHelperWindow:(BOOL)shouldLoad withNormalSize:(BOOL)normalSize;
