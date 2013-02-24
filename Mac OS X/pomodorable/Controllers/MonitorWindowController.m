@@ -8,6 +8,7 @@
 
 #import "MonitorWindowController.h"
 #import "AppDelegate.h"
+#import "AVAudioPlayer+Filesystem.h"
 
 
 // EGG animation
@@ -99,6 +100,11 @@
     stopString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Stop", @"Stop") attributes:txtDict];
     resumeString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Resume",@"Resume") attributes:txtDict];
     [stopButton setAttributedTitle:stopString];
+    
+    NSString *lul = [[NSBundle mainBundle] pathForResource:@"2_egg_wind" ofType:@"aif"];
+    NSData *fileData = [NSData dataWithContentsOfFile:lul];
+    sfx = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
+    sfx.volume = .1;
 }
 
 #pragma mark - IBActions
@@ -198,6 +204,24 @@
     return breatheAnimation;
 }
 
+#pragma mark - NSAnimationView Delegate Methods
+
+- (void)animationEnded
+{
+    if(animationView.animationTag == 1337) //get it?! it means elite in hacker from like 15 years ago! omg i'm old.
+    {
+        animationView.delegate = nil;
+        animationView.frameRate = 30;
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:30];
+        [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
+        animationView.frames = arr;
+        [animationView start];
+        
+        [sfx play];
+        animationView.animationTag = 0;
+    }
+}
+
 #pragma mark - Notification Methods
 
 - (void)PomodoroRequested:(NSNotification *)note
@@ -227,11 +251,12 @@
     [containerView.layer removeAllAnimations];
     
     [animationView stop];
+    animationView.delegate = self;
     animationView.frameRate = 30;
     NSMutableArray *arr = [NSMutableArray arrayWithCapacity:168];
     [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/1_egg_in"]];
-    [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
     animationView.frames = arr;
+    animationView.animationTag = 1337;
     [animationView start];
 }
 

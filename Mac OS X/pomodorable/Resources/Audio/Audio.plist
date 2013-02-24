@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>filename</key>
+			<string>10_egg_hatch.aif</string>
+			<key>name</key>
+			<string>Egg Hatch</string>
+		</dict>
+		<dict>
+			<key>filename</key>
 			<string>complete_tomatoTimer.mp3</string>
 			<key>name</key>
 			<string>Tomato alarm</string>

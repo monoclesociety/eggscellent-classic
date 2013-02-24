@@ -23,6 +23,7 @@
 
 #import "EggTimer.h"
 #import "ScriptManager.h"
+#import "AVAudioPlayer+Filesystem.h"
 
 void *kContextActivePanel = &kContextActivePanel;
 @implementation AppDelegate
@@ -55,23 +56,12 @@ void *kContextActivePanel = &kContextActivePanel;
     //HACKHACK FIX THIS BEFORE RELEASE
     //TODO FIX THIS BEFORE RELEASE
     //FOR THE LOVE OF GOD FIX THIS BEFORE RELEASE
-    NSDate *endDate = [NSDate dateWithString:@"2013-4-1 12:00:00 +0000"];
+    NSDate *endDate = [NSDate dateWithString:@"2013-7-15 12:00:00 +0000"];
     NSDate *today = [NSDate date];
     if([today earlierDate:endDate] == endDate)
     {
         [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
     }
-
-    
-//#if defined (CONFIGURATION_Beta)
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"e8e479634b32a5f155ed795dfae5e5de" companyName:@"Monocle Society" crashReportManagerDelegate:self];
-//#endif
-//    
-//#if defined (CONFIGURATION_Distribution)
-//    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"<RELEASE_APP_IDENTIFIER>" companyName:@"Monocle Society" crashReportManagerDelegate:self];
-//#endif
-    
-    [[BITHockeyManager sharedHockeyManager] startManager];
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_DEFAULT_WIDTH];
     statusView = [[StatusItemView alloc] initWithStatusItem:statusItem];
@@ -589,18 +579,18 @@ void *kContextActivePanel = &kContextActivePanel;
     if([prefKey isEqualToString:@"tickAudioPath"])
     {
         [self.tickSound stop];
-        self.tickSound = [self soundForPreferenceKey:prefKey];
+        self.tickSound = [AVAudioPlayer soundForPreferenceKey:prefKey];
         self.tickSound.numberOfLoops = 1e100;
     }
     else if([prefKey isEqualToString:@"pomodoroAudioPath"])
     {
         [self.pomodoroCompleteSound stop];
-        self.pomodoroCompleteSound = [self soundForPreferenceKey:prefKey];
+        self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:prefKey];
     }
     else if([prefKey isEqualToString:@"breakAudioPath"])
     {
         [self.breakCompleteSound stop];
-        self.breakCompleteSound = [self soundForPreferenceKey:prefKey];
+        self.breakCompleteSound = [AVAudioPlayer soundForPreferenceKey:prefKey];
     }
 }
 
@@ -694,35 +684,13 @@ void *kContextActivePanel = &kContextActivePanel;
     [taskSyncController sync];
 }
 
-- (AVAudioPlayer *)soundForPreferenceKey:(NSString *)preferenceKey
-{
-    NSString *audioPath = [[NSUserDefaults standardUserDefaults] stringForKey:preferenceKey];
-    AVAudioPlayer *returnSound = nil;
-    
-    //most likely is
-    NSString *lul = [[NSBundle mainBundle] pathForResource:[audioPath stringByDeletingPathExtension] ofType:[audioPath pathExtension]];
-    NSData *fileData = [NSData dataWithContentsOfFile:lul];
-    returnSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    
-    //someone using custom sounds? how unlikely!
-    if(!returnSound)
-    {
-        fileData = [NSData dataWithContentsOfFile:audioPath];
-        returnSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    }
-    
-    float volume = [[NSUserDefaults standardUserDefaults] floatForKey:@"audioVolume"] / 100.0f;
-    [returnSound setVolume:volume];
-    return returnSound;
-}
-
 - (void)setupSounds
 {
-    self.tickSound = [self soundForPreferenceKey:@"tickAudioPath"];
+    self.tickSound = [AVAudioPlayer soundForPreferenceKey:@"tickAudioPath"];
     self.tickSound.numberOfLoops = 1e100;
     
-    self.pomodoroCompleteSound = [self soundForPreferenceKey:@"pomodoroAudioPath"];    
-    self.breakCompleteSound = [self soundForPreferenceKey:@"breakAudioPath"];
+    self.pomodoroCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"pomodoroAudioPath"];    
+    self.breakCompleteSound = [AVAudioPlayer soundForPreferenceKey:@"breakAudioPath"];
 }
 
 - (void)loadHelperWindow:(BOOL)shouldLoad withNormalSize:(BOOL)normalSize;

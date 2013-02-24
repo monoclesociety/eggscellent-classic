@@ -12,6 +12,8 @@
 @synthesize frames;
 @synthesize isPlaying = _isPlaying;
 @synthesize frameRate = _frameRate;
+@synthesize animationTag = _animationTag;
+@synthesize delegate = _delegate;
 
 - (void)awakeFromNib
 {
@@ -69,7 +71,10 @@ CVTimeStamp oldTime;
     int nextFrame = lastFrame + 1;
 
     if ([frames count] == nextFrame || (!_isPlaying))
+    {
+        [_delegate animationEnded];
         return;
+    }
     
     NSString *s = [frames objectAtIndex:nextFrame];
     NSImage *i = [[NSImage alloc] initWithContentsOfFile:s];

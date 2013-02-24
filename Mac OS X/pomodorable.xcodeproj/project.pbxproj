@@ -16,6 +16,12 @@
 		3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D29F971169655DF00681346 /* eggscellent.xcdatamodeld */; };
 		3D38EFC115A375A0003C1224 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 3D38EFC015A375A0003C1224 /* icon.iconset */; };
 		3D45F6D615D8B10E006C085B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45F6D515D8B10D006C085B /* NSAttributedString+Hyperlink.m */; };
+		3D47206616D99651009204E2 /* 2_egg_wind.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206116D99651009204E2 /* 2_egg_wind.aif */; };
+		3D47206716D99651009204E2 /* 4_egg_nudge_1.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206216D99651009204E2 /* 4_egg_nudge_1.aif */; };
+		3D47206816D99651009204E2 /* 6_egg_nudge_2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206316D99651009204E2 /* 6_egg_nudge_2.aif */; };
+		3D47206916D99651009204E2 /* 8_egg_nudge_3.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206416D99651009204E2 /* 8_egg_nudge_3.aif */; };
+		3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206516D99651009204E2 /* 10_egg_hatch.aif */; };
+		3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */; };
 		3D58D99C15E2CD71002B3F84 /* Eggscellent.help in Resources */ = {isa = PBXBuildFile; fileRef = 3D58D99B15E2CD71002B3F84 /* Eggscellent.help */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
@@ -285,6 +291,13 @@
 		3D40841D15712DFF00A8469B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		3D45F6D415D8B10D006C085B /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+Hyperlink.h"; path = "Other Sources/Categories/NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		3D45F6D515D8B10D006C085B /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+Hyperlink.m"; path = "Other Sources/Categories/NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
+		3D47206116D99651009204E2 /* 2_egg_wind.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2_egg_wind.aif; path = Resources/Audio/egg/2_egg_wind.aif; sourceTree = "<group>"; };
+		3D47206216D99651009204E2 /* 4_egg_nudge_1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 4_egg_nudge_1.aif; path = Resources/Audio/egg/4_egg_nudge_1.aif; sourceTree = "<group>"; };
+		3D47206316D99651009204E2 /* 6_egg_nudge_2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 6_egg_nudge_2.aif; path = Resources/Audio/egg/6_egg_nudge_2.aif; sourceTree = "<group>"; };
+		3D47206416D99651009204E2 /* 8_egg_nudge_3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 8_egg_nudge_3.aif; path = Resources/Audio/egg/8_egg_nudge_3.aif; sourceTree = "<group>"; };
+		3D47206516D99651009204E2 /* 10_egg_hatch.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 10_egg_hatch.aif; path = Resources/Audio/egg/10_egg_hatch.aif; sourceTree = "<group>"; };
+		3D47206B16D997FD009204E2 /* AVAudioPlayer+Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AVAudioPlayer+Filesystem.h"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.h"; sourceTree = "<group>"; };
+		3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AVAudioPlayer+Filesystem.m"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.m"; sourceTree = "<group>"; };
 		3D58D99B15E2CD71002B3F84 /* Eggscellent.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eggscellent.help; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -643,6 +656,18 @@
 			name = Reminders;
 			sourceTree = "<group>";
 		};
+		3D47206016D9963E009204E2 /* egg */ = {
+			isa = PBXGroup;
+			children = (
+				3D47206116D99651009204E2 /* 2_egg_wind.aif */,
+				3D47206216D99651009204E2 /* 4_egg_nudge_1.aif */,
+				3D47206316D99651009204E2 /* 6_egg_nudge_2.aif */,
+				3D47206416D99651009204E2 /* 8_egg_nudge_3.aif */,
+				3D47206516D99651009204E2 /* 10_egg_hatch.aif */,
+			);
+			name = egg;
+			sourceTree = "<group>";
+		};
 		3D8EA55315D5A7E100A07915 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,6 +782,7 @@
 		F4104BBC147C147B0077D272 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				3D47206016D9963E009204E2 /* egg */,
 				F45A4BD0152EAE910010AB45 /* Audio.plist */,
 				F45A4BD3152F70BA0010AB45 /* completions */,
 				F45A4BDF152F70BA0010AB45 /* ticks */,
@@ -998,6 +1024,8 @@
 				F47CC65B14B1413400CA239C /* NSButton+TextColor.m */,
 				3D45F6D415D8B10D006C085B /* NSAttributedString+Hyperlink.h */,
 				3D45F6D515D8B10D006C085B /* NSAttributedString+Hyperlink.m */,
+				3D47206B16D997FD009204E2 /* AVAudioPlayer+Filesystem.h */,
+				3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1669,6 +1697,11 @@
 				3D9CAB4816D67858004604B6 /* egg_sequences in Resources */,
 				3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */,
 				3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */,
+				3D47206616D99651009204E2 /* 2_egg_wind.aif in Resources */,
+				3D47206716D99651009204E2 /* 4_egg_nudge_1.aif in Resources */,
+				3D47206816D99651009204E2 /* 6_egg_nudge_2.aif in Resources */,
+				3D47206916D99651009204E2 /* 8_egg_nudge_3.aif in Resources */,
+				3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1749,6 +1782,7 @@
 				3D45F6D615D8B10E006C085B /* NSAttributedString+Hyperlink.m in Sources */,
 				3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */,
 				3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */,
+				3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+
 #import "PomodoroCounterView.h"
 #import "ModelStore.h"
 #import "ColorView.h"
@@ -16,7 +18,8 @@
 #import "BackgroundView.h"
 #import "NSAnimatedImageView.h"
 
-@interface MonitorWindowController : NSWindowController
+
+@interface MonitorWindowController : NSWindowController <NSAnimatedImageViewDelegate>
 {
     //general items
     IBOutlet NSView                 *growmatoView;
@@ -43,6 +46,8 @@
     
     //non view members
     Activity                        *currentActivity;
+    
+    AVAudioPlayer                   *sfx;
 }
 
 - (IBAction)addExternalInterruption:(id)sender;

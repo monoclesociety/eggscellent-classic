@@ -7,16 +7,25 @@
 //
 #import <Cocoa/Cocoa.h>
 
+@protocol NSAnimatedImageViewDelegate <NSObject>
+
+- (void)animationEnded;
+
+@end
+
 @interface NSAnimatedImageView : NSView
 {
     NSMutableArray *frames;
     int lastFrame;
     
     CVDisplayLinkRef displayLink;
+    id <NSAnimatedImageViewDelegate> delegate;
 }
+@property (strong) id <NSAnimatedImageViewDelegate> delegate;
 @property (readonly) BOOL isPlaying;
 @property (strong) NSArray *frames;
 @property (nonatomic) double frameRate;
+@property (nonatomic) int animationTag;
 
 - (void)start;
 - (void)pause;

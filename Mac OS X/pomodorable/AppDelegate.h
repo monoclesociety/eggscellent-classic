@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
-#import <HockeySDK/BITCrashReportManagerDelegate.h>
-#import <HockeySDK/HockeySDK.h>
 
 #import "ChatController.h"
 #import "MonitorWindowController.h"
@@ -28,7 +26,7 @@
 #import "RemindersSyncController.h"
 
 @class WelcomeWindowController;
-@interface AppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate, BITCrashReportManagerDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
 {
     NSStatusItem                    *statusItem;
     StatusItemView                  *statusView;
@@ -85,7 +83,6 @@
 - (void)externalInterruptionKeyed:(id)sender;
 - (void)internalInterruptionKeyed:(id)sender;
 
-- (AVAudioPlayer *)soundForPreferenceKey:(NSString *)preferenceKey;
 - (void)setupTaskSyncing;
 - (IBAction)togglePanel:(id)sender;
 @end
