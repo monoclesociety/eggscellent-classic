@@ -23,6 +23,7 @@
 		3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206516D99651009204E2 /* 10_egg_hatch.aif */; };
 		3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */; };
 		3D58D99C15E2CD71002B3F84 /* Eggscellent.help in Resources */ = {isa = PBXBuildFile; fileRef = 3D58D99B15E2CD71002B3F84 /* Eggscellent.help */; };
+		3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F856016DB1E0A0037A95C /* MSButtonCell.m */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
 		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
@@ -299,6 +300,8 @@
 		3D47206B16D997FD009204E2 /* AVAudioPlayer+Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AVAudioPlayer+Filesystem.h"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.h"; sourceTree = "<group>"; };
 		3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AVAudioPlayer+Filesystem.m"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.m"; sourceTree = "<group>"; };
 		3D58D99B15E2CD71002B3F84 /* Eggscellent.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eggscellent.help; sourceTree = "<group>"; };
+		3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonCell.h; sourceTree = "<group>"; };
+		3D6F856016DB1E0A0037A95C /* MSButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonCell.m; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
@@ -1141,6 +1144,8 @@
 				F450098C151FB5F1003F46F4 /* GradientView.m */,
 				3DAA1E5416D4278500287DA8 /* NSAnimatedImageView.h */,
 				3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */,
+				3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */,
+				3D6F856016DB1E0A0037A95C /* MSButtonCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1783,6 +1788,7 @@
 				3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */,
 				3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */,
 				3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */,
+				3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
