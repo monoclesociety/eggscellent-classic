@@ -194,10 +194,10 @@
         NSMutableArray *arr = [NSMutableArray arrayWithCapacity:30];
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
         animationView.frames = arr;
-        [animationView start];
         
         AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
         [appDelegate.windUpSound play];
+        [animationView start];
     }
     
 //    if(animationView.animationTag == 8008135)

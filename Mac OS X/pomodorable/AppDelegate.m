@@ -441,7 +441,7 @@ void *kContextActivePanel = &kContextActivePanel;
         if(NSClassFromString(@"NSUserNotification"))
         {
             NSUserNotification *userNotification = [[NSUserNotification alloc] init];
-            userNotification.title = NSLocalizedString(@"Egg Completed", @"Egg Completed");
+            userNotification.title = NSLocalizedString(@"Timer Completed", @"Timer Completed");
             userNotification.subtitle = [Activity currentActivity].name;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
@@ -485,7 +485,7 @@ void *kContextActivePanel = &kContextActivePanel;
         if(NSClassFromString(@"NSUserNotification"))
         {
             NSUserNotification *userNotification = [[NSUserNotification alloc] init];
-            userNotification.title = NSLocalizedString(@"Egg Break Completed", @"Egg Break Completed");
+            userNotification.title = NSLocalizedString(@"Break Completed", @"Break Completed");
             userNotification.subtitle = [Activity currentActivity].name;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
@@ -520,7 +520,7 @@ void *kContextActivePanel = &kContextActivePanel;
     {
 #ifdef __MAC_10_8
         NSUserNotification *userNotification = [[NSUserNotification alloc] init];
-        userNotification.title = @"Task Stopped.";
+        userNotification.title = @"Timer Stopped.";
         userNotification.subtitle = [Activity currentActivity].name;
         [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
 #endif
