@@ -375,7 +375,7 @@ void *kContextActivePanel = &kContextActivePanel;
 {  
     bool login = loginItem ? true : false;
 
-    NSString *bundleIdentifier = @"com.monoclesociety.eggscellent.helper";
+    NSString *bundleIdentifier = @"com.monoclesociety.eggscellentosx.helper";
 
     if (!SMLoginItemSetEnabled((__bridge CFStringRef)bundleIdentifier, login))
     {

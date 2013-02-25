@@ -44,7 +44,7 @@
 			</object>
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{1480, 62}, {354, 262}}</string>
+				<string key="NSWindowRect">{{1480, 62}, {354, 242}}</string>
 				<int key="NSWTFlags">1615860736</int>
 				<string key="NSWindowTitle"/>
 				<string key="NSWindowClass">NSWindow</string>
@@ -85,7 +85,7 @@
 							<string key="NSClassName">PomodoroBadgeView</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{354, 262}</string>
+					<string key="NSFrameSize">{354, 242}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="993760293"/>

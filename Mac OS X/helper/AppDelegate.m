@@ -25,6 +25,7 @@
     {
         if ([[app bundleIdentifier] isEqualToString:@"com.monoclesociety.eggscellentosx"])
         {
+            NSLog(@"EGGSCELLENT IS ALREADY RUNNING");
             alreadyRunning = YES;
         }
     }

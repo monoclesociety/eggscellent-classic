@@ -1943,6 +1943,7 @@
 				GCC_PREFIX_HEADER = "pomodorable/pomodorable-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
 				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1964,6 +1965,7 @@
 				GCC_PREFIX_HEADER = "pomodorable/pomodorable-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
 				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
