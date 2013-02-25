@@ -89,7 +89,10 @@ static EggTimer *currentTimer;
         timer = nil; 
         
         if(self.status == TimerStatusPaused)
+        {
+            status = TimerStatusStopped;
             [[NSNotificationCenter defaultCenter] postNotificationName:EGG_STOP object:self];
+        }
         else
             [[NSNotificationCenter defaultCenter] postNotificationName:EGG_COMPLETE object:self];
         

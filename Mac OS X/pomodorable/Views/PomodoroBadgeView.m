@@ -25,7 +25,6 @@
     return self;
 }
 
-
 - (NSImage *)ribbonForPercentageComplete
 {
     NSString *imageName = @"ribbon1";

@@ -85,8 +85,10 @@ void *kContextActivePanel = &kContextActivePanel;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroTimeCompleted:) name:EGG_COMPLETE object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroStopped:) name:EGG_STOP object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroRequested:) name:EGG_REQUESTED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
     
-    //set up Activity 
+    //set up Activity
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED object:nil];
     
     //set up Idle Notifications
@@ -406,7 +408,7 @@ void *kContextActivePanel = &kContextActivePanel;
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
     {
-        if([[NSUserDefaults standardUserDefaults] boolForKey:@"playTickSound"] && ![self.tickSound isPlaying])
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"playTickSound"] && ![self.tickSound isPlaying] && pomo.status != TimerStatusPaused)
         {
             [self.tickSound play];
         }
@@ -529,7 +531,12 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)pomodoroPaused:(NSNotification *)note
 {
-    
+    [self.tickSound stop];
+}
+
+- (void)pomodoroResume:(NSNotificationCenter *)note
+{
+    [self.tickSound play];
 }
 
 - (void)ActivityModifiedCompletion:(NSNotification *)note

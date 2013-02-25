@@ -27,7 +27,6 @@
     IBOutlet PomodoroBadgeView      *ribbonView;
     IBOutlet NSTextField            *pomodoroCount;
     IBOutlet NSTextField            *plannedPomodoroCount;
-    CABasicAnimation                *breatheAnimation;
     
     //mouseover view items
     IBOutlet BackgroundView         *mouseoverView;

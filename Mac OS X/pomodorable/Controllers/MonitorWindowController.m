@@ -184,21 +184,6 @@
     plannedPomodoroCount.stringValue = [[Activity currentActivity].plannedCount stringValue];
 }
 
-- (CABasicAnimation *)breatheAnimation;
-{
-    if(!breatheAnimation)
-    {
-        //animate opacity for now
-        breatheAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-        breatheAnimation.toValue = [NSNumber numberWithFloat:0.75f];
-        breatheAnimation.duration = 1.5;
-        breatheAnimation.repeatCount = 1e10f;
-        breatheAnimation.autoreverses = YES;
-        breatheAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    }
-    return breatheAnimation;
-}
-
 #pragma mark - NSAnimationView Delegate Methods
 
 - (void)animationEnded
@@ -215,12 +200,15 @@
         [appDelegate.windUpSound play];
     }
     
-    if(animationView.animationTag == 8008135)
-    {
-        //TODO: make this count up after a pomodoro has been completed
-        NSView *mainView = (NSView *)self.window.contentView;
-        [mainView.layer addAnimation:[self breatheAnimation] forKey:@"opacity"];
-    }
+//    if(animationView.animationTag == 8008135)
+//    {
+//        //TODO: make the timer count turn into a activity view on ribbon until break is over.
+//        NSProgressIndicator* indicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(NSMaxX(containerView.frame) - 40, 10, 15, 15)];
+//        [indicator setStyle:NSProgressIndicatorSpinningStyle];
+//        [indicator setControlTint:NSClearControlTint];
+//        [indicator startAnimation:nil];
+//        [containerView addSubview:indicator];
+//    }
 
     animationView.animationTag = 0;
     animationView.delegate = nil;
@@ -323,8 +311,8 @@
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/11_egg_out"]];
 
         [animationView stop];
-        animationView.animationTag = 8008135;
-        animationView.delegate = self;
+//        animationView.animationTag = 8008135;
+//        animationView.delegate = self;
         animationView.frames = arr;
         animationView.frameRate = 30.0f;
         [animationView start];
