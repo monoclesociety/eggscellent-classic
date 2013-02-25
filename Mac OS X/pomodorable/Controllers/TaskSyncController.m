@@ -129,6 +129,7 @@
             
             existingActivity.name = name;
             existingActivity.plannedCount = [NSNumber numberWithInt:plannedCount];
+            existingActivity.removed = [NSNumber numberWithBool:NO];
             [existingActivity secretSetCompleted:status];
             
             //add ID to ID dictionary, to keep it safe

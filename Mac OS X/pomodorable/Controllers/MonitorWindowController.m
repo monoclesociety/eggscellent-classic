@@ -219,6 +219,9 @@
 - (void)PomodoroRequested:(NSNotification *)note
 {
     [self.window makeKeyAndOrderFront:nil];
+    
+    [activityNameLabel setNeedsLayout:YES];
+    [activityNameLabel setNeedsDisplay:YES];
 
     Activity *a = [Activity currentActivity];
     
