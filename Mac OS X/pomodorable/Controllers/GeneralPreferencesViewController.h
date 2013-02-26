@@ -21,7 +21,7 @@
     IBOutlet NSPopUpButton  *notesSelection;
     IBOutlet NSTextField    *notesLabel;
 }
-@property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 
 - (IBAction)toggleAutoLogin:(id)sender;
 - (IBAction)toggleHelperWindow:(id)sender;

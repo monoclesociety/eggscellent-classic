@@ -181,7 +181,7 @@
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:row];
     result.textField.stringValue = a.name;
     result.selected = rowView.selected;
-
+    
     return result;
 }
 
@@ -437,6 +437,7 @@
 
 - (IBAction)openPreferences:(id)sender;
 {
+    NSLog(@"Opening preferences from overview");
     [self.panelController.delegate performSelector:@selector(openPreferences)];
 }
 

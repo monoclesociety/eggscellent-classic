@@ -14,7 +14,7 @@
     NSArrayController *__weak arrayController;
 }
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
-@property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 
 - (IBAction)debugSelected:(id)sender;
 

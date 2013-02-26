@@ -23,7 +23,7 @@
     
     NSURL *hackURL;
 }
-@property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 
 - (IBAction)newTickSoundSelected:(id)sender;
 - (IBAction)newCompletedSoundSelected:(id)sender;

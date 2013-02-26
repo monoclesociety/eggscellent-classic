@@ -41,6 +41,6 @@
 @property (nonatomic, strong) SGHotKey *hotKeyToggleHoverWindow;
 @property (nonatomic, strong) SGHotKey *hotKeyToggleNoteWindow;
 
-@property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 
 @end

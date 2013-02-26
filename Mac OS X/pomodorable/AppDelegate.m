@@ -758,8 +758,10 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)openPreferences;
 {
+    NSLog(@"IN THE METHOD");
     if (!preferencesWindow)
     {
+            NSLog(@"CREATING WINDOW");
         ShortcutsPreferencesViewController *shortcutsViewController = [[ShortcutsPreferencesViewController alloc] initWithNibName:@"ShortcutsPreferencesViewController" bundle:nil];
         NotificationsPreferencesViewController *notificationsViewController = [[NotificationsPreferencesViewController alloc] initWithNibName:@"NotificationsPreferencesViewController" bundle:nil];
         IntegrationPreferencesViewController *integrationViewController = [[IntegrationPreferencesViewController alloc] initWithNibName:@"IntegrationPreferencesViewController" bundle:nil];
@@ -782,6 +784,7 @@ void *kContextActivePanel = &kContextActivePanel;
         preferencesWindow = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
     }
     
+        NSLog(@"SHOWING WINDOW");
     [NSApp activateIgnoringOtherApps:YES];
     [preferencesWindow showWindow:self];
 }

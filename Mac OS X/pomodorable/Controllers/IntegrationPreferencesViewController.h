@@ -15,7 +15,7 @@
     IBOutlet NSTextField    *taskLearnMore;
     IBOutlet NSTextField    *taskAwayMessage;
 }
-@property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 
 - (IBAction)taskSyncChanged:(id)sender;
 

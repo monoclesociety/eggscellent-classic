@@ -28,14 +28,13 @@
     NSMutableAttributedString       *startString;
     NSMutableAttributedString       *stopString;
     NSMutableAttributedString       *resumeString;
-    
-    PanelController                 *__weak _panelController;
+
     NSManagedObjectContext          *__weak _managedObjectContext;
     AboutWindowController           *_aboutWindowController;
 }
 @property (weak, nonatomic, readonly) NSArray                 *activitySortDescriptors;
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
-@property (nonatomic, weak)   PanelController         *panelController;
+@property (nonatomic, strong)   PanelController         *panelController;
 @property (nonatomic, strong)   AboutWindowController   *aboutWindowController;
 
 - (void)viewWillAppear;
