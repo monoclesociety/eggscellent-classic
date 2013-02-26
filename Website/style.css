@@ -103,14 +103,13 @@ body>header{background:#ccdee6;text-shadow:0 1px 0 rgba(0,0,0,0.2)}
 body>header>nav{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:10px;text-align:right}
 body>header>nav a{color:#fff;margin-left:0.5em}
 body>header>div{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:140px 10px 100px;position:relative}
-body>header h1
+body>header #title
 {
 	text-indent:100%;
 	white-space:nowrap;
 	overflow:hidden;
 	width:375px;
 	height:125px;
-	background:url(images/eggellentTitle@2x.png) no-repeat;
 	background-size:375px 125px;
 	margin:0 0 12px -2px
 }
@@ -141,7 +140,7 @@ body>header h2
 {
 	body>header h1
 	{
-		background-image:url(images/eggellentTitle@2x.png)
+/* 		background-image:url(images/eggellentTitle@2x.png) */
 	}
 }
 
@@ -171,7 +170,7 @@ body>header h2
 		text-align:center
 	}
 	
-	body>header h1
+	body>header #title
 	{
 		width:320px;
 		height:106px;
