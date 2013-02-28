@@ -38,10 +38,6 @@
         NSMenuItem *reminderitem = [taskSyncIntegration itemAtIndex:1];
         [reminderitem setHidden:NO];
     }
-    
-    //setup pomodoro book pdf link
-    [self setupURL:[NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/task"]
-      forTextField:taskLearnMore];
 }
 
 #pragma mark - Helper methods
@@ -83,6 +79,11 @@
 }
 
 #pragma mark - IBActions
+
+- (IBAction)helpSelected:(id)sender
+{
+    [[NSApplication sharedApplication] showHelp:nil];
+}
 
 - (IBAction)taskSyncChanged:(id)sender
 {

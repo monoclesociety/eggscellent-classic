@@ -425,8 +425,6 @@
 - (IBAction)showHelpMenu:(id)sender;
 {
     [[NSApplication sharedApplication] showHelp:nil];
-//    NSURL *url = [NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/support"];
-//    [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 - (IBAction)showAboutMenu:(id)sender

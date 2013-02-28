@@ -12,11 +12,11 @@
 @interface IntegrationPreferencesViewController : NSViewController <MASPreferencesViewController>
 {
     IBOutlet NSPopUpButton  *taskSyncIntegration;
-    IBOutlet NSTextField    *taskLearnMore;
     IBOutlet NSTextField    *taskAwayMessage;
 }
 @property (nonatomic, unsafe_unretained) NSWindow *window;
 
+- (IBAction)helpSelected:(id)sender;
 - (IBAction)taskSyncChanged:(id)sender;
 
 @end

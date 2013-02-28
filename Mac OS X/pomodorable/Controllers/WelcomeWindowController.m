@@ -81,7 +81,7 @@
       forTextField:pomodorableFeedbackAndSupportLink];
     
     //setup pomdorable facebook link
-    [self setupURL:[NSURL URLWithString:@"http://www.facebook.com/eggscellentapp"]
+    [self setupURL:[NSURL URLWithString:@"http://www.facebook.com/pages/Eggscellent/143251492506482"]
       forTextField:pomodorableFacebookLink];
     
     //setup pomodorable twitter link
