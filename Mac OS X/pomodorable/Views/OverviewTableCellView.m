@@ -132,7 +132,7 @@
         
         selectionHeight -= 6;
         r.size.height = selectionHeight;
-        r.origin.y = 0;// NSMaxY(self.frame) - selectionHeight - 3;
+        r.origin.y = NSMaxY(self.frame) - selectionHeight - 6;
         coverupView.frame = r;
         
         BOOL tofu = [((Activity *)self.objectValue).completed boolValue];        
