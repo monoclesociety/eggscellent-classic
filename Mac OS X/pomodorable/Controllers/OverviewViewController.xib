@@ -367,14 +367,11 @@
 							<reference key="NSControlView" ref="351998138"/>
 							<int key="NSButtonFlags">139198464</int>
 							<int key="NSButtonFlags2">134</int>
-							<object class="NSCustomResource" key="NSNormalImage">
+							<object class="NSCustomResource" key="NSNormalImage" id="661990664">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">prefs</string>
 							</object>
-							<object class="NSCustomResource" key="NSAlternateImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">prefs-down</string>
-							</object>
+							<reference key="NSAlternateImage" ref="661990664"/>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
 							<int key="NSPeriodicDelay">200</int>
@@ -2532,7 +2529,6 @@
 			<string key="footer">{320, 41}</string>
 			<string key="header-with_point@2x">{320, 84}</string>
 			<string key="prefs">{24, 24}</string>
-			<string key="prefs-down">{24, 24}</string>
 			<string key="pullOutBackground">{320, 100}</string>
 			<string key="pullOutBackgroundClip">{320, 3}</string>
 			<string key="shadow">{320, 7}</string>
