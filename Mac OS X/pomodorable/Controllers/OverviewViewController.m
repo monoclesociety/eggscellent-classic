@@ -276,16 +276,9 @@
 
 - (IBAction)cellDoubleClicked:(id)sender;
 {
-    OverviewTableCellView *cellView = [itemsTableView viewAtColumn:0 row:[itemsTableView selectedRow] makeIfNecessary:NO];
-    
-    if(cellView && [cellView class] == [OverviewTableCellView class])
-    {
-        [cellView.textField setEditable:YES];
-        [itemsTableView editColumn:0 
-                               row:[itemsTableView selectedRow]
-                         withEvent:nil
-                            select:YES];
-    }
+    OverviewTableCellView *cellView = [itemsTableView viewAtColumn:0 row:0 makeIfNecessary:NO];
+    [cellView.textField setEditable:YES];
+    [cellView.textField becomeFirstResponder];
 }
 
 - (IBAction)addItem:(id)sender;
@@ -299,13 +292,21 @@
     newActivity.plannedCount = [NSNumber numberWithInt:1];
     [newActivity save];
     
+    [self performSelector:@selector(expandAndEdit) withObject:nil afterDelay:0.0f];
+}
+
+- (void)expandAndEdit
+{
     NSIndexSet *newlySelectedRow = [NSIndexSet indexSetWithIndex:0];
     [itemsTableView editColumn:0
                            row:0
                      withEvent:nil
                         select:YES];
     [itemsTableView selectRowIndexes:newlySelectedRow byExtendingSelection:YES];
-
+    
+    OverviewTableCellView *cellView = [itemsTableView viewAtColumn:0 row:0 makeIfNecessary:NO];
+    [cellView.textField setEditable:YES];
+    [cellView.textField becomeFirstResponder];
 }
 
 - (IBAction)removeItem:(id)sender;
