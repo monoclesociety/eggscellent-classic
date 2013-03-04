@@ -49,6 +49,7 @@
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
 		3DB7924B160A4E2D00CA5D24 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
 		3DB7924E160A528D00CA5D24 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
+		3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCDCC3516E110D2001B55EB /* CalendarController.m */; };
 		3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */; };
 		3DD48E6115BA545F00492EF4 /* tick_grandfatherClock.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */; };
 		3DD48E6215BA545F00492EF4 /* tick_tomatoTimer.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5E15BA545F00492EF4 /* tick_tomatoTimer.aiff */; };
@@ -64,6 +65,8 @@
 		3DD633B5160F8CA7001F9661 /* button-resume-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */; };
 		3DD633B6160F8CA7001F9661 /* button-resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD633B2160F8CA7001F9661 /* button-resume.png */; };
 		3DD633B7160F8CA7001F9661 /* button-resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD633B3160F8CA7001F9661 /* button-resume@2x.png */; };
+		3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD73F8A16E3299600B6D994 /* CalendarPreferencesViewController.m */; };
+		3DD73F8D16E3299600B6D994 /* CalendarPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD73F8B16E3299600B6D994 /* CalendarPreferencesViewController.xib */; };
 		3DDF88E615A2862D009AEFFC /* focus-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF88E515A2862D009AEFFC /* focus-card@2x.png */; };
 		3DF3F46A158A505100691B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3F468158A505100691B97 /* MainMenu.xib */; };
 		3DF9349D16D021C500A98287 /* status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF9349C16D021C500A98287 /* status@2x.png */; };
@@ -327,6 +330,8 @@
 		3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAnimatedImageView.m; sourceTree = "<group>"; };
 		3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiddenLogo.png; sourceTree = "<group>"; };
 		3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "pomodorable/Vendor/HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
+		3DCDCC3416E110D2001B55EB /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
+		3DCDCC3516E110D2001B55EB /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
 		3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick_grandfatherClock.aiff; sourceTree = "<group>"; };
 		3DD48E5E15BA545F00492EF4 /* tick_tomatoTimer.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick_tomatoTimer.aiff; sourceTree = "<group>"; };
@@ -345,6 +350,9 @@
 		3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-resume-down@2x.png"; path = "Resources/window/button-resume-down@2x.png"; sourceTree = "<group>"; };
 		3DD633B2160F8CA7001F9661 /* button-resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-resume.png"; sourceTree = "<group>"; };
 		3DD633B3160F8CA7001F9661 /* button-resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-resume@2x.png"; path = "Resources/window/button-resume@2x.png"; sourceTree = "<group>"; };
+		3DD73F8916E3299600B6D994 /* CalendarPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPreferencesViewController.h; sourceTree = "<group>"; };
+		3DD73F8A16E3299600B6D994 /* CalendarPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPreferencesViewController.m; sourceTree = "<group>"; };
+		3DD73F8B16E3299600B6D994 /* CalendarPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarPreferencesViewController.xib; sourceTree = "<group>"; };
 		3DDF88E515A2862D009AEFFC /* focus-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card@2x.png"; path = "Resources/window/focus-card@2x.png"; sourceTree = "<group>"; };
 		3DF3F469158A505100691B97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3DF9349C16D021C500A98287 /* status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status@2x.png"; path = "Resources/status icons/status@2x.png"; sourceTree = "<group>"; };
@@ -678,6 +686,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		3DCDCC3316E1104C001B55EB /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3DCDCC3416E110D2001B55EB /* CalendarController.h */,
+				3DCDCC3516E110D2001B55EB /* CalendarController.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		3DD61E5A158A4A55001947B1 /* helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +717,16 @@
 				3DD61E63158A4A55001947B1 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DD73F8816E3294E00B6D994 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3DD73F8916E3299600B6D994 /* CalendarPreferencesViewController.h */,
+				3DD73F8A16E3299600B6D994 /* CalendarPreferencesViewController.m */,
+				3DD73F8B16E3299600B6D994 /* CalendarPreferencesViewController.xib */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		3DFBE61215A26C890006ABB2 /* retina */ = {
@@ -1161,6 +1188,7 @@
 				F49988651495A82000D356DB /* Remote */,
 				F4391DD3148B08080051CACC /* Welcome */,
 				F4E7E82D147DB3EF00815B66 /* Task Syncing */,
+				3DCDCC3316E1104C001B55EB /* Calendar */,
 				F4E7E812147D673500815B66 /* Chat */,
 				F4D439E5146EE83F005EA5F9 /* Preferences */,
 			);
@@ -1296,6 +1324,7 @@
 				F4104BC1147C15A40077D272 /* Notifications */,
 				F4104BC2147C15B10077D272 /* Integration */,
 				F49C24B814D8BB5F00C34218 /* Devices */,
+				3DD73F8816E3294E00B6D994 /* Calendar */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -1707,6 +1736,7 @@
 				3D47206816D99651009204E2 /* 6_egg_nudge_2.aif in Resources */,
 				3D47206916D99651009204E2 /* 8_egg_nudge_3.aif in Resources */,
 				3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */,
+				3DD73F8D16E3299600B6D994 /* CalendarPreferencesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1789,6 +1819,8 @@
 				3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */,
 				3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */,
 				3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */,
+				3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */,
+				3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

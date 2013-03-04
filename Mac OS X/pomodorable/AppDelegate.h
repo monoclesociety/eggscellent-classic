@@ -24,6 +24,7 @@
 #import "OmniFocusSyncController.h"
 #import "ThingsSyncController.h"
 #import "RemindersSyncController.h"
+#import "CalendarController.h"
 
 @class WelcomeWindowController;
 @interface AppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
@@ -38,6 +39,7 @@
     MonitorWindowController         *monitorWindowController;
     WelcomeWindowController         *welcomeWindowController;
     NoteWindowController            *noteWindowController;
+    CalendarController              *calendarController;
     
     SGHotKey    *hotKeyStopPomodoro;
     SGHotKey    *hotKeyExternalInterrupt;

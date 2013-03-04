@@ -196,7 +196,7 @@
         animationView.frames = arr;
         
         AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-        [appDelegate.windUpSound play];
+        [appDelegate.windUpSound performSelectorInBackground:@selector(play) withObject:nil];
         [animationView start];
     }
     

@@ -51,6 +51,7 @@
 						<string key="NSFrame">{{368, 171}, {25, 25}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="336499840"/>
 						<string key="NSReuseIdentifierKey">_NS:1598</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="1058566534">
@@ -112,6 +113,7 @@
 						<string key="NSFrame">{{239, 22}, {134, 22}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:903</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="307986543">
@@ -170,7 +172,7 @@
 					<object class="NSButton" id="580110153">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{237, 80}, {123, 18}}</string>
+						<string key="NSFrame">{{237, 80}, {77, 18}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="672891689"/>
@@ -179,7 +181,7 @@
 						<object class="NSButtonCell" key="NSCell" id="848074007">
 							<int key="NSCellFlags">-2080374784</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">iChat/Messages</string>
+							<string key="NSContents">Message</string>
 							<reference key="NSSupport" ref="787595433"/>
 							<string key="NSCellIdentifier">_NS:771</string>
 							<reference key="NSControlView" ref="580110153"/>
@@ -303,6 +305,7 @@
 						<string key="NSFrame">{{235, 171}, {126, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="83840874"/>
 						<string key="NSReuseIdentifierKey">_NS:868</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="537145591">
@@ -770,16 +773,11 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="taskAwayMessage">NSTextField</string>
-						<string key="taskLearnMore">NSTextField</string>
 						<string key="taskSyncIntegration">NSPopUpButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="taskAwayMessage">
 							<string key="name">taskAwayMessage</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="taskLearnMore">
-							<string key="name">taskLearnMore</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="taskSyncIntegration">

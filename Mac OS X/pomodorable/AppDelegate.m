@@ -146,6 +146,11 @@ void *kContextActivePanel = &kContextActivePanel;
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     windUpSound.volume = .1;
+    
+    
+    //create calendar controller
+    calendarController = [[CalendarController alloc] init];
+    [calendarController eggscellentCalendarSource];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -456,6 +461,9 @@ void *kContextActivePanel = &kContextActivePanel;
         
         [[ModelStore sharedStore] save];
         [[Activity currentActivity] refresh];
+        
+        
+        [calendarController createCalendarLogForEgg:e];
         
         //if you just met the requirements for auto-complete, then auto-complete!
         Activity *a = [Activity currentActivity];

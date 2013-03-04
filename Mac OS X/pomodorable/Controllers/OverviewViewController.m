@@ -436,7 +436,6 @@
 
 - (IBAction)openPreferences:(id)sender;
 {
-    NSLog(@"Opening preferences from overview");
     [self.panelController.delegate performSelector:@selector(openPreferences)];
 }
 
