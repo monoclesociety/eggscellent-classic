@@ -106,14 +106,22 @@
 
 - (IBAction)addExternalInterruption:(id)sender;
 {
+    id s = sender;
+    if (([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask))
+        s = nil;
+            
     AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-    [appDelegate externalInterruptionKeyed:nil];
+    [appDelegate externalInterruptionKeyed:s];
 }
 
 - (IBAction)addInternalInterruption:(id)sender;
 {
+    id s = sender;
+    if (([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask))
+        s = nil;
+    
     AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-    [appDelegate internalInterruptionKeyed:nil];
+    [appDelegate internalInterruptionKeyed:s];
 }
 
 - (IBAction)stopPomodoro:(id)sender;

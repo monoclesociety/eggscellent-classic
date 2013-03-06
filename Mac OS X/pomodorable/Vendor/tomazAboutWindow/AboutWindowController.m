@@ -94,7 +94,7 @@ static CGColorRef kAboutWindowCreditsFadeColor2 = NULL;
 
 - (IBAction)getInTouch:(id)sender 
 {
-	NSURL *url = [NSURL URLWithString:@"http://www.facebook.com/pages/Eggscellent/143251492506482"];
+	NSURL *url = [NSURL URLWithString:@"http://www.facebook.com/eggscellentapp"];
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 

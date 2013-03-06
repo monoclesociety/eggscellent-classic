@@ -149,8 +149,8 @@ void *kContextActivePanel = &kContextActivePanel;
     
     
     //create calendar controller
-    calendarController = [[CalendarController alloc] init];
-    [calendarController eggscellentCalendarSource];
+//    calendarController = [[CalendarController alloc] init];
+//    [calendarController eggscellentCalendarSource];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -212,10 +212,13 @@ void *kContextActivePanel = &kContextActivePanel;
 }
 
 - (void)externalInterruptionKeyed:(id)sender;
-{   
+{
+    int modifier = (sender == nil) ? -1 : 1;
     Activity *a = [Activity currentActivity];
     Egg *p = [[a.eggs allObjects] lastObject];
-    p.externalInterruptions = [NSNumber numberWithInt:[p.externalInterruptions intValue] + 1];
+    
+    int intValue = MAX([p.externalInterruptions intValue] + modifier, 0);
+    p.externalInterruptions = [NSNumber numberWithInt:intValue];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"externalInterruptionKeyed" object:nil];
     
     EggTimer *currentTimer = [EggTimer currentTimer];
@@ -224,9 +227,12 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)internalInterruptionKeyed:(id)sender;
 {
+    int modifier = (sender == nil) ? -1 : 1;
     Activity *a = [Activity currentActivity];
     Egg *p = [[a.eggs allObjects] lastObject];
-    p.internalInterruptions = [NSNumber numberWithInt:[p.internalInterruptions intValue] + 1];
+    
+    int intValue = MAX([p.internalInterruptions intValue] + modifier, 0);
+    p.internalInterruptions = [NSNumber numberWithInt:intValue];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"internalInterruptionKeyed" object:nil];
     
     EggTimer *currentTimer = [EggTimer currentTimer];
@@ -253,29 +259,30 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)toggleNoteKeyed:(id)sender;
 {
 
+//    noteWindowController = [[NoteWindowController alloc] initWithWindowNibName:@"NoteWindowController"];
+//    
+//    if([noteWindowController.window isVisible])
+//    {
+//        [noteWindowController close:self];
+//    }
+//    else
+//    {
+//        [noteWindowController showWindow:self];
+//        [noteWindowController.window makeKeyAndOrderFront:self];
+//        [NSApp activateIgnoringOtherApps:YES];
+//    }
+    
 //    if([[NSUserDefaults standardUserDefaults] integerForKey:@"notesType"])
 //    {
-    NSURL *mainAppUrl = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.apple.notes"];
-    if(mainAppUrl)
-    {
-        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:mainAppUrl options:NSWorkspaceLaunchDefault configuration:nil error:NULL];
-    }
+//    NSURL *mainAppUrl = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.apple.notes"];
+//    if(mainAppUrl)
+//    {
+//        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:mainAppUrl options:NSWorkspaceLaunchDefault configuration:nil error:NULL];
 //    }
 //    else
 //    {
 //        if(!noteWindowController)
-//            noteWindowController = [[NoteWindowController alloc] initWithWindowNibName:@"NoteWindowController"];
-//        
-//        if([noteWindowController.window isVisible])
-//        {
-//            [noteWindowController close:self];
-//        }
-//        else
-//        {
-//            [noteWindowController showWindow:self];
-//            [noteWindowController.window makeKeyAndOrderFront:self];
-//            [NSApp activateIgnoringOtherApps:YES];
-//        }
+//
 //    }
 }
 
@@ -342,7 +349,7 @@ void *kContextActivePanel = &kContextActivePanel;
     self.hotKeyStopPomodoro = [self hotKeyWithKey:HOTKEY_STOP_POMODORO withSelector:@selector(stopPomodoroKeyed:)];
     self.hotKeyToggleStatusItemWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_STATUSITEM_WINDOW withSelector:@selector(togglePanel:)];
     self.hotKeyToggleHoverWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_HOVER_WINDOW withSelector:@selector(toggleHoverWindowKeyed:)];
-    self.hotKeyToggleNoteWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_NOTE_WINDOW withSelector:@selector(toggleNoteKeyed:)];
+    //self.hotKeyToggleNoteWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_NOTE_WINDOW withSelector:@selector(toggleNoteKeyed:)];
     
 }
 

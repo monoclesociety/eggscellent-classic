@@ -109,113 +109,113 @@
 #pragma mark -
 #pragma mark Drawing Methods
 
-- (NSRange)glyphRangeForRect:(NSRect)aRect
-{
-	NSRange glyphRange;
-    NSLayoutManager *layoutManager = [self layoutManager];
-    NSTextContainer *textContainer = [self textContainer];
-    NSPoint containerOrigin = [self textContainerOrigin];
-	
-	// Convert from view coordinates to container coordinates
-	aRect = NSOffsetRect(aRect, -containerOrigin.x, -containerOrigin.y);
-	
-    glyphRange = [layoutManager glyphRangeForBoundingRect:aRect inTextContainer:textContainer];
-	
-	return glyphRange;
-}
-
-- (void)drawViewBackgroundInRect:(NSRect)rect
-{
-	// Do normal drawing first
-	[super drawViewBackgroundInRect:rect];
-	
-	// Is there an image to draw? If so, do so now
-	if (image)
-	{
-		// Copied from KBCorkboardView's -drawCardForItem:inRect:
-		BOOL imageFlippedState = [image isFlipped];
-		[image setFlipped:YES];	// We are in a flipped co-ordinate system
-		NSRect imgRect = NSMakeRect(0,0,[image size].width,[image size].height);
-		NSRect drawRect = rect;
-		// Make sure image is in proportion - so that it fills the height
-		drawRect.size.width = drawRect.size.height * (imgRect.size.width/imgRect.size.height);
-		drawRect.origin.x += (rect.size.width - drawRect.size.width)/2.0;
-		
-		// But if it is still too small, we have to scale it so that it fills the width and not the height
-		if (drawRect.size.width > rect.size.width)
-		{
-			drawRect = rect;
-			drawRect.size.height = drawRect.size.width * (imgRect.size.height/imgRect.size.width);
-			drawRect.origin.y += (rect.size.height - drawRect.size.height)/2.0;
-		}
-		
-		[image drawInRect:drawRect
-				 fromRect:imgRect
-				operation:NSCompositeSourceOver
-				 fraction:0.25];
-		
-		[image setFlipped:imageFlippedState];	// Reset the image to its former flipped state
-		
-		// If we aren't meant to draw the lines too, return
-		if (![self drawsLinesAndImage])
-			return;
-	}
-	
-	// Just in case the default line width changes...
-	float bezierDefaultLineWidth = [NSBezierPath defaultLineWidth];
-	[NSBezierPath setDefaultLineWidth:1.0];
-	
-	// Now draw the lines
-	NSLayoutManager *layoutManager = [self layoutManager];
-	NSPoint p1, p2;
-    NSRange lineRange;
-	float defaultLineHeight;
-	if ([self typingAttributes])
-	{
-		defaultLineHeight = [layoutManager defaultLineHeightForFont:
-                             [[self typingAttributes] objectForKey:NSFontAttributeName]];
-	}
-	else
-		defaultLineHeight = 14.0;
-	NSRect lineRect = NSMakeRect(0,rect.origin.y-defaultLineHeight,0,defaultLineHeight);
-	NSRange glyphRange = [self glyphRangeForRect:rect];
-	NSUInteger i = glyphRange.location;
-	
-	[lineColor set];
-	
-	// First draw the lines for the text
-	while (i < NSMaxRange(glyphRange))
-	{
-        lineRect = [layoutManager lineFragmentRectForGlyphAtIndex:i
-												   effectiveRange:&lineRange];
-		
-		p1 = NSMakePoint(rect.origin.x, (int)NSMaxY(lineRect)+0.5);
-		p2 = NSMakePoint(NSMaxX(rect), (int)NSMaxY(lineRect)+0.5);
-		[NSBezierPath strokeLineFromPoint:p1 toPoint:p2];
-		
-        i = NSMaxRange(lineRange);
-    }
-	
-	// Now continue to fill up the area with no text with lines
-	while (NSMaxY(lineRect) < NSMaxY(rect))
-	{
-		lineRect.origin.y += lineRect.size.height;
-		p1 = NSMakePoint(rect.origin.x, (int)NSMaxY(lineRect)+0.5);
-		p2 = NSMakePoint(NSMaxX(rect), (int)NSMaxY(lineRect)+0.5);
-		[NSBezierPath strokeLineFromPoint:p1 toPoint:p2];
-	}
-	
-	[NSBezierPath setDefaultLineWidth:bezierDefaultLineWidth];	// Reset
-}
-
-- (void)setNeedsDisplayInRect:(NSRect)aRect avoidAdditionalLayout:(BOOL)flag
-{
-	// All though this is not ideal as it is very expensive, we have to brute force
-	// the view to redraw its visible rect every time it is redrawn - otherwise the lines
-	// below the one currently being drawn may not get updated. Fortunately, this view
-	// is designed only to be used in small areas, such as for index cards, so this
-	// should not cause us too much grief.
-	[super setNeedsDisplayInRect:[self visibleRect] avoidAdditionalLayout:flag];
-}
+//- (NSRange)glyphRangeForRect:(NSRect)aRect
+//{
+//	NSRange glyphRange;
+//    NSLayoutManager *layoutManager = [self layoutManager];
+//    NSTextContainer *textContainer = [self textContainer];
+//    NSPoint containerOrigin = [self textContainerOrigin];
+//	
+//	// Convert from view coordinates to container coordinates
+//	aRect = NSOffsetRect(aRect, -containerOrigin.x, -containerOrigin.y);
+//	
+//    glyphRange = [layoutManager glyphRangeForBoundingRect:aRect inTextContainer:textContainer];
+//	
+//	return glyphRange;
+//}
+//
+//- (void)drawViewBackgroundInRect:(NSRect)rect
+//{
+//	// Do normal drawing first
+//	[super drawViewBackgroundInRect:rect];
+//	
+//	// Is there an image to draw? If so, do so now
+//	if (image)
+//	{
+//		// Copied from KBCorkboardView's -drawCardForItem:inRect:
+//		BOOL imageFlippedState = [image isFlipped];
+//		[image setFlipped:YES];	// We are in a flipped co-ordinate system
+//		NSRect imgRect = NSMakeRect(0,0,[image size].width,[image size].height);
+//		NSRect drawRect = rect;
+//		// Make sure image is in proportion - so that it fills the height
+//		drawRect.size.width = drawRect.size.height * (imgRect.size.width/imgRect.size.height);
+//		drawRect.origin.x += (rect.size.width - drawRect.size.width)/2.0;
+//		
+//		// But if it is still too small, we have to scale it so that it fills the width and not the height
+//		if (drawRect.size.width > rect.size.width)
+//		{
+//			drawRect = rect;
+//			drawRect.size.height = drawRect.size.width * (imgRect.size.height/imgRect.size.width);
+//			drawRect.origin.y += (rect.size.height - drawRect.size.height)/2.0;
+//		}
+//		
+//		[image drawInRect:drawRect
+//				 fromRect:imgRect
+//				operation:NSCompositeSourceOver
+//				 fraction:0.25];
+//		
+//		[image setFlipped:imageFlippedState];	// Reset the image to its former flipped state
+//		
+//		// If we aren't meant to draw the lines too, return
+//		if (![self drawsLinesAndImage])
+//			return;
+//	}
+//	
+//	// Just in case the default line width changes...
+//	float bezierDefaultLineWidth = [NSBezierPath defaultLineWidth];
+//	[NSBezierPath setDefaultLineWidth:1.0];
+//	
+//	// Now draw the lines
+//	NSLayoutManager *layoutManager = [self layoutManager];
+//	NSPoint p1, p2;
+//    NSRange lineRange;
+//	float defaultLineHeight;
+//	if ([self typingAttributes])
+//	{
+//		defaultLineHeight = [layoutManager defaultLineHeightForFont:
+//                             [[self typingAttributes] objectForKey:NSFontAttributeName]];
+//	}
+//	else
+//		defaultLineHeight = 14.0;
+//	NSRect lineRect = NSMakeRect(0,rect.origin.y-defaultLineHeight,0,defaultLineHeight);
+//	NSRange glyphRange = [self glyphRangeForRect:rect];
+//	NSUInteger i = glyphRange.location;
+//	
+//	[lineColor set];
+//	
+//	// First draw the lines for the text
+//	while (i < NSMaxRange(glyphRange))
+//	{
+//        lineRect = [layoutManager lineFragmentRectForGlyphAtIndex:i
+//												   effectiveRange:&lineRange];
+//		
+//		p1 = NSMakePoint(rect.origin.x, (int)NSMaxY(lineRect)+0.5);
+//		p2 = NSMakePoint(NSMaxX(rect), (int)NSMaxY(lineRect)+0.5);
+//		[NSBezierPath strokeLineFromPoint:p1 toPoint:p2];
+//		
+//        i = NSMaxRange(lineRange);
+//    }
+//	
+//	// Now continue to fill up the area with no text with lines
+//	while (NSMaxY(lineRect) < NSMaxY(rect))
+//	{
+//		lineRect.origin.y += lineRect.size.height;
+//		p1 = NSMakePoint(rect.origin.x, (int)NSMaxY(lineRect)+0.5);
+//		p2 = NSMakePoint(NSMaxX(rect), (int)NSMaxY(lineRect)+0.5);
+//		[NSBezierPath strokeLineFromPoint:p1 toPoint:p2];
+//	}
+//	
+//	[NSBezierPath setDefaultLineWidth:bezierDefaultLineWidth];	// Reset
+//}
+//
+//- (void)setNeedsDisplayInRect:(NSRect)aRect avoidAdditionalLayout:(BOOL)flag
+//{
+//	// All though this is not ideal as it is very expensive, we have to brute force
+//	// the view to redraw its visible rect every time it is redrawn - otherwise the lines
+//	// below the one currently being drawn may not get updated. Fortunately, this view
+//	// is designed only to be used in small areas, such as for index cards, so this
+//	// should not cause us too much grief.
+//	[super setNeedsDisplayInRect:[self visibleRect] avoidAdditionalLayout:flag];
+//}
 
 @end
