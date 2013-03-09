@@ -17,6 +17,7 @@
 #import "ShortcutsPreferencesViewController.h"
 #import "NotificationsPreferencesViewController.h"
 #import "IntegrationPreferencesViewController.h"
+#import "CalendarPreferencesViewController.h"
 #import "DevicesPreferencesViewController.h"
 #import "WelcomeWindowController.h"
 #import "RemoteClientController.h"
@@ -146,11 +147,8 @@ void *kContextActivePanel = &kContextActivePanel;
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     windUpSound.volume = .1;
-    
-    
-    //create calendar controller
-//    calendarController = [[CalendarController alloc] init];
-//    [calendarController eggscellentCalendarSource];
+
+    calendarController = [[CalendarController alloc] init];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -779,6 +777,7 @@ void *kContextActivePanel = &kContextActivePanel;
         NotificationsPreferencesViewController *notificationsViewController = [[NotificationsPreferencesViewController alloc] initWithNibName:@"NotificationsPreferencesViewController" bundle:nil];
         IntegrationPreferencesViewController *integrationViewController = [[IntegrationPreferencesViewController alloc] initWithNibName:@"IntegrationPreferencesViewController" bundle:nil];
         GeneralPreferencesViewController *generalViewController = [[GeneralPreferencesViewController alloc] init];
+        CalendarPreferencesViewController *calendarViewController = [[CalendarPreferencesViewController alloc] initWithNibName:@"CalendarPreferencesViewController" bundle:nil];
         //DevicesPreferencesViewController *devicesViewController = [[DevicesPreferencesViewController alloc] init];
         
         shortcutsViewController.hotKeyToggleStatusItemWindow = self.hotKeyToggleStatusItemWindow;
@@ -788,7 +787,7 @@ void *kContextActivePanel = &kContextActivePanel;
         shortcutsViewController.hotKeyToggleHoverWindow = self.hotKeyToggleHoverWindow;
         shortcutsViewController.hotKeyToggleNoteWindow = self.hotKeyToggleNoteWindow;
         
-        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, shortcutsViewController, notificationsViewController, integrationViewController, nil];
+        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, shortcutsViewController, notificationsViewController, integrationViewController, calendarViewController, nil];
         
         //release all those created preferences view
         //[devicesViewController release];

@@ -8,7 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MASPreferencesViewController.h"
+#import "CalendarController.h"
 
 @interface CalendarPreferencesViewController : NSViewController <MASPreferencesViewController>
+@property (weak) CalendarController *calendarController;
 @property (strong) IBOutlet NSPopUpButton* sourcesPopUpButton;
+@property (nonatomic, unsafe_unretained) NSWindow *window;
 @end

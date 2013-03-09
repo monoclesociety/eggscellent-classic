@@ -13,8 +13,8 @@
 
 @implementation CalendarController
 @synthesize calendarStore = _calendarStore;
+@synthesize calendarSource = _calendarSource;
 @synthesize eggscellentCalendar = _eggscellentCalendar;
-@synthesize eggscellentCalendarSource = _eggscellentCalendarSource;
 
 - (id)init
 {
@@ -23,11 +23,6 @@
         _calendarStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent];
     }
     return self;
-}
-
-- (void)start
-{
-    
 }
 
 - (BOOL)createCalendarLogForEgg:(Egg *)egg
@@ -57,12 +52,8 @@
 
 #pragma mark - EventKit Stack
 
-- (EKSource *)eggscellentCalendarSource
+- (NSArray *)supportedCalendarSources;
 {
-    if(_eggscellentCalendar)
-        return _eggscellentCalendarSource;
-    
-    EKSource* localSource = nil;
     NSMutableArray *sources = [NSMutableArray array];
     for (EKSource* source in _calendarStore.sources)
     {
@@ -71,7 +62,28 @@
             [sources addObject:source];
         }
     }
-    return localSource;
+    return sources;
+}
+
+- (EKSource *)calendarSource
+{
+    if(_calendarSource)
+        return _calendarSource;
+    
+    NSString *sourceIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:@"calendarSourceIdentifier"];
+    if(sourceIdentifier)
+    {
+        _calendarSource = [_calendarStore sourceWithIdentifier:sourceIdentifier];
+    }
+    
+    return _calendarSource;
+}
+
+- (void)setCalendarSource:(EKSource *)calendarSource
+{
+    _calendarSource = calendarSource;
+    NSString *sourceIdentifier = _calendarSource.sourceIdentifier;
+    [[NSUserDefaults standardUserDefaults] setObject:sourceIdentifier forKey:@"calendarSourceIdentifier"];
 }
 
 - (EKCalendar *)eggscellentCalendar
@@ -82,7 +94,7 @@
     NSString *calendarIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:@"eggscellentCalendarIdentifier"];
     if(!calendarIdentifier)
     {
-        EKSource *eggSource = [self eggscellentCalendarSource];
+        EKSource *eggSource = [self calendarSource];
         _eggscellentCalendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:_calendarStore];
         _eggscellentCalendar.source = eggSource;
         _eggscellentCalendar.title = @"Eggscellent";

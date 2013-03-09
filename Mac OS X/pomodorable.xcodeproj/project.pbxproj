@@ -24,6 +24,7 @@
 		3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */; };
 		3D58D99C15E2CD71002B3F84 /* Eggscellent.help in Resources */ = {isa = PBXBuildFile; fileRef = 3D58D99B15E2CD71002B3F84 /* Eggscellent.help */; };
 		3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F856016DB1E0A0037A95C /* MSButtonCell.m */; };
+		3D88F86D16EA42FB00265052 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
 		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
@@ -305,6 +306,7 @@
 		3D58D99B15E2CD71002B3F84 /* Eggscellent.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eggscellent.help; sourceTree = "<group>"; };
 		3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonCell.h; sourceTree = "<group>"; };
 		3D6F856016DB1E0A0037A95C /* MSButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonCell.m; sourceTree = "<group>"; };
+		3D88F86C16EA42FB00265052 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/preferences/calendar.png; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
@@ -1332,6 +1334,7 @@
 		F4E2F2C414FB301500700D09 /* preferences */ = {
 			isa = PBXGroup;
 			children = (
+				3D88F86C16EA42FB00265052 /* calendar.png */,
 				F4F9E938153380BC00BA461A /* speaker.png */,
 				F4E2F2CE14FB30F600700D09 /* tools.png */,
 				F4E2F2CC14FB30F100700D09 /* sync.png */,
@@ -1737,6 +1740,7 @@
 				3D47206916D99651009204E2 /* 8_egg_nudge_3.aif in Resources */,
 				3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */,
 				3DD73F8D16E3299600B6D994 /* CalendarPreferencesViewController.xib in Resources */,
+				3D88F86D16EA42FB00265052 /* calendar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,12 +9,11 @@
 #import <EventKit/EventKit.h>
 @interface CalendarController : NSObject
 
-@property (readonly) EKEventStore *calendarStore;
-@property (readonly) EKCalendar *eggscellentCalendar;
-@property (readonly) EKSource *eggscellentCalendarSource;
+@property (readonly) EKEventStore   *calendarStore;
+@property (readonly) EKSource       *calendarSource;
+@property (readonly) EKCalendar     *eggscellentCalendar;
 
-- (BOOL)setCalendarSource:(EKSource *)calendarSource;
-- (NSArray *)supportedCalendars;
+- (NSArray *)supportedCalendarSources;
 - (BOOL)createCalendarLogForEgg:(Egg *)egg;
 
 @end
