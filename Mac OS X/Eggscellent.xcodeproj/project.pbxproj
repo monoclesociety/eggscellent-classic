@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0FDCE516ECEBEA00815B2C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */; };
 		3D1564E315697BC200D70EBB /* ThingsSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E215697BC100D70EBB /* ThingsSyncController.m */; };
 		3D1564EA15697C9700D70EBB /* OmniFocusSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E915697C9700D70EBB /* OmniFocusSyncController.m */; };
 		3D1564ED15697CA600D70EBB /* RemindersSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564EC15697CA600D70EBB /* RemindersSyncController.m */; };
@@ -48,8 +49,6 @@
 		3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
 		3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */; };
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
-		3DB7924B160A4E2D00CA5D24 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
-		3DB7924E160A528D00CA5D24 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */; };
 		3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCDCC3516E110D2001B55EB /* CalendarController.m */; };
 		3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */; };
 		3DD48E6115BA545F00492EF4 /* tick_grandfatherClock.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */; };
@@ -258,6 +257,44 @@
 		F4FBA62414BB8A06000A44FF /* ribbon8.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FBA62314BB8A06000A44FF /* ribbon8.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3D0FDCDB16ECEBD600815B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		3D0FDCDD16ECEBD600815B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		3D0FDCDF16ECEBD600815B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		3D0FDCE116ECEBD600815B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		3D0FDCE316ECEBD600815B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3DB7924D160A526E00CA5D24 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -265,7 +302,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3DB7924E160A528D00CA5D24 /* HockeySDK.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +318,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
 		3D1564E815697C9700D70EBB /* OmniFocusSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmniFocusSyncController.h; sourceTree = "<group>"; };
@@ -510,10 +547,10 @@
 		F48A5B371465F38500BFD7B2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F48A5B381465F38500BFD7B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F48A5B391465F38500BFD7B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F48A5B3C1465F38500BFD7B2 /* pomodorable-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pomodorable-Info.plist"; sourceTree = "<group>"; };
+		F48A5B3C1465F38500BFD7B2 /* Eggscellent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Eggscellent-Info.plist"; sourceTree = "<group>"; };
 		F48A5B3E1465F38500BFD7B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F48A5B401465F38500BFD7B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F48A5B421465F38500BFD7B2 /* pomodorable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pomodorable-Prefix.pch"; sourceTree = "<group>"; };
+		F48A5B421465F38500BFD7B2 /* Eggscellent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eggscellent-Prefix.pch"; sourceTree = "<group>"; };
 		F48A5B441465F38500BFD7B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F48A5B461465F38500BFD7B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F48A5B471465F38500BFD7B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -621,6 +658,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0FDCE516ECEBEA00815B2C /* Sparkle.framework in Frameworks */,
 				3D29146415BB0A0200F19BED /* InstantMessage.framework in Frameworks */,
 				3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */,
 				3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */,
@@ -635,13 +673,24 @@
 				F4E8848F1466FAFD0004DADB /* libz.dylib in Frameworks */,
 				F4E8848D1466FAEC0004DADB /* SystemConfiguration.framework in Frameworks */,
 				F48A5B351465F38500BFD7B2 /* Cocoa.framework in Frameworks */,
-				3DB7924B160A4E2D00CA5D24 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0FDCD416ECEBD600815B2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */,
+				3D0FDCDE16ECEBD600815B2C /* Sparkle Test App.app */,
+				3D0FDCE016ECEBD600815B2C /* Sparkle Unit Tests.octest */,
+				3D0FDCE216ECEBD600815B2C /* BinaryDelta */,
+				3D0FDCE416ECEBD600815B2C /* finish_installation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3D1564E515697BCF00D70EBB /* Things */ = {
 			isa = PBXGroup;
 			children = (
@@ -1065,10 +1114,11 @@
 		F48A5B251465F38500BFD7B2 = {
 			isa = PBXGroup;
 			children = (
-				F48A5B3A1465F38500BFD7B2 /* pomodorable */,
+				F48A5B3A1465F38500BFD7B2 /* Eggscellent */,
 				3DD61E5A158A4A55001947B1 /* helper */,
 				F48A5B331465F38500BFD7B2 /* Frameworks */,
 				F48A5B311465F38500BFD7B2 /* Products */,
+				3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1114,7 +1164,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		F48A5B3A1465F38500BFD7B2 /* pomodorable */ = {
+		F48A5B3A1465F38500BFD7B2 /* Eggscellent */ = {
 			isa = PBXGroup;
 			children = (
 				F4015F7D14943ED1000CF4AB /* Models */,
@@ -1124,6 +1174,7 @@
 				F4D439DD146EE432005EA5F9 /* Vendor */,
 				F48A5B3B1465F38500BFD7B2 /* Supporting Files */,
 			);
+			name = Eggscellent;
 			path = pomodorable;
 			sourceTree = "<group>";
 		};
@@ -1137,8 +1188,8 @@
 				F4104BBA147C14720077D272 /* Images */,
 				F43E823314705F4C00F3B6BB /* initialDefaults.plist */,
 				3D58D99B15E2CD71002B3F84 /* Eggscellent.help */,
-				F48A5B421465F38500BFD7B2 /* pomodorable-Prefix.pch */,
-				F48A5B3C1465F38500BFD7B2 /* pomodorable-Info.plist */,
+				F48A5B421465F38500BFD7B2 /* Eggscellent-Prefix.pch */,
+				F48A5B3C1465F38500BFD7B2 /* Eggscellent-Info.plist */,
 				F48A5B3D1465F38500BFD7B2 /* InfoPlist.strings */,
 				F48A5B431465F38500BFD7B2 /* Credits.rtf */,
 				3D912757157516940016661F /* Eggscellent.entitlements */,
@@ -1518,9 +1569,9 @@
 			productReference = 3DD61E57158A4A54001947B1 /* helper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F48A5B2F1465F38500BFD7B2 /* Pomodorable */ = {
+		F48A5B2F1465F38500BFD7B2 /* Eggscellent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Pomodorable" */;
+			buildConfigurationList = F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent" */;
 			buildPhases = (
 				F48A5B2C1465F38500BFD7B2 /* Sources */,
 				F48A5B2D1465F38500BFD7B2 /* Frameworks */,
@@ -1532,7 +1583,7 @@
 			);
 			dependencies = (
 			);
-			name = Pomodorable;
+			name = Eggscellent;
 			productName = Pomodorable;
 			productReference = F48A5B301465F38500BFD7B2 /* Eggscellent.app */;
 			productType = "com.apple.product-type.application";
@@ -1546,7 +1597,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Monocle Society LLC";
 			};
-			buildConfigurationList = F48A5B2A1465F38500BFD7B2 /* Build configuration list for PBXProject "pomodorable" */;
+			buildConfigurationList = F48A5B2A1465F38500BFD7B2 /* Build configuration list for PBXProject "Eggscellent" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1557,13 +1608,57 @@
 			mainGroup = F48A5B251465F38500BFD7B2;
 			productRefGroup = F48A5B311465F38500BFD7B2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3D0FDCD416ECEBD600815B2C /* Products */;
+					ProjectRef = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				F48A5B2F1465F38500BFD7B2 /* Pomodorable */,
+				F48A5B2F1465F38500BFD7B2 /* Eggscellent */,
 				3DD61E56158A4A54001947B1 /* helper */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 3D0FDCDB16ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D0FDCDE16ECEBD600815B2C /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 3D0FDCDD16ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D0FDCE016ECEBD600815B2C /* Sparkle Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.octest";
+			remoteRef = 3D0FDCDF16ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D0FDCE216ECEBD600815B2C /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 3D0FDCE116ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D0FDCE416ECEBD600815B2C /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = 3D0FDCE316ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3DD61E55158A4A54001947B1 /* Resources */ = {
@@ -1982,9 +2077,9 @@
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pomodorable/pomodorable-Prefix.pch";
+				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
-				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
+				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
@@ -2004,9 +2099,9 @@
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pomodorable/pomodorable-Prefix.pch";
+				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
-				INFOPLIST_FILE = "pomodorable/pomodorable-Info.plist";
+				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
@@ -2026,7 +2121,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F48A5B2A1465F38500BFD7B2 /* Build configuration list for PBXProject "pomodorable" */ = {
+		F48A5B2A1465F38500BFD7B2 /* Build configuration list for PBXProject "Eggscellent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48A5B4F1465F38600BFD7B2 /* Debug */,
@@ -2035,7 +2130,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Pomodorable" */ = {
+		F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48A5B521465F38600BFD7B2 /* Debug */,
