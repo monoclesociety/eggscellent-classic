@@ -26,6 +26,10 @@
 #import "ScriptManager.h"
 #import "AVAudioPlayer+Filesystem.h"
 
+#ifdef CLASSIC_APP
+#import <Sparkle/Sparkle.h>
+#endif
+
 void *kContextActivePanel = &kContextActivePanel;
 @implementation AppDelegate
 @synthesize panelController;
@@ -41,7 +45,6 @@ void *kContextActivePanel = &kContextActivePanel;
 @synthesize breakCompleteSound;
 
 #pragma mark - Application delegate and notifications
-
 
 - (void) showMainApplicationWindow
 {
@@ -779,10 +782,7 @@ void *kContextActivePanel = &kContextActivePanel;
         NotificationsPreferencesViewController *notificationsViewController = [[NotificationsPreferencesViewController alloc] initWithNibName:@"NotificationsPreferencesViewController" bundle:nil];
         IntegrationPreferencesViewController *integrationViewController = [[IntegrationPreferencesViewController alloc] initWithNibName:@"IntegrationPreferencesViewController" bundle:nil];
         GeneralPreferencesViewController *generalViewController = [[GeneralPreferencesViewController alloc] init];
-        CalendarPreferencesViewController *calendarViewController = [[CalendarPreferencesViewController alloc] initWithNibName:@"CalendarPreferencesViewController" bundle:nil];
         //DevicesPreferencesViewController *devicesViewController = [[DevicesPreferencesViewController alloc] init];
-        
-        calendarViewController.calendarController = calendarController;
         
         shortcutsViewController.hotKeyToggleStatusItemWindow = self.hotKeyToggleStatusItemWindow;
         shortcutsViewController.hotKeyStopPomodoro = self.hotKeyStopPomodoro;
@@ -791,10 +791,14 @@ void *kContextActivePanel = &kContextActivePanel;
         shortcutsViewController.hotKeyToggleHoverWindow = self.hotKeyToggleHoverWindow;
         shortcutsViewController.hotKeyToggleNoteWindow = self.hotKeyToggleNoteWindow;
         
-        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, shortcutsViewController, notificationsViewController, integrationViewController, calendarViewController, nil];
+        NSMutableArray *controllers = [[NSMutableArray alloc] initWithObjects:generalViewController, shortcutsViewController, notificationsViewController, integrationViewController, nil];
         
-        //release all those created preferences view
-        //[devicesViewController release];
+        if(NSClassFromString(@"NSUserNotification"))
+        {
+            CalendarPreferencesViewController *calendarViewController = [[CalendarPreferencesViewController alloc] initWithNibName:@"CalendarPreferencesViewController" bundle:nil];
+            calendarViewController.calendarController = calendarController;
+            [controllers addObject:calendarViewController];
+        }
         
         NSString *title = NSLocalizedString(@"Eggscellent Preferences", @"Common title for Preferences window");
         preferencesWindow = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
