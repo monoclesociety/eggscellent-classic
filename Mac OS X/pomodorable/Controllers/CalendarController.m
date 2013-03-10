@@ -64,7 +64,7 @@
     }
     return sources;
 }
-
+ 
 - (EKSource *)calendarSource
 {
     if(_calendarSource)
@@ -84,6 +84,7 @@
     _calendarSource = calendarSource;
     NSString *sourceIdentifier = _calendarSource.sourceIdentifier;
     [[NSUserDefaults standardUserDefaults] setObject:sourceIdentifier forKey:@"calendarSourceIdentifier"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"eggscellentCalendarIdentifier"];
 }
 
 - (EKCalendar *)eggscellentCalendar
@@ -95,6 +96,7 @@
     if(!calendarIdentifier)
     {
         EKSource *eggSource = [self calendarSource];
+        
         _eggscellentCalendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:_calendarStore];
         _eggscellentCalendar.source = eggSource;
         _eggscellentCalendar.title = @"Eggscellent";

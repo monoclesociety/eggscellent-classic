@@ -12,6 +12,10 @@
 
 @interface CalendarPreferencesViewController : NSViewController <MASPreferencesViewController>
 @property (weak) CalendarController *calendarController;
-@property (strong) IBOutlet NSPopUpButton* sourcesPopUpButton;
+@property (strong) IBOutlet NSButton *calendarIntegrationCheckbox;
+@property (strong) IBOutlet NSPopUpButton *sourcesPopUpButton;
 @property (nonatomic, unsafe_unretained) NSWindow *window;
+
+- (IBAction)changeSource:(id)sender;
+
 @end

@@ -9,11 +9,12 @@
 #import "CalendarPreferencesViewController.h"
 
 @interface CalendarPreferencesViewController ()
-
+@property (strong) NSArray *sources;
 @end
 
 @implementation CalendarPreferencesViewController
 @synthesize sourcesPopUpButton = _sourcesPopUpButton;
+@synthesize sources = _sources;
 @synthesize calendarController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,6 +28,21 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [self populateCalendarSourceList];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)changeSource:(id)sender
+{
+    NSInteger index = _sourcesPopUpButton.indexOfSelectedItem;
+    EKSource *source = [_sources objectAtIndex:index];
+    
+    calendarController.calendarSource = source;
+}
+
 #pragma mark - NSPopUpButton
 
 - (void)populateCalendarSourceList
@@ -34,23 +50,24 @@
     [_sourcesPopUpButton removeAllItems];
     
     //first populate the list
-    EKSource *selected = nil;
     EKSource *iCloud = nil;
-    NSArray *sources = [calendarController supportedCalendarSources];
-    for(EKSource *source in sources)
+    _sources = [calendarController supportedCalendarSources];
+    for(EKSource *source in _sources)
     {
         if(source.sourceType == EKSourceTypeCalDAV && [source.title isEqualToString:@"iCloud"])
         {
-            [_sourcesPopUpButton addItemWithTitle:source.title];
+            iCloud = source;
         }
+        [_sourcesPopUpButton addItemWithTitle:source.title];
     }
-        
-    EKSource *final = (selected == nil) ? iCloud : selected;
-    [_sourcesPopUpButton selectItemWithTitle:final.title];
-
-    //might be useful later
-//    [popUpButton.menu addItem:[NSMenuItem separatorItem]];
-//    [popUpButton addItemWithTitle:@"Choose Sound..."];
+    
+    //set selected source
+    EKSource *selectedSource = calendarController.calendarSource;
+    if(selectedSource == nil && iCloud != nil)
+    {
+        selectedSource = calendarController.calendarSource = iCloud;
+    }
+    [_sourcesPopUpButton selectItemWithTitle:selectedSource.title];
 }
 
 #pragma mark - MASPreferencesViewController Methods

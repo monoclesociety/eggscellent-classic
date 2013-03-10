@@ -10,7 +10,7 @@
 @interface CalendarController : NSObject
 
 @property (readonly) EKEventStore   *calendarStore;
-@property (readonly) EKSource       *calendarSource;
+@property (strong)   EKSource       *calendarSource;
 @property (readonly) EKCalendar     *eggscellentCalendar;
 
 - (NSArray *)supportedCalendarSources;

@@ -456,6 +456,7 @@ void *kContextActivePanel = &kContextActivePanel;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
 
+        
         //TODO: fix possible bug here with tracking pomodoros
         Egg *e = [Egg lastEgg];
         
@@ -467,8 +468,9 @@ void *kContextActivePanel = &kContextActivePanel;
         [[ModelStore sharedStore] save];
         [[Activity currentActivity] refresh];
         
-        
-        [calendarController createCalendarLogForEgg:e];
+        //Calendar integration support
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"calendarIntegrationEnabled"])
+            [calendarController createCalendarLogForEgg:e];
         
         //if you just met the requirements for auto-complete, then auto-complete!
         Activity *a = [Activity currentActivity];
@@ -779,6 +781,8 @@ void *kContextActivePanel = &kContextActivePanel;
         GeneralPreferencesViewController *generalViewController = [[GeneralPreferencesViewController alloc] init];
         CalendarPreferencesViewController *calendarViewController = [[CalendarPreferencesViewController alloc] initWithNibName:@"CalendarPreferencesViewController" bundle:nil];
         //DevicesPreferencesViewController *devicesViewController = [[DevicesPreferencesViewController alloc] init];
+        
+        calendarViewController.calendarController = calendarController;
         
         shortcutsViewController.hotKeyToggleStatusItemWindow = self.hotKeyToggleStatusItemWindow;
         shortcutsViewController.hotKeyStopPomodoro = self.hotKeyStopPomodoro;
