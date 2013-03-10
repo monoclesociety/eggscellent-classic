@@ -1,3 +1,6 @@
 [submodule "Vendor/AFNetworking"]
 	path = Vendor/AFNetworking
 	url = git://github.com/AFNetworking/AFNetworking.git
+[submodule "Vendor/Sparkle"]
+	path = Vendor/Sparkle
+	url = git@github.com:monoclesociety/Sparkle.git

@@ -37,7 +37,7 @@
     logEvent.endDate = endDate;
 
     //(0 of 2) - Create a brand new feature that will log all completed timers in a calendar.
-    NSString *titleFormat = NSLocalizedString(@"(%d of %d) - %@", @"Title - x of x");
+    NSString *titleFormat = NSLocalizedString(@"(%d of %d) - %@", @"(x of x) - Title");
     logEvent.title = [NSString stringWithFormat:titleFormat,
                                                 [egg.activity.completedEggs count],
                                                 [egg.activity.plannedCount intValue],
