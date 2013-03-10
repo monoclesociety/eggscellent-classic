@@ -15,7 +15,10 @@
 #import "GeneralPreferencesViewController.h"
 #import "NSButton+TextColor.h"
 
-//BETA
+#ifdef CLASSIC_APP
+#import <Sparkle/Sparkle.h>
+#endif
+
 #import "AppDelegate.h"
 
 @implementation OverviewViewController
@@ -72,10 +75,15 @@
         NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
         today = [calendar dateFromComponents:nowComponents];
         arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed == 1 AND modified > %@ AND removed == 0)", today, nil];
+        
+#ifdef CLASSIC_APP
+        NSString *title = NSLocalizedString(@"Check for updates...", @"Check for updates...");
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title action:@selector(checkForUpdates:) keyEquivalent:@""];
+        item.target = [SUUpdater sharedUpdater];
+        [optionsMenu insertItem:item atIndex:4];
+#endif
 
         //set target and action of double click to this class
-        [itemsTableView setTarget:self];
-        [itemsTableView setDoubleAction:@selector(cellDoubleClicked:)];
         [itemsTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
         
         //center the text    
@@ -87,17 +95,16 @@
         [shadow setShadowOffset:NSMakeSize(0.0,-1.0)];
         [shadow setShadowBlurRadius:1.0];
         [shadow setShadowColor:[NSColor colorWithDeviceWhite:0.0 alpha:0.7]];
-        
+
+        //set up stop/start/resume strings
         NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:pStyle, NSParagraphStyleAttributeName, txtFont, NSFontAttributeName, txtColor,  NSForegroundColorAttributeName, shadow, NSShadowAttributeName, nil];
-        
         startString = [[NSMutableAttributedString alloc] initWithString:@"Start" attributes:txtDict];
         stopString  = [[NSMutableAttributedString alloc] initWithString:@"Stop"  attributes:txtDict];
         resumeString = [[NSMutableAttributedString alloc] initWithString:@"Resume" attributes:txtDict];
-        
-        startButton.toolTip = @"Start a Task (⌘ Enter)";
-        addTaskButton.toolTip = @"Add a new task (⌘ N)";
-        
         [startButton setAttributedTitle:startString];
+        
+        startButton.toolTip = NSLocalizedString(@"Start a Task (⌘ Enter)", @"Start a Task (⌘ Enter)");
+        addTaskButton.toolTip = NSLocalizedString(@"Add a new task (⌘ N)", @"Add a new task (⌘ N)");
         
         currentClippedRow = -1;
         firstRun = YES;
@@ -177,7 +184,6 @@
     //set the appropriate selection
     NSTableRowView *rowView = [itemsTableView rowViewAtRow:row makeIfNecessary:NO];
     
-//    NSLog(@"Number of Tasks: %ld", [arrayController.arrangedObjects count]);
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:row];
     result.textField.stringValue = a.name;
     result.selected = rowView.selected;

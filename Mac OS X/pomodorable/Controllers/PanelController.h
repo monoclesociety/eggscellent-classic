@@ -27,7 +27,7 @@
 @property (nonatomic, assign) BOOL pinned;
 @property (unsafe_unretained, nonatomic, readonly) id<PanelControllerDelegate> delegate;
 
-- (id)initWithDelegate:(id<PanelControllerDelegate>)delegate;// panelViewController:(PanelViewController *)pvc;
+- (id)initWithDelegate:(id<PanelControllerDelegate>)delegate;
 
 - (void)openPanel;
 - (void)closePanel;

@@ -28,6 +28,10 @@
 
 #ifdef CLASSIC_APP
 #import <Sparkle/Sparkle.h>
+
+@implementation AppDelegate (classic)
+
+@end
 #endif
 
 void *kContextActivePanel = &kContextActivePanel;
@@ -56,11 +60,7 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    //TICKING LIKE A TIMEBOMB
-    //KYLEKYLE FIX THIS BEFORE RELEASE
-    //HACKHACK FIX THIS BEFORE RELEASE
-    //TODO FIX THIS BEFORE RELEASE
-    //FOR THE LOVE OF GOD FIX THIS BEFORE RELEASE
+    //setup timebomb
     NSDate *endDate = [NSDate dateWithString:@"2013-7-15 12:00:00 +0000"];
     NSDate *today = [NSDate date];
     if([today earlierDate:endDate] == endDate)
@@ -68,58 +68,29 @@ void *kContextActivePanel = &kContextActivePanel;
         [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
     }
     
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_DEFAULT_WIDTH];
-    statusView = [[StatusItemView alloc] initWithStatusItem:statusItem];
-    statusView.image = [NSImage imageNamed:@"status"];
-    statusView.target = self;
-    statusView.action = @selector(togglePanel:);
+    //Status View
+    [self setupStatusView];
     
-#ifdef __MAC_10_8
-    //set up user notifications
-    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
-#endif    
-    
-    //set up Application Notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:NSApplicationDidBecomeActiveNotification object:self];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
-
-    //set up Timer notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroTimeStarted:) name:EGG_START object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroClockTicked:) name:EGG_TICK object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroTimeCompleted:) name:EGG_COMPLETE object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroStopped:) name:EGG_STOP object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroRequested:) name:EGG_REQUESTED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
-    
-    //set up Activity
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED object:nil];
-    
-    //set up Idle Notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(awokeFromIdle:) name:@"AwokeFromUserIdle" object:nil];
-    
-    //set up audio notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioVolumeDidChange:) name:@"audioVolumeChanged" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(soundDidChange:) name:@"soundChanged" object:nil];
-    
-    //Misc Notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applescriptAppNotInFolder:) name:@"applescriptAppicationNotInFolder" object:nil];
-    
-    //then set up defaults
-    [self setDefaults];
+    //Notifications and Defaults
+    [self setupNotificationsAndDefaults];
     
     //set up chat integration controller
     chatController = [[ChatController alloc] init];
     
+    //Calendar Controller
+    calendarController = [[CalendarController alloc] init];
+    
     //get sync type
     [self setupTaskSyncing];
+    
+    //Sparkle framework updating (for non-app store build)
+#ifdef CLASSIC_APP
+    [SUUpdater sharedUpdater];
+#endif
     
     //load helper window if it's turned on in preferences
     BOOL shouldLoadHelperWindow = [[NSUserDefaults standardUserDefaults] boolForKey:@"displayMonitorWindow"];
     [self loadHelperWindow:shouldLoadHelperWindow withNormalSize:YES];
-
-    //TODO: remote controller for remote hover window.
-    [RemoteClientController sharedClient];
     
     //this is our idle timer to check if someone went idle
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"idleNudgePreference"])
@@ -150,8 +121,7 @@ void *kContextActivePanel = &kContextActivePanel;
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     windUpSound.volume = .1;
-
-    calendarController = [[CalendarController alloc] init];
+    
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
@@ -183,6 +153,54 @@ void *kContextActivePanel = &kContextActivePanel;
     return YES;
 }
 #endif
+
+#pragma mark - ApplicationDidFinishLaunching Methods
+
+- (void)setupStatusView
+{
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_DEFAULT_WIDTH];
+    statusView = [[StatusItemView alloc] initWithStatusItem:statusItem];
+    statusView.image = [NSImage imageNamed:@"status"];
+    statusView.target = self;
+    statusView.action = @selector(togglePanel:);
+}
+
+- (void)setupNotificationsAndDefaults
+{
+#ifdef __MAC_10_8
+    //set up user notifications
+    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+#endif
+    
+    //set up Application Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:NSApplicationDidBecomeActiveNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
+    
+    //set up Timer notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroTimeStarted:) name:EGG_START object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroClockTicked:) name:EGG_TICK object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroTimeCompleted:) name:EGG_COMPLETE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroStopped:) name:EGG_STOP object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroRequested:) name:EGG_REQUESTED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
+    
+    //set up Activity
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED object:nil];
+    
+    //set up Idle Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(awokeFromIdle:) name:@"AwokeFromUserIdle" object:nil];
+    
+    //set up audio notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioVolumeDidChange:) name:@"audioVolumeChanged" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(soundDidChange:) name:@"soundChanged" object:nil];
+    
+    //Misc Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applescriptAppNotInFolder:) name:@"applescriptAppicationNotInFolder" object:nil];
+    
+    //then set up defaults
+    [self setDefaults];
+}
 
 #pragma mark - Hot Key Methods
 
@@ -334,6 +352,7 @@ void *kContextActivePanel = &kContextActivePanel;
             [[NSUserDefaults standardUserDefaults] setValue:[d valueForKey:s] forKey:s];
         }
         
+        [[NSUserDefaults standardUserDefaults] setObject:@"http://www.monoclesociety.com/r/pomodorable/updates" forKey:@"SUFeedURL"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRunComplete"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
