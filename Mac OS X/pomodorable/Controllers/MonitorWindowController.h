@@ -43,6 +43,12 @@
     NSAttributedString              *stopString;
     NSAttributedString              *resumeString;
     
+    AVAudioPlayer                   *hatchSound1;
+    AVAudioPlayer                   *hatchSound2;
+    AVAudioPlayer                   *hatchSound3;
+    
+    double                          _timeEstimated;
+    
     //non view members
     Activity                        *currentActivity;
 }

@@ -121,7 +121,7 @@ void *kContextActivePanel = &kContextActivePanel;
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     windUpSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     windUpSound.volume = .1;
-    
+    [windUpSound prepareToPlay];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
