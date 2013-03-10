@@ -583,7 +583,6 @@
 /* Begin PBXFileReference section */
 		3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		3D0FDDE316ECED5800815B2C /* Eggscellent copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eggscellent copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0FDDE416ECED5800815B2C /* Eggscellent copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Eggscellent copy-Info.plist"; path = "/Users/kinkade/Documents/source/monoclesociety/eggscellent/Mac OS X/Eggscellent copy-Info.plist"; sourceTree = "<absolute>"; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
 		3D1564E815697C9700D70EBB /* OmniFocusSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmniFocusSyncController.h; sourceTree = "<group>"; };
@@ -1405,7 +1404,6 @@
 				F48A5B331465F38500BFD7B2 /* Frameworks */,
 				F48A5B311465F38500BFD7B2 /* Products */,
 				3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */,
-				3D0FDDE416ECED5800815B2C /* Eggscellent copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1876,9 +1874,9 @@
 			productReference = 3DD61E57158A4A54001947B1 /* helper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F48A5B2F1465F38500BFD7B2 /* Eggscellent AppStore */ = {
+		F48A5B2F1465F38500BFD7B2 /* Eggscellent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent AppStore" */;
+			buildConfigurationList = F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent" */;
 			buildPhases = (
 				F48A5B2C1465F38500BFD7B2 /* Sources */,
 				F48A5B2D1465F38500BFD7B2 /* Frameworks */,
@@ -1890,7 +1888,7 @@
 			);
 			dependencies = (
 			);
-			name = "Eggscellent AppStore";
+			name = Eggscellent;
 			productName = Pomodorable;
 			productReference = F48A5B301465F38500BFD7B2 /* Eggscellent.app */;
 			productType = "com.apple.product-type.application";
@@ -1923,7 +1921,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				F48A5B2F1465F38500BFD7B2 /* Eggscellent AppStore */,
+				F48A5B2F1465F38500BFD7B2 /* Eggscellent */,
 				3DD61E56158A4A54001947B1 /* helper */,
 				3D0FDCE716ECED5800815B2C /* Eggscellent Classic */,
 			);
@@ -2541,9 +2539,9 @@
 					"CONFIGURATION_$(CONFIGURATION)",
 					"CLASSIC_APP=1",
 				);
-				INFOPLIST_FILE = "Eggscellent copy-Info.plist";
+				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "Eggscellent copy";
+				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2566,9 +2564,9 @@
 					"CONFIGURATION_$(CONFIGURATION)",
 					"CLASSIC_APP=1",
 				);
-				INFOPLIST_FILE = "Eggscellent copy-Info.plist";
+				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "Eggscellent copy";
+				PRODUCT_NAME = Eggscellent;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2669,10 +2667,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
@@ -2691,10 +2686,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
@@ -2736,7 +2728,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent AppStore" */ = {
+		F48A5B511465F38600BFD7B2 /* Build configuration list for PBXNativeTarget "Eggscellent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48A5B521465F38600BFD7B2 /* Debug */,
