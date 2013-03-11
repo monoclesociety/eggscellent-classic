@@ -110,21 +110,21 @@
     NSString *lul = [[NSBundle mainBundle] pathForResource:@"4_egg_nudge_1" ofType:@"aif"];
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     hatchSound1 = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-   // hatchSound1.volume = .1;
+    hatchSound1.volume = .1;
     [hatchSound1 prepareToPlay];
     
     //hatchSound2
     lul = [[NSBundle mainBundle] pathForResource:@"6_egg_nudge_2" ofType:@"aif"];
     fileData = [NSData dataWithContentsOfFile:lul];
     hatchSound2 = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    //hatchSound2.volume = .1;
+    hatchSound2.volume = .1;
     [hatchSound2 prepareToPlay];
     
     //hatchSound3
     lul = [[NSBundle mainBundle] pathForResource:@"8_egg_nudge_3" ofType:@"aif"];
     fileData = [NSData dataWithContentsOfFile:lul];
     hatchSound3 = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
-    // hatchSound3.volume = .1;
+    hatchSound3.volume = .1;
     [hatchSound3 prepareToPlay];
 }
 
