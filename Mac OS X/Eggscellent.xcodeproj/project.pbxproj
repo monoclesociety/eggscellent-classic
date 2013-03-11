@@ -582,7 +582,7 @@
 
 /* Begin PBXFileReference section */
 		3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
-		3D0FDDE316ECED5800815B2C /* Eggscellent copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eggscellent copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0FDDE316ECED5800815B2C /* Eggscellent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggscellent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
 		3D1564E815697C9700D70EBB /* OmniFocusSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmniFocusSyncController.h; sourceTree = "<group>"; };
@@ -1412,7 +1412,7 @@
 			children = (
 				F48A5B301465F38500BFD7B2 /* Eggscellent.app */,
 				3DD61E57158A4A54001947B1 /* helper.app */,
-				3D0FDDE316ECED5800815B2C /* Eggscellent copy.app */,
+				3D0FDDE316ECED5800815B2C /* Eggscellent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1854,7 +1854,7 @@
 			);
 			name = "Eggscellent Classic";
 			productName = Pomodorable;
-			productReference = 3D0FDDE316ECED5800815B2C /* Eggscellent copy.app */;
+			productReference = 3D0FDDE316ECED5800815B2C /* Eggscellent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3DD61E56158A4A54001947B1 /* helper */ = {

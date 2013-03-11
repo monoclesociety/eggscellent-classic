@@ -33,14 +33,7 @@
     
     // Get the appropriate calendar
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    // Create the start date components
-    NSDateComponents *startDateComponents = [[NSDateComponents alloc] init];
-    startDateComponents.day = -60;
-    NSDate *startDate = [calendar dateByAddingComponents:startDateComponents
-                                                  toDate:[NSDate date]
-                                                 options:0];
-    
+     
     // Create the end date components
     NSDateComponents *endDateComponents = [[NSDateComponents alloc] init];
     endDateComponents.day = 1;
@@ -49,13 +42,12 @@
                                                       options:0];
     
     // Create the predicate. eventStore is an instance variable.
-    NSPredicate *predicate = [mainStore predicateForIncompleteRemindersWithDueDateStarting:startDate
+    NSPredicate *predicate = [mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
                                                                                     ending:endDate
                                                                                  calendars:nil];
     
     
-    [mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
-     {
+    [mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders){
          for(EKReminder *reminder in reminders)
          {
              NSString *ID = reminder.calendarItemExternalIdentifier;//.calendarItemIdentifier;
@@ -69,7 +61,7 @@
              [self syncWithDictionary:syncDictionary];
          }
          
-         [self completeActivitiesForSource:ActivitySourceThings withDictionary:importedIDs];
+         [self completeActivitiesForSource:ActivitySourceReminders withDictionary:importedIDs];
          [self cleanUpSync];
      }];
 }
