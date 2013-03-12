@@ -48,6 +48,10 @@
     NSAttributedString *stopString = [[NSMutableAttributedString alloc] initWithString:@"Clear" attributes:txtDict];
     [clearButton setAttributedTitle:stopString];
     ((ColorView *)self.window.contentView).backgroundColor = textView.backgroundColor;
+    
+//    NSButton *closeButton = [NSWindow
+//                   standardWindowButton:NSWindowCloseButton forStyleMask:NSTitledWindowMask];
+//    [self.window.contentView addSubview:closeButton];
 }
 
 - (void)showWindow:(id)sender

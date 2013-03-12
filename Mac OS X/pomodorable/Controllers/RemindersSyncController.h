@@ -16,9 +16,11 @@
 @class EKEventStore;
 @interface RemindersSyncController : TaskSyncController
 {
-    EKEventStore *mainStore;
     BOOL lameSyncActivityHack;
 }
-
+@property (strong) EKEventStore *mainStore;
+@property (strong) EKCalendar *defaultCalendar;
 - (void)superSync;
+- (NSArray *)calendarsForReminders;
+
 @end

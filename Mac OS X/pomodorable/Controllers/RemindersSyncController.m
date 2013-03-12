@@ -9,7 +9,8 @@
 #import "RemindersSyncController.h"
 
 @implementation RemindersSyncController
-#ifdef __MAC_10_8
+@synthesize mainStore = _mainStore;
+@synthesize defaultCalendar = _defaultCalendar;
 
 - (id)init
 {
@@ -17,12 +18,15 @@
     if (self)
     {
         // Initialize self.
-        mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
+        self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
+
+//        EKCalendar *shouldFail = [self.mainStore calendarWithIdentifier:@"imasuck!"];
+//        EKCalendar *adf = self.mainStore.defaultCalendarForNewReminders;
+//        NSLog(@"default calendar: %@", adf.title, nil);
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(storeChanged:)
                                                      name:EKEventStoreChangedNotification
-                                                   object:mainStore];
-        [self superSync];
+                                                   object:_mainStore];
     }
     return self;
 }
@@ -42,15 +46,17 @@
                                                       options:0];
     
     // Create the predicate. eventStore is an instance variable.
-    NSPredicate *predicate = [mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
+    NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
                                                                                     ending:endDate
                                                                                  calendars:nil];
-    
-    
-    [mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders){
+
+    [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
+    {
+//        NSLog(@"number of reminders: %ld", (unsigned long)[reminders count
+//                                                           ], nil);
          for(EKReminder *reminder in reminders)
          {
-             NSString *ID = reminder.calendarItemExternalIdentifier;//.calendarItemIdentifier;
+             NSString *ID = reminder.calendarItemExternalIdentifier;
              NSString *name = reminder.title;
              NSNull *plannedCount = [NSNull null];
              NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
@@ -68,6 +74,13 @@
 
 - (BOOL)sync
 {
+    if(lameSyncActivityHack)
+    {
+        lameSyncActivityHack = NO;
+        return NO;
+    }
+
+    [self superSync];
     return YES;
 }
 
@@ -76,18 +89,17 @@
     if([activity.source intValue] != ActivitySourceReminders)
         return;
 
-    EKReminder *reminder = (EKReminder *)[[mainStore calendarItemsWithExternalIdentifier:activity.sourceID] lastObject];
+    EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:activity.sourceID] lastObject];
     reminder.completed = [activity.completed boolValue];
     reminder.title = activity.name;
     
     lameSyncActivityHack = YES;
-    [mainStore saveReminder:reminder commit:YES error:NULL];
+    [_mainStore saveReminder:reminder commit:YES error:NULL];
 }
 
 - (void)dealloc
 {
-    mainStore = nil;
-
+    _mainStore = nil;
 }
 
 #pragma mark - EKEventStore Notifications
@@ -102,5 +114,48 @@
     [self superSync];
 }
 
-#endif
+#pragma mark - EKEventStore Stack
+
+- (NSArray *)calendarsForReminders
+{
+    NSArray *arr = nil;
+    arr = [_mainStore calendarsForEntityType:EKEntityTypeReminder];
+    return arr;
+}
+
+- (void)setSystemReminderAsDefault
+{
+    EKCalendar *defCalendar = _mainStore.defaultCalendarForNewReminders;
+    self.defaultCalendar = defCalendar;
+    [[NSUserDefaults standardUserDefaults] setValue:_defaultCalendar.calendarIdentifier forKey:@"remindersCalendarIdentifier"];
+}
+
+- (void)setDefaultCalendar:(EKCalendar *)defaultCalendar
+{
+    _defaultCalendar = defaultCalendar;
+    NSString *sourceIdentifier = _defaultCalendar.calendarIdentifier;
+    [[NSUserDefaults standardUserDefaults] setObject:sourceIdentifier forKey:@"remindersCalendarIdentifier"];
+}
+
+- (EKCalendar *)defaultCalendar
+{
+    if(_defaultCalendar)
+        return _defaultCalendar;
+    
+    NSString *calendarIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:@"remindersCalendarIdentifier"];
+    if(!calendarIdentifier)
+    {
+        [self setSystemReminderAsDefault];
+    }
+    else
+    {
+        _defaultCalendar = [_mainStore calendarWithIdentifier:calendarIdentifier];
+        if(!_defaultCalendar)
+        {
+            [self setSystemReminderAsDefault];
+        }
+    }
+    
+    return _defaultCalendar;
+}
 @end

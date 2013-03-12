@@ -58,6 +58,12 @@ void *kContextActivePanel = &kContextActivePanel;
     [panelController.window makeKeyAndOrderFront:nil];
 }
 
+//- (void)applicationWillBecomeActive:(NSNotification *)notification;
+//{
+//    [taskSyncController sync];
+//    [[self panelController] openPanel];
+//}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     //setup timebomb
@@ -129,11 +135,6 @@ void *kContextActivePanel = &kContextActivePanel;
     // Save changes in the application's managed object context before the application terminates.
     [[ModelStore sharedStore] save];
     return NSTerminateNow;
-}
-
-- (void)applicationDidBecomeActive:(NSNotification *)aNotification
-{
-    
 }
 
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window 
@@ -277,7 +278,7 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)toggleNoteKeyed:(id)sender;
 {
-
+//
 //    noteWindowController = [[NoteWindowController alloc] initWithWindowNibName:@"NoteWindowController"];
 //    
 //    if([noteWindowController.window isVisible])
@@ -290,7 +291,7 @@ void *kContextActivePanel = &kContextActivePanel;
 //        [noteWindowController.window makeKeyAndOrderFront:self];
 //        [NSApp activateIgnoringOtherApps:YES];
 //    }
-    
+//
 //    if([[NSUserDefaults standardUserDefaults] integerForKey:@"notesType"])
 //    {
 //    NSURL *mainAppUrl = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.apple.notes"];
@@ -369,7 +370,7 @@ void *kContextActivePanel = &kContextActivePanel;
     self.hotKeyStopPomodoro = [self hotKeyWithKey:HOTKEY_STOP_POMODORO withSelector:@selector(stopPomodoroKeyed:)];
     self.hotKeyToggleStatusItemWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_STATUSITEM_WINDOW withSelector:@selector(togglePanel:)];
     self.hotKeyToggleHoverWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_HOVER_WINDOW withSelector:@selector(toggleHoverWindowKeyed:)];
-    //self.hotKeyToggleNoteWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_NOTE_WINDOW withSelector:@selector(toggleNoteKeyed:)];
+    self.hotKeyToggleNoteWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_NOTE_WINDOW withSelector:@selector(toggleNoteKeyed:)];
     
 }
 
