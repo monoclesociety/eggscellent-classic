@@ -544,6 +544,7 @@
     {
         //first remove all previous items (just in case a new list was created)
         [listsSubMenu.submenu removeAllItems];
+        [listsSubMenu setHidden:NO];
         
         RemindersSyncController *reminders = (RemindersSyncController *)[TaskSyncController currentController];
         NSArray *lists = [reminders calendarsForReminders];
@@ -559,6 +560,10 @@
             if(menuItem.state)
                 selectedListMenuItem = menuItem;
         }
+    }
+    else
+    {
+        [listsSubMenu setHidden:YES];
     }
 }
 
