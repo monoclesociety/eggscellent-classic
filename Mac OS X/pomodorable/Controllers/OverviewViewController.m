@@ -119,6 +119,7 @@
 - (void)viewWillAppear
 {
     [itemsTableView deselectAll:self];
+    [self populateListSubMenu];
 }
 
 - (void)viewDidAppear
@@ -542,15 +543,37 @@
     if([[TaskSyncController currentController] isKindOfClass:[RemindersSyncController class]])
     {
         //first remove all previous items (just in case a new list was created)
+        [listsSubMenu.submenu removeAllItems];
+        
         RemindersSyncController *reminders = (RemindersSyncController *)[TaskSyncController currentController];
         NSArray *lists = [reminders calendarsForReminders];
         for(EKCalendar *list in lists)
         {
-            //add submenu here
-            //give it self as target and listSubMenuSelected: as action
-            //if the calendar is equal to the defaultCalendar, mark it as selected
+            NSMenuItem *menuItem = [listsSubMenu.submenu addItemWithTitle:list.title
+                                                                   action:@selector(listSubMenuSelected:)
+                                                            keyEquivalent:@""];
+            
+            menuItem.target = self;
+            menuItem.representedObject = list;
+            menuItem.state = ([list.title isEqualToString:[reminders defaultCalendar].title]);
+            if(menuItem.state)
+                selectedListMenuItem = menuItem;
         }
     }
+}
+
+- (void)listSubMenuSelected:(id)sender
+{
+    NSMenuItem *newItem = (NSMenuItem *)sender;
+    EKCalendar *newList = newItem.representedObject;
+    RemindersSyncController *reminders = (RemindersSyncController *)[TaskSyncController currentController];
+    
+    reminders.defaultCalendar = newList;
+    newItem.state = 1;
+    selectedListMenuItem.state = 0;
+    selectedListMenuItem = newItem;
+    
+    [reminders sync];
 }
 
 - (void)setRowclippedAtIndex:(int)index;
