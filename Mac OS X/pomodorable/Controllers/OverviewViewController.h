@@ -14,6 +14,7 @@
 {
     IBOutlet NSTableView            *itemsTableView;
     IBOutlet NSMenu                 *optionsMenu;
+    IBOutlet NSMenuItem             *listsSubMenu;
     IBOutlet NSArrayController      *arrayController;
     IBOutlet NSButton               *startButton;
     IBOutlet NSButton               *addTaskButton;

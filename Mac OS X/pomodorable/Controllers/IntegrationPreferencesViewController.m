@@ -37,7 +37,6 @@
     int selectedTag = [[[NSUserDefaults standardUserDefaults] valueForKey:@"taskManagerType"] intValue];
     [taskSyncIntegration selectItemWithTag:selectedTag];
     
-    
     if(NSClassFromString(@"NSUserNotification"))
     {
         NSMenuItem *reminderitem = [taskSyncIntegration itemAtIndex:1];
@@ -83,8 +82,7 @@
 - (void)populateRemindersList
 {
     [taskList removeAllItems];
-    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-    RemindersSyncController *reminders = (RemindersSyncController *)appDelegate.taskSyncController;
+    RemindersSyncController *reminders = (RemindersSyncController *)[TaskSyncController currentController];
     lists = [reminders calendarsForReminders];
     
     for(EKCalendar *list in lists)

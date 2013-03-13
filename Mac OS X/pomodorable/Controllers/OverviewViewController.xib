@@ -510,7 +510,6 @@
 						<string key="NSFrame">{{110, -24}, {100, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="51660543">
@@ -665,6 +664,19 @@
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="845473866"/>
 						<reference key="NSMixedImage" ref="1048829551"/>
+					</object>
+					<object class="NSMenuItem" id="759385113">
+						<reference key="NSMenu" ref="561729141"/>
+						<string key="NSTitle">Reminders Lists</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="845473866"/>
+						<reference key="NSMixedImage" ref="1048829551"/>
+						<string key="NSAction">submenuAction:</string>
+						<object class="NSMenu" key="NSSubmenu" id="555665576">
+							<string key="NSTitle">Reminders Lists</string>
+							<array class="NSMutableArray" key="NSMenuItems"/>
+						</object>
 					</object>
 					<object class="NSMenuItem" id="247474379">
 						<reference key="NSMenu" ref="561729141"/>
@@ -866,6 +878,14 @@
 						<reference key="destination" ref="174152807"/>
 					</object>
 					<int key="connectionID">618</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">listsSubMenu</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="759385113"/>
+					</object>
+					<int key="connectionID">634</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1716,6 +1736,7 @@
 							<reference ref="247474379"/>
 							<reference ref="986329271"/>
 							<reference ref="897077596"/>
+							<reference ref="759385113"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2091,6 +2112,20 @@
 						<reference key="object" ref="452442571"/>
 						<reference key="parent" ref="921643476"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">626</int>
+						<reference key="object" ref="759385113"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="555665576"/>
+						</array>
+						<reference key="parent" ref="561729141"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">627</int>
+						<reference key="object" ref="555665576"/>
+						<array class="NSMutableArray" key="children"/>
+						<reference key="parent" ref="759385113"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2244,12 +2279,14 @@
 				<string key="607.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="615.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="624.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="626.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="627.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">625</int>
+			<int key="maxID">634</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2382,9 +2419,11 @@
 						<string key="debugSelected:">id</string>
 						<string key="decreasePomodoroCountForSelectedRow:">id</string>
 						<string key="increasePomodoroCountForSelectedRow:">id</string>
+						<string key="noteSelected:">id</string>
 						<string key="openPreferences:">id</string>
 						<string key="pinPanel:">id</string>
 						<string key="quitApplication:">id</string>
+						<string key="removeItem:">id</string>
 						<string key="showAboutMenu:">id</string>
 						<string key="showHelpMenu:">id</string>
 						<string key="showOptionsMenu:">id</string>
@@ -2419,6 +2458,10 @@
 							<string key="name">increasePomodoroCountForSelectedRow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="noteSelected:">
+							<string key="name">noteSelected:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="openPreferences:">
 							<string key="name">openPreferences:</string>
 							<string key="candidateClassName">id</string>
@@ -2429,6 +2472,10 @@
 						</object>
 						<object class="IBActionInfo" key="quitApplication:">
 							<string key="name">quitApplication:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="removeItem:">
+							<string key="name">removeItem:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showAboutMenu:">
@@ -2453,6 +2500,7 @@
 						<string key="arrayController">NSArrayController</string>
 						<string key="itemsTableView">NSTableView</string>
 						<string key="listScrollView">NSScrollView</string>
+						<string key="listsSubMenu">NSMenuItem</string>
 						<string key="optionsMenu">NSMenu</string>
 						<string key="searchField">NSSearchField</string>
 						<string key="startButton">NSButton</string>
@@ -2473,6 +2521,10 @@
 						<object class="IBToOneOutletInfo" key="listScrollView">
 							<string key="name">listScrollView</string>
 							<string key="candidateClassName">NSScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="listsSubMenu">
+							<string key="name">listsSubMenu</string>
+							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="optionsMenu">
 							<string key="name">optionsMenu</string>

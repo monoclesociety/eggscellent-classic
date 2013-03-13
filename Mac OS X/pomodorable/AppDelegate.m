@@ -722,6 +722,7 @@ void *kContextActivePanel = &kContextActivePanel;
     switch(taskType)
     {
         case ActivitySourceNone:
+            taskSyncController = nil;
             break;
         case ActivitySourceReminders:
             taskSyncController = [[RemindersSyncController alloc] init];
@@ -733,6 +734,8 @@ void *kContextActivePanel = &kContextActivePanel;
             taskSyncController = [[ThingsSyncController alloc] init];
             break;
     }
+    
+    [TaskSyncController setCurrentController:taskSyncController];
     
     [taskSyncController sync];
 }

@@ -44,6 +44,9 @@
         
         //set up Activity notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED object:nil];
+        
+        //set up Sync notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
     
     }
     return self;
@@ -527,7 +530,28 @@
     }
 }
 
+- (void)taskManagerTypeChanged:(NSNotification *)note
+{
+    [self populateListSubMenu];
+}
+
 #pragma mark - custom methods
+
+- (void)populateListSubMenu
+{
+    if([[TaskSyncController currentController] isKindOfClass:[RemindersSyncController class]])
+    {
+        //first remove all previous items (just in case a new list was created)
+        RemindersSyncController *reminders = (RemindersSyncController *)[TaskSyncController currentController];
+        NSArray *lists = [reminders calendarsForReminders];
+        for(EKCalendar *list in lists)
+        {
+            //add submenu here
+            //give it self as target and listSubMenuSelected: as action
+            //if the calendar is equal to the defaultCalendar, mark it as selected
+        }
+    }
+}
 
 - (void)setRowclippedAtIndex:(int)index;
 {

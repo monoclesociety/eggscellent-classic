@@ -11,6 +11,19 @@
 @implementation TaskSyncController
 @synthesize importedIDs;
 
+#pragma mark - Class based methods
+
+static TaskSyncController *singleton;
++ (TaskSyncController *)currentController;
+{
+    return singleton;
+}
+
++ (void)setCurrentController:(TaskSyncController *)controller;
+{
+    singleton = controller;
+}
+
 #pragma mark - General methods
         
 - (id)init

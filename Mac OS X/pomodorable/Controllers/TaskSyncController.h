@@ -20,6 +20,9 @@
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;
 
++ (TaskSyncController *)currentController;
++ (void)setCurrentController:(TaskSyncController *)controller;
+
 - (BOOL)sync;
 - (void)syncActivity:(Activity *)activity;
 - (void)cleanUpSync;
