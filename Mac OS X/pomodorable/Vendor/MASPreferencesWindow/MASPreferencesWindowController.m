@@ -57,6 +57,13 @@ static NSString *const PreferencesKeyForViewBounds (NSString *identifier)
     [[self window] setDelegate:nil];
 }
 
+- (void)showWindow:(id)sender
+{
+    [super showWindow:sender];
+    if ([_selectedViewController respondsToSelector:@selector(viewWillAppear)])
+        [_selectedViewController viewWillAppear];
+}
+
 #pragma mark -
 
 - (void)windowDidLoad

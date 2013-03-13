@@ -33,6 +33,11 @@
     [self populateCalendarSourceList];
 }
 
+- (void)viewWillAppear
+{
+    [self populateCalendarSourceList];
+}
+
 #pragma mark - IBActions
 
 - (IBAction)changeSource:(id)sender
