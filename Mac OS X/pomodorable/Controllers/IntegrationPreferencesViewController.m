@@ -5,7 +5,12 @@
 //  Created by Kyle Kinkade on 11/22/11.
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
+#ifdef __MAC_10_8
+#import <EventKit/EventKit.h>
+#import "RemindersSyncController.h"
+#endif
 
+#import "AppDelegate.h"
 #import "IntegrationPreferencesViewController.h"
 #import "NSAttributedString+Hyperlink.h"
 
@@ -40,6 +45,11 @@
     }
 }
 
+- (void)viewWillAppear
+{
+    [self setupTaskList];
+}
+
 #pragma mark - Helper methods
 
 - (void)setupURL:(NSURL *)url forTextField:(NSTextField *)textField
@@ -53,8 +63,41 @@
     
     // set the attributed string to the NSTextField
     [textField setAttributedStringValue: string];
-    
 }
+
+- (void)setupTaskList
+{
+    if((int)[taskSyncIntegration selectedTag] == ActivitySourceReminders)
+    {
+        [taskList setHidden:NO];
+        [taskListDescription setHidden:NO];
+        [self populateRemindersList];
+    }
+    else
+    {
+        [taskList setHidden:YES];
+        [taskList setHidden:YES];
+    }
+}
+
+- (void)populateRemindersList
+{
+    [taskList removeAllItems];
+    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+    RemindersSyncController *reminders = (RemindersSyncController *)appDelegate.taskSyncController;
+    lists = [reminders calendarsForReminders];
+    
+    for(EKCalendar *list in lists)
+    {
+        [taskList addItemWithTitle:list.title];
+    }
+    
+    EKCalendar *defaultList = [reminders defaultCalendar];
+    [taskList selectItemWithTitle:defaultList.title];
+}
+
+#ifdef __MAC_10_8
+#endif
 
 #pragma mark - MASPreferencesViewController Methods
 
@@ -91,8 +134,19 @@
 
     [[NSUserDefaults standardUserDefaults] setValue:newlySelectedTag forKey:@"taskManagerType"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"taskManagerTypeChanged" object:newlySelectedTag];
+    
+    [self setupTaskList];
+}
+
+- (IBAction)taskListChanged:(id)sender;
+{
+    NSInteger index = taskList.indexOfSelectedItem;
+    EKCalendar *calendar = [lists objectAtIndex:index];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+    RemindersSyncController *reminders = (RemindersSyncController *)appDelegate.taskSyncController;
+    reminders.defaultCalendar = calendar;
 }
 
 #pragma mark NSTextField Delegate Methods

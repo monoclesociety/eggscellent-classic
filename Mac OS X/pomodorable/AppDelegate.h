@@ -61,6 +61,7 @@
     NSAlert     *errorAlert;
 }
 @property (nonatomic, strong) PanelController *panelController;
+@property (nonatomic, strong) TaskSyncController *taskSyncController;
 @property (nonatomic, strong) SGHotKey *hotKeyStopPomodoro;
 @property (nonatomic, strong) SGHotKey *hotKeyExternalInterrupt;
 @property (nonatomic, strong) SGHotKey *hotKeyInternalInterrupt;

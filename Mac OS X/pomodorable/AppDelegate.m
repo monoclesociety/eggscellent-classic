@@ -37,6 +37,7 @@
 void *kContextActivePanel = &kContextActivePanel;
 @implementation AppDelegate
 @synthesize panelController;
+@synthesize taskSyncController;
 @synthesize hotKeyExternalInterrupt;
 @synthesize hotKeyInternalInterrupt;
 @synthesize hotKeyStopPomodoro;
