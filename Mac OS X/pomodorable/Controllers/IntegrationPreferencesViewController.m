@@ -76,7 +76,7 @@
     else
     {
         [taskList setHidden:YES];
-        [taskList setHidden:YES];
+        [taskListDescription setHidden:YES];
     }
 }
 

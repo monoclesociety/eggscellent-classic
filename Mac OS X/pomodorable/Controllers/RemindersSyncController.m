@@ -35,25 +35,23 @@
 {
     self.importedIDs = [NSMutableDictionary dictionary];
     
-    // Get the appropriate calendar
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-     
-    // Create the end date components
-    NSDateComponents *endDateComponents = [[NSDateComponents alloc] init];
-    endDateComponents.day = 1;
-    NSDate *endDate = [calendar dateByAddingComponents:endDateComponents
-                                                       toDate:[NSDate date]
-                                                      options:0];
+//    // Get the appropriate calendar
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//     
+//    // Create the end date components
+//    NSDateComponents *endDateComponents = [[NSDateComponents alloc] init];
+//    endDateComponents.day = 1;
+//    NSDate *endDate = [calendar dateByAddingComponents:endDateComponents
+//                                                       toDate:[NSDate date]
+//                                                      options:0];
     
     // Create the predicate. eventStore is an instance variable.
     NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
-                                                                                    ending:endDate
-                                                                                 calendars:nil];
-
+                                                                                     ending:nil //endDate
+                                                                                  calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
+    
     [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
-    {
-//        NSLog(@"number of reminders: %ld", (unsigned long)[reminders count
-//                                                           ], nil);
+     {
          for(EKReminder *reminder in reminders)
          {
              NSString *ID = reminder.calendarItemExternalIdentifier;
