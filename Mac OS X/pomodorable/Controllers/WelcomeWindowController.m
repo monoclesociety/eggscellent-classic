@@ -76,10 +76,6 @@
 
 - (void)populateMoreInformation
 {
-    //setup pomodorable Feedback and Support link
-    [self setupURL:[NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/support"]
-      forTextField:pomodorableFeedbackAndSupportLink];
-    
     //setup pomdorable facebook link
     [self setupURL:[NSURL URLWithString:@"http://www.facebook.com/eggscellentapp"]
       forTextField:pomodorableFacebookLink];
@@ -124,7 +120,6 @@
 
 - (IBAction)presentIntegrationView:(id)sender;
 {
-    [self processAutoLogin];
     [generalOptionsView removeFromSuperview];
     [self.window.contentView addSubview:integrationOptionsView];
 }
@@ -137,6 +132,7 @@
 
 - (IBAction)finishWelcomeExperience:(id)sender;
 {
+    [self processAutoLogin];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"finishedFirstRun"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self close];

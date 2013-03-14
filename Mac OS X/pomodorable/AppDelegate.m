@@ -354,7 +354,7 @@ void *kContextActivePanel = &kContextActivePanel;
             [[NSUserDefaults standardUserDefaults] setValue:[d valueForKey:s] forKey:s];
         }
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"http://www.monoclesociety.com/r/pomodorable/updates" forKey:@"SUFeedURL"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"http://www.eggscellentapp.com/beta/eggscellent.xml" forKey:@"SUFeedURL"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRunComplete"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         

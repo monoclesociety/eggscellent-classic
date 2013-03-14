@@ -12,7 +12,6 @@
 {
     IBOutlet NSView *generalOptionsView;
     IBOutlet NSView *integrationOptionsView;
-    
     IBOutlet NSView *moreInformationView;
     IBOutlet NSTextField *pomodoroBookLink;
     IBOutlet NSTextField *pomodoroCheatSheetLink;
