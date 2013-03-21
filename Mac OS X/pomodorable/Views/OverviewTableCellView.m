@@ -22,7 +22,7 @@
 {
     [super awakeFromNib];
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(textDidChange:) 
+                                             selector:@selector(textDidEndEditing:) 
                                                  name:NSControlTextDidEndEditingNotification 
                                                object:self.textField];
     
@@ -246,16 +246,14 @@
 
 #pragma mark - NSTextField Delegate Methods
 
-- (void)textDidChange:(NSNotification *)aNotification
+- (void)textDidEndEditing:(NSNotification *)aNotification
 {
     Activity *a = (Activity *)self.objectValue;
     a.name = self.textField.stringValue;
+    
+    if(!a.sourceID)
+       [[TaskSyncController currentController] saveNewActivity:a];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:a];
-}
-
-- (void)textDidEnd:(NSNotification *)aNotification
-{
-
 }
 
 @end

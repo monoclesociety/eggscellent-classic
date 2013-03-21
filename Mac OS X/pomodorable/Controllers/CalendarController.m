@@ -84,6 +84,8 @@
     _calendarSource = calendarSource;
     NSString *sourceIdentifier = _calendarSource.sourceIdentifier;
     [[NSUserDefaults standardUserDefaults] setObject:sourceIdentifier forKey:@"calendarSourceIdentifier"];
+    
+    _eggscellentCalendar = nil;
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"eggscellentCalendarIdentifier"];
 }
 
@@ -97,12 +99,26 @@
     {
         EKSource *eggSource = [self calendarSource];
         
-        _eggscellentCalendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:_calendarStore];
-        _eggscellentCalendar.source = eggSource;
-        _eggscellentCalendar.title = @"Eggscellent";
+        EKCalendar *cal = nil;
+        NSSet *calendars = [eggSource calendarsForEntityType:EKEntityTypeEvent];
+        for(EKCalendar *calendar in calendars)
+        {
+            if([calendar.title isEqualToString:@"Eggscellent"])
+            {
+                cal = calendar;
+            }
+        }
         
-        NSError *error = nil;
-        [_calendarStore saveCalendar:_eggscellentCalendar commit:YES error:&error];
+        if(!cal)
+        {
+            cal = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:_calendarStore];
+            cal.source = eggSource;
+            cal.title = @"Eggscellent";
+            NSError *error = nil;
+            [_calendarStore saveCalendar:cal commit:YES error:&error];
+        }
+        _eggscellentCalendar = cal;
+        
         [[NSUserDefaults standardUserDefaults] setValue:_eggscellentCalendar.calendarIdentifier forKey:@"eggscellentCalendarIdentifier"];
     }
     else

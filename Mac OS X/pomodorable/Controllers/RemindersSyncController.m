@@ -19,10 +19,6 @@
     {
         // Initialize self.
         self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
-
-//        EKCalendar *shouldFail = [self.mainStore calendarWithIdentifier:@"imasuck!"];
-//        EKCalendar *adf = self.mainStore.defaultCalendarForNewReminders;
-//        NSLog(@"default calendar: %@", adf.title, nil);
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(storeChanged:)
                                                      name:EKEventStoreChangedNotification
@@ -35,19 +31,9 @@
 {
     self.importedIDs = [NSMutableDictionary dictionary];
     
-//    // Get the appropriate calendar
-//    NSCalendar *calendar = [NSCalendar currentCalendar];
-//     
-//    // Create the end date components
-//    NSDateComponents *endDateComponents = [[NSDateComponents alloc] init];
-//    endDateComponents.day = 1;
-//    NSDate *endDate = [calendar dateByAddingComponents:endDateComponents
-//                                                       toDate:[NSDate date]
-//                                                      options:0];
-    
     // Create the predicate. eventStore is an instance variable.
-    NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
-                                                                                     ending:nil //endDate
+    NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil 
+                                                                                     ending:nil
                                                                                   calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
     
     [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
@@ -93,6 +79,24 @@
     
     lameSyncActivityHack = YES;
     [_mainStore saveReminder:reminder commit:YES error:NULL];
+}
+
+- (void)saveNewActivity:(Activity *)activity;
+{
+    //create new task!
+    EKReminder *reminder = [EKReminder reminderWithEventStore:_mainStore];
+    reminder.title = activity.name;
+    reminder.calendar = [self defaultCalendar];
+    
+    NSError *error = nil;
+    lameSyncActivityHack = YES;
+    [_mainStore saveReminder:reminder commit:YES error:&error];
+    
+    if(!error)
+    {
+        activity.source = [NSNumber numberWithInt:ActivitySourceReminders];
+        activity.sourceID = reminder.calendarItemExternalIdentifier;
+    }
 }
 
 - (void)dealloc

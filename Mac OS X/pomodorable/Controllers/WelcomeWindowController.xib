@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -74,7 +74,6 @@
 							<string key="NSFrameSize">{640, 400}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="586486957">
 								<int key="NSCellFlags">134217728</int>
@@ -150,7 +149,7 @@
 						<object class="NSTextFieldCell" key="NSCell" id="441876018">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">272629760</int>
-							<string key="NSContents">By concentrating for periods at a time on a certain task, you are able to gauge how much time a given task will take, and help you plan your day better.</string>
+							<string key="NSContents">By concentrating for periods at a time on a certain task, you are able to gauge how much time a given task will take, which helps you plan your day better.</string>
 							<object class="NSFont" key="NSSupport" id="1061448692">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
@@ -187,7 +186,7 @@
 						<object class="NSTextFieldCell" key="NSCell" id="732649450">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">272629760</int>
-							<string key="NSContents">Eggscellent™ is based off of a common time management methodology. Take a that you need to get done, break it into smaller chunks of work, and set a timer to work against, making the it your highest priority.</string>
+							<string key="NSContents">Eggscellent™ is based on a common time management methodology. Take a that you need to get done, break it into smaller chunks of work, and set a timer to work against, making that task your highest priority.</string>
 							<reference key="NSSupport" ref="1061448692"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="1015570063"/>
@@ -202,7 +201,6 @@
 						<string key="NSFrame">{{556, 13}, {70, 32}}</string>
 						<reference key="NSSuperview" ref="490170499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="803352226">
@@ -462,7 +460,6 @@
 						<string key="NSFrame">{{556, 13}, {70, 32}}</string>
 						<reference key="NSSuperview" ref="592382395"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="321563157">
@@ -944,7 +941,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<string key="NSFrame">{{442, 13}, {184, 32}}</string>
 						<reference key="NSSuperview" ref="609406934"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="309413788">

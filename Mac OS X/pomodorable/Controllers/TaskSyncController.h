@@ -25,6 +25,7 @@
 
 - (BOOL)sync;
 - (void)syncActivity:(Activity *)activity;
+- (void)saveNewActivity:(Activity *)activity;
 - (void)cleanUpSync;
 
 - (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;

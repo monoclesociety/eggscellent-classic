@@ -10,6 +10,7 @@
 #import "Egg.h"
 #import "EggTimer.h"
 #import "ModelStore.h"
+#import "TaskSyncController.h"
 
 @interface Activity (PrimitiveAccessors)
 - (NSNumber *)primitiveCompleted;
@@ -47,7 +48,15 @@ static Activity *singleton;
 
 + (Activity *)activity;
 {
-    return [[ModelStore sharedStore] newModelWithClassName:@"Activity"];
+    //create new task and pre-populate it.
+    Activity *newActivity = [[ModelStore sharedStore] newModelWithClassName:@"Activity"];
+    newActivity.name = NSLocalizedString(@"new task", @"new task");
+    newActivity.plannedCount = [NSNumber numberWithInt:1];
+    
+    //task sync it
+    [[TaskSyncController currentController] syncActivity:newActivity];
+    
+    return newActivity;
 }
 
 #pragma mark - model operation methods

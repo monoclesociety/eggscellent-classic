@@ -56,6 +56,11 @@ static TaskSyncController *singleton;
 
 }
 
+- (void)saveNewActivity:(Activity *)activity;
+{
+    
+}
+
 #pragma mark - helper methods
 
 - (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;

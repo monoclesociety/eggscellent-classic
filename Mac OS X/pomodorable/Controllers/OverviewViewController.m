@@ -298,8 +298,6 @@
     [itemsTableView reloadData];
     [itemsTableView deselectAll:self];
     Activity *newActivity = [Activity activity];
-    newActivity.name = NSLocalizedString(@"new task", @"new task");
-    newActivity.plannedCount = [NSNumber numberWithInt:1];
     [newActivity save];
     
     [self performSelector:@selector(expandAndEdit) withObject:nil afterDelay:0.0f];
@@ -321,7 +319,6 @@
 
 - (IBAction)removeItem:(id)sender;
 {
-    
     NSInteger selectedIndex = [itemsTableView selectedRow];
     if(selectedIndex >= [arrayController.arrangedObjects count])
         return;
@@ -339,25 +336,8 @@
     a.removed = [NSNumber numberWithBool:YES];
     [a save];
     
+    //search for this comment in git, you'll get the code.
     //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
-//    NSIndexSet *selectedIndexes = [itemsTableView selectedRowIndexes];
-//    
-//    [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-//        
-//        Activity *a = [arrayController.arrangedObjects objectAtIndex:0];
-//        if([Activity currentActivity] == a && [startButton.attributedTitle isEqualToAttributedString:stopString])
-//            return;
-//        
-//        OverviewTableCellView *otcv = (OverviewTableCellView *)[itemsTableView viewAtColumn:0 row:0 makeIfNecessary:NO];
-//        if(otcv)
-//        {
-//            otcv.selected = NO;
-//        }
-//        
-//        a.removed = [NSNumber numberWithBool:YES];
-//        [a save];
-//        
-//    }];
 }
 
 - (IBAction)pinPanel:(id)sender;
