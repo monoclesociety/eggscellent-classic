@@ -4,3 +4,6 @@
 [submodule "Vendor/Sparkle"]
 	path = Vendor/Sparkle
 	url = git@github.com:monoclesociety/Sparkle.git
+[submodule "Vendor/FsprgEmbeddedStoreMac"]
+	path = Vendor/FsprgEmbeddedStoreMac
+	url = git://github.com/monoclesociety/FsprgEmbeddedStoreMac.git
