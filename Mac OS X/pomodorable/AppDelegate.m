@@ -279,32 +279,19 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)toggleNoteKeyed:(id)sender;
 {
-//
-//    noteWindowController = [[NoteWindowController alloc] initWithWindowNibName:@"NoteWindowController"];
-//    
-//    if([noteWindowController.window isVisible])
-//    {
-//        [noteWindowController close:self];
-//    }
-//    else
-//    {
-//        [noteWindowController showWindow:self];
-//        [noteWindowController.window makeKeyAndOrderFront:self];
-//        [NSApp activateIgnoringOtherApps:YES];
-//    }
-//
-//    if([[NSUserDefaults standardUserDefaults] integerForKey:@"notesType"])
-//    {
-//    NSURL *mainAppUrl = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.apple.notes"];
-//    if(mainAppUrl)
-//    {
-//        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:mainAppUrl options:NSWorkspaceLaunchDefault configuration:nil error:NULL];
-//    }
-//    else
-//    {
-//        if(!noteWindowController)
-//
-//    }
+
+    historyWindowController = [[HistoryWindowController alloc] initWithWindowNibName:@"HistoryWindowController"];
+    
+    if([historyWindowController.window isVisible])
+    {
+        [historyWindowController close:self];
+    }
+    else
+    {
+        [historyWindowController showWindow:self];
+        [historyWindowController.window makeKeyAndOrderFront:self];
+        [NSApp activateIgnoringOtherApps:YES];
+    }
 }
 
 #pragma mark - Idle check based methods

@@ -54,12 +54,11 @@
 		3D0FDD1516ECED5800815B2C /* IdleTime.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DC456A14E43F68003BAC41 /* IdleTime.m */; };
 		3D0FDD1616ECED5800815B2C /* MSSearchFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F483D62114FC10EC00634F9C /* MSSearchFieldCell.m */; };
 		3D0FDD1716ECED5800815B2C /* MSSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = F483D62514FC12AC00634F9C /* MSSearchField.m */; };
-		3D0FDD1816ECED5800815B2C /* NoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481A37914FDA3B700AAF2E8 /* NoteWindowController.m */; };
-		3D0FDD1916ECED5800815B2C /* NoteTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235815002A9B00579E89 /* NoteTextView.m */; };
-		3D0FDD1A16ECED5800815B2C /* NoteWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235C15003EC300579E89 /* NoteWindow.m */; };
+		3D0FDD1816ECED5800815B2C /* HistoryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481A37914FDA3B700AAF2E8 /* HistoryWindowController.m */; };
+		3D0FDD1A16ECED5800815B2C /* HistoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235C15003EC300579E89 /* HistoryWindow.m */; };
 		3D0FDD1B16ECED5800815B2C /* HiddenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F46DF74B1506A10200A20D48 /* HiddenButton.m */; };
 		3D0FDD1C16ECED5800815B2C /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F450098C151FB5F1003F46F4 /* GradientView.m */; };
-		3D0FDD1D16ECED5800815B2C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45009A71522DAC6003F46F4 /* NoteView.m */; };
+		3D0FDD1D16ECED5800815B2C /* HistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45009A71522DAC6003F46F4 /* HistoryView.m */; };
 		3D0FDD1E16ECED5800815B2C /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C2D6B215349B14003BAD16 /* AboutWindowController.m */; };
 		3D0FDD1F16ECED5800815B2C /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43D83F615633DD40066AE20 /* WindowController.m */; };
 		3D0FDD2016ECED5800815B2C /* ThingsSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E215697BC100D70EBB /* ThingsSyncController.m */; };
@@ -149,7 +148,7 @@
 		3D0FDD7616ECED5800815B2C /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E2F2C814FB302B00700D09 /* gear.png */; };
 		3D0FDD7716ECED5800815B2C /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E2F2CC14FB30F100700D09 /* sync.png */; };
 		3D0FDD7816ECED5800815B2C /* tools.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E2F2CE14FB30F600700D09 /* tools.png */; };
-		3D0FDD7916ECED5800815B2C /* NoteWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F481A37B14FDA3CC00AAF2E8 /* NoteWindowController.xib */; };
+		3D0FDD7916ECED5800815B2C /* HistoryWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F481A37B14FDA3CC00AAF2E8 /* HistoryWindowController.xib */; };
 		3D0FDD7A16ECED5800815B2C /* notes-button-yellow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E41244151ADA1300444C12 /* notes-button-yellow-down.png */; };
 		3D0FDD7B16ECED5800815B2C /* notes-button-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E41245151ADA1300444C12 /* notes-button-yellow.png */; };
 		3D0FDD7C16ECED5800815B2C /* notes-close.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E41246151ADA1300444C12 /* notes-close.png */; };
@@ -356,8 +355,7 @@
 		F4104BCB147C17540077D272 /* IntegrationPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4104BC9147C17540077D272 /* IntegrationPreferencesViewController.m */; };
 		F4104BCC147C17540077D272 /* IntegrationPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4104BCA147C17540077D272 /* IntegrationPreferencesViewController.xib */; };
 		F41C8AE814D7509E008AF73B /* RemoteClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C8AE714D7509E008AF73B /* RemoteClientController.m */; };
-		F41D235915002A9B00579E89 /* NoteTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235815002A9B00579E89 /* NoteTextView.m */; };
-		F41D235D15003EC300579E89 /* NoteWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235C15003EC300579E89 /* NoteWindow.m */; };
+		F41D235D15003EC300579E89 /* HistoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235C15003EC300579E89 /* HistoryWindow.m */; };
 		F422AFC914AA6FBA002A20ED /* pom_count-off.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB114AA6FBA002A20ED /* pom_count-off.png */; };
 		F422AFCA14AA6FBA002A20ED /* pom_count-on.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB214AA6FBA002A20ED /* pom_count-on.png */; };
 		F422AFD114AA6FBA002A20ED /* ribbon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBB14AA6FBA002A20ED /* ribbon2.png */; };
@@ -393,7 +391,7 @@
 		F44154E4155A4ACB00DD2AB3 /* pullOutBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F44154E3155A4ACB00DD2AB3 /* pullOutBackground.png */; };
 		F447A19014AF73DD001472BD /* RoundedBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F447A18F14AF73DD001472BD /* RoundedBox.m */; };
 		F450098D151FB5F1003F46F4 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F450098C151FB5F1003F46F4 /* GradientView.m */; };
-		F45009A81522DAC6003F46F4 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45009A71522DAC6003F46F4 /* NoteView.m */; };
+		F45009A81522DAC6003F46F4 /* HistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45009A71522DAC6003F46F4 /* HistoryView.m */; };
 		F451B4E01481688B0055D830 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F451B4DF1481688B0055D830 /* WebKit.framework */; };
 		F4592988146F66C5003F0A80 /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = F4592981146F66C5003F0A80 /* SGHotKey.m */; };
 		F4592989146F66C5003F0A80 /* SGHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4592983146F66C5003F0A80 /* SGHotKeyCenter.m */; };
@@ -423,8 +421,8 @@
 		F47AE3A114EEDBDD00DFAE19 /* status.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AE39514EEDBDD00DFAE19 /* status.png */; };
 		F47CC65C14B1413400CA239C /* NSButton+TextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F47CC65B14B1413400CA239C /* NSButton+TextColor.m */; };
 		F480844114E71CE900D7B291 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F480844014E71CE900D7B291 /* close.png */; };
-		F481A37A14FDA3B700AAF2E8 /* NoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481A37914FDA3B700AAF2E8 /* NoteWindowController.m */; };
-		F481A37C14FDA3CC00AAF2E8 /* NoteWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F481A37B14FDA3CC00AAF2E8 /* NoteWindowController.xib */; };
+		F481A37A14FDA3B700AAF2E8 /* HistoryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481A37914FDA3B700AAF2E8 /* HistoryWindowController.m */; };
+		F481A37C14FDA3CC00AAF2E8 /* HistoryWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F481A37B14FDA3CC00AAF2E8 /* HistoryWindowController.xib */; };
 		F483D62214FC10EC00634F9C /* MSSearchFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F483D62114FC10EC00634F9C /* MSSearchFieldCell.m */; };
 		F483D62614FC12AD00634F9C /* MSSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = F483D62514FC12AC00634F9C /* MSSearchField.m */; };
 		F4841A5414DE3207008FE1C1 /* ThingsChangeTodo.applescript in Resources */ = {isa = PBXBuildFile; fileRef = F4841A5214DE31E3008FE1C1 /* ThingsChangeTodo.applescript */; };
@@ -711,10 +709,8 @@
 		F4104BCA147C17540077D272 /* IntegrationPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntegrationPreferencesViewController.xib; sourceTree = "<group>"; };
 		F41C8AE614D7509E008AF73B /* RemoteClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteClientController.h; path = ../../../Common/Controllers/RemoteClientController.h; sourceTree = "<group>"; };
 		F41C8AE714D7509E008AF73B /* RemoteClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteClientController.m; path = ../../../Common/Controllers/RemoteClientController.m; sourceTree = "<group>"; };
-		F41D235715002A9B00579E89 /* NoteTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTextView.h; sourceTree = "<group>"; };
-		F41D235815002A9B00579E89 /* NoteTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTextView.m; sourceTree = "<group>"; };
-		F41D235B15003EC300579E89 /* NoteWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteWindow.h; path = pomodorable/Views/NoteWindow.h; sourceTree = SOURCE_ROOT; };
-		F41D235C15003EC300579E89 /* NoteWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteWindow.m; path = pomodorable/Views/NoteWindow.m; sourceTree = SOURCE_ROOT; };
+		F41D235B15003EC300579E89 /* HistoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryWindow.h; path = pomodorable/Views/HistoryWindow.h; sourceTree = SOURCE_ROOT; };
+		F41D235C15003EC300579E89 /* HistoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryWindow.m; path = pomodorable/Views/HistoryWindow.m; sourceTree = SOURCE_ROOT; };
 		F422AFB114AA6FBA002A20ED /* pom_count-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pom_count-off.png"; sourceTree = "<group>"; };
 		F422AFB214AA6FBA002A20ED /* pom_count-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pom_count-on.png"; sourceTree = "<group>"; };
 		F422AFBB14AA6FBA002A20ED /* ribbon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon2.png; sourceTree = "<group>"; };
@@ -756,8 +752,8 @@
 		F447A18F14AF73DD001472BD /* RoundedBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedBox.m; sourceTree = "<group>"; };
 		F450098B151FB5F1003F46F4 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		F450098C151FB5F1003F46F4 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
-		F45009A61522DAC6003F46F4 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteView.h; path = pomodorable/Views/NoteView.h; sourceTree = SOURCE_ROOT; };
-		F45009A71522DAC6003F46F4 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteView.m; path = pomodorable/Views/NoteView.m; sourceTree = SOURCE_ROOT; };
+		F45009A61522DAC6003F46F4 /* HistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryView.h; path = pomodorable/Views/HistoryView.h; sourceTree = SOURCE_ROOT; };
+		F45009A71522DAC6003F46F4 /* HistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryView.m; path = pomodorable/Views/HistoryView.m; sourceTree = SOURCE_ROOT; };
 		F451B4DF1481688B0055D830 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F4592980146F66C5003F0A80 /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
 		F4592981146F66C5003F0A80 /* SGHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKey.m; sourceTree = "<group>"; };
@@ -799,9 +795,9 @@
 		F47CC65A14B1413400CA239C /* NSButton+TextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+TextColor.h"; path = "Other Sources/Categories/NSButton+TextColor.h"; sourceTree = "<group>"; };
 		F47CC65B14B1413400CA239C /* NSButton+TextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+TextColor.m"; path = "Other Sources/Categories/NSButton+TextColor.m"; sourceTree = "<group>"; };
 		F480844014E71CE900D7B291 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		F481A37814FDA3B700AAF2E8 /* NoteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteWindowController.h; sourceTree = "<group>"; };
-		F481A37914FDA3B700AAF2E8 /* NoteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteWindowController.m; sourceTree = "<group>"; };
-		F481A37B14FDA3CC00AAF2E8 /* NoteWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteWindowController.xib; sourceTree = "<group>"; };
+		F481A37814FDA3B700AAF2E8 /* HistoryWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryWindowController.h; sourceTree = "<group>"; };
+		F481A37914FDA3B700AAF2E8 /* HistoryWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryWindowController.m; sourceTree = "<group>"; };
+		F481A37B14FDA3CC00AAF2E8 /* HistoryWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryWindowController.xib; sourceTree = "<group>"; };
 		F483D62014FC10EC00634F9C /* MSSearchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchFieldCell.h; sourceTree = "<group>"; };
 		F483D62114FC10EC00634F9C /* MSSearchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchFieldCell.m; sourceTree = "<group>"; };
 		F483D62414FC12AC00634F9C /* MSSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchField.h; sourceTree = "<group>"; };
@@ -1371,18 +1367,18 @@
 			name = "status icons";
 			sourceTree = "<group>";
 		};
-		F481A37314FDA30700AAF2E8 /* Note */ = {
+		F481A37314FDA30700AAF2E8 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				F481A37814FDA3B700AAF2E8 /* NoteWindowController.h */,
-				F481A37914FDA3B700AAF2E8 /* NoteWindowController.m */,
-				F481A37B14FDA3CC00AAF2E8 /* NoteWindowController.xib */,
-				F41D235B15003EC300579E89 /* NoteWindow.h */,
-				F41D235C15003EC300579E89 /* NoteWindow.m */,
-				F45009A61522DAC6003F46F4 /* NoteView.h */,
-				F45009A71522DAC6003F46F4 /* NoteView.m */,
+				F481A37814FDA3B700AAF2E8 /* HistoryWindowController.h */,
+				F481A37914FDA3B700AAF2E8 /* HistoryWindowController.m */,
+				F481A37B14FDA3CC00AAF2E8 /* HistoryWindowController.xib */,
+				F41D235B15003EC300579E89 /* HistoryWindow.h */,
+				F41D235C15003EC300579E89 /* HistoryWindow.m */,
+				F45009A61522DAC6003F46F4 /* HistoryView.h */,
+				F45009A71522DAC6003F46F4 /* HistoryView.m */,
 			);
-			name = Note;
+			name = Statistics;
 			sourceTree = "<group>";
 		};
 		F488A13514B0D08A00E9E25A /* Categories */ = {
@@ -1506,8 +1502,6 @@
 				F483D62114FC10EC00634F9C /* MSSearchFieldCell.m */,
 				F483D62414FC12AC00634F9C /* MSSearchField.h */,
 				F483D62514FC12AC00634F9C /* MSSearchField.m */,
-				F41D235715002A9B00579E89 /* NoteTextView.h */,
-				F41D235815002A9B00579E89 /* NoteTextView.m */,
 				F46DF74A1506A10200A20D48 /* HiddenButton.h */,
 				F46DF74B1506A10200A20D48 /* HiddenButton.m */,
 				F450098B151FB5F1003F46F4 /* GradientView.h */,
@@ -1527,7 +1521,7 @@
 				F4E884941466FC5A0004DADB /* Panel */,
 				F4497D2F14A91DE900C7DB4B /* Regular window */,
 				F4E7E831147DB56C00815B66 /* Monitor */,
-				F481A37314FDA30700AAF2E8 /* Note */,
+				F481A37314FDA30700AAF2E8 /* Statistics */,
 				F49988651495A82000D356DB /* Remote */,
 				F4391DD3148B08080051CACC /* Welcome */,
 				F4E7E82D147DB3EF00815B66 /* Task Syncing */,
@@ -2037,7 +2031,7 @@
 				3D0FDD7616ECED5800815B2C /* gear.png in Resources */,
 				3D0FDD7716ECED5800815B2C /* sync.png in Resources */,
 				3D0FDD7816ECED5800815B2C /* tools.png in Resources */,
-				3D0FDD7916ECED5800815B2C /* NoteWindowController.xib in Resources */,
+				3D0FDD7916ECED5800815B2C /* HistoryWindowController.xib in Resources */,
 				3D0FDD7A16ECED5800815B2C /* notes-button-yellow-down.png in Resources */,
 				3D0FDD7B16ECED5800815B2C /* notes-button-yellow.png in Resources */,
 				3D0FDD7C16ECED5800815B2C /* notes-close.png in Resources */,
@@ -2216,7 +2210,7 @@
 				F4E2F2C914FB302B00700D09 /* gear.png in Resources */,
 				F4E2F2CD14FB30F100700D09 /* sync.png in Resources */,
 				F4E2F2CF14FB30F700700D09 /* tools.png in Resources */,
-				F481A37C14FDA3CC00AAF2E8 /* NoteWindowController.xib in Resources */,
+				F481A37C14FDA3CC00AAF2E8 /* HistoryWindowController.xib in Resources */,
 				F4E41247151ADA1300444C12 /* notes-button-yellow-down.png in Resources */,
 				F4E41248151ADA1300444C12 /* notes-button-yellow.png in Resources */,
 				F4E41249151ADA1300444C12 /* notes-close.png in Resources */,
@@ -2373,12 +2367,11 @@
 				3D0FDD1516ECED5800815B2C /* IdleTime.m in Sources */,
 				3D0FDD1616ECED5800815B2C /* MSSearchFieldCell.m in Sources */,
 				3D0FDD1716ECED5800815B2C /* MSSearchField.m in Sources */,
-				3D0FDD1816ECED5800815B2C /* NoteWindowController.m in Sources */,
-				3D0FDD1916ECED5800815B2C /* NoteTextView.m in Sources */,
-				3D0FDD1A16ECED5800815B2C /* NoteWindow.m in Sources */,
+				3D0FDD1816ECED5800815B2C /* HistoryWindowController.m in Sources */,
+				3D0FDD1A16ECED5800815B2C /* HistoryWindow.m in Sources */,
 				3D0FDD1B16ECED5800815B2C /* HiddenButton.m in Sources */,
 				3D0FDD1C16ECED5800815B2C /* GradientView.m in Sources */,
-				3D0FDD1D16ECED5800815B2C /* NoteView.m in Sources */,
+				3D0FDD1D16ECED5800815B2C /* HistoryView.m in Sources */,
 				3D0FDD1E16ECED5800815B2C /* AboutWindowController.m in Sources */,
 				3D0FDD1F16ECED5800815B2C /* WindowController.m in Sources */,
 				3D0FDD2016ECED5800815B2C /* ThingsSyncController.m in Sources */,
@@ -2454,12 +2447,11 @@
 				F4DC456B14E43F68003BAC41 /* IdleTime.m in Sources */,
 				F483D62214FC10EC00634F9C /* MSSearchFieldCell.m in Sources */,
 				F483D62614FC12AD00634F9C /* MSSearchField.m in Sources */,
-				F481A37A14FDA3B700AAF2E8 /* NoteWindowController.m in Sources */,
-				F41D235915002A9B00579E89 /* NoteTextView.m in Sources */,
-				F41D235D15003EC300579E89 /* NoteWindow.m in Sources */,
+				F481A37A14FDA3B700AAF2E8 /* HistoryWindowController.m in Sources */,
+				F41D235D15003EC300579E89 /* HistoryWindow.m in Sources */,
 				F46DF74C1506A10200A20D48 /* HiddenButton.m in Sources */,
 				F450098D151FB5F1003F46F4 /* GradientView.m in Sources */,
-				F45009A81522DAC6003F46F4 /* NoteView.m in Sources */,
+				F45009A81522DAC6003F46F4 /* HistoryView.m in Sources */,
 				F4C2D6B415349B14003BAD16 /* AboutWindowController.m in Sources */,
 				F43D83F815633DD40066AE20 /* WindowController.m in Sources */,
 				3D1564E315697BC200D70EBB /* ThingsSyncController.m in Sources */,

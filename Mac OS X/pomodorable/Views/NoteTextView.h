@@ -7,8 +7,9 @@
 //
 
 #import <AppKit/AppKit.h>
+#import "ColorView.h"
 
-@interface NoteTextView : NSTextView
+@interface NoteTextView : ColorView
 {
     NSColor *lineColor;
 	NSImage *image;

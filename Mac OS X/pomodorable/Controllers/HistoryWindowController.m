@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Monocle Society LLC. All rights reserved.
 //
 
-#import "NoteWindowController.h"
+#import "HistoryWindowController.h"
 #import "ColorView.h"
 
-@implementation NoteWindowController
+@implementation HistoryWindowController
 
 #pragma mark - memory based methods
 
@@ -34,9 +34,6 @@
     [self.window setMovableByWindowBackground:YES];
     [self.window setOpaque:NO];
     [self.window setStyleMask:NSResizableWindowMask];
-
-    [textView setFont:[NSFont fontWithName:@"Helvetica-Light" size:17]];
-    [textView setTextContainerInset:NSSizeFromString(@"15,0")];
     
     //set up "clear" button font and color
     NSMutableParagraphStyle *pStyle = [[NSMutableParagraphStyle alloc] init];    
@@ -47,29 +44,17 @@
     NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:pStyle, NSParagraphStyleAttributeName, txtFont, NSFontAttributeName, txtColor,  NSForegroundColorAttributeName, nil];
     NSAttributedString *stopString = [[NSMutableAttributedString alloc] initWithString:@"Clear" attributes:txtDict];
     [clearButton setAttributedTitle:stopString];
-    ((ColorView *)self.window.contentView).backgroundColor = textView.backgroundColor;
     
-//    NSButton *closeButton = [NSWindow
-//                   standardWindowButton:NSWindowCloseButton forStyleMask:NSTitledWindowMask];
-//    [self.window.contentView addSubview:closeButton];
+    ((ColorView *)self.window.contentView).backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
 }
 
 - (void)showWindow:(id)sender
 {
-    NSString *noteString = [[NSUserDefaults standardUserDefaults] stringForKey:@"note"];
-    if(noteString)
-        textView.string = noteString;
     [super showWindow:sender];
 }
 
 - (void)close
 {
-    NSString *noteString = textView.string;
-    if(noteString)
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:textView.string forKey:@"note"];
-        [[NSUserDefaults standardUserDefaults] synchronize];        
-    }
     [super close];
 }
 
@@ -77,7 +62,6 @@
 
 - (IBAction)clearTextSelected:(id)sender;
 {
-    [textView setString:@""];
 }
 
 - (IBAction)close:(id)sender;

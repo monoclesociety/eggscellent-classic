@@ -8,6 +8,6 @@
 
 #import <AppKit/AppKit.h>
 
-@interface NoteWindow : NSWindow
+@interface HistoryWindow : NSWindow
 
 @end

@@ -1,6 +1,6 @@
  //
 //  main.m
-//  pomodorable
+//  Eggscellent
 //
 //  Created by Kyle Kinkade on 11/5/11.
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.

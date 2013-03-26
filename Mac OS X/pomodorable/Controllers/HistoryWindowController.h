@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface NoteWindowController : NSWindowController
+@interface HistoryWindowController : NSWindowController
 {
-    IBOutlet NSTextView *textView;
     IBOutlet NSImageView *imageView;
     IBOutlet NSButton *clearButton;
 }

@@ -8,6 +8,6 @@
 
 #import "ColorView.h"
 
-@interface NoteView : ColorView
+@interface HistoryView : ColorView
 
 @end

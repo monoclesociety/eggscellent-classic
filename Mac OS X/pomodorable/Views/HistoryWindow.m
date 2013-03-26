@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Monocle Society LLC. All rights reserved.
 //
 
-#import "NoteWindow.h"
+#import "HistoryWindow.h"
 
-@implementation NoteWindow
+@implementation HistoryWindow
 
 - (BOOL)becomeFirstResponder
 {

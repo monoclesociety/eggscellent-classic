@@ -12,7 +12,7 @@
 #import "ChatController.h"
 #import "MonitorWindowController.h"
 #import "MASPreferencesWindowController.h"
-#import "NoteWindowController.h"
+#import "HistoryWindowController.h"
 #import "PanelController.h"
 #import "WindowController.h"
 
@@ -38,7 +38,7 @@
     TaskSyncController              *taskSyncController;
     MonitorWindowController         *monitorWindowController;
     WelcomeWindowController         *welcomeWindowController;
-    NoteWindowController            *noteWindowController;
+    HistoryWindowController         *historyWindowController;
     CalendarController              *calendarController;
     
     SGHotKey    *hotKeyStopPomodoro;

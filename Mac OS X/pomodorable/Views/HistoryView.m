@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Monocle Society LLC. All rights reserved.
 //
 
-#import "NoteView.h"
+#import "HistoryView.h"
 
-@implementation NoteView
+@implementation HistoryView
 
 - (void)drawRect:(NSRect)dirtyRect
 {
