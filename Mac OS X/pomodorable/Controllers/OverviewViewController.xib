@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -53,6 +53,40 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">4388</int>
 				<array class="NSMutableArray" key="NSSubviews">
+					<object class="NSButton" id="1060634677">
+						<reference key="NSNextResponder" ref="1005"/>
+						<int key="NSvFlags">12</int>
+						<string key="NSFrame">{{9, 543}, {24, 24}}</string>
+						<reference key="NSSuperview" ref="1005"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="954334113"/>
+						<string key="NSReuseIdentifierKey">_NS:22</string>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSButtonCell" key="NSCell" id="150298957">
+							<int key="NSCellFlags">-2080374784</int>
+							<int key="NSCellFlags2">184582144</int>
+							<string key="NSContents"/>
+							<object class="NSFont" key="NSSupport" id="892582779">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">13</double>
+								<int key="NSfFlags">1044</int>
+							</object>
+							<string key="NSCellIdentifier">_NS:22</string>
+							<reference key="NSControlView" ref="1060634677"/>
+							<int key="NSButtonFlags">139214848</int>
+							<int key="NSButtonFlags2">134</int>
+							<object class="NSCustomResource" key="NSNormalImage" id="651302041">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">stats</string>
+							</object>
+							<reference key="NSAlternateImage" ref="651302041"/>
+							<string key="NSAlternateContents"/>
+							<string key="NSKeyEquivalent"/>
+							<int key="NSPeriodicDelay">400</int>
+							<int key="NSPeriodicInterval">75</int>
+						</object>
+						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+					</object>
 					<object class="NSImageView" id="348321348">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">256</int>
@@ -97,11 +131,7 @@
 							<int key="NSCellFlags">68157504</int>
 							<int key="NSCellFlags2">272634880</int>
 							<string key="NSContents">Eggscellent</string>
-							<object class="NSFont" key="NSSupport" id="892582779">
-								<string key="NSName">LucidaGrande</string>
-								<double key="NSSize">13</double>
-								<int key="NSfFlags">1044</int>
-							</object>
+							<reference key="NSSupport" ref="892582779"/>
 							<string key="NSCellIdentifier">_NS:3944</string>
 							<reference key="NSControlView" ref="137241969"/>
 							<object class="NSColor" key="NSBackgroundColor" id="892533482">
@@ -639,7 +669,7 @@
 				<string key="NSFrameSize">{322, 588}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="954334113"/>
+				<reference key="NSNextKeyView" ref="1060634677"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSArrayController" id="193486142">
@@ -886,6 +916,14 @@
 						<reference key="destination" ref="129293477"/>
 					</object>
 					<int key="connectionID">634</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">statsSelected:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1060634677"/>
+					</object>
+					<int key="connectionID">637</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1626,6 +1664,7 @@
 							<reference ref="348321348"/>
 							<reference ref="614923619"/>
 							<reference ref="137241969"/>
+							<reference ref="1060634677"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2126,6 +2165,19 @@
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="129293477"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">635</int>
+						<reference key="object" ref="1060634677"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="150298957"/>
+						</array>
+						<reference key="parent" ref="1005"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">636</int>
+						<reference key="object" ref="150298957"/>
+						<reference key="parent" ref="1060634677"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2281,12 +2333,14 @@
 				<string key="624.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="626.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="627.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="636.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">634</int>
+			<int key="maxID">637</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2422,10 +2476,12 @@
 						<string key="openPreferences:">id</string>
 						<string key="pinPanel:">id</string>
 						<string key="quitApplication:">id</string>
+						<string key="removeItem:">id</string>
 						<string key="showAboutMenu:">id</string>
 						<string key="showHelpMenu:">id</string>
 						<string key="showOptionsMenu:">id</string>
 						<string key="startANewPomodoro:">id</string>
+						<string key="statsSelected:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addItem:">
@@ -2468,6 +2524,10 @@
 							<string key="name">quitApplication:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="removeItem:">
+							<string key="name">removeItem:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showAboutMenu:">
 							<string key="name">showAboutMenu:</string>
 							<string key="candidateClassName">id</string>
@@ -2484,6 +2544,10 @@
 							<string key="name">startANewPomodoro:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="statsSelected:">
+							<string key="name">statsSelected:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addTaskButton">NSButton</string>
@@ -2493,6 +2557,7 @@
 						<string key="listsSubMenu">NSMenuItem</string>
 						<string key="optionsMenu">NSMenu</string>
 						<string key="searchField">NSSearchField</string>
+						<string key="selectedListMenuItem">NSMenuItem</string>
 						<string key="startButton">NSButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -2523,6 +2588,10 @@
 						<object class="IBToOneOutletInfo" key="searchField">
 							<string key="name">searchField</string>
 							<string key="candidateClassName">NSSearchField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="selectedListMenuItem">
+							<string key="name">selectedListMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="startButton">
 							<string key="name">startButton</string>
@@ -2575,6 +2644,7 @@
 			<string key="pullOutBackgroundClip">{320, 3}</string>
 			<string key="shadow">{320, 7}</string>
 			<string key="squirrel">{32, 32}</string>
+			<string key="stats">{24, 24}</string>
 		</dictionary>
 	</data>
 </archive>

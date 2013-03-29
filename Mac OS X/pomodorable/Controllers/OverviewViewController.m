@@ -278,7 +278,7 @@
     //used for debug purposes
 }
 
-- (IBAction)noteSelected:(id)sender;
+- (IBAction)statsSelected:(id)sender;
 {
     AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
     [appDelegate toggleNoteKeyed:nil];

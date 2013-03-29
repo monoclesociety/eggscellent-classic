@@ -311,6 +311,10 @@
 		3DDF88E615A2862D009AEFFC /* focus-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF88E515A2862D009AEFFC /* focus-card@2x.png */; };
 		3DE68BCA16F2203200500E40 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE68BC916F2203200500E40 /* list.png */; };
 		3DE68BCB16F2203200500E40 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE68BC916F2203200500E40 /* list.png */; };
+		3DF3DCAA1705492300F865E9 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA81705492100F865E9 /* stats.png */; };
+		3DF3DCAB1705492300F865E9 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA81705492100F865E9 /* stats.png */; };
+		3DF3DCAC1705492300F865E9 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA91705492200F865E9 /* stats@2x.png */; };
+		3DF3DCAD1705492300F865E9 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA91705492200F865E9 /* stats@2x.png */; };
 		3DF3F46A158A505100691B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3F468158A505100691B97 /* MainMenu.xib */; };
 		3DF9349D16D021C500A98287 /* status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF9349C16D021C500A98287 /* status@2x.png */; };
 		3DFBE63615A26CA30006ABB2 /* focus-card-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */; };
@@ -658,6 +662,8 @@
 		3DD73F8B16E3299600B6D994 /* CalendarPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarPreferencesViewController.xib; sourceTree = "<group>"; };
 		3DDF88E515A2862D009AEFFC /* focus-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card@2x.png"; path = "Resources/window/focus-card@2x.png"; sourceTree = "<group>"; };
 		3DE68BC916F2203200500E40 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		3DF3DCA81705492100F865E9 /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
+		3DF3DCA91705492200F865E9 /* stats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stats@2x.png"; path = "Resources/window/stats@2x.png"; sourceTree = "<group>"; };
 		3DF3F469158A505100691B97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3DF9349C16D021C500A98287 /* status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status@2x.png"; path = "Resources/status icons/status@2x.png"; sourceTree = "<group>"; };
 		3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card-hover@2x.png"; path = "Resources/window/focus-card-hover@2x.png"; sourceTree = "<group>"; };
@@ -1067,6 +1073,7 @@
 		3DFBE61215A26C890006ABB2 /* retina */ = {
 			isa = PBXGroup;
 			children = (
+				3DF3DCA91705492200F865E9 /* stats@2x.png */,
 				3DDF88E515A2862D009AEFFC /* focus-card@2x.png */,
 				3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */,
 				3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */,
@@ -1235,6 +1242,7 @@
 		F43937ED14AA8D1500FA1244 /* window */ = {
 			isa = PBXGroup;
 			children = (
+				3DF3DCA81705492100F865E9 /* stats.png */,
 				3D2932A316D0102E0072F829 /* egg.png */,
 				3DD633B0160F8CA7001F9661 /* button-resume-down.png */,
 				3DD633B2160F8CA7001F9661 /* button-resume.png */,
@@ -2131,6 +2139,8 @@
 				3D0FDDDA16ECED5800815B2C /* CalendarPreferencesViewController.xib in Resources */,
 				3D0FDDDB16ECED5800815B2C /* calendar.png in Resources */,
 				3DE68BCB16F2203200500E40 /* list.png in Resources */,
+				3DF3DCAB1705492300F865E9 /* stats.png in Resources */,
+				3DF3DCAD1705492300F865E9 /* stats@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2310,6 +2320,8 @@
 				3DD73F8D16E3299600B6D994 /* CalendarPreferencesViewController.xib in Resources */,
 				3D88F86D16EA42FB00265052 /* calendar.png in Resources */,
 				3DE68BCA16F2203200500E40 /* list.png in Resources */,
+				3DF3DCAA1705492300F865E9 /* stats.png in Resources */,
+				3DF3DCAC1705492300F865E9 /* stats@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

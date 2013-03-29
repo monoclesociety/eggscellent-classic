@@ -50,6 +50,8 @@
 - (IBAction)cellDoubleClicked:(id)sender;
 - (IBAction)checkForUpdates:(id)sender;
 
+- (IBAction)statsSelected:(id)sender;
+
 - (IBAction)openPreferences:(id)sender;
 - (IBAction)showAboutMenu:(id)sender;
 - (IBAction)showHelpMenu:(id)sender;

@@ -279,8 +279,8 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)toggleNoteKeyed:(id)sender;
 {
-
-    historyWindowController = [[HistoryWindowController alloc] initWithWindowNibName:@"HistoryWindowController"];
+    if(!historyWindowController)
+        historyWindowController = [[HistoryWindowController alloc] initWithWindowNibName:@"HistoryWindowController"];
     
     if([historyWindowController.window isVisible])
     {

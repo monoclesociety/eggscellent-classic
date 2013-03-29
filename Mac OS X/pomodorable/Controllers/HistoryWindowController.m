@@ -10,6 +10,7 @@
 #import "ColorView.h"
 
 @implementation HistoryWindowController
+@synthesize managedObjectContext = _managedObjectContext;
 
 #pragma mark - memory based methods
 
@@ -19,6 +20,7 @@
     if (self) 
     {
         // Initialization code here.
+        _managedObjectContext = [[ModelStore sharedStore] managedObjectContext];
     }
     
     return self;
@@ -42,20 +44,32 @@
     NSFont *txtFont = [NSFont systemFontOfSize:12];
     
     NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:pStyle, NSParagraphStyleAttributeName, txtFont, NSFontAttributeName, txtColor,  NSForegroundColorAttributeName, nil];
-    NSAttributedString *stopString = [[NSMutableAttributedString alloc] initWithString:@"Clear" attributes:txtDict];
+    NSAttributedString *stopString = [[NSMutableAttributedString alloc] initWithString:@"Done" attributes:txtDict];
     [clearButton setAttributedTitle:stopString];
     
-    ((ColorView *)self.window.contentView).backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
+    //unify the background color for the contentView of the window as well as the content view of the scroll view
+    ((ColorView *)self.window.contentView).backgroundColor =
+    contentView.backgroundColor =
+    scrollContentView.backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
 }
 
 - (void)showWindow:(id)sender
 {
     [super showWindow:sender];
+    
+    arrayController.filterPredicate = [self filterPredicate];
 }
 
 - (void)close
 {
     [super close];
+}
+
+#pragma mark - Internal methods
+
+- (NSPredicate *)filterPredicate
+{
+    return nil;
 }
 
 #pragma mark - IBActions
