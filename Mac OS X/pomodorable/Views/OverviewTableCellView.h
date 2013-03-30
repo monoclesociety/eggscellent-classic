@@ -39,6 +39,7 @@
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, weak) NSImageView *backgroundClip;
 @property (nonatomic, weak) NSView      *editContainerView;
+@property (nonatomic, weak) NSTableView *tableView;
 
 + (CGFloat)heightForTitle:(NSString *)title selected:(BOOL)selected;
 + (CGFloat)heightOfTitle:(NSString *)title;

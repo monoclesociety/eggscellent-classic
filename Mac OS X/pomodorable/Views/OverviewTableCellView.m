@@ -17,6 +17,7 @@
 @synthesize selected = _selected;
 @synthesize backgroundClip;
 @synthesize editContainerView;
+@synthesize tableView;
 
 - (void)awakeFromNib
 {
@@ -234,10 +235,10 @@
     BOOL completed = [a.completed boolValue];
     a.completed = [NSNumber numberWithBool:!completed];
     [a save];
-    
+
     ribbonView.completed = !completed;
     [ribbonView setNeedsDisplay:YES];
-    
+
     if(a == [Activity currentActivity] && [EggTimer currentTimer].status == TimerStatusRunning)
     {
         [[EggTimer currentTimer] stop];

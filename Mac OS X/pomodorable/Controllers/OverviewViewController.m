@@ -184,6 +184,7 @@
 {
     OverviewTableCellView *result = [itemsTableView makeViewWithIdentifier:@"OverviewTableCellView" owner:self];
     [result.backgroundClip setHidden:YES];
+    result.tableView = itemsTableView;
     
     //set the appropriate selection
     NSTableRowView *rowView = [itemsTableView rowViewAtRow:row makeIfNecessary:NO];
@@ -497,15 +498,27 @@
 
 - (void)ActivityModifiedCompletion:(NSNotification *)note
 {
+    Activity *a = (Activity *)[note object];
+    NSUInteger index = [arrayController.arrangedObjects indexOfObject:a];
+    [itemsTableView beginUpdates];
+    [itemsTableView moveRowAtIndex:index toIndex:[arrayController.arrangedObjects count] - 1];
+    [itemsTableView endUpdates];
+    
+    [arrayController performSelector:@selector(rearrangeObjects) withObject:nil afterDelay:0.35f];
+    
     if([itemsTableView selectedRow] < 0)
         return;
-    
-    Activity *a = (Activity *)[note object];
+
     Activity *b = (Activity *)[arrayController.arrangedObjects objectAtIndex:[itemsTableView selectedRow]];
     if(a == b && ([a.completed boolValue] != [b.completed boolValue]))
     {
-        if([a.completed boolValue] && [[startButton attributedTitle] isEqualToAttributedString:startString])
-            [startButton setEnabled:NO];
+        if([a.completed boolValue])
+        {
+            if([[startButton attributedTitle] isEqualToAttributedString:startString])
+            {
+                [startButton setEnabled:NO];
+            }
+        }
         else
             [startButton setEnabled:YES];
     }

@@ -36,24 +36,44 @@
                                                                                      ending:nil
                                                                                   calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
     
-    [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
-     {
-         for(EKReminder *reminder in reminders)
+    
+    //get the date for 12AM today.
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [calendar setLocale:[NSLocale currentLocale]];
+    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    today = [calendar dateFromComponents:nowComponents];
+    NSPredicate *completedPredicate = [_mainStore predicateForCompletedRemindersWithCompletionDateStarting:today
+                                                                                                    ending:nil
+                                                                                                 calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
+    
+    
+    [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders) {
+        for(EKReminder *reminder in reminders)
+        {
+            [importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
+        }
+        
+        [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
          {
-             NSString *ID = reminder.calendarItemExternalIdentifier;
-             NSString *name = reminder.title;
-             NSNull *plannedCount = [NSNull null];
-             NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
-             NSNumber *status = [NSNumber numberWithBool:reminder.completed];
+             for(EKReminder *reminder in reminders)
+             {
+                 NSString *ID = reminder.calendarItemExternalIdentifier;
+                 NSString *name = reminder.title;
+                 NSNull *plannedCount = [NSNull null];
+                 NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
+                 NSNumber *status = [NSNumber numberWithBool:reminder.completed];
+                 
+                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
+                 
+                 [self syncWithDictionary:syncDictionary];
+             }
              
-             NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
-             
-             [self syncWithDictionary:syncDictionary];
-         }
-         
-         [self completeActivitiesForSource:ActivitySourceReminders withDictionary:importedIDs];
-         [self cleanUpSync];
-     }];
+             [self completeActivitiesForSource:ActivitySourceReminders withDictionary:importedIDs];
+             [self cleanUpSync];
+         }];
+    }];
 }
 
 - (BOOL)sync
