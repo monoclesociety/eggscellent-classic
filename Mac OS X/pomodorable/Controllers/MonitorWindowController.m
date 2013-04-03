@@ -386,7 +386,7 @@
         Activity *a = [Activity currentActivity];
         ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
         ribbonView.completePomodoroCount = (int)[a.completedEggs count];
-        ribbonView.completed = [a.completed boolValue];
+        ribbonView.completed = (a.completed);
 
         [ribbonView setNeedsDisplay:YES];
         [self updatePomodoroCount];

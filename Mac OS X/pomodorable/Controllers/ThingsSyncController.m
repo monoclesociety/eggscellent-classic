@@ -139,7 +139,7 @@
     if([activity.source intValue] != ActivitySourceThings)
         return;
     
-    NSString *statusString = [activity.completed boolValue] ? @"completed" : @"open";
+    NSString *statusString = (activity.completed) ? @"completed" : @"open";
     NSString *nameString = activity.name;
     NSString *activityID = [activity.sourceID copy];
     NSArray *array = [[NSArray alloc] initWithObjects:activityID, statusString, nameString, nil];

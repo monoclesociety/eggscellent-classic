@@ -13,8 +13,8 @@
 #import "TaskSyncController.h"
 
 @interface Activity (PrimitiveAccessors)
-- (NSNumber *)primitiveCompleted;
-- (void)setPrimitiveCompleted:(NSNumber *)completed;
+- (NSDate *)primitiveCompleted;
+- (void)setPrimitiveCompleted:(NSDate *)completed;
 
 - (NSString *)primitiveName;
 - (void)setPrimitiveName:(NSString *)name;
@@ -101,18 +101,21 @@ static Activity *singleton;
 
 #pragma mark - Core Data Property Overrides
 
-- (void)setCompleted:(NSNumber *)inCompleted
+- (void)setCompleted:(NSDate *)inCompleted
 {
-    NSNumber *oldCompleted = [self primitiveCompleted];
+    NSDate *oldCompleted = [self primitiveCompleted];
     [self willChangeValueForKey:@"completed"];
     [self setPrimitiveCompleted:inCompleted];
     [self didChangeValueForKey:@"completed"];
     
-    if([oldCompleted boolValue] != [inCompleted boolValue])
+    if((oldCompleted != nil && inCompleted == nil) || (oldCompleted == nil && inCompleted != nil))
+    {
         [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED_COMPLETION object:self];
+    }
 }
 
-- (void)secretSetCompleted:(NSNumber *)completed;
+- (void)secretSetCompleted:(NSDate *)completed;
 {
     [self willChangeValueForKey:@"completed"];
     [self setPrimitiveCompleted:completed];

@@ -9,11 +9,11 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>Eggscellent.help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>com.monoclesociety.eggscellentosx.help</string>
+	<string>com.monoclesociety.eggscellent.osx.help</string>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.monoclesociety.eggscellentosx</string>
+	<string>com.monoclesociety.eggscellent.osx</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

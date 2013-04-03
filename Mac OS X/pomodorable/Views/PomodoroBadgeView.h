@@ -15,11 +15,11 @@
     
     NSDictionary *completedCountAttributes;
     NSDictionary *plannedCountAttributes;
-    BOOL completed;
+    NSDate *completed;
 }
 @property (nonatomic, assign) int plannedPomodoroCount;
 @property (nonatomic, assign) int completePomodoroCount;
-@property (nonatomic, assign) BOOL completed;
+@property (nonatomic, strong) NSDate *completed;
 
 - (NSDictionary *)attributesForFontName:(NSString *)fontName withSize:(int)fontSize;
 

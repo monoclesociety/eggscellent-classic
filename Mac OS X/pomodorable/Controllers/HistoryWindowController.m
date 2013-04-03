@@ -22,7 +22,7 @@
         // Initialization code here.
         _managedObjectContext = [[ModelStore sharedStore] managedObjectContext];
     }
-    
+
     return self;
 }
 
@@ -30,12 +30,15 @@
 
 - (void)windowDidLoad
 {
+    //set up all the pretty window stuffs
     [super windowDidLoad];
     [self.window setLevel:NSFloatingWindowLevel];
     [self.window setAcceptsMouseMovedEvents:YES];
     [self.window setMovableByWindowBackground:YES];
     [self.window setOpaque:NO];
     [self.window setStyleMask:NSResizableWindowMask];
+    
+    [self filterUpThatPredicate];//look i'm sure you from the future is all like "what a lame name, why did he even do that? cause I can. eat it."
     
     //set up "clear" button font and color
     NSMutableParagraphStyle *pStyle = [[NSMutableParagraphStyle alloc] init];    
@@ -72,10 +75,33 @@
     return nil;
 }
 
+- (void)filterUpThatPredicate
+{
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [calendar setLocale:[NSLocale currentLocale]];
+    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    today = [calendar dateFromComponents:nowComponents];
+    
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed != nil", today, nil];
+    [fetchRequest setPredicate:predicate];
+    
+    arrayController.fetchPredicate = predicate;
+}
+
 #pragma mark - IBActions
 
 - (IBAction)clearTextSelected:(id)sender;
 {
+    
 }
 
 - (IBAction)close:(id)sender;

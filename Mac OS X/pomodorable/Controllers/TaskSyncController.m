@@ -115,7 +115,7 @@ static TaskSyncController *singleton;
             newActivity.name = name;
             newActivity.plannedCount = [NSNumber numberWithInt:plannedCount];
             newActivity.sourceID = ID;
-            newActivity.completed = status; //this could be a 0, 1 or 2. right now if it is 1 or 2, it's completed :-P
+            newActivity.completed = [status boolValue] ? [NSDate date] : nil; //this could be a 0, 1 or 2. right now if it is 1 or 2, it's completed :-P
             
             //add ID to the ID dictionary, to keep it safe
             result = YES;
@@ -148,7 +148,7 @@ static TaskSyncController *singleton;
             existingActivity.name = name;
             existingActivity.plannedCount = [NSNumber numberWithInt:plannedCount];
             existingActivity.removed = [NSNumber numberWithBool:NO];
-            [existingActivity secretSetCompleted:status];
+            [existingActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
             
             //add ID to ID dictionary, to keep it safe
             result = YES;

@@ -28,7 +28,8 @@
 
 -(BOOL)save;
 {
-    if (!__managedObjectContext) 
+    NSLog(@"Saving...");
+    if (!__managedObjectContext)
     {
         return YES;
     }
@@ -97,7 +98,7 @@
     NSSortDescriptor *createdDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:completedDescriptor, createdDescriptor, nil];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((removed == 0) AND (completed == 0)) OR (completed == 1 AND modified > %@ and removed == 0)", today, nil];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((removed == 0) AND (completed == nil)) OR (completed > %@ and removed == 0)", today, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     [fetchRequest setPredicate:predicate];

@@ -43,7 +43,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
         
         //set up Activity notifications
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED_COMPLETION object:nil];
         
         //set up Sync notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
@@ -77,7 +77,7 @@
         [calendar setTimeZone:[NSTimeZone systemTimeZone]];
         NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
         today = [calendar dateFromComponents:nowComponents];
-        arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed == 1 AND modified > %@ AND removed == 0)", today, nil];
+        arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed > %@ AND removed == 0)", today, nil];
         
 #ifdef CLASSIC_APP
         NSString *title = NSLocalizedString(@"Check for updates...", @"Check for updates...");
@@ -174,7 +174,7 @@
     if([a class] == [Activity class])
     {
         //completed ribbons do not have a pull out. this might change for interruptions
-        BOOL selected = ([tableView selectedRow] == row && (![a.completed boolValue]));
+        BOOL selected = ([tableView selectedRow] == row && (!(a.completed)));
         height = [OverviewTableCellView heightForTitle:a.name selected:selected];
     }
     return height;
@@ -207,7 +207,7 @@
     previousSelectedRow = (int)[aTableView selectedRow];
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:rowIndex];
-    if([a.completed boolValue])
+    if((a.completed))
         return YES;
     
     return YES;
@@ -253,7 +253,7 @@
     }
     
     clippedIndex = (int)sr + 1;
-    if(clippedIndex < [arrayController.arrangedObjects count] && !([a.completed boolValue]))
+    if(clippedIndex < [arrayController.arrangedObjects count] && !(a.completed))
     {
         NSTableRowView *rowView = [itemsTableView rowViewAtRow:clippedIndex makeIfNecessary:NO];
         if(rowView)
@@ -268,7 +268,7 @@
     if([a class] == [Activity class])
     {
         if([[startButton attributedTitle] isEqualToAttributedString:startString])
-            [startButton setEnabled:![a.completed boolValue]];
+            [startButton setEnabled:!(a.completed)];
     }
 }
 
@@ -499,20 +499,23 @@
 - (void)ActivityModifiedCompletion:(NSNotification *)note
 {
     Activity *a = (Activity *)[note object];
-    NSUInteger index = [arrayController.arrangedObjects indexOfObject:a];
-    [itemsTableView beginUpdates];
-    [itemsTableView moveRowAtIndex:index toIndex:[arrayController.arrangedObjects count] - 1];
-    [itemsTableView endUpdates];
-    
-    [arrayController performSelector:@selector(rearrangeObjects) withObject:nil afterDelay:0.35f];
+    if(a.completed)
+    {
+        NSUInteger index = [arrayController.arrangedObjects indexOfObject:a];
+        [itemsTableView beginUpdates];
+        [itemsTableView moveRowAtIndex:index toIndex:[arrayController.arrangedObjects count] - 1];
+        [itemsTableView endUpdates];
+        
+        [arrayController performSelector:@selector(rearrangeObjects) withObject:nil afterDelay:0.35f];
+    }
     
     if([itemsTableView selectedRow] < 0)
         return;
 
     Activity *b = (Activity *)[arrayController.arrangedObjects objectAtIndex:[itemsTableView selectedRow]];
-    if(a == b && ([a.completed boolValue] != [b.completed boolValue]))
+    if(a == b && ((a.completed) != (b.completed)))
     {
-        if([a.completed boolValue])
+        if(a.completed)
         {
             if([[startButton attributedTitle] isEqualToAttributedString:startString])
             {

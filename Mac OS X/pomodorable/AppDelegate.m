@@ -476,9 +476,6 @@ void *kContextActivePanel = &kContextActivePanel;
         e.outcome = [NSNumber numberWithInt:EggOutcomeCompleted];
         e.activity = [Activity currentActivity];
         
-        [[ModelStore sharedStore] save];
-        [[Activity currentActivity] refresh];
-        
         //Calendar integration support
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"calendarIntegrationEnabled"])
             [calendarController createCalendarLogForEgg:e];
@@ -489,7 +486,8 @@ void *kContextActivePanel = &kContextActivePanel;
         if([a.completedEggs count] == [a.plannedCount intValue] && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoCompleteTasks"])
             a.completed = [NSNumber numberWithBool:YES];
             
-        [[Activity currentActivity] save];
+        [a save];
+        [a refresh];
         
         TimerType timerType = TimerTypeShortBreak;
         if(breakCounter == 3)

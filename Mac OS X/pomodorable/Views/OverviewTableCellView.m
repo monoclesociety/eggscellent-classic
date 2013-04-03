@@ -136,7 +136,7 @@
         r.origin.y = NSMaxY(self.frame) - selectionHeight - 6;
         coverupView.frame = r;
         
-        BOOL tofu = [((Activity *)self.objectValue).completed boolValue];        
+        BOOL tofu = (((Activity *)self.objectValue).completed);
         editContainerView.hidden = tofu;
     }
     else
@@ -232,11 +232,13 @@
 - (IBAction)toggleCompleteActivity:(id)sender;
 {
     Activity *a = (Activity *)self.objectValue;
-    BOOL completed = [a.completed boolValue];
-    a.completed = [NSNumber numberWithBool:!completed];
+    BOOL completed = (a.completed);
+    
+    NSDate *completedDate = completed ? nil : [NSDate date];
+    a.completed = completedDate;
     [a save];
 
-    ribbonView.completed = !completed;
+    ribbonView.completed = completedDate;
     [ribbonView setNeedsDisplay:YES];
 
     if(a == [Activity currentActivity] && [EggTimer currentTimer].status == TimerStatusRunning)

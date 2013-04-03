@@ -12,6 +12,7 @@
 #import "MSManagedObject.h"
 
 #define ACTIVITY_MODIFIED @"ACTIVITY_MODIFIED"
+#define ACTIVITY_MODIFIED_COMPLETION @"ACTIVITY_MODIFIED_COMPLETION"
 typedef enum
 {
     ActivitySourceNone = 0,
@@ -33,7 +34,7 @@ typedef enum
 @property (nonatomic, strong) NSNumber * source;
 @property (nonatomic, strong) NSString * sourceID;
 @property (nonatomic, strong) NSNumber * unplanned;
-@property (nonatomic, strong) NSNumber * completed;
+@property (nonatomic, strong) NSDate   * completed;
 @property (nonatomic, strong) NSNumber * removed;
 @property (nonatomic, strong) NSNumber * plannedCount;
 @property (nonatomic, strong) NSSet    * eggs;
@@ -50,7 +51,7 @@ typedef enum
 - (NSNumber *)internalInterruptionCount;
 - (NSNumber *)externalInterruptionCount;
 
-- (void)secretSetCompleted:(NSNumber *)completed;
+- (void)secretSetCompleted:(NSDate *)completed;
 - (void)refresh;
 - (BOOL)save;
 @end
