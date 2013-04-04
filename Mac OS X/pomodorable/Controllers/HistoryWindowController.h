@@ -23,6 +23,8 @@
 }
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
 
+- (IBAction)previousWeekSelected:(id)sender;
+- (IBAction)nextWeekSelected:(id)sender;
 - (IBAction)clearTextSelected:(id)sender;
 - (IBAction)close:(id)sender;
 @end

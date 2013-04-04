@@ -81,8 +81,22 @@
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     [calendar setLocale:[NSLocale currentLocale]];
     [calendar setTimeZone:[NSTimeZone systemTimeZone]];
-    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit fromDate:today];
     today = [calendar dateFromComponents:nowComponents];
+ 
+    //get which week it is rightt... now.
+    [nowComponents week];
+    
+    //set how many weeks you want to go back.
+    [nowComponents setWeek:1];
+    
+    //get first day of the week
+    [nowComponents setWeekday:1];
+    NSDate *firstDayOfWeek = [calendar dateFromComponents:nowComponents];
+    
+    //get last day of the week
+    [nowComponents setWeekday:7];
+    NSDate *lastDayOfWeek = [calendar dateFromComponents:nowComponents];
     
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -98,6 +112,16 @@
 }
 
 #pragma mark - IBActions
+
+- (IBAction)previousWeekSelected:(id)sender;
+{
+    
+}
+
+- (IBAction)nextWeekSelected:(id)sender;
+{
+    
+}
 
 - (IBAction)clearTextSelected:(id)sender;
 {
