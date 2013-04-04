@@ -7,3 +7,6 @@
 [submodule "Vendor/FsprgEmbeddedStoreMac"]
 	path = Vendor/FsprgEmbeddedStoreMac
 	url = git://github.com/monoclesociety/FsprgEmbeddedStoreMac.git
+[submodule "Vendor/cocoafob"]
+	path = Vendor/cocoafob
+	url = git://github.com/monoclesociety/cocoafob.git
