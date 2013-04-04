@@ -5,8 +5,15 @@
 //  Created by Kyle Kinkade on 11/5/11.
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
-
+#ifdef CLASSIC_APP
+#import <CocoaFobARC/CFobLicVerifier.h>
+#endif
 #import "ModelStore.h"
+
+@interface ModelStore (private)
+@property (nonatomic, strong) CFobLicVerifier *verifier;
+@property (nonatomic, strong) NSString *pubKey;
+@end
 
 @implementation ModelStore
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -23,6 +30,72 @@
     return singleton;
 }
 
+#pragma mark - time bomb bitches!
+
+- (id)init
+{
+    if(self = [super init])
+    {
+    //      THUS THE TIMEBOMB BEGINS....
+    [self performSelector:@selector(taskStoreInitialization:)
+               withObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:1234], [NSDate date], nil]
+               afterDelay:(arc4random() % 4)];
+    }
+    return self;
+}
+
+- (void)taskStoreInitialization:(NSArray *)arr
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 4) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+//        NSArray *p = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+//        NSMutableString *f = [NSMutableString stringWithString:(NSString *)[p objectAtIndex:0]];
+//        [f appendString:@"/Preferences/com.monoclesociety.eggscellent.osx.plist"];
+//        NSDictionary *d = [[NSFileManager defaultManager] attributesOfFileSystemForPath:f  error:nil];
+//        NSDate *md = [d objectForKey:NSFileModificationDate];
+//        NSTimeInterval mdti = [md timeIntervalSince1970];
+//        
+//        NSTimeInterval t = [[arr objectAtIndex:1] timeIntervalSince1970];
+        
+        //DO CHECK HERE.
+        //MAYBE GET LICENSE FROM USERDEFAULTS
+        //ENSURE THAT THE KEY ISN'T NIL OR IS OF TYPE STRING WHEN YOU GET IT BACK. AND THAT IT'S NOT FUNKY OR ANYTHING.
+//        if(t > initializationRes && )// || t < 1362096000) //detect that current date isn't before first run date (mar 1st is the num)
+//        {
+//            //THROW UP REGISTRATION WINDOW
+//        }
+        
+//        NSMutableString *pubKeyBase64 = [NSMutableString string];
+//        [pubKeyBase64 appendString:@"MIHxMIGoBgcqhkj"];
+//        [pubKeyBase64 appendString:@"OOAQBMIGcAkEA8wm04e0QcQRoAVJW"];
+//        [pubKeyBase64 appendString:@"WnUw/4rQEKbLKjujJu6o\n"];
+//        [pubKeyBase64 appendString:@"yE"];
+//        [pubKeyBase64 appendString:@"v7Y2oT3itY5pbObgYCHEu9FBizqq7apsWYSF3YX"];
+//        [pubKeyBase64 appendString:@"iRjKlg10wIVALfs9eVL10Ph\n"];
+//        [pubKeyBase64 appendString:@"oV6zczFpi3C7FzWNAkBaPhALEKlgIltHsumHdTSBqaVoR1/bmlgw"];
+//        [pubKeyBase64 appendString:@"/BCC13IAsW40\n"];
+//        [pubKeyBase64 appendString:@"nkFNsK1OVwjo2ocn"];
+//        [pubKeyBase64 appendString:@"3M"];
+//        [pubKeyBase64 appendString:@"wW"];
+//        [pubKeyBase64 appendString:@"4Rdq6uLm3DlENRZ5bYrTA"];
+//        [pubKeyBase64 appendString:@"0QAAkEA4reDYZKAl1vx+8EI\n"];
+//        [pubKeyBase64 appendString:@"MP/+"];
+//        [pubKeyBase64 appendString:@"2Z7ekydHfX0sTMDgkxhtRm6qtcywg01X847Y9ySgNepqleD+Ka2Wbucj1pOr\n"];
+//        [pubKeyBase64 appendString:@"y8MoDQ==\n"];
+        NSString *pubKeyBase64 = @"testickles";
+        self.pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
+        
+        self.verifier = [[CFobLicVerifier alloc] init];
+        NSError *err = nil;
+        if (![self.verifier setPublicKey:self.pubKey error:&err])
+        {
+            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
+        }
+        
+
+//        BOOL result = [self.verifier verifyRegCode:@"GAWQE-F9AQP-XJCCL-PAFAX-NU5XX-EUG6W-KLT3H-VTEB9-A9KHJ-8DZ5R-DL74G-TU4BN-7ATPY-3N4XB-V4V27-Q" forName:@"Joe Bloggs" error:&err];
+    });
+}
 
 #pragma mark - methods
 
