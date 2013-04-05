@@ -77,7 +77,7 @@ static TaskSyncController *singleton;
             int sourceInt = [a.source intValue];
             if(sourceInt == source)
             {
-                if(![activityIDs valueForKey:a.sourceID])
+                if(![activityIDs valueForKey:a.sourceID] && (!a.completed))
                 {
                     a.removed = [NSNumber numberWithBool:YES];
                 }

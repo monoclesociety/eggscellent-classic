@@ -77,7 +77,10 @@
         [calendar setTimeZone:[NSTimeZone systemTimeZone]];
         NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
         today = [calendar dateFromComponents:nowComponents];
-        arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"(removed == 0) OR (completed > %@ AND removed == 0)", today, nil];
+        
+        //create predicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(completed == nil && removed == 0) OR (completed > %@ AND removed == 0)", today, nil];        
+        arrayController.fetchPredicate = predicate;
         
 #ifdef CLASSIC_APP
         NSString *title = NSLocalizedString(@"Check for updates...", @"Check for updates...");
