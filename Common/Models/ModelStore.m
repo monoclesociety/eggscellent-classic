@@ -5,17 +5,24 @@
 //  Created by Kyle Kinkade on 11/5/11.
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
-#ifdef CLASSIC_APP
-#import <CocoaFobARC/CFobLicVerifier.h>
-#endif
 #import "ModelStore.h"
 
-@interface ModelStore (private)
-@property (nonatomic, strong) CFobLicVerifier *verifier;
-@property (nonatomic, strong) NSString *pubKey;
-@end
+#ifdef CLASSIC_APP
+#import <CocoaFobARC/CFobLicVerifier.h>
+
+//@interface ModelStore (private)
+//@property (nonatomic, strong) CFobLicVerifier *verifier;
+//@property (nonatomic, strong) NSString *pubKey;
+//@end
+//
+//@implementation ModelStore (private)
+//@synthesize pubKey;
+//@end
+
+#endif
 
 @implementation ModelStore
+
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize managedObjectContext = __managedObjectContext;
@@ -82,17 +89,16 @@
 //        [pubKeyBase64 appendString:@"MP/+"];
 //        [pubKeyBase64 appendString:@"2Z7ekydHfX0sTMDgkxhtRm6qtcywg01X847Y9ySgNepqleD+Ka2Wbucj1pOr\n"];
 //        [pubKeyBase64 appendString:@"y8MoDQ==\n"];
-        NSString *pubKeyBase64 = @"testickles";
-        self.pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
-        
-        self.verifier = [[CFobLicVerifier alloc] init];
-        NSError *err = nil;
-        if (![self.verifier setPublicKey:self.pubKey error:&err])
-        {
-            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
-        }
-        
-
+//        NSString *pubKeyBase64 = @"testickles";
+//        self.pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
+//        
+//        self.verifier = [[CFobLicVerifier alloc] init];
+//        NSError *err = nil;
+//        if (![self.verifier setPublicKey:self.pubKey error:&err])
+//        {
+//            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
+//        }
+//        
 //        BOOL result = [self.verifier verifyRegCode:@"GAWQE-F9AQP-XJCCL-PAFAX-NU5XX-EUG6W-KLT3H-VTEB9-A9KHJ-8DZ5R-DL74G-TU4BN-7ATPY-3N4XB-V4V27-Q" forName:@"Joe Bloggs" error:&err];
     });
 }
