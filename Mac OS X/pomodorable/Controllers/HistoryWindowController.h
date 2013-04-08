@@ -20,6 +20,8 @@
     IBOutlet NSArrayController *arrayController;
     
     NSManagedObjectContext  *__weak _managedObjectContext;
+    
+    int weekCounter;
 }
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
 

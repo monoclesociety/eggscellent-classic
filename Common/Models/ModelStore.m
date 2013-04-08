@@ -107,7 +107,7 @@
 
 -(BOOL)save;
 {
-    NSLog(@"Saving...");
+//    NSLog(@"Saving...");
     if (!__managedObjectContext)
     {
         return YES;

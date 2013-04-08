@@ -77,26 +77,20 @@
 
 - (void)filterUpThatPredicate
 {
-    NSDate *today = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *now = [NSDate date];
+
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     [calendar setLocale:[NSLocale currentLocale]];
     [calendar setTimeZone:[NSTimeZone systemTimeZone]];
-    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit fromDate:today];
-    today = [calendar dateFromComponents:nowComponents];
- 
-    //get which week it is rightt... now.
-    [nowComponents week];
+    NSUInteger components = NSYearForWeekOfYearCalendarUnit |NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit;
+    NSDateComponents *nowComponents = [calendar components:components fromDate:now];
     
-    //set how many weeks you want to go back.
-    [nowComponents setWeek:1];
     
-    //get first day of the week
-    [nowComponents setWeekday:1];
-    NSDate *firstDayOfWeek = [calendar dateFromComponents:nowComponents];
+    [nowComponents setWeekday:2]; // 2: monday
+    NSDate *firstDayOfTheWeek = [calendar dateFromComponents:nowComponents];
     
-    //get last day of the week
-    [nowComponents setWeekday:7];
-    NSDate *lastDayOfWeek = [calendar dateFromComponents:nowComponents];
+    [nowComponents setWeekday:7]; // 7: saturday
+    NSDate *lastDayOfTheWeek = [calendar dateFromComponents:nowComponents];
     
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -105,7 +99,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed != nil", today, nil];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed != nil AND (completed > %@ AND completed < %@)", firstDayOfTheWeek, lastDayOfTheWeek, nil];
     [fetchRequest setPredicate:predicate];
     
     arrayController.fetchPredicate = predicate;
