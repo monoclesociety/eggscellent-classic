@@ -347,7 +347,7 @@ void *kContextActivePanel = &kContextActivePanel;
         
         Activity *a = [Activity activity];
         a.name = NSLocalizedString(@"Open Eggscellent for the first time", @"Open Eggscellent for the first time");
-        a.completed = [NSNumber numberWithBool:YES];
+        a.completed = [NSDate date];
         a.plannedCount = [NSNumber numberWithInt:1];
         
         [[ModelStore sharedStore] save];;
@@ -359,13 +359,12 @@ void *kContextActivePanel = &kContextActivePanel;
     self.hotKeyToggleStatusItemWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_STATUSITEM_WINDOW withSelector:@selector(togglePanel:)];
     self.hotKeyToggleHoverWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_HOVER_WINDOW withSelector:@selector(toggleHoverWindowKeyed:)];
     self.hotKeyToggleNoteWindow = [self hotKeyWithKey:HOTKEY_TOGGLE_NOTE_WINDOW withSelector:@selector(toggleNoteKeyed:)];
-    
 }
 
 - (BOOL)startAtLogin
 {
     NSDictionary *dict = (NSDictionary*)CFBridgingRelease(SMJobCopyDictionary(kSMDomainUserLaunchd, 
-                                                            CFSTR("com.monoclesociety.eggscellentosx")));
+                                                            CFSTR("com.monoclesociety.eggscellent.osx")));
     BOOL contains = (dict!=NULL);
     return contains;
 }
@@ -396,7 +395,7 @@ void *kContextActivePanel = &kContextActivePanel;
 {  
     bool login = loginItem ? true : false;
 
-    NSString *bundleIdentifier = @"com.monoclesociety.eggscellentosx.helper";
+    NSString *bundleIdentifier = @"com.monoclesociety.eggscellent.osx.helper";
 
     if (!SMLoginItemSetEnabled((__bridge CFStringRef)bundleIdentifier, login))
     {

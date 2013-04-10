@@ -23,7 +23,7 @@
     NSArray *running = [[NSWorkspace sharedWorkspace] runningApplications];
     for (NSRunningApplication *app in running)
     {
-        if ([[app bundleIdentifier] isEqualToString:@"com.monoclesociety.eggscellentosx"])
+        if ([[app bundleIdentifier] isEqualToString:@"com.monoclesociety.eggscellent.osx"])
         {
             NSLog(@"EGGSCELLENT IS ALREADY RUNNING");
             alreadyRunning = YES;

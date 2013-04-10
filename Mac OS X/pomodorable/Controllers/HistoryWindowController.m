@@ -39,21 +39,10 @@
     [self.window setStyleMask:NSResizableWindowMask];
     
     [self filterUpThatPredicate];//look i'm sure you from the future is all like "what a lame name, why did he even do that? cause I can. eat it."
-    
-    //set up "clear" button font and color
-    NSMutableParagraphStyle *pStyle = [[NSMutableParagraphStyle alloc] init];    
-    pStyle.alignment = NSCenterTextAlignment;
-    NSColor *txtColor = [NSColor colorWithDeviceRed:0.423 green:0.415 blue:0.317 alpha:1];
-    NSFont *txtFont = [NSFont systemFontOfSize:12];
-    
-    NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:pStyle, NSParagraphStyleAttributeName, txtFont, NSFontAttributeName, txtColor,  NSForegroundColorAttributeName, nil];
-    NSAttributedString *stopString = [[NSMutableAttributedString alloc] initWithString:@"Done" attributes:txtDict];
-    [clearButton setAttributedTitle:stopString];
-    
+     
     //unify the background color for the contentView of the window as well as the content view of the scroll view
     ((ColorView *)self.window.contentView).backgroundColor =
-    contentView.backgroundColor =
-    scrollContentView.backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
+    contentView.backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
 }
 
 - (void)showWindow:(id)sender
@@ -75,22 +64,40 @@
     return nil;
 }
 
-- (void)filterUpThatPredicate
+- (void)updateFirstAndLastDatesWithDelta:(int)delta
 {
     NSDate *now = [NSDate date];
-
     NSCalendar *calendar = [NSCalendar currentCalendar];
     [calendar setLocale:[NSLocale currentLocale]];
     [calendar setTimeZone:[NSTimeZone systemTimeZone]];
-    NSUInteger components = NSYearForWeekOfYearCalendarUnit |NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit;
-    NSDateComponents *nowComponents = [calendar components:components fromDate:now];
     
+    NSUInteger components = NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit;
+    NSDateComponents* comps = [calendar components:components
+                                          fromDate:now];
     
-    [nowComponents setWeekday:2]; // 2: monday
-    NSDate *firstDayOfTheWeek = [calendar dateFromComponents:nowComponents];
-    
-    [nowComponents setWeekday:7]; // 7: saturday
-    NSDate *lastDayOfTheWeek = [calendar dateFromComponents:nowComponents];
+    // set first of the month
+    [comps setDay:1];
+    firstDay = [calendar dateFromComponents:comps];
+
+    // set last of month
+    [comps setMonth:[comps month]+1];
+    lastDay = [calendar dateFromComponents:comps];
+
+    //this code is saved here because it is used for when we want weeks at a time.
+//    NSUInteger components = NSYearForWeekOfYearCalendarUnit |NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit;
+//    NSDateComponents *nowComponents = [calendar components:components fromDate:now];
+//    [nowComponents setWeek:[nowComponents week] - delta];
+//
+//    [nowComponents setWeekday:1]; // 2: monday
+//    firstDay = [calendar dateFromComponents:nowComponents];
+//
+//    [nowComponents setWeekday:7]; // 7: saturday
+//    lastDay = [calendar dateFromComponents:nowComponents];
+}
+
+- (void)filterUpThatPredicate
+{
+    [self updateFirstAndLastDatesWithDelta:0];
     
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -99,7 +106,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed != nil AND (completed > %@ AND completed < %@)", firstDayOfTheWeek, lastDayOfTheWeek, nil];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed != nil AND (completed > %@ AND completed < %@)", firstDay, lastDay, nil];
     [fetchRequest setPredicate:predicate];
     
     arrayController.fetchPredicate = predicate;

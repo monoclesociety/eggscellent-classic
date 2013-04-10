@@ -12,7 +12,6 @@
 
 @interface HistoryWindowController : NSWindowController
 {
-    IBOutlet NSScrollView   *scrollContentView;
     IBOutlet ColorView      *contentView;
     IBOutlet NSImageView    *imageView;
     IBOutlet NSButton       *clearButton;
@@ -21,6 +20,8 @@
     
     NSManagedObjectContext  *__weak _managedObjectContext;
     
+    NSDate *firstDay;
+    NSDate *lastDay;
     int weekCounter;
 }
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;

@@ -7,19 +7,19 @@
 //
 #import "ModelStore.h"
 
-#ifdef CLASSIC_APP
-#import <CocoaFobARC/CFobLicVerifier.h>
-
-//@interface ModelStore (private)
-//@property (nonatomic, strong) CFobLicVerifier *verifier;
-//@property (nonatomic, strong) NSString *pubKey;
-//@end
+//#ifdef CLASSIC_APP
+//#import <CocoaFobARC/CFobLicVerifier.h>
 //
-//@implementation ModelStore (private)
-//@synthesize pubKey;
-//@end
-
-#endif
+////@interface ModelStore (private)
+////@property (nonatomic, strong) CFobLicVerifier *verifier;
+////@property (nonatomic, strong) NSString *pubKey;
+////@end
+////
+////@implementation ModelStore (private)
+////@synthesize pubKey;
+////@end
+//
+//#endif
 
 @implementation ModelStore
 
