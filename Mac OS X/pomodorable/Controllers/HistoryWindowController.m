@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Monocle Society LLC. All rights reserved.
 //
 
+#import <RobotKit/RobotKit.h>
 #import "HistoryWindowController.h"
 #import "ColorView.h"
 
@@ -139,6 +140,57 @@
 - (void)imageDropped:(NSNotification *)note
 {
     
+}
+
+#pragma mark - TableView Delegate and Datasource methods
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    if(row >= [arrayController.arrangedObjects count])
+        return 70;
+    
+    return 70;
+}
+
+- (BOOL)tableView:(NSTableView *)tableView isGroupRow:(NSInteger)row;
+{
+    return (row % 2);
+}
+
+//- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+//{
+////    OverviewTableCellView *result = [itemsTableView makeViewWithIdentifier:@"OverviewTableCellView" owner:self];
+////    [result.backgroundClip setHidden:YES];
+////    result.tableView = itemsTableView;
+////    
+////    //set the appropriate selection
+////    NSTableRowView *rowView = [itemsTableView rowViewAtRow:row makeIfNecessary:NO];
+////    
+////    Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:row];
+////    result.textField.stringValue = a.name;
+////    result.selected = rowView.selected;
+////    
+////    return result;
+//    
+//    NSTableCellView *result = [historyTableView makeViewWithIdentifier:@"HistoryTableCellView" owner:self];
+//    result.textField.stringValue = @"OH SHIT";
+//    return result;
+//}
+
+//- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
+//{
+//    OverviewTableRowView *rowView = [[OverviewTableRowView alloc] init];
+//    return rowView;
+//}
+
+- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex
+{
+    return YES;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+
 }
 
 @end

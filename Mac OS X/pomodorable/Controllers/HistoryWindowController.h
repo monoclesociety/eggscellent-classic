@@ -15,6 +15,7 @@
     IBOutlet ColorView      *contentView;
     IBOutlet NSImageView    *imageView;
     IBOutlet NSButton       *clearButton;
+    IBOutlet NSTableView    *historyTableView;
     
     IBOutlet NSArrayController *arrayController;
     

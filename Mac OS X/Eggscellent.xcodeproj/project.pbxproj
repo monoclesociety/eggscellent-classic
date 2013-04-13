@@ -269,6 +269,13 @@
 		3D88F86D16EA42FB00265052 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
+		3D96967517188E9400A0CE95 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
+		3D96967617188E9400A0CE95 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
+		3D96967C17188EF900A0CE95 /* RobotKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
+		3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
+		3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
+		3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
+		3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
 		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
 		3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
 		3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
@@ -559,6 +566,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */,
+				3D96967C17188EF900A0CE95 /* RobotKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +622,9 @@
 		3D88F86C16EA42FB00265052 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/preferences/calendar.png; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		3D96967417188E9400A0CE95 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = pomodorable/Vendor/RobotKit.framework; sourceTree = "<group>"; };
+		3D96967D171891CD00A0CE95 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
 		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
 		3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbonComplete.png; sourceTree = "<group>"; };
 		3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbonComplete@2x.png"; path = "Resources/ribbons/ribbonComplete@2x.png"; sourceTree = "<group>"; };
@@ -919,6 +930,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */,
+				3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */,
 				3D0FDD2B16ECED5800815B2C /* Sparkle.framework in Frameworks */,
 				3D0FDD2C16ECED5800815B2C /* InstantMessage.framework in Frameworks */,
 				3D0FDD2D16ECED5800815B2C /* AVFoundation.framework in Frameworks */,
@@ -934,6 +947,7 @@
 				3D0FDD3716ECED5800815B2C /* libz.dylib in Frameworks */,
 				3D0FDD3816ECED5800815B2C /* SystemConfiguration.framework in Frameworks */,
 				3D0FDD3916ECED5800815B2C /* Cocoa.framework in Frameworks */,
+				3D96967617188E9400A0CE95 /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +963,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */,
+				3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */,
 				3D29146415BB0A0200F19BED /* InstantMessage.framework in Frameworks */,
 				3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */,
 				3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */,
@@ -963,6 +979,7 @@
 				F4E8848F1466FAFD0004DADB /* libz.dylib in Frameworks */,
 				F4E8848D1466FAEC0004DADB /* SystemConfiguration.framework in Frameworks */,
 				F48A5B351465F38500BFD7B2 /* Cocoa.framework in Frameworks */,
+				3D96967517188E9400A0CE95 /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1428,6 +1445,9 @@
 		F48A5B331465F38500BFD7B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D96967D171891CD00A0CE95 /* IOBluetooth.framework */,
+				3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */,
+				3D96967417188E9400A0CE95 /* RobotKit.framework */,
 				3DB7924A160A4E2D00CA5D24 /* HockeySDK.framework */,
 				3D29146315BB0A0200F19BED /* InstantMessage.framework */,
 				3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */,
@@ -2542,6 +2562,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
+					"\"$(SRCROOT)/pomodorable/Vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
@@ -2567,6 +2588,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
+					"\"$(SRCROOT)/pomodorable/Vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
@@ -2677,7 +2699,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/pomodorable/Vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
@@ -2696,7 +2721,10 @@
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/pomodorable/Vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pomodorable/Eggscellent-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";

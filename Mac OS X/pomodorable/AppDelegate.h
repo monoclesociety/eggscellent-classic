@@ -59,6 +59,9 @@
     NSTimer     *idleTimer;
     NSAlert     *idleAlert;
     NSAlert     *errorAlert;
+    BOOL         robotOnline;
+    
+    int updatePacketsLeft;
 }
 @property (nonatomic, strong) PanelController *panelController;
 @property (nonatomic, strong) TaskSyncController *taskSyncController;

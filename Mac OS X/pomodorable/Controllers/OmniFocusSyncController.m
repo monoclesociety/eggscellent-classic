@@ -70,7 +70,7 @@
         
         NSAppleEventDescriptor *IDs     = [ed descriptorAtIndex:1];
         NSAppleEventDescriptor *names   = [ed descriptorAtIndex:2];
-        NSAppleEventDescriptor *minutes = [ed descriptorAtIndex:3];
+//        NSAppleEventDescriptor *minutes = [ed descriptorAtIndex:3];
         
         int count = (int)[IDs numberOfItems];
         
