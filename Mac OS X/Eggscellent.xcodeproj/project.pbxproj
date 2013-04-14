@@ -265,6 +265,8 @@
 		3D47206A16D99651009204E2 /* 10_egg_hatch.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206516D99651009204E2 /* 10_egg_hatch.aif */; };
 		3D47206D16D997FD009204E2 /* AVAudioPlayer+Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */; };
 		3D58D99C15E2CD71002B3F84 /* Eggscellent.help in Resources */ = {isa = PBXBuildFile; fileRef = 3D58D99B15E2CD71002B3F84 /* Eggscellent.help */; };
+		3D5C2634171A166400CF25A0 /* HistoryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5C2633171A166400CF25A0 /* HistoryTableCellView.m */; };
+		3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5C2633171A166400CF25A0 /* HistoryTableCellView.m */; };
 		3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F856016DB1E0A0037A95C /* MSButtonCell.m */; };
 		3D88F86D16EA42FB00265052 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -617,6 +619,8 @@
 		3D47206B16D997FD009204E2 /* AVAudioPlayer+Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AVAudioPlayer+Filesystem.h"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.h"; sourceTree = "<group>"; };
 		3D47206C16D997FD009204E2 /* AVAudioPlayer+Filesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AVAudioPlayer+Filesystem.m"; path = "Other Sources/Categories/AVAudioPlayer+Filesystem.m"; sourceTree = "<group>"; };
 		3D58D99B15E2CD71002B3F84 /* Eggscellent.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eggscellent.help; sourceTree = "<group>"; };
+		3D5C2632171A166400CF25A0 /* HistoryTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableCellView.h; sourceTree = "<group>"; };
+		3D5C2633171A166400CF25A0 /* HistoryTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableCellView.m; sourceTree = "<group>"; };
 		3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonCell.h; sourceTree = "<group>"; };
 		3D6F856016DB1E0A0037A95C /* MSButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonCell.m; sourceTree = "<group>"; };
 		3D88F86C16EA42FB00265052 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/preferences/calendar.png; sourceTree = "<group>"; };
@@ -1037,6 +1041,15 @@
 			name = egg;
 			sourceTree = "<group>";
 		};
+		3D5C262C171A15F700CF25A0 /* HistoryTableCellView */ = {
+			isa = PBXGroup;
+			children = (
+				3D5C2632171A166400CF25A0 /* HistoryTableCellView.h */,
+				3D5C2633171A166400CF25A0 /* HistoryTableCellView.m */,
+			);
+			name = HistoryTableCellView;
+			sourceTree = "<group>";
+		};
 		3D8EA55315D5A7E100A07915 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1395,6 +1408,7 @@
 		F481A37314FDA30700AAF2E8 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				3D5C262C171A15F700CF25A0 /* HistoryTableCellView */,
 				F481A37814FDA3B700AAF2E8 /* HistoryWindowController.h */,
 				F481A37914FDA3B700AAF2E8 /* HistoryWindowController.m */,
 				F481A37B14FDA3CC00AAF2E8 /* HistoryWindowController.xib */,
@@ -2416,6 +2430,7 @@
 				3D0FDD2716ECED5800815B2C /* MSButtonCell.m in Sources */,
 				3D0FDD2816ECED5800815B2C /* CalendarController.m in Sources */,
 				3D0FDD2916ECED5800815B2C /* CalendarPreferencesViewController.m in Sources */,
+				3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2496,6 +2511,7 @@
 				3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */,
 				3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */,
 				3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */,
+				3D5C2634171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,29 +31,29 @@
     NSBezierPath* roundedGradientPath = [NSBezierPath bezierPathWithRoundedRect:f xRadius:6 yRadius:6];
     [awesome drawInBezierPath:roundedGradientPath angle:-90];
     
-//    //create "red" lines
-//    CGFloat maxY = NSMaxY(self.frame);
-//    CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-//    CGColorRef black = CGColorCreateGenericRGB(0.949, 0.713, 0.317, 1);
-//    CGContextSetStrokeColorWithColor(c, black);
-//    CGContextBeginPath(c);
-//    CGContextMoveToPoint(c, 0.0f, maxY - 49.0f);
-//    CGContextAddLineToPoint(c, self.frame.size.width, maxY - 49.0f);
-//    CGContextSetLineWidth(c, 2);
-//    CGContextSetLineCap(c, kCGLineCapSquare);
-//    CGContextClosePath(c);
-//    CGContextStrokePath(c);
-//    
-//    CGContextSetStrokeColorWithColor(c, black);
-//    CGContextBeginPath(c);
-//    CGContextMoveToPoint(c, 0.0f, maxY - 51.5f);
-//    CGContextAddLineToPoint(c, self.frame.size.width, maxY - 51.5f);
-//    CGContextSetLineWidth(c, 1);
-//    CGContextSetLineCap(c, kCGLineCapSquare);
-//    CGContextClosePath(c);
-//    CGContextStrokePath(c);
+    //create "red" lines
+    CGFloat maxY = NSMaxY(self.frame);
+    CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
+    CGColorRef black = CGColorCreateGenericRGB(0.949, 0.713, 0.317, 1);
+    CGContextSetStrokeColorWithColor(c, black);
+    CGContextBeginPath(c);
+    CGContextMoveToPoint(c, 0.0f, maxY - 49.0f);
+    CGContextAddLineToPoint(c, self.frame.size.width, maxY - 49.0f);
+    CGContextSetLineWidth(c, 2);
+    CGContextSetLineCap(c, kCGLineCapSquare);
+    CGContextClosePath(c);
+    CGContextStrokePath(c);
     
-//    CGColorRelease(black);
+    CGContextSetStrokeColorWithColor(c, black);
+    CGContextBeginPath(c);
+    CGContextMoveToPoint(c, 0.0f, maxY - 51.5f);
+    CGContextAddLineToPoint(c, self.frame.size.width, maxY - 51.5f);
+    CGContextSetLineWidth(c, 1);
+    CGContextSetLineCap(c, kCGLineCapSquare);
+    CGContextClosePath(c);
+    CGContextStrokePath(c);
+    
+    CGColorRelease(black);
     
     //stroke entire rounded rectangle with clear
     [[NSColor clearColor] setStroke];

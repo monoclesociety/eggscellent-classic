@@ -345,7 +345,7 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)handleRobotOnline
 {
-    [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green:0.5 blue:0.0];
+    [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.0];
     
     ////First turn off stabilization so the drive mechanism does not move.
     [RKStabilizationCommand sendCommandWithState:RKStabilizationStateOff];
@@ -663,6 +663,9 @@ void *kContextActivePanel = &kContextActivePanel;
         [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
 #endif
     }
+    
+    if(robotOnline)
+        [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.0 blue:0.0];
     
     [[Activity currentActivity] save];
 }
