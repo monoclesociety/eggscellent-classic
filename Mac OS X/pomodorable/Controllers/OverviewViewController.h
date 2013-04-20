@@ -21,6 +21,7 @@
     IBOutlet NSButton               *addTaskButton;
     IBOutlet NSSearchField          *searchField;
     IBOutlet NSScrollView           *listScrollView;
+    IBOutlet NSTextField            *noTaskLabel;
     
     int                              currentClippedRow;
     int                              previousSelectedRow;
