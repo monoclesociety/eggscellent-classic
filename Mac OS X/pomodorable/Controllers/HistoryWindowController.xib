@@ -95,7 +95,7 @@
 						</object>
 						<object class="NSButton" id="451319379">
 							<reference key="NSNextResponder" ref="668163697"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{285, 428}, {28, 28}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
@@ -128,7 +128,7 @@
 						</object>
 						<object class="NSButton" id="172612312">
 							<reference key="NSNextResponder" ref="668163697"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{313, 428}, {28, 28}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
@@ -178,7 +178,7 @@
 											<string key="NSFrameSize">{320.5, 397}</string>
 											<reference key="NSSuperview" ref="769644312"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="954073568"/>
+											<reference key="NSNextKeyView" ref="330132852"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -315,7 +315,7 @@
 							<string key="NSFrame">{{21, 2}, {320, 397}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="330132852"/>
+							<reference key="NSNextKeyView" ref="769644312"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">154240</int>
 							<reference key="NSVScroller" ref="330132852"/>
@@ -402,10 +402,9 @@
 					<string key="NSEntityName">Activity</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
-				<bool key="_NSUsesLazyFetching">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
-				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
+				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -560,7 +559,6 @@
 									<int key="NSvFlags">266</int>
 									<string key="NSFrame">{{28, 5}, {289.5, 17}}</string>
 									<reference key="NSSuperview" ref="954073568"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="594005501">

@@ -16,15 +16,12 @@
 
 #pragma mark - memory based methods
 
-- (id)initWithWindow:(NSWindow *)window
+- (id)initWithWindowNibName:(NSString *)windowNibName
 {
-    self = [super initWithWindow:window];
-    if (self) 
+    if(self = [super initWithWindowNibName:windowNibName])
     {
-        // Initialization code here.
         _managedObjectContext = [[ModelStore sharedStore] managedObjectContext];
     }
-
     return self;
 }
 
