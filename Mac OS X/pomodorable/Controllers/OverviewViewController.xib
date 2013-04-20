@@ -101,7 +101,7 @@
 						<string key="NSFrame">{{1, 497}, {320, 7}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="14308960"/>
+						<reference key="NSNextKeyView" ref="240135862"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="727414147">
 							<int key="NSCellFlags">134217728</int>
@@ -118,7 +118,7 @@
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						<bool key="NSEditable">YES</bool>
 					</object>
-					<object class="NSTextField" id="14308960">
+					<object class="NSTextField" id="240135862">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{-2, 285}, {327, 17}}</string>
@@ -127,13 +127,13 @@
 						<reference key="NSNextKeyView" ref="393863604"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="714843177">
+						<object class="NSTextFieldCell" key="NSCell" id="762588741">
 							<int key="NSCellFlags">68157504</int>
 							<int key="NSCellFlags2">138413056</int>
 							<string key="NSContents">Click on + button to add a new task</string>
 							<reference key="NSSupport" ref="892582779"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
-							<reference key="NSControlView" ref="14308960"/>
+							<reference key="NSControlView" ref="240135862"/>
 							<object class="NSColor" key="NSBackgroundColor" id="892533482">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
@@ -954,7 +954,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">noTaskLabel</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="14308960"/>
+						<reference key="destination" ref="240135862"/>
 					</object>
 					<int key="connectionID">646</int>
 				</object>
@@ -1368,7 +1368,7 @@
 										<object class="NSCustomView" id="186449567">
 											<reference key="NSNextResponder" ref="542309460"/>
 											<int key="NSvFlags">36</int>
-											<string key="NSFrame">{{55, 63}, {181, 18}}</string>
+											<string key="NSFrame">{{55, 63}, {144, 18}}</string>
 											<reference key="NSSuperview" ref="542309460"/>
 											<reference key="NSNextKeyView" ref="729232514"/>
 											<string key="NSReuseIdentifierKey">_NS:1192</string>
@@ -1659,10 +1659,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: arrangedObjects.@count</string>
-						<reference key="source" ref="14308960"/>
+						<reference key="source" ref="240135862"/>
 						<reference key="destination" ref="193486142"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="14308960"/>
+							<reference key="NSSource" ref="240135862"/>
 							<reference key="NSDestination" ref="193486142"/>
 							<string key="NSLabel">hidden: arrangedObjects.@count</string>
 							<string key="NSBinding">hidden</string>
@@ -1714,7 +1714,7 @@
 							<reference ref="614923619"/>
 							<reference ref="137241969"/>
 							<reference ref="724325799"/>
-							<reference ref="14308960"/>
+							<reference ref="240135862"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2230,16 +2230,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">638</int>
-						<reference key="object" ref="14308960"/>
+						<reference key="object" ref="240135862"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="714843177"/>
+							<reference ref="762588741"/>
 						</array>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">639</int>
-						<reference key="object" ref="714843177"/>
-						<reference key="parent" ref="14308960"/>
+						<reference key="object" ref="762588741"/>
+						<reference key="parent" ref="240135862"/>
 					</object>
 				</array>
 			</object>

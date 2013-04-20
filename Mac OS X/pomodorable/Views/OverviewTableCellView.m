@@ -56,6 +56,11 @@
     
     //set coverupview
     coverupView.backgroundColor = [NSColor colorWithCalibratedWhite:0.9254901961f alpha:1];
+    
+    //Add tracking area to allow for mouse selection
+    //NSTrackingMouseMoved
+    NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[self.window frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:self userInfo:nil];
+    [pomodoroCounterView addTrackingArea:area];
 }
 
 - (void)dealloc
@@ -257,6 +262,52 @@
     if(!a.sourceID)
        [[TaskSyncController currentController] saveNewActivity:a];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:a];
+}
+
+#pragma mark - Mouse click and tracking stuff
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    if(inCounter)
+    {
+        mouseDown = YES;
+        NSPoint cursorPoint = [self convertPoint:[theEvent locationInWindow] toView:pomodoroCounterView];
+        double floorAmount = ceil(cursorPoint.x / 18);
+
+        int amount = MIN(floorAmount, 8);
+        
+        Activity *a = (Activity *)self.objectValue;
+
+        a.plannedCount = [NSNumber numberWithInt:amount];
+        pomodoroCounterView.plannedCount = a.plannedCount;
+
+        //set ribbon value
+        ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
+        ribbonView.completePomodoroCount = (int)[a.completedEggs count];
+        [ribbonView setNeedsDisplay:YES];
+
+        [a save];
+        
+        return;
+    }
+    
+    [super mouseDown:theEvent];
+}
+
+- (void)mouseUp:(NSEvent *)theEvent
+{
+    mouseDown = NO;
+    [super mouseDown:theEvent];
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+    inCounter = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent
+{
+    inCounter = NO;
 }
 
 @end

@@ -35,6 +35,8 @@
     IBOutlet NSButton       *increasePomodoroCountButton;
     
     BOOL                    _selected;
+    BOOL                    mouseDown;
+    BOOL                    inCounter;
 }
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, weak) NSImageView *backgroundClip;
