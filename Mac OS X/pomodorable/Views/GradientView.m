@@ -9,15 +9,15 @@
 #import "GradientView.h"
 
 @implementation GradientView
+@synthesize topColor;
+@synthesize bottomColor;
 
 - (void)drawRect:(NSRect)dirtyRect
 {
     [super drawRect:dirtyRect];
     
-    //// Gradient Declarations 
-    NSColor *stickyNoteColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
-    NSColor *stickyNoteClearColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:0.000];
-    NSGradient* awesome = [[NSGradient alloc] initWithStartingColor:stickyNoteColor endingColor:stickyNoteClearColor];
+    //// Gradient Declarations
+    NSGradient* awesome = [[NSGradient alloc] initWithStartingColor:bottomColor endingColor:topColor];
     [awesome drawInRect:self.bounds angle:90];
     
     //// Cleanup

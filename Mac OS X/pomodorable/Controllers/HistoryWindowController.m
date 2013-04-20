@@ -12,6 +12,7 @@
 
 @implementation HistoryWindowController
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize activitySortDescriptors;
 
 #pragma mark - memory based methods
 
@@ -46,10 +47,13 @@
     historyTableView.backgroundColor = 
     contentView.backgroundColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
     
-    
-    NSSortDescriptor *completedDescriptor = [[NSSortDescriptor alloc] initWithKey:@"completed" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:completedDescriptor, nil];
-    arrayController.sortDescriptors = sortDescriptors;
+    //set up the gradients!
+    NSColor *stickyNoteColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
+    NSColor *stickyNoteClearColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:0.000];
+    topGradient.topColor = stickyNoteColor;
+    topGradient.bottomColor = stickyNoteClearColor;
+    bottomGradient.topColor = stickyNoteClearColor;
+    bottomGradient.bottomColor = stickyNoteColor;
 }
 
 - (void)showWindow:(id)sender
@@ -65,6 +69,14 @@
 }
 
 #pragma mark - Internal methods
+
+- (NSArray *)activitySortDescriptors
+{
+    return [NSArray arrayWithObjects:
+            [NSSortDescriptor sortDescriptorWithKey:@"completed"
+                                          ascending:NO],
+            nil];
+}
 
 - (NSPredicate *)filterPredicate
 {

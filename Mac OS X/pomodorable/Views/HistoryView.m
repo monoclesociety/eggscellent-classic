@@ -31,10 +31,10 @@
     NSBezierPath* roundedGradientPath = [NSBezierPath bezierPathWithRoundedRect:f xRadius:6 yRadius:6];
     [awesome drawInBezierPath:roundedGradientPath angle:-90];
     
-    //create "red" lines
+    //create blue lines
     CGFloat maxY = NSMaxY(self.frame);
     CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-    CGColorRef black = CGColorCreateGenericRGB(0.949, 0.713, 0.317, 1);
+    CGColorRef black = CGColorCreateGenericRGB(83.0/255.0, 177.0/255.0, 215.0/255.0, 1);
     CGContextSetStrokeColorWithColor(c, black);
     CGContextBeginPath(c);
     CGContextMoveToPoint(c, 0.0f, maxY - 49.0f);

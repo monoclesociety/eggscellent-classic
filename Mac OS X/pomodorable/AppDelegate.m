@@ -132,7 +132,7 @@ void *kContextActivePanel = &kContextActivePanel;
     [windUpSound prepareToPlay];
     
     //if sphero, then try to connect
-    [[RKRobotProvider sharedRobotProvider] performSelector:@selector(openRobotConnection) withObject:nil afterDelay:0.1f];
+   // [[RKRobotProvider sharedRobotProvider] performSelector:@selector(openRobotConnection) withObject:nil afterDelay:0.1f];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

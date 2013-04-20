@@ -10,5 +10,9 @@
 #import "ColorView.h"
 
 @interface GradientView : NSView
-
+{
+    
+}
+@property(strong, nonatomic) NSColor *topColor;
+@property(strong, nonatomic) NSColor *bottomColor;
 @end
