@@ -111,11 +111,6 @@
                 [tagArray addObject:[[itemTags descriptorAtIndex:x] stringValue]];
             }
             
-//            NSNumber *plannedCount = [NSNumber numberWithInt:[self getThingsPlannedCountInTagArray:tagArray]];
-//            if(!plannedCount)
-//                plannedCount = [NSNumber numberWithInt:0];
-//            else
-//                plannedCount = [NSNumber numberWithInt:MIN([plannedCount intValue], 7)];
             NSNull *plannedCount = [NSNull null];
             
             //set up source and piece it all together
@@ -123,7 +118,6 @@
             NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
             
             [self performSelectorOnMainThread:@selector(syncWithDictionary:) withObject:syncDictionary waitUntilDone:NO];
-            //[self syncWithDictionary:syncDictionary];
         }
         
         [self completeActivitiesForSource:ActivitySourceThings withDictionary:importedIDs];

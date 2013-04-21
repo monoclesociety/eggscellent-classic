@@ -373,23 +373,23 @@
 {
     EggTimer *currentTimer = [EggTimer currentTimer];
 
-//    NSLog(@"inside start");
+    NSLog(@"inside start");
     NSInteger selectedIndex;
     switch([currentTimer status])
     {
         case TimerStatusPaused:
-//            NSLog(@"inside paused");
+            NSLog(@"inside paused");
             [currentTimer resume];
             break;
             
         case TimerStatusRunning:
-//            NSLog(@"inside running");
+            NSLog(@"inside running");
             [currentTimer stop];
             break;
          
         case TimerStatusStopped:
         default:
-//            NSLog(@"inside default");
+            NSLog(@"inside default");
             //set the selected activity as the currentActivity
             selectedIndex = [itemsTableView selectedRow];
             if(selectedIndex < 0)
@@ -399,9 +399,11 @@
             }
             
             Activity *a = [arrayController.arrangedObjects objectAtIndex:selectedIndex];
-//            if(!a)
-//                NSLog(@"no a");
+            if(!a)
+                NSLog(@"no a");
             EggTimer *pomo = [a crackAnEgg];
+            if(!pomo)
+                NSLog(@"no pomo");
             [pomo startAfterDelay:EGG_REQUEST_DELAY];
             break;
     }
@@ -474,7 +476,6 @@
     if(pomo.type == TimerTypeEgg)
     {    
         [self changeButtonToStart:YES];
-        //TODO: change title of start button here
     }
 }
 
@@ -484,7 +485,6 @@
     if(pomo.type == TimerTypeEgg)
     {    
         [self changeButtonToStart:YES];
-        //TODO: change title of start button here
     }
 }
 

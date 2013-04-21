@@ -63,7 +63,7 @@
 						<object class="NSButton" id="955689020">
 							<reference key="NSNextResponder" ref="668163697"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{0, 432}, {30, 30}}</string>
+							<string key="NSFrame">{{7, 422}, {30, 30}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="851451378"/>
@@ -178,7 +178,7 @@
 											<string key="NSFrameSize">{320.5, 397}</string>
 											<reference key="NSSuperview" ref="769644312"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="330132852"/>
+											<reference key="NSNextKeyView" ref="954073568"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -256,7 +256,7 @@
 												<int key="NSColorSpace">3</int>
 												<bytes key="NSWhite">MSAwAA</bytes>
 											</object>
-											<double key="NSRowHeight">29</double>
+											<double key="NSRowHeight">32</double>
 											<int key="NSTvFlags">1379958784</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
@@ -315,14 +315,14 @@
 							<string key="NSFrame">{{21, 2}, {320, 397}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="769644312"/>
+							<reference key="NSNextKeyView" ref="330132852"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">154240</int>
 							<reference key="NSVScroller" ref="330132852"/>
 							<reference key="NSHScroller" ref="645177618"/>
 							<reference key="NSContentView" ref="769644312"/>
 							<int key="NSScrollerKnobStyle">1</int>
-							<bytes key="NSScrollAmts">QSAAAEEgAABB+AAAQfgAAA</bytes>
+							<bytes key="NSScrollAmts">QSAAAEEgAABCCAAAQggAAA</bytes>
 							<double key="NSMinMagnification">0.25</double>
 							<double key="NSMaxMagnification">4</double>
 							<double key="NSMagnification">1</double>
@@ -352,7 +352,7 @@
 						<object class="NSTextField" id="851451378">
 							<reference key="NSNextResponder" ref="668163697"/>
 							<int key="NSvFlags">269</int>
-							<string key="NSFrame">{{155, 437}, {52, 21}}</string>
+							<string key="NSFrame">{{155, 427}, {52, 21}}</string>
 							<reference key="NSSuperview" ref="668163697"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="451319379"/>
@@ -557,15 +557,20 @@
 								<object class="NSTextField" id="655798692">
 									<reference key="NSNextResponder" ref="954073568"/>
 									<int key="NSvFlags">266</int>
-									<string key="NSFrame">{{28, 5}, {289.5, 17}}</string>
+									<string key="NSFrame">{{21, 6}, {289.5, 21}}</string>
 									<reference key="NSSuperview" ref="954073568"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="594005501">
 										<int key="NSCellFlags">67108928</int>
 										<int key="NSCellFlags2">272631808</int>
 										<string key="NSContents">Table View Cell</string>
-										<reference key="NSSupport" ref="1069262946"/>
+										<object class="NSFont" key="NSSupport" id="346075821">
+											<string key="NSName">HelveticaNeue</string>
+											<double key="NSSize">14</double>
+											<int key="NSfFlags">16</int>
+										</object>
 										<reference key="NSControlView" ref="655798692"/>
 										<reference key="NSBackgroundColor" ref="262366786"/>
 										<reference key="NSTextColor" ref="834375025"/>
@@ -575,7 +580,7 @@
 								<object class="NSButton" id="764061248">
 									<reference key="NSNextResponder" ref="954073568"/>
 									<int key="NSvFlags">268</int>
-									<string key="NSFrame">{{3, 2}, {25, 25}}</string>
+									<string key="NSFrame">{{-2, 6}, {25, 20}}</string>
 									<reference key="NSSuperview" ref="954073568"/>
 									<reference key="NSNextKeyView" ref="655798692"/>
 									<string key="NSReuseIdentifierKey">_NS:22</string>
@@ -584,7 +589,7 @@
 										<int key="NSCellFlags">-2080374784</int>
 										<int key="NSCellFlags2">134217728</int>
 										<string key="NSContents">✓</string>
-										<reference key="NSSupport" ref="1069262946"/>
+										<reference key="NSSupport" ref="346075821"/>
 										<string key="NSCellIdentifier">_NS:22</string>
 										<reference key="NSControlView" ref="764061248"/>
 										<int key="NSButtonFlags">139214848</int>
@@ -597,7 +602,7 @@
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								</object>
 							</object>
-							<string key="NSFrame">{{1, 1}, {317.5, 29}}</string>
+							<string key="NSFrame">{{1, 1}, {317.5, 32}}</string>
 							<reference key="NSNextKeyView" ref="764061248"/>
 						</object>
 						<reference key="destination" ref="655798692"/>
@@ -673,12 +678,12 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="547980798"/>
-							<reference ref="955689020"/>
 							<reference ref="1021892919"/>
 							<reference ref="604531623"/>
-							<reference ref="851451378"/>
 							<reference ref="172612312"/>
 							<reference ref="451319379"/>
+							<reference ref="955689020"/>
+							<reference ref="851451378"/>
 						</object>
 						<reference key="parent" ref="101485282"/>
 					</object>
@@ -709,12 +714,6 @@
 						<int key="objectID">66</int>
 						<reference key="object" ref="891329051"/>
 						<reference key="parent" ref="851451378"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">63</int>
-						<reference key="object" ref="547980798"/>
-						<reference key="parent" ref="668163697"/>
-						<string key="objectName">Top Gradient View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">109</int>
@@ -838,6 +837,12 @@
 						<int key="objectID">213</int>
 						<reference key="object" ref="1009547104"/>
 						<reference key="parent" ref="451319379"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">63</int>
+						<reference key="object" ref="547980798"/>
+						<reference key="parent" ref="668163697"/>
+						<string key="objectName">Top Gradient View</string>
 					</object>
 				</object>
 			</object>

@@ -577,8 +577,6 @@ void *kContextActivePanel = &kContextActivePanel;
             [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:userNotification];
         }
 
-        
-        //TODO: fix possible bug here with tracking pomodoros
         Egg *e = [Egg lastEgg];
         
         e.timeElapsed = [NSNumber numberWithInt:egg.timeElapsed];
