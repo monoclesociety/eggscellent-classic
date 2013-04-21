@@ -10,10 +10,7 @@
 #import "ScriptManager.h"
 #import "ModelStore.h"
 
-@protocol TaskSyncControllerDatasource <NSObject>
-
-@end
-
+#define SYNC_COMPLETED @"SYNC_COMPLETED"
 @interface TaskSyncController : NSObject
 {
     NSMutableDictionary *importedIDs;

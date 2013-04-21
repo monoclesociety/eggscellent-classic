@@ -44,6 +44,7 @@ static TaskSyncController *singleton;
 - (void)cleanUpSync
 {
     [[ModelStore sharedStore] save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED object:self];
 }
 
 - (void)dealloc

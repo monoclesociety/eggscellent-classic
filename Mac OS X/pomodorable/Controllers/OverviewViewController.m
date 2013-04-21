@@ -47,6 +47,8 @@
         
         //set up Sync notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerSyncCompleted:) name:SYNC_COMPLETED object:nil];
+        
     
     }
     return self;
@@ -533,6 +535,11 @@
 - (void)taskManagerTypeChanged:(NSNotification *)note
 {
     [self populateListSubMenu];
+}
+
+- (void)taskManagerSyncCompleted:(NSNotification *)note
+{
+    [arrayController rearrangeObjects];
 }
 
 #pragma mark - custom methods

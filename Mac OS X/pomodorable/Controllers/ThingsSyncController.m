@@ -149,7 +149,8 @@
 
 - (void)syncActivityThread:(NSArray *)activity
 {
-    @autoreleasepool {
+    @autoreleasepool
+    {
     
         NSString *scriptName = @"ThingsChangeTodo";
         [[ScriptManager sharedManager] executeScript:scriptName withParameters:activity];
