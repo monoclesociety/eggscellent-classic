@@ -114,7 +114,6 @@
 		3D0FDD5416ECED5800815B2C /* MonitorNormalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E7E835147DB67E00815B66 /* MonitorNormalWindowController.xib */; };
 		3D0FDD5516ECED5800815B2C /* WelcomeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4391DD8148B08550051CACC /* WelcomeWindowController.xib */; };
 		3D0FDD5616ECED5800815B2C /* pom_count-off.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB114AA6FBA002A20ED /* pom_count-off.png */; };
-		3D0FDD5716ECED5800815B2C /* pom_count-on.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB214AA6FBA002A20ED /* pom_count-on.png */; };
 		3D0FDD5816ECED5800815B2C /* ribbon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBB14AA6FBA002A20ED /* ribbon2.png */; };
 		3D0FDD5916ECED5800815B2C /* ribbon3.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBC14AA6FBA002A20ED /* ribbon3.png */; };
 		3D0FDD5A16ECED5800815B2C /* ribbon4.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBD14AA6FBA002A20ED /* ribbon4.png */; };
@@ -198,7 +197,6 @@
 		3D0FDDA816ECED5800815B2C /* notes-button-yellow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62B15A26CA30006ABB2 /* notes-button-yellow-down@2x.png */; };
 		3D0FDDA916ECED5800815B2C /* notes-button-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62C15A26CA30006ABB2 /* notes-button-yellow@2x.png */; };
 		3D0FDDAA16ECED5800815B2C /* pom_count-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62D15A26CA30006ABB2 /* pom_count-off@2x.png */; };
-		3D0FDDAB16ECED5800815B2C /* pom_count-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62E15A26CA30006ABB2 /* pom_count-on@2x.png */; };
 		3D0FDDAC16ECED5800815B2C /* prefs-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62F15A26CA30006ABB2 /* prefs-down@2x.png */; };
 		3D0FDDAD16ECED5800815B2C /* prefs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63015A26CA30006ABB2 /* prefs@2x.png */; };
 		3D0FDDAE16ECED5800815B2C /* ribbon4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63115A26CA30006ABB2 /* ribbon4@2x.png */; };
@@ -367,7 +365,6 @@
 		3DFBE64D15A26CA30006ABB2 /* notes-button-yellow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62B15A26CA30006ABB2 /* notes-button-yellow-down@2x.png */; };
 		3DFBE64E15A26CA30006ABB2 /* notes-button-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62C15A26CA30006ABB2 /* notes-button-yellow@2x.png */; };
 		3DFBE64F15A26CA30006ABB2 /* pom_count-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62D15A26CA30006ABB2 /* pom_count-off@2x.png */; };
-		3DFBE65015A26CA30006ABB2 /* pom_count-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62E15A26CA30006ABB2 /* pom_count-on@2x.png */; };
 		3DFBE65115A26CA30006ABB2 /* prefs-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE62F15A26CA30006ABB2 /* prefs-down@2x.png */; };
 		3DFBE65215A26CA30006ABB2 /* prefs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63015A26CA30006ABB2 /* prefs@2x.png */; };
 		3DFBE65315A26CA30006ABB2 /* ribbon4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63115A26CA30006ABB2 /* ribbon4@2x.png */; };
@@ -386,7 +383,6 @@
 		F41C8AE814D7509E008AF73B /* RemoteClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41C8AE714D7509E008AF73B /* RemoteClientController.m */; };
 		F41D235D15003EC300579E89 /* HistoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D235C15003EC300579E89 /* HistoryWindow.m */; };
 		F422AFC914AA6FBA002A20ED /* pom_count-off.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB114AA6FBA002A20ED /* pom_count-off.png */; };
-		F422AFCA14AA6FBA002A20ED /* pom_count-on.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFB214AA6FBA002A20ED /* pom_count-on.png */; };
 		F422AFD114AA6FBA002A20ED /* ribbon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBB14AA6FBA002A20ED /* ribbon2.png */; };
 		F422AFD214AA6FBA002A20ED /* ribbon3.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBC14AA6FBA002A20ED /* ribbon3.png */; };
 		F422AFD314AA6FBA002A20ED /* ribbon4.png in Resources */ = {isa = PBXBuildFile; fileRef = F422AFBD14AA6FBA002A20ED /* ribbon4.png */; };
@@ -730,7 +726,6 @@
 		3DFBE62B15A26CA30006ABB2 /* notes-button-yellow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notes-button-yellow-down@2x.png"; path = "Resources/notes/notes-button-yellow-down@2x.png"; sourceTree = "<group>"; };
 		3DFBE62C15A26CA30006ABB2 /* notes-button-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notes-button-yellow@2x.png"; path = "Resources/notes/notes-button-yellow@2x.png"; sourceTree = "<group>"; };
 		3DFBE62D15A26CA30006ABB2 /* pom_count-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pom_count-off@2x.png"; path = "Resources/selected_item_pull_out/pom_count-off@2x.png"; sourceTree = "<group>"; };
-		3DFBE62E15A26CA30006ABB2 /* pom_count-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pom_count-on@2x.png"; path = "Resources/selected_item_pull_out/pom_count-on@2x.png"; sourceTree = "<group>"; };
 		3DFBE62F15A26CA30006ABB2 /* prefs-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "prefs-down@2x.png"; path = "Resources/window/prefs-down@2x.png"; sourceTree = "<group>"; };
 		3DFBE63015A26CA30006ABB2 /* prefs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "prefs@2x.png"; path = "Resources/window/prefs@2x.png"; sourceTree = "<group>"; };
 		3DFBE63115A26CA30006ABB2 /* ribbon4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon4@2x.png"; path = "Resources/ribbons/ribbon4@2x.png"; sourceTree = "<group>"; };
@@ -757,7 +752,6 @@
 		F41D235B15003EC300579E89 /* HistoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryWindow.h; path = pomodorable/Views/HistoryWindow.h; sourceTree = SOURCE_ROOT; };
 		F41D235C15003EC300579E89 /* HistoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryWindow.m; path = pomodorable/Views/HistoryWindow.m; sourceTree = SOURCE_ROOT; };
 		F422AFB114AA6FBA002A20ED /* pom_count-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pom_count-off.png"; sourceTree = "<group>"; };
-		F422AFB214AA6FBA002A20ED /* pom_count-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pom_count-on.png"; sourceTree = "<group>"; };
 		F422AFBB14AA6FBA002A20ED /* ribbon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon2.png; sourceTree = "<group>"; };
 		F422AFBC14AA6FBA002A20ED /* ribbon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon3.png; sourceTree = "<group>"; };
 		F422AFBD14AA6FBA002A20ED /* ribbon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon4.png; sourceTree = "<group>"; };
@@ -1154,7 +1148,6 @@
 				3DFBE62B15A26CA30006ABB2 /* notes-button-yellow-down@2x.png */,
 				3DFBE62C15A26CA30006ABB2 /* notes-button-yellow@2x.png */,
 				3DFBE62D15A26CA30006ABB2 /* pom_count-off@2x.png */,
-				3DFBE62E15A26CA30006ABB2 /* pom_count-on@2x.png */,
 				3DFBE62F15A26CA30006ABB2 /* prefs-down@2x.png */,
 				3DFBE63015A26CA30006ABB2 /* prefs@2x.png */,
 				3DD633B1160F8CA7001F9661 /* button-resume-down@2x.png */,
@@ -1259,7 +1252,6 @@
 				F44154E3155A4ACB00DD2AB3 /* pullOutBackground.png */,
 				F44154E0155A414700DD2AB3 /* squirrel.png */,
 				F422AFB114AA6FBA002A20ED /* pom_count-off.png */,
-				F422AFB214AA6FBA002A20ED /* pom_count-on.png */,
 			);
 			name = selected_item_pull_out;
 			path = Resources/selected_item_pull_out;
@@ -2071,7 +2063,6 @@
 				3D0FDD5416ECED5800815B2C /* MonitorNormalWindowController.xib in Resources */,
 				3D0FDD5516ECED5800815B2C /* WelcomeWindowController.xib in Resources */,
 				3D0FDD5616ECED5800815B2C /* pom_count-off.png in Resources */,
-				3D0FDD5716ECED5800815B2C /* pom_count-on.png in Resources */,
 				3D0FDD5816ECED5800815B2C /* ribbon2.png in Resources */,
 				3D0FDD5916ECED5800815B2C /* ribbon3.png in Resources */,
 				3D0FDD5A16ECED5800815B2C /* ribbon4.png in Resources */,
@@ -2155,7 +2146,6 @@
 				3D0FDDA816ECED5800815B2C /* notes-button-yellow-down@2x.png in Resources */,
 				3D0FDDA916ECED5800815B2C /* notes-button-yellow@2x.png in Resources */,
 				3D0FDDAA16ECED5800815B2C /* pom_count-off@2x.png in Resources */,
-				3D0FDDAB16ECED5800815B2C /* pom_count-on@2x.png in Resources */,
 				3D0FDDAC16ECED5800815B2C /* prefs-down@2x.png in Resources */,
 				3D0FDDAD16ECED5800815B2C /* prefs@2x.png in Resources */,
 				3D0FDDAE16ECED5800815B2C /* ribbon4@2x.png in Resources */,
@@ -2260,7 +2250,6 @@
 				F4E7E836147DB67E00815B66 /* MonitorNormalWindowController.xib in Resources */,
 				F4391DD9148B08550051CACC /* WelcomeWindowController.xib in Resources */,
 				F422AFC914AA6FBA002A20ED /* pom_count-off.png in Resources */,
-				F422AFCA14AA6FBA002A20ED /* pom_count-on.png in Resources */,
 				F422AFD114AA6FBA002A20ED /* ribbon2.png in Resources */,
 				F422AFD214AA6FBA002A20ED /* ribbon3.png in Resources */,
 				F422AFD314AA6FBA002A20ED /* ribbon4.png in Resources */,
@@ -2344,7 +2333,6 @@
 				3DFBE64D15A26CA30006ABB2 /* notes-button-yellow-down@2x.png in Resources */,
 				3DFBE64E15A26CA30006ABB2 /* notes-button-yellow@2x.png in Resources */,
 				3DFBE64F15A26CA30006ABB2 /* pom_count-off@2x.png in Resources */,
-				3DFBE65015A26CA30006ABB2 /* pom_count-on@2x.png in Resources */,
 				3DFBE65115A26CA30006ABB2 /* prefs-down@2x.png in Resources */,
 				3DFBE65215A26CA30006ABB2 /* prefs@2x.png in Resources */,
 				3DFBE65315A26CA30006ABB2 /* ribbon4@2x.png in Resources */,

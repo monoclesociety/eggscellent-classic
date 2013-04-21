@@ -566,7 +566,7 @@
 										<int key="NSCellFlags">67108928</int>
 										<int key="NSCellFlags2">272631808</int>
 										<string key="NSContents">Table View Cell</string>
-										<object class="NSFont" key="NSSupport" id="346075821">
+										<object class="NSFont" key="NSSupport" id="299173644">
 											<string key="NSName">HelveticaNeue</string>
 											<double key="NSSize">14</double>
 											<int key="NSfFlags">16</int>
@@ -589,7 +589,7 @@
 										<int key="NSCellFlags">-2080374784</int>
 										<int key="NSCellFlags2">134217728</int>
 										<string key="NSContents">✓</string>
-										<reference key="NSSupport" ref="346075821"/>
+										<reference key="NSSupport" ref="299173644"/>
 										<string key="NSCellIdentifier">_NS:22</string>
 										<reference key="NSControlView" ref="764061248"/>
 										<int key="NSButtonFlags">139214848</int>
