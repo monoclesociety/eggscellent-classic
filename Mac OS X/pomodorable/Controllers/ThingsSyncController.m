@@ -127,6 +127,19 @@
     }
 }
 
+- (void)saveNewActivity:(Activity *)activity;
+{
+    @autoreleasepool
+    {
+        NSString *scriptName = @"ThingsAddTodo";
+        NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:activity.name];
+        
+        //Things gives us an ID back, so let's save it to the activity
+        NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        activity.sourceID = [ID stringValue];
+    }
+}
+
 - (void)syncActivity:(Activity *)activity
 {
     //if it doesn't have an external id, then don't sync. duh :-P
@@ -138,17 +151,14 @@
     NSString *activityID = [activity.sourceID copy];
     NSArray *array = [[NSArray alloc] initWithObjects:activityID, statusString, nameString, nil];
     [self performSelectorInBackground:@selector(syncActivityThread:) withObject:array];
-    
 }
 
 - (void)syncActivityThread:(NSArray *)activity
 {
     @autoreleasepool
     {
-    
         NSString *scriptName = @"ThingsChangeTodo";
         [[ScriptManager sharedManager] executeScript:scriptName withParameters:activity];
-    
     }
 }
 
