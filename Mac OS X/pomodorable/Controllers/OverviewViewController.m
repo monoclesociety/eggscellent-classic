@@ -47,7 +47,7 @@
         
         //set up Sync notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerSyncCompleted:) name:SYNC_COMPLETED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerSyncCompleted:) name:SYNC_COMPLETED_WITH_CHANGES object:nil];
         
     
     }
@@ -129,7 +129,7 @@
 
 - (void)viewDidAppear
 {
-    [itemsTableView reloadData];
+    [arrayController rearrangeObjects];
     [itemsTableView becomeFirstResponder];
     
     EggTimer *currentTimer = [EggTimer currentTimer];

@@ -70,7 +70,6 @@
         
         NSAppleEventDescriptor *IDs     = [ed descriptorAtIndex:1];
         NSAppleEventDescriptor *names   = [ed descriptorAtIndex:2];
-//        NSAppleEventDescriptor *minutes = [ed descriptorAtIndex:3];
         
         int count = (int)[IDs numberOfItems];
         
@@ -83,17 +82,6 @@
             
             NSNumber *status = [NSNumber numberWithBool:NO]; //for now defaulting to incomplete
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
-
-//            NSString *minutesString = [[minutes descriptorAtIndex:i] stringValue];
-//            int minutes = [minutesString intValue];
-//            NSNumber *pomodoroMinutes = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroMinutes"];
-//            int minutesPlannedCount = 0;
-//            if(minutes)
-//                minutesPlannedCount = minutes / [pomodoroMinutes intValue];
-//            
-//            minutesPlannedCount = MIN(minutes, MAX_EGG_COUNT);
-//            
-//            NSNumber *plannedCount = [NSNumber numberWithInt:minutesPlannedCount];
             
             NSNull *plannedCount = [NSNull null];
             NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
@@ -105,6 +93,20 @@
         [self cleanUpSync];
         
         self.importedIDs = nil;
+    }
+}
+
+- (void)saveNewActivity:(Activity *)activity;
+{
+    @autoreleasepool
+    {
+        NSString *scriptName = @"OmniFocusAddTodos";
+        NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:activity.name];
+        
+        //Things gives us an ID back, so let's save it to the activity
+        NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        activity.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
+        activity.sourceID = [ID stringValue];
     }
 }
 

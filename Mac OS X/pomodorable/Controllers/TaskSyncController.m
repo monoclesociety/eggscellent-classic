@@ -44,7 +44,9 @@ static TaskSyncController *singleton;
 - (void)cleanUpSync
 {
     [[ModelStore sharedStore] save];
-    [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED object:self];
+    
+    if(tasksChanged)
+        [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED_WITH_CHANGES object:self];
 }
 
 - (void)dealloc
@@ -146,19 +148,38 @@ static TaskSyncController *singleton;
             //if plannedCount is 0, then we'll stick with our last size thankyouverymuch
             plannedCount = (plannedCount == 0) ? [existingActivity.plannedCount intValue] : plannedCount;
             
-            existingActivity.name = name;
+            NSString *munge = [NSString stringWithFormat:@"%@%@%@%@", existingActivity.name,
+                               [existingActivity.plannedCount stringValue],
+                               [existingActivity.removed stringValue],
+                               [existingActivity.completed description],
+                               nil];
+                
+              existingActivity.name = name;
             existingActivity.plannedCount = [NSNumber numberWithInt:plannedCount];
             existingActivity.removed = [NSNumber numberWithBool:NO];
-            [existingActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
+            
+            BOOL completedBool = (existingActivity.completed);
+            BOOL statusBool = [status boolValue];
+            
+            if((completedBool) != (statusBool))
+                [existingActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
             
             //add ID to ID dictionary, to keep it safe
-            result = YES;
+            NSString *alter  = [NSString stringWithFormat:@"%@%@%@%@", existingActivity.name,
+                               [existingActivity.plannedCount stringValue],
+                               [existingActivity.removed stringValue],
+                               [existingActivity.completed description],
+                               nil];
+            BOOL different = ![munge isEqualToString:alter];
+            result = different;
             
         }];
     }
     
+    [importedIDs setValue:ID forKey:ID];
+    
     if(result)
-        [importedIDs setValue:ID forKey:ID];
+        tasksChanged = YES;
     
     return result;
 }

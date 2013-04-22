@@ -10,9 +10,10 @@
 #import "ScriptManager.h"
 #import "ModelStore.h"
 
-#define SYNC_COMPLETED @"SYNC_COMPLETED"
+#define SYNC_COMPLETED_WITH_CHANGES @"SYNC_COMPLETED_WITH_CHANGES"
 @interface TaskSyncController : NSObject
 {
+    BOOL tasksChanged;
     NSMutableDictionary *importedIDs;
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;

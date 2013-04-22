@@ -75,6 +75,7 @@
         
         int count = (int)[IDs numberOfItems];
 
+        tasksChanged = NO;
         int i = 1;
         for(; i <= count; i++)
         {
@@ -117,7 +118,7 @@
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceThings];
             NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
             
-            [self performSelectorOnMainThread:@selector(syncWithDictionary:) withObject:syncDictionary waitUntilDone:NO];
+            [self performSelectorOnMainThread:@selector(syncWithDictionary:) withObject:syncDictionary waitUntilDone:YES];
         }
         
         [self completeActivitiesForSource:ActivitySourceThings withDictionary:importedIDs];
@@ -136,6 +137,7 @@
         
         //Things gives us an ID back, so let's save it to the activity
         NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        activity.source = [NSNumber numberWithInt:ActivitySourceThings];
         activity.sourceID = [ID stringValue];
     }
 }
