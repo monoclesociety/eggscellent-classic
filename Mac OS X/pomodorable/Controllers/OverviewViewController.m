@@ -510,9 +510,9 @@
         [itemsTableView beginUpdates];
         [itemsTableView moveRowAtIndex:index toIndex:[arrayController.arrangedObjects count] - 1];
         [itemsTableView endUpdates];
-        
-        [arrayController performSelector:@selector(rearrangeObjects) withObject:nil afterDelay:0.35f];
     }
+    
+    [arrayController performSelector:@selector(rearrangeObjects) withObject:nil afterDelay:0.35f];
     
     if([itemsTableView selectedRow] < 0)
         return;
