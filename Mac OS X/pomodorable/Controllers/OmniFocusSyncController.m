@@ -105,8 +105,9 @@
         
         //Things gives us an ID back, so let's save it to the activity
         NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        NSString *idValue = [ID stringValue];
+        activity.sourceID = idValue;
         activity.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
-        activity.sourceID = [ID stringValue];
     }
 }
 
