@@ -31,6 +31,9 @@
 {
     self.importedIDs = [NSMutableDictionary dictionary];
     
+    
+    tasksChanged = NO;
+    
     // Create the predicate. eventStore is an instance variable.
     NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil 
                                                                                      ending:nil
