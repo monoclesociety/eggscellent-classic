@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -44,7 +44,7 @@
 			</object>
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{1480, 62}, {354, 242}}</string>
+				<string key="NSWindowRect">{{1480, 62}, {354, 249}}</string>
 				<int key="NSWTFlags">1615860736</int>
 				<string key="NSWindowTitle"/>
 				<string key="NSWindowClass">NSWindow</string>
@@ -55,24 +55,27 @@
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSCustomView" id="51735889">
-							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{87, 87}, {180, 155}}</string>
-							<reference key="NSSuperview" ref="1006"/>
-							<reference key="NSWindow"/>
-							<string key="NSReuseIdentifierKey">_NS:9</string>
-							<string key="NSClassName">NSAnimatedImageView</string>
-						</object>
 						<object class="NSCustomView" id="993760293">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
+							<object class="NSMutableArray" key="NSSubviews">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+							</object>
 							<string key="NSFrame">{{14, 20}, {320, 101}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="126246119"/>
 							<string key="NSReuseIdentifierKey">_NS:1192</string>
 							<string key="NSClassName">NSView</string>
+						</object>
+						<object class="NSCustomView" id="51735889">
+							<reference key="NSNextResponder" ref="1006"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{87, 90}, {180, 155}}</string>
+							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<string key="NSClassName">NSAnimatedImageView</string>
 						</object>
 						<object class="NSCustomView" id="126246119">
 							<reference key="NSNextResponder" ref="1006"/>
@@ -85,7 +88,7 @@
 							<string key="NSClassName">PomodoroBadgeView</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{354, 242}</string>
+					<string key="NSFrameSize">{354, 249}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="993760293"/>
@@ -672,8 +675,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<reference key="object" ref="1006"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="993760293"/>
 							<reference ref="126246119"/>
+							<reference ref="993760293"/>
 							<reference ref="51735889"/>
 						</object>
 						<reference key="parent" ref="1005"/>
