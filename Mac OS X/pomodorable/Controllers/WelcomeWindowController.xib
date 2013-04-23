@@ -186,7 +186,7 @@
 						<object class="NSTextFieldCell" key="NSCell" id="732649450">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">272629760</int>
-							<string key="NSContents">Eggscellent™ is based on a common time management methodology. Take a that you need to get done, break it into smaller chunks of work, and set a timer to work against, making that task your highest priority.</string>
+							<string key="NSContents">Eggscellent™ is based on a common time management methodology. Take a task you need to get done, break it into smaller chunks of work, and set a timer to work against, making that task your highest priority.</string>
 							<reference key="NSSupport" ref="1061448692"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="1015570063"/>
@@ -1195,8 +1195,8 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<array class="NSMutableArray" key="children">
 							<reference ref="765764469"/>
 							<reference ref="937606835"/>
-							<reference ref="1015570063"/>
 							<reference ref="298266682"/>
+							<reference ref="1015570063"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">General Options</string>
