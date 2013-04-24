@@ -94,7 +94,7 @@ static CGColorRef kAboutWindowCreditsFadeColor2 = NULL;
 
 - (IBAction)getInTouch:(id)sender 
 {
-	NSURL *url = [NSURL URLWithString:@"http://www.facebook.com/eggscellentapp"];
+	NSURL *url = [NSURL URLWithString:@"http://www.monoclesociety.com/r/eggscellent/support"];
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
