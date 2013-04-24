@@ -15,6 +15,7 @@
 @end
 
 @implementation OmniFocusSyncController
+@synthesize syncThread;
 
 #pragma mark - OmniFocus synchronization methods
 
@@ -70,6 +71,7 @@
         
         NSAppleEventDescriptor *IDs     = [ed descriptorAtIndex:1];
         NSAppleEventDescriptor *names   = [ed descriptorAtIndex:2];
+        NSAppleEventDescriptor *completeds   = [ed descriptorAtIndex:3];
         
         int count = (int)[IDs numberOfItems];
         
@@ -80,7 +82,10 @@
             NSString *ID = [[IDs descriptorAtIndex:i] stringValue];
             NSString *name = [[names descriptorAtIndex:i] stringValue];
             
-            NSNumber *status = [NSNumber numberWithBool:NO]; //for now defaulting to incomplete
+            Boolean b = [[completeds descriptorAtIndex:i] booleanValue];
+            BOOL completed = b ? YES : NO;
+            
+            NSNumber *status = [NSNumber numberWithBool:completed]; //for now defaulting to incomplete
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
             
             NSNull *plannedCount = [NSNull null];

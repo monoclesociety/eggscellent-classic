@@ -11,7 +11,6 @@
 
 @interface OmniFocusSyncController : TaskSyncController
 {
-    NSThread *syncThread;
 }
 @property (strong, nonatomic) NSThread *syncThread;
 
