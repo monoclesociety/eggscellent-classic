@@ -45,6 +45,10 @@
     
     logEvent.allDay = NO;
     
+    //create notes
+    NSString *format = NSLocalizedString(@"%d External Distractions  -  %d Internal Distractions", @"External and Internal Distractions");
+    logEvent.notes = [NSString stringWithFormat:format, [egg.externalInterruptions intValue],[egg.internalInterruptions intValue], nil];
+    
     NSError *error = nil;
     [_calendarStore saveEvent:logEvent span:EKSpanThisEvent commit:YES error:&error];
     return (error == nil);

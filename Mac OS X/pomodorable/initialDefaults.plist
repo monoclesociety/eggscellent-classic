@@ -31,14 +31,14 @@
 	<key>HOTKEY_EXTERNAL_INTERRUPTION</key>
 	<dict>
 		<key>keyCode</key>
-		<integer>123</integer>
+		<integer>124</integer>
 		<key>modifiers</key>
 		<integer>8395008</integer>
 	</dict>
 	<key>HOTKEY_INTERNAL_INTERRUPTION</key>
 	<dict>
 		<key>keyCode</key>
-		<integer>124</integer>
+		<integer>123</integer>
 		<key>modifiers</key>
 		<integer>8395008</integer>
 	</dict>

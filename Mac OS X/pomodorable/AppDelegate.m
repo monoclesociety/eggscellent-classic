@@ -256,6 +256,7 @@ void *kContextActivePanel = &kContextActivePanel;
     Egg *p = [[a.eggs allObjects] lastObject];
     
     int intValue = MAX([p.externalInterruptions intValue] + modifier, 0);
+    intValue = MIN(intValue, 99);
     p.externalInterruptions = [NSNumber numberWithInt:intValue];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"externalInterruptionKeyed" object:nil];
     
@@ -270,6 +271,7 @@ void *kContextActivePanel = &kContextActivePanel;
     Egg *p = [[a.eggs allObjects] lastObject];
     
     int intValue = MAX([p.internalInterruptions intValue] + modifier, 0);
+    intValue = MIN(intValue, 99);
     p.internalInterruptions = [NSNumber numberWithInt:intValue];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"internalInterruptionKeyed" object:nil];
     
