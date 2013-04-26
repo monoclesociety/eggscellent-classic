@@ -14,7 +14,7 @@
 #import "ModelStore.h"
 #import "ColorView.h"
 #import "RoundedBox.h"
-#import "PomodoroBadgeView.h"
+#import "TaskRibbonView.h"
 #import "BackgroundView.h"
 #import "NSAnimatedImageView.h"
 
@@ -24,7 +24,7 @@
     //general items
     IBOutlet NSView                 *growmatoView;
     IBOutlet NSView                 *containerView;
-    IBOutlet PomodoroBadgeView      *ribbonView;
+    IBOutlet TaskRibbonView      *ribbonView;
     IBOutlet NSTextField            *pomodoroCount;
     IBOutlet NSTextField            *plannedPomodoroCount;
     

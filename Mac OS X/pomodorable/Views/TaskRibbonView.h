@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PomodoroBadgeView : NSView
+@interface TaskRibbonView : NSView
 {
     int plannedPomodoroCount;
     int completePomodoroCount;

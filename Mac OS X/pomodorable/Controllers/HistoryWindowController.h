@@ -7,22 +7,27 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Rebel/Rebel.h>
 #import "ModelStore.h"
 #import "ColorView.h"
 #import "GradientView.h"
 
+@class HistoryPopOverViewController;
 @interface HistoryWindowController : NSWindowController
 {
-    IBOutlet ColorView      *contentView;
-    IBOutlet NSImageView    *imageView;
-    IBOutlet NSButton       *clearButton;
-    IBOutlet NSTableView    *historyTableView;
-    IBOutlet GradientView   *topGradient;
-    IBOutlet GradientView   *bottomGradient;
+    IBOutlet ColorView          *contentView;
+    IBOutlet NSImageView        *imageView;
+    IBOutlet NSButton           *clearButton;
+    IBOutlet NSTableView        *historyTableView;
+    IBOutlet GradientView       *topGradient;
+    IBOutlet GradientView       *bottomGradient;
     
-    IBOutlet NSArrayController *arrayController;
+    IBOutlet NSArrayController  *arrayController;
     
-    NSManagedObjectContext  *__weak _managedObjectContext;
+    RBLPopover                  *popOver;
+    HistoryPopOverViewController   *popOverController;
+    
+    NSManagedObjectContext      *__weak _managedObjectContext;
     
     NSDate *firstDay;
     NSDate *lastDay;
@@ -31,8 +36,6 @@
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
 @property (weak, nonatomic, readonly) NSArray                 *activitySortDescriptors;
 
-- (IBAction)previousWeekSelected:(id)sender;
-- (IBAction)nextWeekSelected:(id)sender;
-- (IBAction)clearTextSelected:(id)sender;
+- (IBAction)displayTaskInfo:(id)sender;
 - (IBAction)close:(id)sender;
 @end

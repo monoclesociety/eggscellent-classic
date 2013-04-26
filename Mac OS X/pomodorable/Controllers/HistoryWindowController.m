@@ -8,6 +8,7 @@
 
 #import <RobotKit/RobotKit.h>
 #import "HistoryWindowController.h"
+#import "HistoryPopOverViewController.h"
 #import "ColorView.h"
 
 @implementation HistoryWindowController
@@ -122,24 +123,26 @@
 
 #pragma mark - IBActions
 
-- (IBAction)previousWeekSelected:(id)sender;
-{
-    
-}
-
-- (IBAction)nextWeekSelected:(id)sender;
-{
-    
-}
-
-- (IBAction)clearTextSelected:(id)sender;
-{
-    
-}
-
 - (IBAction)close:(id)sender;
 {
     [self close];
+}
+
+- (IBAction)displayTaskInfo:(id)sender;
+{
+    
+    NSButton *targetButton = (NSButton *)sender;
+    
+    if(!popOver)
+    {
+        popOverController = [[HistoryPopOverViewController alloc] initWithNibName:@"HistoryPopOverViewController" bundle:nil];
+        popOver = [[RBLPopover alloc] initWithContentViewController:(NSViewController *)popOverController];
+    }
+    
+    popOver.behavior = RBLPopoverViewControllerBehaviorTransient;
+    [popOver showRelativeToRect:[targetButton bounds] ofView:sender preferredEdge:CGRectMinXEdge];
+    popOver.backgroundView.fillColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
+    [popOver.backgroundView setNeedsDisplay:YES];
 }
 
 #pragma mark - Image Drop NoteTextView Notifications

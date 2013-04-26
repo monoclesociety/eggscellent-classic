@@ -12,13 +12,13 @@
 #import "RoundedBox.h"
 #import "ColorView.h"
 
-@class PomodoroBadgeView;
+@class TaskRibbonView;
 @interface OverviewTableCellView : NSTableCellView
 {
     //standard item elements
     IBOutlet NSTextField    *plannedCount;
     IBOutlet NSTextField    *actualCount;
-    IBOutlet PomodoroBadgeView *ribbonView;
+    IBOutlet TaskRibbonView *ribbonView;
 
     //selection status elements
     IBOutlet NSImageView    *__weak backgroundClip;

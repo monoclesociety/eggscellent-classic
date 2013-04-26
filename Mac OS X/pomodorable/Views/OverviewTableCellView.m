@@ -10,7 +10,7 @@
 #import "ModelStore.h"
 #import "NS(Attributed)String+Geometrics.h"
 #import "EggTimer.h"
-#import "PomodoroBadgeView.h"
+#import "TaskRibbonView.h"
 #import "TaskSyncController.h"
 
 @implementation OverviewTableCellView

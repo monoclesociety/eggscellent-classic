@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Monocle Society LLC  All rights reserved.
 //
 
-#import "PomodoroBadgeView.h"
+#import "TaskRibbonView.h"
 
-@implementation PomodoroBadgeView
+@implementation TaskRibbonView
 @synthesize plannedPomodoroCount;
 @synthesize completePomodoroCount;
 @synthesize completed;
