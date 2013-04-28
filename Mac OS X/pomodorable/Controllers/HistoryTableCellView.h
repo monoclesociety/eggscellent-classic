@@ -7,11 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HistoryWindowController.h"
 
 @interface HistoryTableCellView : NSTableCellView
 {
-    
 }
+@property (weak) HistoryWindowController *historyController;
+@property (strong) IBOutlet NSButton *infoButton;
 
 - (IBAction)toggleCompleteActivity:(id)sender;
 

@@ -9,6 +9,8 @@
 #import "HistoryTableCellView.h"
 
 @implementation HistoryTableCellView
+@synthesize infoButton;
+@synthesize historyController;
 
 - (IBAction)toggleCompleteActivity:(id)sender
 {
@@ -23,6 +25,13 @@
     {
         [[EggTimer currentTimer] stop];
     }
+}
+
+- (IBAction)displayTaskInfo:(id)sender;
+{
+    NSButton *targetButton = (NSButton *)sender;
+    Activity *a = (Activity *)self.objectValue;
+    [self.historyController showActivity:a forButton:targetButton];
 }
 
 @end

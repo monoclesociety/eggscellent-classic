@@ -36,6 +36,7 @@
 @property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
 @property (weak, nonatomic, readonly) NSArray                 *activitySortDescriptors;
 
-- (IBAction)displayTaskInfo:(id)sender;
 - (IBAction)close:(id)sender;
+- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
+
 @end

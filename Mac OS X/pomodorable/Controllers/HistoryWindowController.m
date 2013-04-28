@@ -9,6 +9,7 @@
 #import <RobotKit/RobotKit.h>
 #import "HistoryWindowController.h"
 #import "HistoryPopOverViewController.h"
+#import "HistoryTableCellView.h"
 #import "ColorView.h"
 
 @implementation HistoryWindowController
@@ -128,11 +129,9 @@
     [self close];
 }
 
-- (IBAction)displayTaskInfo:(id)sender;
+
+- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
 {
-    
-    NSButton *targetButton = (NSButton *)sender;
-    
     if(!popOver)
     {
         popOverController = [[HistoryPopOverViewController alloc] initWithNibName:@"HistoryPopOverViewController" bundle:nil];
@@ -140,9 +139,10 @@
     }
     
     popOver.behavior = RBLPopoverViewControllerBehaviorTransient;
-    [popOver showRelativeToRect:[targetButton bounds] ofView:sender preferredEdge:CGRectMinXEdge];
-    popOver.backgroundView.fillColor = [NSColor colorWithDeviceRed:0.969 green:0.965 blue:0.702 alpha:1.000];
-    [popOver.backgroundView setNeedsDisplay:YES];
+    [popOver showRelativeToRect:[button bounds] ofView:button preferredEdge:CGRectMinXEdge];
+    popOverController.activity = a;
+    popOver.backgroundView.fillColor = [NSColor colorWithCalibratedWhite:0.9254901961f alpha:1];
+    [popOver.contentViewController.view setNeedsDisplay:YES];
 }
 
 #pragma mark - Image Drop NoteTextView Notifications
@@ -160,8 +160,9 @@
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{    
-    NSTableCellView *result = [historyTableView makeViewWithIdentifier:@"HistoryTableCellView" owner:self];
+{
+    HistoryTableCellView *result = [historyTableView makeViewWithIdentifier:@"HistoryTableCellView" owner:self];
+    result.historyController = self;
     return result;
 }
 
@@ -175,10 +176,10 @@
 //{
 //    return YES;
 //}
-//
+////
 //- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 //{
-//
+//    NSLog(@"OMFG HUUUU");
 //}
 
 @end

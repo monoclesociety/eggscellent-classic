@@ -29,24 +29,31 @@
     return self;
 }
 
-//- (void)awakeFromNib
-//{
-//    [super awakeFromNib];
-//    
-//    if(!loaded)
-//    {
-//
-//        loaded = YES;
-//    }
-//}
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    if(!loaded)
+    {
+//        ColorView *cv = (ColorView *)self.view;
+//        cv.backgroundColor = [NSColor clearColor];
+        loaded = YES;
+    }
+}
 
 - (void)setActivity:(Activity *)newActivity
 {
     activity = newActivity;
+    
     ribbonView.plannedPomodoroCount = [newActivity.plannedCount intValue];
     ribbonView.completePomodoroCount = [newActivity.completedEggs count];
     internalDistractions.stringValue = [newActivity.internalInterruptionCount stringValue];
     externalDistractions.stringValue = [newActivity.externalInterruptionCount stringValue];
+    
+    [self.view setNeedsDisplay:YES];
+    [ribbonView setNeedsDisplay:YES];
+    [internalDistractions setNeedsDisplay:YES];
+    [externalDistractions setNeedsDisplay:YES];
 }
 
 @end
