@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0270231729876000475D0E /* HistoryPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0270211729875F00475D0E /* HistoryPopOverViewController.m */; };
-		3D0270241729876000475D0E /* HistoryPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0270211729875F00475D0E /* HistoryPopOverViewController.m */; };
-		3D0270251729876000475D0E /* HistoryPopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0270221729876000475D0E /* HistoryPopOverViewController.xib */; };
-		3D0270261729876000475D0E /* HistoryPopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0270221729876000475D0E /* HistoryPopOverViewController.xib */; };
 		3D0FDCE916ECED5800815B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B401465F38500BFD7B2 /* main.m */; };
 		3D0FDCEA16ECED5800815B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B471465F38500BFD7B2 /* AppDelegate.m */; };
 		3D0FDCEB16ECED5800815B2C /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B931466F68400BFD7B2 /* PanelController.m */; };
@@ -342,9 +338,6 @@
 		3DF3DCAD1705492300F865E9 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA91705492200F865E9 /* stats@2x.png */; };
 		3DF3F46A158A505100691B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3F468158A505100691B97 /* MainMenu.xib */; };
 		3DF9349D16D021C500A98287 /* status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF9349C16D021C500A98287 /* status@2x.png */; };
-		3DFA13D5172AC91200BE15CA /* Rebel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFA13D4172AC91200BE15CA /* Rebel.framework */; };
-		3DFA13D6172AC91200BE15CA /* Rebel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFA13D4172AC91200BE15CA /* Rebel.framework */; };
-		3DFA13DC172ACA6900BE15CA /* Rebel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DFA13D4172AC91200BE15CA /* Rebel.framework */; };
 		3DFA13DD172ACA6C00BE15CA /* RobotKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
 		3DFBE63615A26CA30006ABB2 /* focus-card-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */; };
 		3DFBE63715A26CA30006ABB2 /* pullOutBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */; };
@@ -585,7 +578,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */,
-				3DFA13DC172ACA6900BE15CA /* Rebel.framework in CopyFiles */,
 				3DFA13DD172ACA6C00BE15CA /* RobotKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,9 +605,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D0270201729875F00475D0E /* HistoryPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPopOverViewController.h; sourceTree = "<group>"; };
-		3D0270211729875F00475D0E /* HistoryPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPopOverViewController.m; sourceTree = "<group>"; };
-		3D0270221729876000475D0E /* HistoryPopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryPopOverViewController.xib; sourceTree = "<group>"; };
 		3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		3D0FDDE316ECED5800815B2C /* Eggscellent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggscellent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
@@ -709,7 +698,6 @@
 		3DF3DCA91705492200F865E9 /* stats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stats@2x.png"; path = "Resources/window/stats@2x.png"; sourceTree = "<group>"; };
 		3DF3F469158A505100691B97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3DF9349C16D021C500A98287 /* status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status@2x.png"; path = "Resources/status icons/status@2x.png"; sourceTree = "<group>"; };
-		3DFA13D4172AC91200BE15CA /* Rebel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rebel.framework; path = pomodorable/Vendor/Rebel.framework; sourceTree = "<group>"; };
 		3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "focus-card-hover@2x.png"; path = "Resources/window/focus-card-hover@2x.png"; sourceTree = "<group>"; };
 		3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pullOutBackground@2x.png"; path = "Resources/selected_item_pull_out/pullOutBackground@2x.png"; sourceTree = "<group>"; };
 		3DFBE61615A26CA30006ABB2 /* ribbon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon1@2x.png"; path = "Resources/ribbons/ribbon1@2x.png"; sourceTree = "<group>"; };
@@ -977,7 +965,6 @@
 				3D0FDD3816ECED5800815B2C /* SystemConfiguration.framework in Frameworks */,
 				3D0FDD3916ECED5800815B2C /* Cocoa.framework in Frameworks */,
 				3D96967617188E9400A0CE95 /* RobotKit.framework in Frameworks */,
-				3DFA13D6172AC91200BE15CA /* Rebel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,7 +997,6 @@
 				F4E8848D1466FAEC0004DADB /* SystemConfiguration.framework in Frameworks */,
 				F48A5B351465F38500BFD7B2 /* Cocoa.framework in Frameworks */,
 				3D96967517188E9400A0CE95 /* RobotKit.framework in Frameworks */,
-				3DFA13D5172AC91200BE15CA /* Rebel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1430,7 +1416,7 @@
 			name = "status icons";
 			sourceTree = "<group>";
 		};
-		F481A37314FDA30700AAF2E8 /* Statistics */ = {
+		F481A37314FDA30700AAF2E8 /* History */ = {
 			isa = PBXGroup;
 			children = (
 				3D5C262C171A15F700CF25A0 /* HistoryTableCellView */,
@@ -1441,11 +1427,8 @@
 				F41D235C15003EC300579E89 /* HistoryWindow.m */,
 				F45009A61522DAC6003F46F4 /* HistoryView.h */,
 				F45009A71522DAC6003F46F4 /* HistoryView.m */,
-				3D0270201729875F00475D0E /* HistoryPopOverViewController.h */,
-				3D0270211729875F00475D0E /* HistoryPopOverViewController.m */,
-				3D0270221729876000475D0E /* HistoryPopOverViewController.xib */,
 			);
-			name = Statistics;
+			name = History;
 			sourceTree = "<group>";
 		};
 		F488A13514B0D08A00E9E25A /* Categories */ = {
@@ -1487,7 +1470,6 @@
 		F48A5B331465F38500BFD7B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DFA13D4172AC91200BE15CA /* Rebel.framework */,
 				3D96967D171891CD00A0CE95 /* IOBluetooth.framework */,
 				3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */,
 				3D96967417188E9400A0CE95 /* RobotKit.framework */,
@@ -1591,7 +1573,7 @@
 				F4E884941466FC5A0004DADB /* Panel */,
 				F4497D2F14A91DE900C7DB4B /* Regular window */,
 				F4E7E831147DB56C00815B66 /* Monitor */,
-				F481A37314FDA30700AAF2E8 /* Statistics */,
+				F481A37314FDA30700AAF2E8 /* History */,
 				F49988651495A82000D356DB /* Remote */,
 				F4391DD3148B08080051CACC /* Welcome */,
 				F4E7E82D147DB3EF00815B66 /* Task Syncing */,
@@ -2206,7 +2188,6 @@
 				3D53FD32171A5E0000303BD4 /* button-previous-down@2x.png in Resources */,
 				3D53FD34171A5E0000303BD4 /* button-previous.png in Resources */,
 				3D53FD36171A5E0000303BD4 /* button-previous@2x.png in Resources */,
-				3D0270261729876000475D0E /* HistoryPopOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2394,7 +2375,6 @@
 				3D53FD31171A5E0000303BD4 /* button-previous-down@2x.png in Resources */,
 				3D53FD33171A5E0000303BD4 /* button-previous.png in Resources */,
 				3D53FD35171A5E0000303BD4 /* button-previous@2x.png in Resources */,
-				3D0270251729876000475D0E /* HistoryPopOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2469,7 +2449,6 @@
 				3D0FDD2816ECED5800815B2C /* CalendarController.m in Sources */,
 				3D0FDD2916ECED5800815B2C /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
-				3D0270241729876000475D0E /* HistoryPopOverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2550,7 +2529,6 @@
 				3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */,
 				3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2634171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
-				3D0270231729876000475D0E /* HistoryPopOverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

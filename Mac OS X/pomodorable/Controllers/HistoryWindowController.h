@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Rebel/Rebel.h>
 #import "ModelStore.h"
 #import "ColorView.h"
 #import "GradientView.h"
@@ -23,9 +22,6 @@
     IBOutlet GradientView       *bottomGradient;
     
     IBOutlet NSArrayController  *arrayController;
-    
-    RBLPopover                  *popOver;
-    HistoryPopOverViewController   *popOverController;
     
     NSManagedObjectContext      *__weak _managedObjectContext;
     

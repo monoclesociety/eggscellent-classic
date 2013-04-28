@@ -6,9 +6,7 @@
 //  Copyright (c) 2012 Monocle Society LLC. All rights reserved.
 //
 
-#import <RobotKit/RobotKit.h>
 #import "HistoryWindowController.h"
-#import "HistoryPopOverViewController.h"
 #import "HistoryTableCellView.h"
 #import "ColorView.h"
 
@@ -130,20 +128,20 @@
 }
 
 
-- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
-{
-    if(!popOver)
-    {
-        popOverController = [[HistoryPopOverViewController alloc] initWithNibName:@"HistoryPopOverViewController" bundle:nil];
-        popOver = [[RBLPopover alloc] initWithContentViewController:(NSViewController *)popOverController];
-    }
-    
-    popOver.behavior = RBLPopoverViewControllerBehaviorTransient;
-    [popOver showRelativeToRect:[button bounds] ofView:button preferredEdge:CGRectMinXEdge];
-    popOverController.activity = a;
-    popOver.backgroundView.fillColor = [NSColor colorWithCalibratedWhite:0.9254901961f alpha:1];
-    [popOver.contentViewController.view setNeedsDisplay:YES];
-}
+//- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
+//{
+//    if(!popOver)
+//    {
+//        popOverController = [[HistoryPopOverViewController alloc] initWithNibName:@"HistoryPopOverViewController" bundle:nil];
+//        popOver = [[RBLPopover alloc] initWithContentViewController:(NSViewController *)popOverController];
+//    }
+//    
+//    popOver.behavior = RBLPopoverViewControllerBehaviorTransient;
+//    [popOver showRelativeToRect:[button bounds] ofView:button preferredEdge:CGRectMinXEdge];
+//    popOverController.activity = a;
+//    popOver.backgroundView.fillColor = [NSColor colorWithCalibratedWhite:0.9254901961f alpha:1];
+//    [popOver.contentViewController.view setNeedsDisplay:YES];
+//}
 
 #pragma mark - Image Drop NoteTextView Notifications
 
@@ -154,10 +152,10 @@
 
 #pragma mark - TableView Delegate and Datasource methods
 
-- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
-{
-    return 25;
-}
+//- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+//{
+//    return 25;
+//}
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
