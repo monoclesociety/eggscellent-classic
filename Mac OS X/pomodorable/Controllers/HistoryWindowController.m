@@ -158,7 +158,15 @@
     
     Activity *a = [arrayController.arrangedObjects objectAtIndex:row];
     
-    result.dateLabel.stringValue = [NSString stringWithFormat:@"%@", @"Mar 1", nil];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setDateFormat:@"MMM dd"];
+    
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    NSString *date = [formatter stringFromDate:a.completed];
+    
+    result.dateLabel.stringValue = [NSString stringWithFormat:@"%@", date, nil];
     
     
     int timerCount = (int)[a.completedEggs count];
