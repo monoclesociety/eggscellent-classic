@@ -51,7 +51,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="1006">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -63,6 +63,7 @@
 							</object>
 							<string key="NSFrame">{{14, 20}, {320, 101}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="126246119"/>
 							<string key="NSReuseIdentifierKey">_NS:1192</string>
 							<string key="NSClassName">NSView</string>
@@ -72,6 +73,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{87, 90}, {180, 155}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">NSAnimatedImageView</string>
 						</object>
@@ -80,12 +82,15 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 71}, {50, 52}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="51735889"/>
 							<string key="NSReuseIdentifierKey">_NS:1192</string>
 							<string key="NSClassName">TaskRibbonView</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{354, 249}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="993760293"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -95,7 +100,7 @@
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSView" id="9695598">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -104,6 +109,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{60, 12}, {241, 80}}</string>
 						<reference key="NSSuperview" ref="9695598"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -136,10 +142,12 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 101}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1017523468"/>
 			</object>
 			<object class="NSView" id="420580095">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSTextField" id="636943209">
@@ -147,6 +155,7 @@
 						<int key="NSvFlags">12</int>
 						<string key="NSFrame">{{113, 46}, {109, 46}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="30567668"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -206,6 +215,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{249, 58}, {56, 28}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="237473612"/>
 						<string key="NSReuseIdentifierKey">_NS:2466</string>
 						<bool key="NSEnabled">YES</bool>
@@ -242,6 +252,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{209, 113}, {82, 16}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="636943209"/>
 						<string key="NSReuseIdentifierKey">_NS:687</string>
 						<bool key="NSEnabled">YES</bool>
@@ -270,6 +281,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{282, 8}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:2510</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="144939393">
@@ -301,6 +313,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{142, 8}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="812987863"/>
 						<string key="NSReuseIdentifierKey">_NS:2510</string>
 						<bool key="NSEnabled">YES</bool>
@@ -327,6 +340,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{30, 0}, {50, 48}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="90807084"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -355,6 +369,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{178, 0}, {39, 48}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="958701908"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -376,6 +391,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{78, 9}, {63, 26}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="387622768"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -401,6 +417,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{216, 9}, {63, 26}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="730822508"/>
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -434,6 +451,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 						</object>
 						<string key="NSFrame">{{14, 7}, {32, 32}}</string>
 						<reference key="NSSuperview" ref="420580095"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="23865433"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="970205158">
@@ -453,12 +471,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 101}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="967689610"/>
 			</object>
 			<object class="NSButton" id="383704921">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{82, 32}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="NSEnabled">YES</bool>
 				<object class="NSButtonCell" key="NSCell" id="439344101">
@@ -1117,7 +1139,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 							<string>BackgroundView</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
-							<string>PomodoroBadgeView</string>
+							<string>TaskRibbonView</string>
 							<string>NSButton</string>
 							<string>NSTextField</string>
 						</object>
@@ -1184,7 +1206,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">ribbonView</string>
-								<string key="candidateClassName">PomodoroBadgeView</string>
+								<string key="candidateClassName">TaskRibbonView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">stopButton</string>
@@ -1210,19 +1232,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//A</bytes>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">PomodoroBadgeView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PomodoroBadgeView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">RSVerticallyCenteredTextFieldCell</string>
 					<string key="superclassName">NSTextFieldCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/RSVerticallyCenteredTextFieldCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TaskRibbonView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TaskRibbonView.h</string>
 					</object>
 				</object>
 			</object>

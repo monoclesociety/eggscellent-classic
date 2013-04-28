@@ -11,9 +11,12 @@
 
 @interface HistoryTableCellView : NSTableCellView
 {
+    
 }
-@property (weak) HistoryWindowController *historyController;
-@property (strong) IBOutlet NSButton *infoButton;
+@property (strong) IBOutlet NSTextField *dateLabel;
+@property (strong) IBOutlet NSTextField *timersLabel;
+@property (strong) IBOutlet NSTextField *distractionsLabel;
+@property (strong) IBOutlet NSButton    *checkmarkButton;
 
 - (IBAction)toggleCompleteActivity:(id)sender;
 

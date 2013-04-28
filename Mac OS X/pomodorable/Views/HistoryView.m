@@ -34,8 +34,8 @@
     //create blue lines
     CGFloat maxY = NSMaxY(self.frame);
     CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-    CGColorRef black = CGColorCreateGenericRGB(83.0/255.0, 177.0/255.0, 215.0/255.0, 1);
-    CGContextSetStrokeColorWithColor(c, black);
+    CGColorRef blue = CGColorCreateGenericRGB(83.0/255.0, 177.0/255.0, 215.0/255.0, 1);
+    CGContextSetStrokeColorWithColor(c, blue);
     CGContextBeginPath(c);
     CGContextMoveToPoint(c, 0.0f, maxY - 49.0f);
     CGContextAddLineToPoint(c, self.frame.size.width, maxY - 49.0f);
@@ -44,7 +44,7 @@
     CGContextClosePath(c);
     CGContextStrokePath(c);
     
-    CGContextSetStrokeColorWithColor(c, black);
+    CGContextSetStrokeColorWithColor(c, blue);
     CGContextBeginPath(c);
     CGContextMoveToPoint(c, 0.0f, maxY - 51.5f);
     CGContextAddLineToPoint(c, self.frame.size.width, maxY - 51.5f);
@@ -53,7 +53,7 @@
     CGContextClosePath(c);
     CGContextStrokePath(c);
     
-    CGColorRelease(black);
+    CGColorRelease(blue);
     
     //stroke entire rounded rectangle with clear
     [[NSColor clearColor] setStroke];

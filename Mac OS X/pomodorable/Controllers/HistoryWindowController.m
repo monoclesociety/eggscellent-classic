@@ -152,15 +152,27 @@
 
 #pragma mark - TableView Delegate and Datasource methods
 
-//- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
-//{
-//    return 25;
-//}
-
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     HistoryTableCellView *result = [historyTableView makeViewWithIdentifier:@"HistoryTableCellView" owner:self];
-    result.historyController = self;
+    
+    Activity *a = [arrayController.arrangedObjects objectAtIndex:row];
+    
+    result.dateLabel.stringValue = [NSString stringWithFormat:@"%@", @"Mar 1", nil];
+    
+    
+    int timerCount = (int)[a.completedEggs count];
+    if(timerCount)
+    {
+        result.timersLabel.stringValue = [NSString stringWithFormat:@"%d timers", timerCount, nil];
+    
+        int internal = [a.internalInterruptionCount intValue];
+        int external = [a.externalInterruptionCount intValue];
+        int totalDistractions = internal + external;
+    
+        if(totalDistractions)
+            result.distractionsLabel.stringValue = [NSString stringWithFormat:@"%d distractions", totalDistractions, nil];
+    }
     return result;
 }
 

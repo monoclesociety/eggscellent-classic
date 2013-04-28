@@ -311,6 +311,8 @@
 		3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
 		3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */; };
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
+		3DC3BDB9172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */; };
+		3DC3BDBA172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */; };
 		3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCDCC3516E110D2001B55EB /* CalendarController.m */; };
 		3DD48E5515BA4BD900492EF4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */; };
 		3DD48E6115BA545F00492EF4 /* tick_grandfatherClock.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3DD48E5D15BA545F00492EF4 /* tick_grandfatherClock.aiff */; };
@@ -669,6 +671,8 @@
 		3DAA1E5416D4278500287DA8 /* NSAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAnimatedImageView.h; sourceTree = "<group>"; };
 		3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAnimatedImageView.m; sourceTree = "<group>"; };
 		3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiddenLogo.png; sourceTree = "<group>"; };
+		3DC3BDB7172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSVerticallyCenteredTextFieldCell.h; path = Vendor/RSVerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
+		3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSVerticallyCenteredTextFieldCell.m; path = Vendor/RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
 		3DCDCC3416E110D2001B55EB /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
 		3DCDCC3516E110D2001B55EB /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
 		3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -1683,6 +1687,8 @@
 		F4D439DD146EE432005EA5F9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3DC3BDB7172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.h */,
+				3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */,
 				F4C2D6AF15349B14003BAD16 /* tomazAboutWindow */,
 				F499885A1495A5A000D356DB /* CocoaAsyncSocket */,
 				F45929AA146F8EBB003F0A80 /* ShortcutRecorder */,
@@ -2449,6 +2455,7 @@
 				3D0FDD2816ECED5800815B2C /* CalendarController.m in Sources */,
 				3D0FDD2916ECED5800815B2C /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
+				3DC3BDBA172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2529,6 +2536,7 @@
 				3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */,
 				3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2634171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
+				3DC3BDB9172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
