@@ -34,7 +34,9 @@
     //create blue lines
     CGFloat maxY = NSMaxY(self.frame);
     CGContextRef c = (CGContextRef )[[NSGraphicsContext currentContext] graphicsPort];
-    CGColorRef blue = CGColorCreateGenericRGB(83.0/255.0, 177.0/255.0, 215.0/255.0, 1);
+
+//    NSColor *as = [NSColor colorWithSRGBRed:0.3019607843 green:0.6901960784 blue:0.85098003922 alpha:1.0f];
+    CGColorRef blue = CGColorCreateGenericRGB(77.0/255.0, 176.0/255.0, 217.0/255.0, 1);
     CGContextSetStrokeColorWithColor(c, blue);
     CGContextBeginPath(c);
     CGContextMoveToPoint(c, 0.0f, maxY - 49.0f);

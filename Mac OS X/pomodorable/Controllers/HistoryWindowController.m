@@ -172,7 +172,8 @@
     int timerCount = (int)[a.completedEggs count];
     if(timerCount)
     {
-        result.timersLabel.stringValue = [NSString stringWithFormat:@"%d timers", timerCount, nil];
+        NSString *timerString = (timerCount > 1) ? @"%d timers" : @"%d timer";
+        result.timersLabel.stringValue = [NSString stringWithFormat:timerString, timerCount, nil];
     
         int internal = [a.internalInterruptionCount intValue];
         int external = [a.externalInterruptionCount intValue];

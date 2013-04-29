@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
 #import <ServiceManagement/ServiceManagement.h>
-#import <RobotKit/RobotKit.h>
+//#import <RobotKit/RobotKit.h>
 
 #import "AppDelegate.h"
 #import "ModelStore.h"
@@ -139,11 +139,11 @@ void *kContextActivePanel = &kContextActivePanel;
 {    
     // Save changes in the application's managed object context before the application terminates.
     [[ModelStore sharedStore] save];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKDeviceConnectionOnlineNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKDeviceConnectionOnlineNotification object:nil];
 
     // Close the connection
-    if(robotOnline)
-        [self endStreaming];
+//    if(robotOnline)
+//        [self endStreaming];
     
     return NSTerminateNow;
 }
@@ -210,12 +210,12 @@ void *kContextActivePanel = &kContextActivePanel;
     //Misc Notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applescriptAppNotInFolder:) name:@"applescriptAppicationNotInFolder" object:nil];
     
-    //Go Sphero!
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleRobotOffline)
-                                                 name:RKRobotIsNoLongerAvailableNotification
-                                               object:nil];
+//    //Go Sphero!
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleRobotOffline)
+//                                                 name:RKRobotIsNoLongerAvailableNotification
+//                                               object:nil];
     
     //then set up defaults
     [self setDefaults];
@@ -343,95 +343,95 @@ void *kContextActivePanel = &kContextActivePanel;
     }
 }
 
-#pragma mark - Sphero Integration
-
-- (void)handleRobotOnline
-{
-    [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.0];
-    
-    ////First turn off stabilization so the drive mechanism does not move.
-    [RKStabilizationCommand sendCommandWithState:RKStabilizationStateOff];
-    
-    ////Register for asynchronise data streaming packets
-    [[RKDeviceMessenger sharedMessenger] addDataStreamingObserver:self selector:@selector(handleAsyncData:)];
-    
-    //start streaming
-    //[self beginStreaming];
-    robotOnline = YES;
-}
-
-- (void)handleRobotOffline
-{
-    robotOnline = NO;
-}
-
-- (void) beginStreaming
-{
-    //// Start data streaming for the accelerometer and IMU data. The update rate is set to 20Hz with
-    //// one sample per update, so the sample rate is 10Hz. Packets are sent continuosly.
-    [RKSetDataStreamingCommand sendCommandWithSampleRateDivisor:100 packetFrames:1
-                                                     sensorMask:RKDataStreamingMaskAccelerometerXFiltered |
-     RKDataStreamingMaskAccelerometerYFiltered |
-     RKDataStreamingMaskAccelerometerZFiltered |
-     RKDataStreamingMaskIMUPitchAngleFiltered |
-     RKDataStreamingMaskIMURollAngleFiltered |
-     RKDataStreamingMaskIMUYawAngleFiltered
-                                                    packetCount:20];
-    updatePacketsLeft = 10;
-}
-
-- (void) endStreaming
-{
-    /*When the application is entering the background we need to close the connection to the robot*/
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKDeviceConnectionOnlineNotification object:nil];
-    
-    // Turn off data streaming
-    [RKSetDataStreamingCommand sendCommandWithSampleRateDivisor:0
-                                                   packetFrames:0
-                                                     sensorMask:RKDataStreamingMaskOff
-                                                    packetCount:0];
-    // Unregister for async data packets
-    [[RKDeviceMessenger sharedMessenger] removeDataStreamingObserver:self];
-    
-    // Restore stabilization (the control unit)
-    [RKStabilizationCommand sendCommandWithState:RKStabilizationStateOn];
-    
-    // Close the connection
-    [[RKRobotProvider sharedRobotProvider] closeRobotConnection];
-}
-
-- (void)handleAsyncData:(RKDeviceAsyncData *)asyncData
-{
-    // Need to check which type of async data is received as this method will be called for
-    // data streaming packets and sleep notification packets. We are going to ingnore the sleep
-    // notifications.
-    if ([asyncData isKindOfClass:[RKDeviceSensorsAsyncData class]])
-    {
-        // Received sensor data, so display it to the user.
-        RKDeviceSensorsAsyncData *sensorsAsyncData = (RKDeviceSensorsAsyncData *)asyncData;
-        RKDeviceSensorsData *sensorsData = [sensorsAsyncData.dataFrames lastObject];
-        RKAccelerometerData *accelerometerData = sensorsData.accelerometerData;
-        RKAttitudeData *attitudeData = sensorsData.attitudeData;
-        
-        NSLog(@"attitudeData yaw: %.6f", attitudeData.yaw, nil);
-       // NSLog(@"accelerometer y: %.6f", accelerometerData.acceleration.y, nil);
-        
-//        latestSpheroSensorData.accelX = accelerometerData.acceleration.x;
-//        latestSpheroSensorData.accelY = accelerometerData.acceleration.y;
-//        latestSpheroSensorData.accelZ = accelerometerData.acceleration.z;
+//#pragma mark - Sphero Integration
+//
+//- (void)handleRobotOnline
+//{
+//    [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.0];
+//    
+//    ////First turn off stabilization so the drive mechanism does not move.
+//    [RKStabilizationCommand sendCommandWithState:RKStabilizationStateOff];
+//    
+//    ////Register for asynchronise data streaming packets
+//    [[RKDeviceMessenger sharedMessenger] addDataStreamingObserver:self selector:@selector(handleAsyncData:)];
+//    
+//    //start streaming
+//    //[self beginStreaming];
+//    robotOnline = YES;
+//}
+//
+//- (void)handleRobotOffline
+//{
+//    robotOnline = NO;
+//}
+//
+//- (void) beginStreaming
+//{
+//    //// Start data streaming for the accelerometer and IMU data. The update rate is set to 20Hz with
+//    //// one sample per update, so the sample rate is 10Hz. Packets are sent continuosly.
+//    [RKSetDataStreamingCommand sendCommandWithSampleRateDivisor:100 packetFrames:1
+//                                                     sensorMask:RKDataStreamingMaskAccelerometerXFiltered |
+//     RKDataStreamingMaskAccelerometerYFiltered |
+//     RKDataStreamingMaskAccelerometerZFiltered |
+//     RKDataStreamingMaskIMUPitchAngleFiltered |
+//     RKDataStreamingMaskIMURollAngleFiltered |
+//     RKDataStreamingMaskIMUYawAngleFiltered
+//                                                    packetCount:20];
+//    updatePacketsLeft = 10;
+//}
+//
+//- (void) endStreaming
+//{
+//    /*When the application is entering the background we need to close the connection to the robot*/
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKDeviceConnectionOnlineNotification object:nil];
+//    
+//    // Turn off data streaming
+//    [RKSetDataStreamingCommand sendCommandWithSampleRateDivisor:0
+//                                                   packetFrames:0
+//                                                     sensorMask:RKDataStreamingMaskOff
+//                                                    packetCount:0];
+//    // Unregister for async data packets
+//    [[RKDeviceMessenger sharedMessenger] removeDataStreamingObserver:self];
+//    
+//    // Restore stabilization (the control unit)
+//    [RKStabilizationCommand sendCommandWithState:RKStabilizationStateOn];
+//    
+//    // Close the connection
+//    [[RKRobotProvider sharedRobotProvider] closeRobotConnection];
+//}
+//
+//- (void)handleAsyncData:(RKDeviceAsyncData *)asyncData
+//{
+//    // Need to check which type of async data is received as this method will be called for
+//    // data streaming packets and sleep notification packets. We are going to ingnore the sleep
+//    // notifications.
+//    if ([asyncData isKindOfClass:[RKDeviceSensorsAsyncData class]])
+//    {
+//        // Received sensor data, so display it to the user.
+//        RKDeviceSensorsAsyncData *sensorsAsyncData = (RKDeviceSensorsAsyncData *)asyncData;
+//        RKDeviceSensorsData *sensorsData = [sensorsAsyncData.dataFrames lastObject];
+//        RKAccelerometerData *accelerometerData = sensorsData.accelerometerData;
+//        RKAttitudeData *attitudeData = sensorsData.attitudeData;
 //        
-//        latestSpheroSensorData.pitch = attitudeData.pitch;
-//        latestSpheroSensorData.roll = attitudeData.roll;
-//        latestSpheroSensorData.yaw = attitudeData.yaw;
-        
-        updatePacketsLeft--;
-        if (updatePacketsLeft == 0)
-        {
-            [self beginStreaming];
-        }
-        
-    }
-}
+//        NSLog(@"attitudeData yaw: %.6f", attitudeData.yaw, nil);
+//       // NSLog(@"accelerometer y: %.6f", accelerometerData.acceleration.y, nil);
+//        
+////        latestSpheroSensorData.accelX = accelerometerData.acceleration.x;
+////        latestSpheroSensorData.accelY = accelerometerData.acceleration.y;
+////        latestSpheroSensorData.accelZ = accelerometerData.acceleration.z;
+////        
+////        latestSpheroSensorData.pitch = attitudeData.pitch;
+////        latestSpheroSensorData.roll = attitudeData.roll;
+////        latestSpheroSensorData.yaw = attitudeData.yaw;
+//        
+//        updatePacketsLeft--;
+//        if (updatePacketsLeft == 0)
+//        {
+//            [self beginStreaming];
+//        }
+//        
+//    }
+//}
 
 #pragma mark - Defaults
 
@@ -528,8 +528,8 @@ void *kContextActivePanel = &kContextActivePanel;
             [self.tickSound play];
     }
     
-    if(robotOnline)
-        [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.0];
+//    if(robotOnline)
+//        [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.0];
 }
 
 - (void)PomodoroClockTicked:(NSNotification *)note
@@ -550,9 +550,9 @@ void *kContextActivePanel = &kContextActivePanel;
             [self.tickSound stop];
         }
         
-        float percentComplete = ((float)pomo.timeElapsed / (float)pomo.timeEstimated) / 2;
-        if(robotOnline)
-            [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5-percentComplete blue:0.0];
+//        float percentComplete = ((float)pomo.timeElapsed / (float)pomo.timeEstimated) / 2;
+////        if(robotOnline)
+////            [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5-percentComplete blue:0.0];
     }
     
     NSString *stringFormat = @"%02d:%02d";
@@ -612,8 +612,8 @@ void *kContextActivePanel = &kContextActivePanel;
         
         breakCounter++;
         
-        if(robotOnline)
-            [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.5];
+//        if(robotOnline)
+//            [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5 blue:0.5];
         
         return;
     }
@@ -664,8 +664,8 @@ void *kContextActivePanel = &kContextActivePanel;
 #endif
     }
     
-    if(robotOnline)
-        [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.0 blue:0.0];
+//    if(robotOnline)
+//        [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.0 blue:0.0];
     
     [[Activity currentActivity] save];
 }

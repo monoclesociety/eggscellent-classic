@@ -284,8 +284,6 @@
 		3D88F86D16EA42FB00265052 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
-		3D96967517188E9400A0CE95 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
-		3D96967617188E9400A0CE95 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
 		3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
 		3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
 		3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
@@ -340,7 +338,6 @@
 		3DF3DCAD1705492300F865E9 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3DCA91705492200F865E9 /* stats@2x.png */; };
 		3DF3F46A158A505100691B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3F468158A505100691B97 /* MainMenu.xib */; };
 		3DF9349D16D021C500A98287 /* status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF9349C16D021C500A98287 /* status@2x.png */; };
-		3DFA13DD172ACA6C00BE15CA /* RobotKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D96967417188E9400A0CE95 /* RobotKit.framework */; };
 		3DFBE63615A26CA30006ABB2 /* focus-card-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61415A26CA30006ABB2 /* focus-card-hover@2x.png */; };
 		3DFBE63715A26CA30006ABB2 /* pullOutBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61515A26CA30006ABB2 /* pullOutBackground@2x.png */; };
 		3DFBE63815A26CA30006ABB2 /* ribbon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE61615A26CA30006ABB2 /* ribbon1@2x.png */; };
@@ -580,7 +577,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */,
-				3DFA13DD172ACA6C00BE15CA /* RobotKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +642,6 @@
 		3D88F86C16EA42FB00265052 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/preferences/calendar.png; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		3D96967417188E9400A0CE95 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = pomodorable/Vendor/RobotKit.framework; sourceTree = "<group>"; };
 		3D96967D171891CD00A0CE95 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
 		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
@@ -968,7 +963,6 @@
 				3D0FDD3716ECED5800815B2C /* libz.dylib in Frameworks */,
 				3D0FDD3816ECED5800815B2C /* SystemConfiguration.framework in Frameworks */,
 				3D0FDD3916ECED5800815B2C /* Cocoa.framework in Frameworks */,
-				3D96967617188E9400A0CE95 /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +994,6 @@
 				F4E8848F1466FAFD0004DADB /* libz.dylib in Frameworks */,
 				F4E8848D1466FAEC0004DADB /* SystemConfiguration.framework in Frameworks */,
 				F48A5B351465F38500BFD7B2 /* Cocoa.framework in Frameworks */,
-				3D96967517188E9400A0CE95 /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,7 +1469,6 @@
 			children = (
 				3D96967D171891CD00A0CE95 /* IOBluetooth.framework */,
 				3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */,
-				3D96967417188E9400A0CE95 /* RobotKit.framework */,
 				3D29146315BB0A0200F19BED /* InstantMessage.framework */,
 				3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */,
 				3D91275915751A710016661F /* ServiceManagement.framework */,
