@@ -168,7 +168,6 @@
     
     result.dateLabel.stringValue = [NSString stringWithFormat:@"%@", date, nil];
     
-    
     int timerCount = (int)[a.completedEggs count];
     if(timerCount)
     {
@@ -179,8 +178,9 @@
         int external = [a.externalInterruptionCount intValue];
         int totalDistractions = internal + external;
     
+        NSString *distractionString = (totalDistractions > 1) ? @"%d distractions" : @"%d distraction";
         if(totalDistractions)
-            result.distractionsLabel.stringValue = [NSString stringWithFormat:@"%d distractions", totalDistractions, nil];
+            result.distractionsLabel.stringValue = [NSString stringWithFormat:distractionString, totalDistractions, nil];
     }
     return result;
 }
