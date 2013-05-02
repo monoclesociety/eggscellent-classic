@@ -2731,7 +2731,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor\"",
@@ -2742,7 +2742,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "38936283-AE1D-4377-A954-814CDE1CF36F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2752,7 +2752,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2764,7 +2764,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "38936283-AE1D-4377-A954-814CDE1CF36F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

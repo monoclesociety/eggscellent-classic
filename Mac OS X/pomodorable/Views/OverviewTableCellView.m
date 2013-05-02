@@ -27,6 +27,13 @@
                                                  name:NSControlTextDidEndEditingNotification 
                                                object:self.textField];
     
+    self.menu = [[NSMenu alloc] initWithTitle:@""];
+    //completeItem = [[NSMenuItem alloc] initWithTitle:@"mark as complete" action:@selector(toggleCompleteActivity:) keyEquivalent:@""];
+    //[self.menu addItem:completeItem];
+    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"delete" action:@selector(removeItem:) keyEquivalent:@""];
+    [self.menu addItem:item];
+    
+    
     //BIND: ribbon view values
     [ribbonView bind:@"plannedPomodoroCount"
             toObject:self
@@ -252,6 +259,28 @@
     }
 }
 
+- (IBAction)removeItem:(id)sender;
+{
+    
+    Activity *a = (Activity *)self.objectValue;
+    
+    
+    if([Activity currentActivity] == a && [EggTimer currentTimer].status == TimerStatusRunning)
+        return;
+    
+//    OverviewTableCellView *otcv = (OverviewTableCellView *)[itemsTableView viewAtColumn:0 row:selectedIndex makeIfNecessary:NO];
+//    if(otcv)
+//    {
+//        otcv.selected = NO;
+//    }
+    
+    a.removed = [NSNumber numberWithBool:YES];
+    [a save];
+    
+    //search for this comment in git, you'll get the code for multiple deletion.
+    //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
+}
+
 #pragma mark - NSTextField Delegate Methods
 
 - (void)textDidEndEditing:(NSNotification *)aNotification
@@ -292,6 +321,11 @@
     }
     
     [super mouseDown:theEvent];
+}
+
+- (void)rightMouseDown:(NSEvent *)theEvent
+{
+    [NSMenu popUpContextMenu:self.menu withEvent:theEvent forView:self];
 }
 
 - (void)mouseUp:(NSEvent *)theEvent

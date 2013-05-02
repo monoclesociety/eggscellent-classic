@@ -342,7 +342,7 @@
     a.removed = [NSNumber numberWithBool:YES];
     [a save];
     
-    //search for this comment in git, you'll get the code.
+    //search for this comment in git, you'll get the code for multiple deletion.
     //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
 }
 

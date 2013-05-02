@@ -34,6 +34,9 @@
     IBOutlet NSButton       *decreasePomodoroCountButton;
     IBOutlet NSButton       *increasePomodoroCountButton;
     
+    //context menu
+    NSMenuItem              *completeItem;
+    
     BOOL                    _selected;
     BOOL                    mouseDown;
     BOOL                    inCounter;
