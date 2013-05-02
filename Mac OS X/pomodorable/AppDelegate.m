@@ -68,13 +68,13 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    //setup timebomb
-    NSDate *endDate = [NSDate dateWithString:@"2013-7-15 12:00:00 +0000"];
-    NSDate *today = [NSDate date];
-    if([today earlierDate:endDate] == endDate)
-    {
-        [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
-    }
+//    //setup timebomb
+//    NSDate *endDate = [NSDate dateWithString:@"2013-7-15 12:00:00 +0000"];
+//    NSDate *today = [NSDate date];
+//    if([today earlierDate:endDate] == endDate)
+//    {
+//        [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
+//    }
     
     //Status View
     [self setupStatusView];
