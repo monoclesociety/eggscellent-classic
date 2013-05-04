@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
 
-#import "PomodoroCounterView.h"
+#import "EggTimerCounterView.h"
 
-@implementation PomodoroCounterView
+@implementation EggTimerCounterView
 @synthesize unfilledPomodoroImage;
 @synthesize plannedCount;
 

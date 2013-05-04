@@ -1353,7 +1353,7 @@
 											<reference key="NSSuperview" ref="542309460"/>
 											<reference key="NSNextKeyView" ref="729232514"/>
 											<string key="NSReuseIdentifierKey">_NS:1192</string>
-											<string key="NSClassName">PomodoroCounterView</string>
+											<string key="NSClassName">EggTimerCounterView</string>
 										</object>
 										<object class="NSImageView" id="912885280">
 											<reference key="NSNextResponder" ref="542309460"/>

@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PomodoroCounterView : NSView
+@interface EggTimerCounterView : NSView
 {
     NSImage     *unfilledPomodoroImage;
     

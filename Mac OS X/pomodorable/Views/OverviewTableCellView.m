@@ -213,9 +213,9 @@
     [a save];
 }
 
-- (void)generateTimerCounterViewToolTip
+- (NSString *)generateEggTimerCounterViewToolTip
 {
-    
+    return nil;
 }
 
 #pragma mark - IBActions

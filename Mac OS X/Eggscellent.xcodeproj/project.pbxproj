@@ -15,7 +15,7 @@
 		3D0FDCEE16ECED5800815B2C /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B9C1466F6BB00BFD7B2 /* StatusItemView.m */; };
 		3D0FDCEF16ECED5800815B2C /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E884A1146713F20004DADB /* OverviewViewController.m */; };
 		3D0FDCF016ECED5800815B2C /* OverviewTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439C3146B2C66005EA5F9 /* OverviewTableCellView.m */; };
-		3D0FDCF116ECED5800815B2C /* PomodoroCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439D7146ED4A9005EA5F9 /* PomodoroCounterView.m */; };
+		3D0FDCF116ECED5800815B2C /* EggTimerCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439D7146ED4A9005EA5F9 /* EggTimerCounterView.m */; };
 		3D0FDCF216ECED5800815B2C /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439E2146EE46A005EA5F9 /* MASPreferencesWindowController.m */; };
 		3D0FDCF316ECED5800815B2C /* GeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439E7146EEB48005EA5F9 /* GeneralPreferencesViewController.m */; };
 		3D0FDCF416ECED5800815B2C /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = F4592981146F66C5003F0A80 /* SGHotKey.m */; };
@@ -480,7 +480,7 @@
 		F4CA1E2B14E320F400741A0F /* TaskPaperGetTodos.applescript in Resources */ = {isa = PBXBuildFile; fileRef = F4CA1E2914E3209E00741A0F /* TaskPaperGetTodos.applescript */; };
 		F4CE90C3155B463E0014FD9C /* pullOutBackgroundClip.png in Resources */ = {isa = PBXBuildFile; fileRef = F4CE90C2155B463E0014FD9C /* pullOutBackgroundClip.png */; };
 		F4D439C4146B2C67005EA5F9 /* OverviewTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439C3146B2C66005EA5F9 /* OverviewTableCellView.m */; };
-		F4D439D8146ED4A9005EA5F9 /* PomodoroCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439D7146ED4A9005EA5F9 /* PomodoroCounterView.m */; };
+		F4D439D8146ED4A9005EA5F9 /* EggTimerCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439D7146ED4A9005EA5F9 /* EggTimerCounterView.m */; };
 		F4D439E3146EE46A005EA5F9 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D439E0146EE46A005EA5F9 /* MASPreferencesWindow.xib */; };
 		F4D439E4146EE46A005EA5F9 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439E2146EE46A005EA5F9 /* MASPreferencesWindowController.m */; };
 		F4D439E9146EEB48005EA5F9 /* GeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D439E7146EEB48005EA5F9 /* GeneralPreferencesViewController.m */; };
@@ -891,8 +891,8 @@
 		F4CE90C2155B463E0014FD9C /* pullOutBackgroundClip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullOutBackgroundClip.png; sourceTree = "<group>"; };
 		F4D439C2146B2C66005EA5F9 /* OverviewTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverviewTableCellView.h; path = pomodorable/Views/OverviewTableCellView.h; sourceTree = SOURCE_ROOT; };
 		F4D439C3146B2C66005EA5F9 /* OverviewTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverviewTableCellView.m; path = pomodorable/Views/OverviewTableCellView.m; sourceTree = SOURCE_ROOT; };
-		F4D439D6146ED4A9005EA5F9 /* PomodoroCounterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroCounterView.h; sourceTree = "<group>"; };
-		F4D439D7146ED4A9005EA5F9 /* PomodoroCounterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroCounterView.m; sourceTree = "<group>"; };
+		F4D439D6146ED4A9005EA5F9 /* EggTimerCounterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggTimerCounterView.h; sourceTree = "<group>"; };
+		F4D439D7146ED4A9005EA5F9 /* EggTimerCounterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggTimerCounterView.m; sourceTree = "<group>"; };
 		F4D439DF146EE46A005EA5F9 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
 		F4D439E0146EE46A005EA5F9 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
 		F4D439E1146EE46A005EA5F9 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -1544,8 +1544,8 @@
 				F48A5B9C1466F6BB00BFD7B2 /* StatusItemView.m */,
 				F43A84A114AAD1E900BA06D5 /* TaskRibbonView.h */,
 				F43A84A214AAD1E900BA06D5 /* TaskRibbonView.m */,
-				F4D439D6146ED4A9005EA5F9 /* PomodoroCounterView.h */,
-				F4D439D7146ED4A9005EA5F9 /* PomodoroCounterView.m */,
+				F4D439D6146ED4A9005EA5F9 /* EggTimerCounterView.h */,
+				F4D439D7146ED4A9005EA5F9 /* EggTimerCounterView.m */,
 				F483D62014FC10EC00634F9C /* MSSearchFieldCell.h */,
 				F483D62114FC10EC00634F9C /* MSSearchFieldCell.m */,
 				F483D62414FC12AC00634F9C /* MSSearchField.h */,
@@ -2391,7 +2391,7 @@
 				3D0FDCEE16ECED5800815B2C /* StatusItemView.m in Sources */,
 				3D0FDCEF16ECED5800815B2C /* OverviewViewController.m in Sources */,
 				3D0FDCF016ECED5800815B2C /* OverviewTableCellView.m in Sources */,
-				3D0FDCF116ECED5800815B2C /* PomodoroCounterView.m in Sources */,
+				3D0FDCF116ECED5800815B2C /* EggTimerCounterView.m in Sources */,
 				3D0FDCF216ECED5800815B2C /* MASPreferencesWindowController.m in Sources */,
 				3D0FDCF316ECED5800815B2C /* GeneralPreferencesViewController.m in Sources */,
 				3D0FDCF416ECED5800815B2C /* SGHotKey.m in Sources */,
@@ -2472,7 +2472,7 @@
 				F48A5B9F1466F6BB00BFD7B2 /* StatusItemView.m in Sources */,
 				F4E884A3146713F20004DADB /* OverviewViewController.m in Sources */,
 				F4D439C4146B2C67005EA5F9 /* OverviewTableCellView.m in Sources */,
-				F4D439D8146ED4A9005EA5F9 /* PomodoroCounterView.m in Sources */,
+				F4D439D8146ED4A9005EA5F9 /* EggTimerCounterView.m in Sources */,
 				F4D439E4146EE46A005EA5F9 /* MASPreferencesWindowController.m in Sources */,
 				F4D439E9146EEB48005EA5F9 /* GeneralPreferencesViewController.m in Sources */,
 				F4592988146F66C5003F0A80 /* SGHotKey.m in Sources */,

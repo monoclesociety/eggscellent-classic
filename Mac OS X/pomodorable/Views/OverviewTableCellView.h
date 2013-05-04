@@ -8,7 +8,7 @@
 
 #import <AppKit/AppKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "PomodoroCounterView.h"
+#import "EggTimerCounterView.h"
 #import "RoundedBox.h"
 #import "ColorView.h"
 
@@ -28,7 +28,7 @@
     IBOutlet NSView         *__weak editContainerView;
     IBOutlet NSTextField    *externalInterruptionLabel;
     IBOutlet NSTextField    *internalInterruptionLabel;
-    IBOutlet PomodoroCounterView *pomodoroCounterView;
+    IBOutlet EggTimerCounterView *pomodoroCounterView;
     
     //distraction
     IBOutlet NSButton       *decreasePomodoroCountButton;

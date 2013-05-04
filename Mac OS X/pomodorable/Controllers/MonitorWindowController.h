@@ -10,14 +10,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "PomodoroCounterView.h"
 #import "ModelStore.h"
 #import "ColorView.h"
 #import "RoundedBox.h"
 #import "TaskRibbonView.h"
 #import "BackgroundView.h"
 #import "NSAnimatedImageView.h"
-
 
 @interface MonitorWindowController : NSWindowController <NSAnimatedImageViewDelegate>
 {
@@ -56,7 +54,5 @@
 - (IBAction)addExternalInterruption:(id)sender;
 - (IBAction)addInternalInterruption:(id)sender;
 - (IBAction)stopPomodoro:(id)sender;
-
-- (CABasicAnimation *)breatheAnimation;
 
 @end

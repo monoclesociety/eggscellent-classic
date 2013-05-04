@@ -33,6 +33,6 @@
 @property (weak, nonatomic, readonly) NSArray                 *activitySortDescriptors;
 
 - (IBAction)close:(id)sender;
-- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
+//- (void)showActivity:(Activity *)a forButton:(NSButton *)button;
 
 @end
