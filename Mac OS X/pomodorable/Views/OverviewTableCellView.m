@@ -12,6 +12,8 @@
 #import "EggTimer.h"
 #import "TaskRibbonView.h"
 #import "TaskSyncController.h"
+#import "Activity.h"
+#import "Egg.h"
 
 @implementation OverviewTableCellView
 @synthesize selected = _selected;
@@ -211,6 +213,11 @@
     [a save];
 }
 
+- (void)generateTimerCounterViewToolTip
+{
+    
+}
+
 #pragma mark - IBActions
 
 - (IBAction)increasePomodoroCount:(id)sender;
@@ -261,24 +268,12 @@
 
 - (IBAction)removeItem:(id)sender;
 {
-    
     Activity *a = (Activity *)self.objectValue;
-    
-    
     if([Activity currentActivity] == a && [EggTimer currentTimer].status == TimerStatusRunning)
         return;
     
-//    OverviewTableCellView *otcv = (OverviewTableCellView *)[itemsTableView viewAtColumn:0 row:selectedIndex makeIfNecessary:NO];
-//    if(otcv)
-//    {
-//        otcv.selected = NO;
-//    }
-    
     a.removed = [NSNumber numberWithBool:YES];
     [a save];
-    
-    //search for this comment in git, you'll get the code for multiple deletion.
-    //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
 }
 
 #pragma mark - NSTextField Delegate Methods
