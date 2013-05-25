@@ -282,6 +282,9 @@
 		3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5C2633171A166400CF25A0 /* HistoryTableCellView.m */; };
 		3D6F856116DB1E0A0037A95C /* MSButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F856016DB1E0A0037A95C /* MSButtonCell.m */; };
 		3D88F86D16EA42FB00265052 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
+		3D8FE333173FE2D40061AA4B /* EggscellentClassic.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3D8FE332173FE2D40061AA4B /* EggscellentClassic.entitlements */; };
+		3D8FE33D173FE5030061AA4B /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */; };
+		3D8FE33E173FE5030061AA4B /* RegistrationWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D8FE33C173FE5030061AA4B /* RegistrationWindowController.xib */; };
 		3D903CA3157FDE8F00FC0BAE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D91275915751A710016661F /* ServiceManagement.framework */; };
 		3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
@@ -640,6 +643,10 @@
 		3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonCell.h; sourceTree = "<group>"; };
 		3D6F856016DB1E0A0037A95C /* MSButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonCell.m; sourceTree = "<group>"; };
 		3D88F86C16EA42FB00265052 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/preferences/calendar.png; sourceTree = "<group>"; };
+		3D8FE332173FE2D40061AA4B /* EggscellentClassic.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EggscellentClassic.entitlements; sourceTree = "<group>"; };
+		3D8FE33A173FE5030061AA4B /* RegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationWindowController.h; sourceTree = "<group>"; };
+		3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationWindowController.m; sourceTree = "<group>"; };
+		3D8FE33C173FE5030061AA4B /* RegistrationWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationWindowController.xib; sourceTree = "<group>"; };
 		3D912757157516940016661F /* Eggscellent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Eggscellent.entitlements; path = ../Pomodorable/Eggscellent.entitlements; sourceTree = "<group>"; };
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D96967D171891CD00A0CE95 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
@@ -1065,6 +1072,16 @@
 			children = (
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		3D8FE339173FE4B90061AA4B /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				3D8FE33A173FE5030061AA4B /* RegistrationWindowController.h */,
+				3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */,
+				3D8FE33C173FE5030061AA4B /* RegistrationWindowController.xib */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		3DCDCC3316E1104C001B55EB /* Calendar */ = {
@@ -1527,6 +1544,7 @@
 				F48A5B3D1465F38500BFD7B2 /* InfoPlist.strings */,
 				F48A5B431465F38500BFD7B2 /* Credits.rtf */,
 				3D912757157516940016661F /* Eggscellent.entitlements */,
+				3D8FE332173FE2D40061AA4B /* EggscellentClassic.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1576,6 +1594,7 @@
 				3DCDCC3316E1104C001B55EB /* Calendar */,
 				F4E7E812147D673500815B66 /* Chat */,
 				F4D439E5146EE83F005EA5F9 /* Preferences */,
+				3D8FE339173FE4B90061AA4B /* Registration */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2186,6 +2205,8 @@
 				3D53FD32171A5E0000303BD4 /* button-previous-down@2x.png in Resources */,
 				3D53FD34171A5E0000303BD4 /* button-previous.png in Resources */,
 				3D53FD36171A5E0000303BD4 /* button-previous@2x.png in Resources */,
+				3D8FE333173FE2D40061AA4B /* EggscellentClassic.entitlements in Resources */,
+				3D8FE33E173FE5030061AA4B /* RegistrationWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2448,6 +2469,7 @@
 				3D0FDD2916ECED5800815B2C /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
 				3DC3BDBA172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
+				3D8FE33D173FE5030061AA4B /* RegistrationWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2590,7 +2612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
+				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2615,7 +2637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
+				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2742,7 +2764,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "38936283-AE1D-4377-A954-814CDE1CF36F";
+				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2764,7 +2786,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "38936283-AE1D-4377-A954-814CDE1CF36F";
+				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
