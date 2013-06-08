@@ -6,20 +6,8 @@
 //  Copyright (c) 2011 Monocle Society LLC All rights reserved.
 //
 #import "ModelStore.h"
-
-//#ifdef CLASSIC_APP
-//#import <CocoaFobARC/CFobLicVerifier.h>
-//
-////@interface ModelStore (private)
-////@property (nonatomic, strong) CFobLicVerifier *verifier;
-////@property (nonatomic, strong) NSString *pubKey;
-////@end
-////
-////@implementation ModelStore (private)
-////@synthesize pubKey;
-////@end
-//
-//#endif
+#import "AppDelegate.h"
+#import <CocoaFobARC/CFobLicVerifier.h>
 
 @implementation ModelStore
 
@@ -43,10 +31,12 @@
 {
     if(self = [super init])
     {
-    //      THUS THE TIMEBOMB BEGINS....
-    [self performSelector:@selector(taskStoreInitialization:)
-               withObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:1234], [NSDate date], nil]
-               afterDelay:(arc4random() % 4)];
+        NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
+
+        [self performSelector:@selector(taskStoreInitialization:)
+                   withObject:[NSArray arrayWithObjects:l, [NSDate date], nil]
+                   afterDelay:(arc4random() % 4)];
+        
     }
     return self;
 }
@@ -55,41 +45,42 @@
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
+//---------------------------------        
+//---------------------------------        
+        NSString *s = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationKey"];
+        NSString *k = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationName"];
+        NSString *pubKey;
+        CFobLicVerifier *verifier;
+        NSMutableString *pubKeyBase64 = [NSMutableString string];
+        [pubKeyBase64 appendString:@"MIHwMIGoBgcqhkjOOAQBMIGcAkEA41O0Z67VS0w/XZV38hkMgTCBVUrHmnXp3aKg\n"];
+        [pubKeyBase64 appendString:@"lh2hn7RIbD/cO2EV/f+rLqsrzlQuZbTps7aKt9AMcx+M9C+AOQIVALQ/JDXRDpvq\n"];
+        [pubKeyBase64 appendString:@"koXX8syztrUVzlsjAkAA60zNaRTY9mRPTHwwgMl0GsRsGmjJDOcr/25gnC9aGRi/\n"];
+        [pubKeyBase64 appendString:@"d9BCB8cydi0U8nUSqgZW07LLUJwN9lIF01Y4OQIbA0MAAkAYLjkqBi6BlI/VCdkB\n"];
+        [pubKeyBase64 appendString:@"78Zag7VZlTBUys8lVKIousGbKf2/K51uwF7f5VRBdmLx6my4qbjB7/GBkz12SHfg\n"];
+        [pubKeyBase64 appendString:@"JXT8\n"];
+        
+        pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
+        
+        verifier = [[CFobLicVerifier alloc] init];
+        NSError *err = nil;
+        if (![verifier setPublicKey:pubKey error:&err])
+        {
+            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
+            exit(EXIT_FAILURE);
+        }
+        
+        //@"GAWAE-FC2FV-PAZT9-VVR9J-EZY38-DN48J-N82CN-A779C-CR4CS-V3DCF-K6W4G-9ZPML-7J3L7-K5ZJL-S9U9"
+        //@"Kyle Kinkade"
+        B_ZONKERS = [verifier verifyRegCode:k forName:s error:&err];
+        
+//---------------------------------
+//---------------------------------        
+        
         NSURL *p = [[self applicationFilesDirectory] URLByAppendingPathComponent:@"eggscellent.sqlite"];
         NSDictionary *d = [[NSFileManager defaultManager] attributesOfItemAtPath:p.path  error:nil];
         NSDate *createdDate = [d fileCreationDate];
         NSDate *currentDate = (NSDate *)[arr objectAtIndex:1];
-        int mt = (12 + 2);
-        
-        NSMutableString *pubKeyBase64 = [NSMutableString string];
-        [pubKeyBase64 appendString:@"MIHxMIGoBgcqhkj"];
-        [pubKeyBase64 appendString:@"OOAQBMIGcAkEA8wm04e0QcQRoAVJW"];
-        [pubKeyBase64 appendString:@"WnUw/4rQEKbLKjujJu6o\n"];
-        [pubKeyBase64 appendString:@"yE"];
-        [pubKeyBase64 appendString:@"v7Y2oT3itY5pbObgYCHEu9FBizqq7apsWYSF3YX"];
-        [pubKeyBase64 appendString:@"iRjKlg10wIVALfs9eVL10Ph\n"];
-        [pubKeyBase64 appendString:@"oV6zczFpi3C7FzWNAkBaPhALEKlgIltHsumHdTSBqaVoR1/bmlgw"];
-        [pubKeyBase64 appendString:@"/BCC13IAsW40\n"];
-        [pubKeyBase64 appendString:@"nkFNsK1OVwjo2ocn"];
-        [pubKeyBase64 appendString:@"3M"];
-        [pubKeyBase64 appendString:@"wW"];
-        [pubKeyBase64 appendString:@"4Rdq6uLm3DlENRZ5bYrTA"];
-        [pubKeyBase64 appendString:@"0QAAkEA4reDYZKAl1vx+8EI\n"];
-        [pubKeyBase64 appendString:@"MP/+"];
-        [pubKeyBase64 appendString:@"2Z7ekydHfX0sTMDgkxhtRm6qtcywg01X847Y9ySgNepqleD+Ka2Wbucj1pOr\n"];
-        [pubKeyBase64 appendString:@"y8MoDQ==\n"];
-//        self.pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
-//
-//        self.verifier = [[CFobLicVerifier alloc] init];
-//        NSError *err = nil;
-//        if (![self.verifier setPublicKey:self.pubKey error:&err])
-//        {
-//            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
-//
-//        }
-//
-//        BOOL result = [self.verifier verifyRegCode:@"GAWQE-F9AQP-XJCCL-PAFAX-NU5XX-EUG6W-KLT3H-VTEB9-A9KHJ-8DZ5R-DL74G-TU4BN-7ATPY-3N4XB-V4V27-Q" forName:@"Joe Bloggs" error:&err];
-        
+        int mt = [[arr objectAtIndex:0] intValue];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
            
             NSUInteger unitFlags = NSDayCalendarUnit;
@@ -115,7 +106,6 @@
 
 -(BOOL)save;
 {
-//    NSLog(@"Saving...");
     if (!__managedObjectContext)
     {
         return YES;

@@ -26,6 +26,10 @@
 #import "RemindersSyncController.h"
 #import "CalendarController.h"
 
+#ifdef CLASSIC_APP
+#import <CocoaFobARC/CFobLicVerifier.h>
+#endif
+
 @class WelcomeWindowController;
 @interface AppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
 {
@@ -93,4 +97,5 @@
 
 - (void)setupTaskSyncing;
 - (IBAction)togglePanel:(id)sender;
+
 @end

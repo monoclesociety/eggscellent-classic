@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PanelController.h"
 #import "AboutWindowController.h"
+#import "RegistrationWindowController.h"
 
 @interface OverviewViewController : NSViewController
 {
@@ -35,10 +36,11 @@
     NSManagedObjectContext          *__weak _managedObjectContext;
     AboutWindowController           *_aboutWindowController;
 }
-@property (weak, nonatomic, readonly) NSArray                 *activitySortDescriptors;
-@property (weak, nonatomic, readonly) NSManagedObjectContext  *managedObjectContext;
-@property (nonatomic, strong)   PanelController         *panelController;
-@property (nonatomic, strong)   AboutWindowController   *aboutWindowController;
+@property (weak, nonatomic, readonly) NSArray                       *activitySortDescriptors;
+@property (weak, nonatomic, readonly) NSManagedObjectContext        *managedObjectContext;
+@property (nonatomic, strong)   PanelController                     *panelController;
+@property (nonatomic, strong)   AboutWindowController               *aboutWindowController;
+@property (nonatomic, strong)   RegistrationWindowController        *registrationWindowController;
 
 - (void)viewWillAppear;
 - (void)viewDidAppear;
@@ -50,6 +52,8 @@
 - (IBAction)showOptionsMenu:(id)sender;
 - (IBAction)cellDoubleClicked:(id)sender;
 - (IBAction)checkForUpdates:(id)sender;
+
+- (IBAction)registrationSelected:(id)sender;
 
 - (IBAction)statsSelected:(id)sender;
 

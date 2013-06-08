@@ -25,6 +25,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize panelController = _panelController;
 @synthesize aboutWindowController = _aboutWindowController;
+@synthesize registrationWindowController = _registrationWindowController;
 @synthesize activitySortDescriptors;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -434,6 +435,7 @@
 
 - (IBAction)openPreferences:(id)sender;
 {
+    [NSApp activateIgnoringOtherApps:YES];
     [self.panelController.delegate performSelector:@selector(openPreferences)];
 }
 
@@ -445,6 +447,13 @@
 - (IBAction)checkForUpdates:(id)sender;
 {
 
+}
+
+- (IBAction)registrationSelected:(id)sender;
+{
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.registrationWindowController showWindow:self];
+    [self.registrationWindowController.window makeKeyAndOrderFront:self];
 }
 
 - (IBAction)closePanelWindow:(id)sender;
@@ -630,6 +639,13 @@
 	if (_aboutWindowController) return _aboutWindowController;
 	_aboutWindowController = [[AboutWindowController alloc] init];
 	return _aboutWindowController;
+}
+
+- (RegistrationWindowController *)registrationWindowController
+{
+    if (_registrationWindowController) return _registrationWindowController;
+	_registrationWindowController = [[RegistrationWindowController alloc] initWithWindowNibName:@"RegistrationWindowController"];
+	return _registrationWindowController;
 }
 
 @end

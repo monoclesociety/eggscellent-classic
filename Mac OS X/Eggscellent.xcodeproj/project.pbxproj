@@ -253,6 +253,8 @@
 		3D2932A516D0102E0072F829 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2932A316D0102E0072F829 /* egg.png */; };
 		3D2932A616D0102E0072F829 /* egg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2932A416D0102E0072F829 /* egg@2x.png */; };
 		3D29F973169655DF00681346 /* eggscellent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D29F971169655DF00681346 /* eggscellent.xcdatamodeld */; };
+		3D38724317516CAB005327E2 /* CocoaFobARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723B17516C50005327E2 /* CocoaFobARC.framework */; };
+		3D38724417516CB9005327E2 /* CocoaFobARC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D38723B17516C50005327E2 /* CocoaFobARC.framework */; };
 		3D38EFC115A375A0003C1224 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 3D38EFC015A375A0003C1224 /* icon.iconset */; };
 		3D45F6D615D8B10E006C085B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45F6D515D8B10D006C085B /* NSAttributedString+Hyperlink.m */; };
 		3D47206616D99651009204E2 /* 2_egg_wind.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206116D99651009204E2 /* 2_egg_wind.aif */; };
@@ -560,6 +562,34 @@
 			remoteGlobalIDString = 55C14BB7136EEF1500649790;
 			remoteInfo = finish_installation;
 		};
+		3D38723617516C50005327E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D38722F17516C50005327E2 /* cocoafob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 303524081223BB9600AACD22;
+			remoteInfo = CocoaFob;
+		};
+		3D38723817516C50005327E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D38722F17516C50005327E2 /* cocoafob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 303526E91223E45100AACD22;
+			remoteInfo = cocoafob;
+		};
+		3D38723A17516C50005327E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D38722F17516C50005327E2 /* cocoafob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7F7EF2C1577F3D90067C3A3;
+			remoteInfo = CocoaFobARC;
+		};
+		3D38723C17516C50005327E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D38722F17516C50005327E2 /* cocoafob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CA0D8715F1BFA900C7E9CD;
+			remoteInfo = CocoaFobTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -579,6 +609,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3D38724417516CB9005327E2 /* CocoaFobARC.framework in CopyFiles */,
 				3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +649,7 @@
 		3D2932A316D0102E0072F829 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egg.png; path = pomodorable/Resources/selected_item_pull_out/egg.png; sourceTree = SOURCE_ROOT; };
 		3D2932A416D0102E0072F829 /* egg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egg@2x.png"; path = "pomodorable/Resources/selected_item_pull_out/egg@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D29F972169655DF00681346 /* eggscellent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eggscellent.xcdatamodel; sourceTree = "<group>"; };
+		3D38722F17516C50005327E2 /* cocoafob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocoafob.xcodeproj; path = ../Vendor/cocoafob/objc/cocoafob.xcodeproj; sourceTree = "<group>"; };
 		3D38EFC015A375A0003C1224 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = icon.iconset; path = Resources/icon.iconset; sourceTree = "<group>"; };
 		3D40841D15712DFF00A8469B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		3D45F6D415D8B10D006C085B /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+Hyperlink.h"; path = "Other Sources/Categories/NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
@@ -953,6 +985,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D38724317516CAB005327E2 /* CocoaFobARC.framework in Frameworks */,
 				3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */,
 				3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */,
 				3D0FDD2B16ECED5800815B2C /* Sparkle.framework in Frameworks */,
@@ -1044,6 +1077,17 @@
 				3D1564EC15697CA600D70EBB /* RemindersSyncController.m */,
 			);
 			name = Reminders;
+			sourceTree = "<group>";
+		};
+		3D38723017516C50005327E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D38723717516C50005327E2 /* CocoaFob.framework */,
+				3D38723917516C50005327E2 /* cocoafob */,
+				3D38723B17516C50005327E2 /* CocoaFobARC.framework */,
+				3D38723D17516C50005327E2 /* CocoaFobTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3D47206016D9963E009204E2 /* egg */ = {
@@ -1467,6 +1511,7 @@
 				3DD61E5A158A4A55001947B1 /* helper */,
 				F48A5B331465F38500BFD7B2 /* Frameworks */,
 				F48A5B311465F38500BFD7B2 /* Products */,
+				3D38722F17516C50005327E2 /* cocoafob.xcodeproj */,
 				3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -1979,6 +2024,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 3D38723017516C50005327E2 /* Products */;
+					ProjectRef = 3D38722F17516C50005327E2 /* cocoafob.xcodeproj */;
+				},
+				{
 					ProductGroup = 3D0FDCD416ECEBD600815B2C /* Products */;
 					ProjectRef = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
 				},
@@ -2026,6 +2075,34 @@
 			fileType = wrapper.application;
 			path = finish_installation.app;
 			remoteRef = 3D0FDCE316ECEBD600815B2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D38723717516C50005327E2 /* CocoaFob.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaFob.framework;
+			remoteRef = 3D38723617516C50005327E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D38723917516C50005327E2 /* cocoafob */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = cocoafob;
+			remoteRef = 3D38723817516C50005327E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D38723B17516C50005327E2 /* CocoaFobARC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaFobARC.framework;
+			remoteRef = 3D38723A17516C50005327E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D38723D17516C50005327E2 /* CocoaFobTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CocoaFobTests.octest;
+			remoteRef = 3D38723C17516C50005327E2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2613,7 +2690,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
@@ -2628,7 +2705,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2638,7 +2715,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: kyle kinkade (E29DALNENY)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2654,7 +2731,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

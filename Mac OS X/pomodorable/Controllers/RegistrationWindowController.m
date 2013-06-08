@@ -7,12 +7,15 @@
 //
 
 #import "RegistrationWindowController.h"
+#import "ModelStore.h"
 
 @interface RegistrationWindowController ()
 
 @end
 
 @implementation RegistrationWindowController
+@synthesize fullName;
+@synthesize regKey;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -33,12 +36,23 @@
 
 - (IBAction)registerApplication:(id)sender;
 {
-    
+    NSString *fullNameString = fullName.stringValue;
+    NSString *regKeyString = regKey.stringValue;
+    [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
+    [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    double delayInSeconds = 0.25;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
+        [[ModelStore sharedStore] taskStoreInitialization:[NSArray arrayWithObjects:l, [NSDate date], nil]];
+    });
 }
 
 - (IBAction)cancel:(id)sender;
 {
-    
+    [self.window close];
 }
 
 @end

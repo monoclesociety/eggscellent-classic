@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface RegistrationWindowController : NSWindowController
+@property (strong) IBOutlet NSTextField *fullName;
+@property (strong) IBOutlet NSTextField *regKey;
 - (IBAction)registerApplication:(id)sender;
 - (IBAction)cancel:(id)sender;
 @end
