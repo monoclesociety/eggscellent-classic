@@ -36,6 +36,7 @@
 
 - (IBAction)registerApplication:(id)sender;
 {
+    //Test commit
     NSString *fullNameString = fullName.stringValue;
     NSString *regKeyString = regKey.stringValue;
     [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
