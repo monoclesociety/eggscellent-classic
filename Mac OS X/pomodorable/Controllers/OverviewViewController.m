@@ -42,6 +42,8 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroRequested:) name:EGG_REQUESTED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroExpired:) name:EGG_EXPIRED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroRegistered:) name:EGG_REGISTERED object:nil];
         
         //set up Activity notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED_COMPLETION object:nil];
@@ -62,6 +64,7 @@
 
 - (void)awakeFromNib
 {
+    return;
     [super awakeFromNib];
     
     if(!firstRun)
@@ -124,12 +127,14 @@
 
 - (void)viewWillAppear
 {
+    return;
     [itemsTableView deselectAll:self];
     [self populateListSubMenu];
 }
 
 - (void)viewDidAppear
 {
+    return;
     [arrayController rearrangeObjects];
     [itemsTableView becomeFirstResponder];
     
@@ -188,6 +193,7 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row 
 {
+    return nil;
     OverviewTableCellView *result = [itemsTableView makeViewWithIdentifier:@"OverviewTableCellView" owner:self];
     [result.backgroundClip setHidden:YES];
     result.tableView = itemsTableView;
@@ -204,6 +210,7 @@
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
 {
+    return nil;
     OverviewTableRowView *rowView = [[OverviewTableRowView alloc] init];
     return rowView;
 }
@@ -508,6 +515,15 @@
 - (void)pomodoroResume:(NSNotificationCenter *)note
 {
     [self changeButtonToStart:NO];
+}
+
+- (void)pomodoroExpired:(NSNotificationCenter *)note
+{
+    //The trial expired
+}
+- (void)pomodoroRegistered:(NSNotificationCenter *)note
+{
+    //User registered the app
 }
 
 - (void)ActivityModifiedCompletion:(NSNotification *)note

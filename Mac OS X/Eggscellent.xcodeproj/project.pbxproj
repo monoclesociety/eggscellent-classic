@@ -375,6 +375,12 @@
 		3DFBE65515A26CA30006ABB2 /* ribbon6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */; };
 		3DFBE65615A26CA30006ABB2 /* ribbon7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63415A26CA30006ABB2 /* ribbon7@2x.png */; };
 		3DFBE65715A26CA30006ABB2 /* ribbon8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */; };
+		AE01DF461764CE7E005F1A0D /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */; };
+		AE01DF471764D124005F1A0D /* CocoaFob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723717516C50005327E2 /* CocoaFob.framework */; };
+		AE01DF481764D124005F1A0D /* CocoaFobARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723B17516C50005327E2 /* CocoaFobARC.framework */; };
+		AE01DF491764E125005F1A0D /* RegistrationWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D8FE33C173FE5030061AA4B /* RegistrationWindowController.xib */; };
+		AE01DF4C1764E320005F1A0D /* NSTextFieldPastable.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */; };
+		AE01DF4D1764E320005F1A0D /* NSTextFieldPastable.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */; };
 		F4015F8814943ED1000CF4AB /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F7F14943ED1000CF4AB /* Activity.m */; };
 		F4015F8914943ED1000CF4AB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8114943ED1000CF4AB /* ModelStore.m */; };
 		F4015F8B14943ED1000CF4AB /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = F4015F8514943ED1000CF4AB /* Egg.m */; };
@@ -768,6 +774,8 @@
 		3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon6@2x.png"; path = "Resources/ribbons/ribbon6@2x.png"; sourceTree = "<group>"; };
 		3DFBE63415A26CA30006ABB2 /* ribbon7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon7@2x.png"; path = "Resources/ribbons/ribbon7@2x.png"; sourceTree = "<group>"; };
 		3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon8@2x.png"; path = "Resources/ribbons/ribbon8@2x.png"; sourceTree = "<group>"; };
+		AE01DF4A1764E320005F1A0D /* NSTextFieldPastable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTextFieldPastable.h; sourceTree = "<group>"; };
+		AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTextFieldPastable.m; sourceTree = "<group>"; };
 		F4015F7E14943ED1000CF4AB /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		F4015F7F14943ED1000CF4AB /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		F4015F8014943ED1000CF4AB /* ModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStore.h; sourceTree = "<group>"; };
@@ -1018,6 +1026,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE01DF471764D124005F1A0D /* CocoaFob.framework in Frameworks */,
+				AE01DF481764D124005F1A0D /* CocoaFobARC.framework in Frameworks */,
 				3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */,
 				3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */,
 				3D29146415BB0A0200F19BED /* InstantMessage.framework in Frameworks */,
@@ -1621,6 +1631,8 @@
 				3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */,
 				3D6F855F16DB1E0A0037A95C /* MSButtonCell.h */,
 				3D6F856016DB1E0A0037A95C /* MSButtonCell.m */,
+				AE01DF4A1764E320005F1A0D /* NSTextFieldPastable.h */,
+				AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2471,6 +2483,7 @@
 				3D53FD31171A5E0000303BD4 /* button-previous-down@2x.png in Resources */,
 				3D53FD33171A5E0000303BD4 /* button-previous.png in Resources */,
 				3D53FD35171A5E0000303BD4 /* button-previous@2x.png in Resources */,
+				AE01DF491764E125005F1A0D /* RegistrationWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2547,6 +2560,7 @@
 				3D5C2635171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
 				3DC3BDBA172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 				3D8FE33D173FE5030061AA4B /* RegistrationWindowController.m in Sources */,
+				AE01DF4D1764E320005F1A0D /* NSTextFieldPastable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2628,6 +2642,8 @@
 				3DD73F8C16E3299600B6D994 /* CalendarPreferencesViewController.m in Sources */,
 				3D5C2634171A166400CF25A0 /* HistoryTableCellView.m in Sources */,
 				3DC3BDB9172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
+				AE01DF461764CE7E005F1A0D /* RegistrationWindowController.m in Sources */,
+				AE01DF4C1764E320005F1A0D /* NSTextFieldPastable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2690,7 +2706,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor/HockeySDK-Mac\"",
@@ -2705,7 +2721,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2715,7 +2731,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = pomodorable/EggscellentClassic.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2731,7 +2747,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2830,7 +2846,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/pomodorable/Vendor\"",
@@ -2841,7 +2857,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2851,7 +2867,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Pomodorable/Eggscellent.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Monocle Society LLC (4U6SVFV9XT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2863,7 +2879,7 @@
 				INFOPLIST_FILE = "pomodorable/Eggscellent-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Eggscellent;
-				PROVISIONING_PROFILE = "13DA815C-C6E9-48FA-B2D6-14547886A9D3";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

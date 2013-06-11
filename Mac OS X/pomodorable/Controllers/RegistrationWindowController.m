@@ -36,7 +36,8 @@
 
 - (IBAction)registerApplication:(id)sender;
 {
-    //Test commit
+    [self successfullyRegisteredApplication];
+    
     NSString *fullNameString = fullName.stringValue;
     NSString *regKeyString = regKey.stringValue;
     [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
@@ -55,5 +56,16 @@
 {
     [self.window close];
 }
-
+- (void)successfullyRegisteredApplication{
+    [self showRegisteredInfo];
+    [[NSNotificationCenter defaultCenter] postNotification:EGG_REGISTERED];
+}
+- (void)showRegisteredInfo{
+    [self.okButton setHidden:YES];
+    [self.cancelButton setHidden:YES];
+    [self.titleLabel setHidden:YES];
+    [self.fullName setHidden:YES];
+    [self.regKey setHidden:YES];
+    [self.thanksForRegistering setHidden:NO];
+}
 @end

@@ -16,6 +16,9 @@
 #define EGG_PAUSE      @"EGG_PAUSE"
 #define EGG_RESUME     @"EGG_RESUME"
 
+#define EGG_EXPIRED    @"EGG_EXPIRED"
+#define EGG_REGISTERED @"EGG_REGISTERED"
+
 typedef enum 
 {
     TimerTypeEgg = 0,
