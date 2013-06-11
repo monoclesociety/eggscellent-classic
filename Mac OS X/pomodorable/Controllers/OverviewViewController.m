@@ -346,6 +346,14 @@
     //search for this comment in git, you'll get the code for multiple deletion.
     //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
 }
+// to hide all items
+- (void)removeAllItems{
+    for (Activity *a in arrayController.arrangedObjects){
+        a.removed = [NSNumber numberWithBool:YES];
+        [a save];
+    }
+    
+}
 
 - (IBAction)pinPanel:(id)sender;
 {

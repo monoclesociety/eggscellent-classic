@@ -23,7 +23,8 @@
     IBOutlet NSSearchField          *searchField;
     IBOutlet NSScrollView           *listScrollView;
     IBOutlet NSTextField            *noTaskLabel;
-    
+    IBOutlet NSButton               *trialButton;
+
     int                              currentClippedRow;
     int                              previousSelectedRow;
     BOOL                             doubleClicked;
