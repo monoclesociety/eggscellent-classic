@@ -31,7 +31,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:@"OverviewViewController" bundle:nibBundleOrNil];
-    if (self) 
+    if (self)
     {
         _managedObjectContext = [[ModelStore sharedStore] managedObjectContext];
         
@@ -42,8 +42,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PomodoroRequested:) name:EGG_REQUESTED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroExpired:) name:EGG_EXPIRED object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroRegistered:) name:EGG_REGISTERED object:nil];
         
         //set up Activity notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED_COMPLETION object:nil];
@@ -52,7 +50,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerTypeChanged:) name:@"taskManagerTypeChanged" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskManagerSyncCompleted:) name:SYNC_COMPLETED_WITH_CHANGES object:nil];
         
-    
+        
     }
     return self;
 }
@@ -64,7 +62,6 @@
 
 - (void)awakeFromNib
 {
-    return;
     [super awakeFromNib];
     
     if(!firstRun)
@@ -85,7 +82,7 @@
         today = [calendar dateFromComponents:nowComponents];
         
         //create predicate
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(completed == nil && removed == 0) OR (completed > %@ AND removed == 0)", today, nil];        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(completed == nil && removed == 0) OR (completed > %@ AND removed == 0)", today, nil];
         arrayController.fetchPredicate = predicate;
         
 #ifdef CLASSIC_APP
@@ -94,12 +91,12 @@
         item.target = [SUUpdater sharedUpdater];
         [optionsMenu insertItem:item atIndex:4];
 #endif
-
+        
         //set target and action of double click to this class
         [itemsTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
         
-        //center the text    
-        NSMutableParagraphStyle *pStyle = [[NSMutableParagraphStyle alloc] init];    
+        //center the text
+        NSMutableParagraphStyle *pStyle = [[NSMutableParagraphStyle alloc] init];
         pStyle.alignment = NSCenterTextAlignment;
         NSColor *txtColor = [NSColor whiteColor];
         NSFont *txtFont = [NSFont systemFontOfSize:12];
@@ -107,7 +104,7 @@
         [shadow setShadowOffset:NSMakeSize(0.0,-1.0)];
         [shadow setShadowBlurRadius:1.0];
         [shadow setShadowColor:[NSColor colorWithDeviceWhite:0.0 alpha:0.7]];
-
+        
         //set up stop/start/resume strings
         NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:pStyle, NSParagraphStyleAttributeName, txtFont, NSFontAttributeName, txtColor,  NSForegroundColorAttributeName, shadow, NSShadowAttributeName, nil];
         startString = [[NSMutableAttributedString alloc] initWithString:@"Start" attributes:txtDict];
@@ -127,14 +124,12 @@
 
 - (void)viewWillAppear
 {
-    return;
     [itemsTableView deselectAll:self];
     [self populateListSubMenu];
 }
 
 - (void)viewDidAppear
 {
-    return;
     [arrayController rearrangeObjects];
     [itemsTableView becomeFirstResponder];
     
@@ -168,7 +163,7 @@
     return [NSArray arrayWithObjects:
             [NSSortDescriptor sortDescriptorWithKey:@"completed"
                                           ascending:YES],
-            [NSSortDescriptor sortDescriptorWithKey:@"created" 
+            [NSSortDescriptor sortDescriptorWithKey:@"created"
                                           ascending:NO],
             nil];
 }
@@ -191,9 +186,8 @@
     return height;
 }
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row 
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    return nil;
     OverviewTableCellView *result = [itemsTableView makeViewWithIdentifier:@"OverviewTableCellView" owner:self];
     [result.backgroundClip setHidden:YES];
     result.tableView = itemsTableView;
@@ -210,7 +204,6 @@
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
 {
-    return nil;
     OverviewTableRowView *rowView = [[OverviewTableRowView alloc] init];
     return rowView;
 }
@@ -229,7 +222,7 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
     doubleClicked = NO;
-
+    
     NSIndexSet *selectedIndexSet = [itemsTableView selectedRowIndexes];
     if([selectedIndexSet count] < 2)
     {
@@ -250,7 +243,7 @@
                 currentClippedRow = -1;
             }
         }
-        return;   
+        return;
     }
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:sr];
@@ -277,7 +270,7 @@
             currentClippedRow = clippedIndex;
         }
     }
-
+    
     if([a class] == [Activity class])
     {
         if([[startButton attributedTitle] isEqualToAttributedString:startString])
@@ -308,7 +301,7 @@
 - (IBAction)addItem:(id)sender;
 {
     arrayController.filterPredicate = nil;
-
+    
     [itemsTableView reloadData];
     [itemsTableView deselectAll:self];
     Activity *newActivity = [Activity activity];
@@ -380,38 +373,38 @@
 - (IBAction)startANewPomodoro:(id)sender;
 {
     EggTimer *currentTimer = [EggTimer currentTimer];
-
-//    NSLog(@"inside start");
+    
+    //    NSLog(@"inside start");
     NSInteger selectedIndex;
     switch([currentTimer status])
     {
         case TimerStatusPaused:
-//            NSLog(@"inside paused");
+            //            NSLog(@"inside paused");
             [currentTimer resume];
             break;
             
         case TimerStatusRunning:
-//            NSLog(@"inside running");
+            //            NSLog(@"inside running");
             [currentTimer stop];
             break;
-         
+            
         case TimerStatusStopped:
         default:
-//            NSLog(@"inside default");
+            //            NSLog(@"inside default");
             //set the selected activity as the currentActivity
             selectedIndex = [itemsTableView selectedRow];
             if(selectedIndex < 0)
             {
-//                NSLog(@"bad selected Index");
+                //                NSLog(@"bad selected Index");
                 return;
             }
             
             Activity *a = [arrayController.arrangedObjects objectAtIndex:selectedIndex];
-//            if(!a)
-//                NSLog(@"no a");
+            //            if(!a)
+            //                NSLog(@"no a");
             EggTimer *pomo = [a crackAnEgg];
-//            if(!pomo)
-//                NSLog(@"no pomo");
+            //            if(!pomo)
+            //                NSLog(@"no pomo");
             [pomo startAfterDelay:EGG_REQUEST_DELAY];
             break;
     }
@@ -453,7 +446,7 @@
 
 - (IBAction)checkForUpdates:(id)sender;
 {
-
+    
 }
 
 - (IBAction)registrationSelected:(id)sender;
@@ -490,7 +483,7 @@
 {
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
-    {    
+    {
         [self changeButtonToStart:YES];
     }
 }
@@ -499,7 +492,7 @@
 {
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
-    {    
+    {
         [self changeButtonToStart:YES];
     }
 }
@@ -517,15 +510,6 @@
     [self changeButtonToStart:NO];
 }
 
-- (void)pomodoroExpired:(NSNotificationCenter *)note
-{
-    //The trial expired
-}
-- (void)pomodoroRegistered:(NSNotificationCenter *)note
-{
-    //User registered the app
-}
-
 - (void)ActivityModifiedCompletion:(NSNotification *)note
 {
     Activity *a = (Activity *)[note object];
@@ -541,7 +525,7 @@
     
     if([itemsTableView selectedRow] < 0)
         return;
-
+    
     Activity *b = (Activity *)[arrayController.arrangedObjects objectAtIndex:[itemsTableView selectedRow]];
     if(a == b && ((a.completed) != (b.completed)))
     {
@@ -638,19 +622,19 @@
 - (void)modifyPomodoroCountForSelectedRow:(int)modValue;
 {
     int selectedIndex = (int)[itemsTableView selectedRow];
-    if(selectedIndex < 0) 
+    if(selectedIndex < 0)
         return;
-
+    
     OverviewTableCellView *otcv = (OverviewTableCellView *)[itemsTableView viewAtColumn:0 row:selectedIndex makeIfNecessary:NO];
     if(otcv)
     {
         [otcv modifyPomodoroCount:modValue];
-    } 
+    }
 }
 
 #pragma mark - Property based methods
 
-- (AboutWindowController *)aboutWindowController 
+- (AboutWindowController *)aboutWindowController
 {
 	if (_aboutWindowController) return _aboutWindowController;
 	_aboutWindowController = [[AboutWindowController alloc] init];
