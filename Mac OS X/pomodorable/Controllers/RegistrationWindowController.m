@@ -71,8 +71,8 @@
 - (IBAction)registerApplication:(id)sender;
 {
     NSLog(@"CHUJ w dupe");
-    [self.webView setHidden:NO];
-    [(AppController *)_appController registerApp];
+    //[self.webView setHidden:NO];
+    //[(AppController *)_appController registerApp];
     //[self successfullyRegisteredApplication];
     
     NSString *fullNameString = fullName.stringValue;
@@ -80,6 +80,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
     [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[ModelStore sharedStore] taskStoreInitialization];
     /*
      double delayInSeconds = 0.25;
      dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));

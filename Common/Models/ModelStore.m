@@ -51,12 +51,12 @@
         NSString *pubKey;
         CFobLicVerifier *verifier;
         NSMutableString *pubKeyBase64 = [NSMutableString string];
-        [pubKeyBase64 appendString:@"MIHwMIGoBgcqhkjOOAQBMIGcAkEA41O0Z67VS0w/XZV38hkMgTCBVUrHmnXp3aKg\n"];
-        [pubKeyBase64 appendString:@"lh2hn7RIbD/cO2EV/f+rLqsrzlQuZbTps7aKt9AMcx+M9C+AOQIVALQ/JDXRDpvq\n"];
-        [pubKeyBase64 appendString:@"koXX8syztrUVzlsjAkAA60zNaRTY9mRPTHwwgMl0GsRsGmjJDOcr/25gnC9aGRi/\n"];
-        [pubKeyBase64 appendString:@"d9BCB8cydi0U8nUSqgZW07LLUJwN9lIF01Y4OQIbA0MAAkAYLjkqBi6BlI/VCdkB\n"];
-        [pubKeyBase64 appendString:@"78Zag7VZlTBUys8lVKIousGbKf2/K51uwF7f5VRBdmLx6my4qbjB7/GBkz12SHfg\n"];
-        [pubKeyBase64 appendString:@"JXT8\n"];
+        [pubKeyBase64 appendString:@"MIHxMIGpBgcqhkjOOAQBMIGdAkEA67kg0KCdLQDFNxAOhQSkpahjtc/F88Xb+7n1\n"];
+        [pubKeyBase64 appendString:@"eOVy0ZeU8Hk2/PU9vw5e6Fxq00v1chd2LnsbtXswn/4gb1zu+wIVAIwG5ah41VTM\n"];
+        [pubKeyBase64 appendString:@"xNfFSFzukg0KIUy7AkEA0OpFvt0NltD8DoBSczQXeqkZcwfvO9tkZc+HoRdbUnul\n"];
+        [pubKeyBase64 appendString:@"ytCVG06//YlvefKgQvpFUOWG6c973Up98xztq40nrgNDAAJAVVQvs91kjFARH51Q\n"];
+        [pubKeyBase64 appendString:@"MYDyIV8x6AsDokx+44VzAd5MHHxA8Oq0WHqXWNAbwq/gyUdM/EX7YdnpXHXThcUw\n"];
+        [pubKeyBase64 appendString:@"0EqEwQ==\n"];
         
         pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
         
@@ -70,8 +70,13 @@
         
         //@"GAWAE-FC2FV-PAZT9-VVR9J-EZY38-DN48J-N82CN-A779C-CR4CS-V3DCF-K6W4G-9ZPML-7J3L7-K5ZJL-S9U9"
         //@"Kyle Kinkade"
-        B_ZONKERS = [verifier verifyRegCode:k forName:s error:&err];
-        
+        B_ZONKERS = [verifier verifyRegCode:s forName:k error:&err];
+        NSLog(@"veryfikingRegCode: %@ forName: %@", k, s);
+        if (B_ZONKERS) {
+            NSLog(@"success");
+        } else {
+            NSLog(@"fail");
+        }
         [self checkDaysRemaining];
                 
     });
