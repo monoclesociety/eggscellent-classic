@@ -31,17 +31,16 @@
 {
     if(self = [super init])
     {
-        NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
 
-        [self performSelector:@selector(taskStoreInitialization:)
-                   withObject:[NSArray arrayWithObjects:l, [NSDate date], nil]
+        [self performSelector:@selector(taskStoreInitialization)
+                   withObject:nil
                    afterDelay:(arc4random() % 4)];
         
     }
     return self;
 }
 
-- (void)taskStoreInitialization:(NSArray *)arr
+- (void)taskStoreInitialization
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
@@ -73,33 +72,36 @@
         //@"Kyle Kinkade"
         B_ZONKERS = [verifier verifyRegCode:k forName:s error:&err];
         
-//---------------------------------
-//---------------------------------        
-        
-        NSURL *p = [[self applicationFilesDirectory] URLByAppendingPathComponent:@"eggscellent.sqlite"];
-        NSDictionary *d = [[NSFileManager defaultManager] attributesOfItemAtPath:p.path  error:nil];
-        NSDate *createdDate = [d fileCreationDate];
-        NSDate *currentDate = (NSDate *)[arr objectAtIndex:1];
-        int mt = [[arr objectAtIndex:0] intValue];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-           
-            NSUInteger unitFlags = NSDayCalendarUnit;
-            NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-            NSDateComponents *components = [calendar components:unitFlags fromDate:createdDate toDate:currentDate options:0];
-            NSInteger day = [components day];
-            
-            if(day > mt)// && !result
-            {
-                NSLog(@"TOO LONG");
-            }
-            else
-            {
-                NSLog(@"NOT LONG ENOUGH");
-            }
-            
-        });
-        
+        [self checkDaysRemaining];
+                
     });
+}
+
+- (int)checkDaysRemaining{
+    NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
+    NSArray *arr = [NSArray arrayWithObjects:l, [NSDate date], nil];
+    
+    NSURL *p = [[self applicationFilesDirectory] URLByAppendingPathComponent:@"eggscellent.sqlite"];
+    NSDictionary *d = [[NSFileManager defaultManager] attributesOfItemAtPath:p.path  error:nil];
+    NSDate *createdDate = [d fileCreationDate];
+    NSDate *currentDate = (NSDate *)[arr objectAtIndex:1];
+    int mt = [[arr objectAtIndex:0] intValue];
+    
+    NSUInteger unitFlags = NSDayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:createdDate toDate:currentDate options:0];
+    NSInteger day = [components day];
+    
+    if(day > mt)// && !result
+    {
+        NSLog(@"TOO LONG");
+        [[NSNotificationCenter defaultCenter] postNotificationName:EGG_EXPIRED object:nil];
+    }
+    else
+    {
+        NSLog(@"NOT LONG ENOUGH");
+    }
+    return mt-(int)day;
 }
 
 #pragma mark - methods

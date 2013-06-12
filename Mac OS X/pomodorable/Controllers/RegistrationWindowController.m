@@ -32,6 +32,11 @@
     [super windowDidLoad];
 }
 
+- (void)awakeFromNib{
+    if(B_ZONKERS)
+        [self showRegisteredInfo];
+}
+
 #pragma mark - IBActions
 
 - (IBAction)registerApplication:(id)sender;
@@ -47,8 +52,7 @@
     double delayInSeconds = 0.25;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
-        [[ModelStore sharedStore] taskStoreInitialization:[NSArray arrayWithObjects:l, [NSDate date], nil]];
+        [[ModelStore sharedStore] taskStoreInitialization];
     });
 }
 
@@ -57,8 +61,9 @@
     [self.window close];
 }
 - (void)successfullyRegisteredApplication{
+    B_ZONKERS = YES;
     [self showRegisteredInfo];
-    [[NSNotificationCenter defaultCenter] postNotification:EGG_REGISTERED];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
 }
 - (void)showRegisteredInfo{
     [self.okButton setHidden:YES];

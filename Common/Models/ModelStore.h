@@ -18,6 +18,8 @@
 
 + (ModelStore *)sharedStore;
 
+- (int)checkDaysRemaining;
+
 - (BOOL)save;
 
 - (id)newModelWithClassName:(NSString *)className;
@@ -26,6 +28,6 @@
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
 - (BOOL)activityExistsForSourceID:(NSString *)sourceID;
 
-- (void)taskStoreInitialization:(NSArray *)arr;
+- (void)taskStoreInitialization;
 
 @end
