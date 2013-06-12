@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict><key>OrderIsTest</key><true/><key>OrderReference</key><string>DM100219-7871-29151</string><key>OrderLanguage</key><string>en</string><key>OrderCurrency</key><string>USD</string><key>OrderTotal</key><real>47.42</real><key>CustomerFirstName</key><string>Ryan</string><key>CustomerLastName</key><string>Dewell</string><key>CustomerCompany</key><string/><key>CustomerEmail</key><string>ryan@dewell.org</string><key>OrderItems</key><array><dict><key>ProductName</key><string>ABC Book Organizer</string><key>ProductDisplay</key><string>ABC Book Organizer</string><key>Quantity</key><integer>1</integer><key>Fulfillment</key><dict><key>windows_file</key><dict><key>FulfillmentType</key><string>File</string><key>FileURL</key><string>https://localhost:8443/bm-hosted/demo/order/dl/DM100219-7871-29151/8508</string></dict><key>supportLicense</key><dict><key>FulfillmentType</key><string>License</string><key>LicenseCount</key><integer>1</integer><key>LicenseCode</key><string xml:space="preserve">QEHCDK-375722-EVDEAM-744794-5934</string><key>LicenseCodes</key><array><string xml:space="preserve">QEHCDK-375722-EVDEAM-744794-5934</string></array></dict><key>file</key><dict><key>FulfillmentType</key><string>File</string><key>FileURL</key><string>https://localhost:8443/bm-hosted/demo/order/dl/DM100219-7871-29151/8679</string></dict><key>license</key><dict><key>FulfillmentType</key><string>License</string><key>LicenseName</key><string>Ryan Dewell</string><key>LicenseCount</key><integer>1</integer><key>LicenseURL</key><string>https://localhost:8443/bm-hosted/demo/order/dl/DM100219-7871-29151/7358</string><key>LicensePropertyList</key><dict>
+	<key>Name</key>
+	<string>Ryan Dewell</string>
+	<key>Order</key>
+	<string>DM100219-7871-29151</string>
+	<key>Product</key>
+	<string>Bob</string>
+	<key>Quantity</key>
+	<string>1</string>
+	<key>Timestamp</key>
+	<string>Thu, 18 Feb 2010 16:00:00 -0800</string>
+	<key>Signature</key>
+	<data>iudvEgPqbs5CpmkYi71BUJeDjA9xQHlacpmQL8i5/lADRq2FWWhUZdOUFSX7EDAZBrWmPCYlfhYS
+E2Kwgn0u37H/lN957ylHvYCDwSOBg3lgkYxB2joW13Yl6J3rkGq97t3rmUOJKfCoqWuUWJ33tLqz
+ldgGza8PH73u3U9ANTs=
+</data>
+</dict></dict></dict></dict><dict><key>ProductName</key><string>ABC Photo Organizer</string><key>ProductDisplay</key><string>ABC Photo Organizer</string><key>Quantity</key><integer>1</integer><key>Fulfillment</key><dict/></dict></array></dict></plist>
