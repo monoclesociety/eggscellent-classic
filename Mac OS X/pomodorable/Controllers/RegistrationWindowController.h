@@ -18,7 +18,7 @@
 @property (strong) IBOutlet NSTextField *titleLabel;
 @property (strong) IBOutlet NSButton *okButton;
 @property (strong) IBOutlet NSButton *cancelButton;
-@property (strong) IBOutlet WebView *storeView;
+@property (strong) IBOutlet WebView *webView;
 @property (strong) IBOutlet NSObject *appController;
 
 
@@ -26,3 +26,4 @@
 - (IBAction)registerApplication:(id)sender;
 - (IBAction)cancel:(id)sender;
 @end
+

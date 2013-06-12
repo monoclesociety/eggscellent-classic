@@ -33,8 +33,37 @@
 }
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     if(B_ZONKERS)
         [self showRegisteredInfo];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4), dispatch_get_main_queue(), ^{
+        
+        NSString *urlAddress = @"http://piotrszwach.com";
+        NSURL *url = [NSURL URLWithString:urlAddress];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        
+        
+        [self.webView setPostsFrameChangedNotifications:TRUE];
+        [self.webView setFrameLoadDelegate:self];
+        [self.webView setUIDelegate:self];
+        [self.webView setResourceLoadDelegate:self];
+        [self.webView setApplicationNameForUserAgent:@"FSEmbeddedStore/2.0"];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(webViewLoadedSite:)
+                                                     name:WebViewProgressFinishedNotification
+                                                   object:self.webView];
+        
+        [self.webView.mainFrame loadRequest:requestObj];
+        NSLog(@"%@",self.webView.mainFrame);
+        NSLog(@"%@",self.webView);
+        NSLog(@"%@",requestObj);
+        
+    });
+    
+}
+
+- (void)webViewLoadedSite:(NSNotification *)not{
+    [self.webView setNeedsDisplay:YES];
 }
 
 #pragma mark - IBActions
@@ -42,7 +71,7 @@
 - (IBAction)registerApplication:(id)sender;
 {
     NSLog(@"CHUJ w dupe");
-    [_storeView setHidden:NO];
+    [self.webView setHidden:NO];
     [(AppController *)_appController registerApp];
     //[self successfullyRegisteredApplication];
     
@@ -51,16 +80,16 @@
     [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
     [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-/*
-    double delayInSeconds = 0.25;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [[ModelStore sharedStore] taskStoreInitialization];
-    });
-        NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
-        [[ModelStore sharedStore] taskStoreInitialization:[NSArray arrayWithObjects:l, [NSDate date], nil]];
-    });
-*/
+    /*
+     double delayInSeconds = 0.25;
+     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+     [[ModelStore sharedStore] taskStoreInitialization];
+     });
+     NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
+     [[ModelStore sharedStore] taskStoreInitialization:[NSArray arrayWithObjects:l, [NSDate date], nil]];
+     });
+     */
     
 }
 
