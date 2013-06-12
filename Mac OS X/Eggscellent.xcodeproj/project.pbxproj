@@ -375,6 +375,16 @@
 		3DFBE65515A26CA30006ABB2 /* ribbon6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */; };
 		3DFBE65615A26CA30006ABB2 /* ribbon7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63415A26CA30006ABB2 /* ribbon7@2x.png */; };
 		3DFBE65715A26CA30006ABB2 /* ribbon8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */; };
+		470AC3641767864E0069DC84 /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC34A1767864E0069DC84 /* FsprgEmbeddedStoreController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC3651767864E0069DC84 /* FsprgOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC34D1767864E0069DC84 /* FsprgOrderDocumentRepresentation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC3661767864E0069DC84 /* FsprgOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC34F1767864E0069DC84 /* FsprgOrderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC3671767864E0069DC84 /* FsprgStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC3511767864E0069DC84 /* FsprgStoreParameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC3681767864E0069DC84 /* FsprgFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC3541767864E0069DC84 /* FsprgFileDownload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC3691767864E0069DC84 /* FsprgFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC3561767864E0069DC84 /* FsprgFulfillment.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC36A1767864E0069DC84 /* FsprgLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC3581767864E0069DC84 /* FsprgLicense.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC36B1767864E0069DC84 /* FsprgOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC35A1767864E0069DC84 /* FsprgOrder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC36C1767864E0069DC84 /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC35C1767864E0069DC84 /* FsprgOrderItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		470AC37B1767870B0069DC84 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC37A1767870B0069DC84 /* AppController.m */; };
 		AE01DF461764CE7E005F1A0D /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */; };
 		AE01DF471764D124005F1A0D /* CocoaFob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723717516C50005327E2 /* CocoaFob.framework */; };
 		AE01DF481764D124005F1A0D /* CocoaFobARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723B17516C50005327E2 /* CocoaFobARC.framework */; };
@@ -774,6 +784,28 @@
 		3DFBE63315A26CA30006ABB2 /* ribbon6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon6@2x.png"; path = "Resources/ribbons/ribbon6@2x.png"; sourceTree = "<group>"; };
 		3DFBE63415A26CA30006ABB2 /* ribbon7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon7@2x.png"; path = "Resources/ribbons/ribbon7@2x.png"; sourceTree = "<group>"; };
 		3DFBE63515A26CA30006ABB2 /* ribbon8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbon8@2x.png"; path = "Resources/ribbons/ribbon8@2x.png"; sourceTree = "<group>"; };
+		470AC3481767864E0069DC84 /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
+		470AC3491767864E0069DC84 /* FsprgEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreController.h; sourceTree = "<group>"; };
+		470AC34A1767864E0069DC84 /* FsprgEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgEmbeddedStoreController.m; sourceTree = "<group>"; };
+		470AC34B1767864E0069DC84 /* FsprgEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
+		470AC34C1767864E0069DC84 /* FsprgOrderDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderDocumentRepresentation.h; sourceTree = "<group>"; };
+		470AC34D1767864E0069DC84 /* FsprgOrderDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderDocumentRepresentation.m; sourceTree = "<group>"; };
+		470AC34E1767864E0069DC84 /* FsprgOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderView.h; sourceTree = "<group>"; };
+		470AC34F1767864E0069DC84 /* FsprgOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderView.m; sourceTree = "<group>"; };
+		470AC3501767864E0069DC84 /* FsprgStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgStoreParameters.h; sourceTree = "<group>"; };
+		470AC3511767864E0069DC84 /* FsprgStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgStoreParameters.m; sourceTree = "<group>"; };
+		470AC3531767864E0069DC84 /* FsprgFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFileDownload.h; sourceTree = "<group>"; };
+		470AC3541767864E0069DC84 /* FsprgFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFileDownload.m; sourceTree = "<group>"; };
+		470AC3551767864E0069DC84 /* FsprgFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFulfillment.h; sourceTree = "<group>"; };
+		470AC3561767864E0069DC84 /* FsprgFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFulfillment.m; sourceTree = "<group>"; };
+		470AC3571767864E0069DC84 /* FsprgLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgLicense.h; sourceTree = "<group>"; };
+		470AC3581767864E0069DC84 /* FsprgLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgLicense.m; sourceTree = "<group>"; };
+		470AC3591767864E0069DC84 /* FsprgOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrder.h; sourceTree = "<group>"; };
+		470AC35A1767864E0069DC84 /* FsprgOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrder.m; sourceTree = "<group>"; };
+		470AC35B1767864E0069DC84 /* FsprgOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderItem.h; sourceTree = "<group>"; };
+		470AC35C1767864E0069DC84 /* FsprgOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderItem.m; sourceTree = "<group>"; };
+		470AC3791767870B0069DC84 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		470AC37A1767870B0069DC84 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		AE01DF4A1764E320005F1A0D /* NSTextFieldPastable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTextFieldPastable.h; sourceTree = "<group>"; };
 		AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTextFieldPastable.m; sourceTree = "<group>"; };
 		F4015F7E14943ED1000CF4AB /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
@@ -1026,6 +1058,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49988641495A7E600D356DB /* Security.framework in Frameworks */,
+				F451B4E01481688B0055D830 /* WebKit.framework in Frameworks */,
 				AE01DF471764D124005F1A0D /* CocoaFob.framework in Frameworks */,
 				AE01DF481764D124005F1A0D /* CocoaFobARC.framework in Frameworks */,
 				3D96967F171891CE00A0CE95 /* IOBluetooth.framework in Frameworks */,
@@ -1036,8 +1070,6 @@
 				3D91275A15751A710016661F /* ServiceManagement.framework in Frameworks */,
 				F4DC457014E43FD4003BAC41 /* IOKit.framework in Frameworks */,
 				F4DC456E14E43FBA003BAC41 /* CoreFoundation.framework in Frameworks */,
-				F49988641495A7E600D356DB /* Security.framework in Frameworks */,
-				F451B4E01481688B0055D830 /* WebKit.framework in Frameworks */,
 				F45929BC146F8F6A003F0A80 /* CoreServices.framework in Frameworks */,
 				F4592999146F8539003F0A80 /* Carbon.framework in Frameworks */,
 				F4E884931466FB340004DADB /* QuartzCore.framework in Frameworks */,
@@ -1134,6 +1166,8 @@
 				3D8FE33A173FE5030061AA4B /* RegistrationWindowController.h */,
 				3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */,
 				3D8FE33C173FE5030061AA4B /* RegistrationWindowController.xib */,
+				470AC3791767870B0069DC84 /* AppController.h */,
+				470AC37A1767870B0069DC84 /* AppController.m */,
 			);
 			name = Registration;
 			sourceTree = "<group>";
@@ -1224,6 +1258,42 @@
 				3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */,
 			);
 			name = retina;
+			sourceTree = "<group>";
+		};
+		470AC3471767864E0069DC84 /* FsprgEmbeddedStore */ = {
+			isa = PBXGroup;
+			children = (
+				470AC3481767864E0069DC84 /* FsprgEmbeddedStore.h */,
+				470AC3491767864E0069DC84 /* FsprgEmbeddedStoreController.h */,
+				470AC34A1767864E0069DC84 /* FsprgEmbeddedStoreController.m */,
+				470AC34B1767864E0069DC84 /* FsprgEmbeddedStoreDelegate.h */,
+				470AC34C1767864E0069DC84 /* FsprgOrderDocumentRepresentation.h */,
+				470AC34D1767864E0069DC84 /* FsprgOrderDocumentRepresentation.m */,
+				470AC34E1767864E0069DC84 /* FsprgOrderView.h */,
+				470AC34F1767864E0069DC84 /* FsprgOrderView.m */,
+				470AC3501767864E0069DC84 /* FsprgStoreParameters.h */,
+				470AC3511767864E0069DC84 /* FsprgStoreParameters.m */,
+				470AC3521767864E0069DC84 /* Model */,
+			);
+			name = FsprgEmbeddedStore;
+			path = "../../../../../Downloads/FsprgEmbeddedStoreMac-master/FsprgEmbeddedStore";
+			sourceTree = "<group>";
+		};
+		470AC3521767864E0069DC84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				470AC3531767864E0069DC84 /* FsprgFileDownload.h */,
+				470AC3541767864E0069DC84 /* FsprgFileDownload.m */,
+				470AC3551767864E0069DC84 /* FsprgFulfillment.h */,
+				470AC3561767864E0069DC84 /* FsprgFulfillment.m */,
+				470AC3571767864E0069DC84 /* FsprgLicense.h */,
+				470AC3581767864E0069DC84 /* FsprgLicense.m */,
+				470AC3591767864E0069DC84 /* FsprgOrder.h */,
+				470AC35A1767864E0069DC84 /* FsprgOrder.m */,
+				470AC35B1767864E0069DC84 /* FsprgOrderItem.h */,
+				470AC35C1767864E0069DC84 /* FsprgOrderItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4015F7D14943ED1000CF4AB /* Models */ = {
@@ -1933,6 +2003,7 @@
 		F4E8848B1466FA870004DADB /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				470AC3471767864E0069DC84 /* FsprgEmbeddedStore */,
 				F488A13514B0D08A00E9E25A /* Categories */,
 				F4E7E7D8147C8FB900815B66 /* Helpers */,
 				F48A5B461465F38500BFD7B2 /* AppDelegate.h */,
@@ -2644,6 +2715,16 @@
 				3DC3BDB9172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 				AE01DF461764CE7E005F1A0D /* RegistrationWindowController.m in Sources */,
 				AE01DF4C1764E320005F1A0D /* NSTextFieldPastable.m in Sources */,
+				470AC3641767864E0069DC84 /* FsprgEmbeddedStoreController.m in Sources */,
+				470AC3651767864E0069DC84 /* FsprgOrderDocumentRepresentation.m in Sources */,
+				470AC3661767864E0069DC84 /* FsprgOrderView.m in Sources */,
+				470AC3671767864E0069DC84 /* FsprgStoreParameters.m in Sources */,
+				470AC3681767864E0069DC84 /* FsprgFileDownload.m in Sources */,
+				470AC3691767864E0069DC84 /* FsprgFulfillment.m in Sources */,
+				470AC36A1767864E0069DC84 /* FsprgLicense.m in Sources */,
+				470AC36B1767864E0069DC84 /* FsprgOrder.m in Sources */,
+				470AC36C1767864E0069DC84 /* FsprgOrderItem.m in Sources */,
+				470AC37B1767870B0069DC84 /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
