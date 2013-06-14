@@ -28,6 +28,6 @@
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
 - (BOOL)activityExistsForSourceID:(NSString *)sourceID;
 
-- (void)taskStoreInitialization;
+- (BOOL)taskStoreInitialization;
 
 @end

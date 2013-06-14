@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "AppController.h"
 
-@interface RegistrationWindowController : NSWindowController
+@interface RegistrationWindowController : NSWindowController <AppControllerDelegate>
 
 @property (strong) IBOutlet NSTextField *fullName;
 @property (strong) IBOutlet NSTextField *regKey;
@@ -18,11 +18,13 @@
 @property (strong) IBOutlet NSTextField *titleLabel;
 @property (strong) IBOutlet NSButton *okButton;
 @property (strong) IBOutlet NSButton *cancelButton;
+@property (strong) IBOutlet NSButton *buyButton;
+@property (strong) IBOutlet NSWindow *buyWindow;
 @property (strong) IBOutlet WebView *webView;
-@property (strong) IBOutlet NSObject *appController;
+@property (strong) IBOutlet AppController *appController;
 
 
-
+- (IBAction)buyApplication:(id)sender;
 - (IBAction)registerApplication:(id)sender;
 - (IBAction)cancel:(id)sender;
 @end

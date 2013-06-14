@@ -394,6 +394,9 @@
 		4718D8AB1768DC42007CE97D /* FsprgOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4718D8921768DC42007CE97D /* FsprgOrder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4718D8AC1768DC42007CE97D /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4718D8941768DC42007CE97D /* FsprgOrderItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4718D8AD1768DC42007CE97D /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4718D8941768DC42007CE97D /* FsprgOrderItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		477E65B6176B5ED000D34EFB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470AC37A1767870B0069DC84 /* AppController.m */; };
+		477E65C1176B61A600D34EFB /* IsSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 477E65C0176B61A600D34EFB /* IsSecureIcon.png */; };
+		477E65C2176B61A600D34EFB /* IsSecureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 477E65C0176B61A600D34EFB /* IsSecureIcon.png */; };
 		AE01DF461764CE7E005F1A0D /* RegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FE33B173FE5030061AA4B /* RegistrationWindowController.m */; };
 		AE01DF471764D124005F1A0D /* CocoaFob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723717516C50005327E2 /* CocoaFob.framework */; };
 		AE01DF481764D124005F1A0D /* CocoaFobARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D38723B17516C50005327E2 /* CocoaFobARC.framework */; };
@@ -815,6 +818,7 @@
 		4718D8921768DC42007CE97D /* FsprgOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrder.m; sourceTree = "<group>"; };
 		4718D8931768DC42007CE97D /* FsprgOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderItem.h; sourceTree = "<group>"; };
 		4718D8941768DC42007CE97D /* FsprgOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderItem.m; sourceTree = "<group>"; };
+		477E65C0176B61A600D34EFB /* IsSecureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IsSecureIcon.png; path = "Resources/status icons/IsSecureIcon.png"; sourceTree = "<group>"; };
 		AE01DF4A1764E320005F1A0D /* NSTextFieldPastable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTextFieldPastable.h; sourceTree = "<group>"; };
 		AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTextFieldPastable.m; sourceTree = "<group>"; };
 		F4015F7E14943ED1000CF4AB /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
@@ -1557,6 +1561,7 @@
 		F47AE39314EEDB3500DFAE19 /* status icons */ = {
 			isa = PBXGroup;
 			children = (
+				477E65C0176B61A600D34EFB /* IsSecureIcon.png */,
 				3DF9349C16D021C500A98287 /* status@2x.png */,
 				F47AE39514EEDBDD00DFAE19 /* status.png */,
 			);
@@ -2376,6 +2381,7 @@
 				3D53FD36171A5E0000303BD4 /* button-previous@2x.png in Resources */,
 				3D8FE333173FE2D40061AA4B /* EggscellentClassic.entitlements in Resources */,
 				3D8FE33E173FE5030061AA4B /* RegistrationWindowController.xib in Resources */,
+				477E65C2176B61A600D34EFB /* IsSecureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2564,6 +2570,7 @@
 				3D53FD33171A5E0000303BD4 /* button-previous.png in Resources */,
 				3D53FD35171A5E0000303BD4 /* button-previous@2x.png in Resources */,
 				AE01DF491764E125005F1A0D /* RegistrationWindowController.xib in Resources */,
+				477E65C1176B61A600D34EFB /* IsSecureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2650,6 +2657,7 @@
 				4718D8A91768DC42007CE97D /* FsprgLicense.m in Sources */,
 				4718D8AB1768DC42007CE97D /* FsprgOrder.m in Sources */,
 				4718D8AD1768DC42007CE97D /* FsprgOrderItem.m in Sources */,
+				477E65B6176B5ED000D34EFB /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

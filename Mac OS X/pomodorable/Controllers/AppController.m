@@ -26,19 +26,15 @@
     self.storeController.webView = _storeView;
 }
 
-
-- (void)registerApp{
-    [self load:nil];
+- (IBAction)reloadPage:(id)sender{
+    [self loadStorePage];
 }
-- (IBAction)load:(id)sender
-{
+- (void)loadStorePage{
 	FsprgStoreParameters *parameters = [FsprgStoreParameters parameters];
 	[parameters setOrderProcessType:kFsprgOrderProcessDetail];
 	[parameters setStoreId:@"monoclesociety" withProductId:@"eggscellent"];
-	[parameters setMode:kFsprgModeTest];
-    
-    [parameters setContactFname:@"test"];	
-	[self.storeController loadWithParameters:parameters];
+	[parameters setMode:kFsprgModeTest];   // change to active mode
+    [self.storeController loadWithParameters:parameters];
 }
 
 // FsprgEmbeddedStoreDelegate
@@ -55,17 +51,19 @@
 {
     NSEnumerator *e = [[order orderItems] objectEnumerator];
     FsprgOrderItem *item = nil;
+    NSString *userName;
+    NSString *serialNumber;
     while (item = [e nextObject]) {
-        if ([[item productName] hasPrefix:@"MyItemNamePrefix"]) {
-            NSString *userName = [[item license] licenseName];
-            NSString *serialNumber = [[item license] firstLicenseCode];
+            userName = [[item license] licenseName];
+            serialNumber = [[item license] firstLicenseCode];
             if ([[[item productName] lowercaseString] rangeOfString:@"upgrade"].location != NSNotFound) {
                 NSLog(@"Upgrade purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
             } else {
                 NSLog(@"Full purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
             }
-        }
     }
+    [self.delegate productPurchasedForName:userName serialNumber:serialNumber];
+    
 }
 
 - (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order

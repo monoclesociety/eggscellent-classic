@@ -40,9 +40,9 @@
     return self;
 }
 
-- (void)taskStoreInitialization
+- (BOOL)taskStoreInitialization
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
 //---------------------------------        
 //---------------------------------        
@@ -76,10 +76,11 @@
             NSLog(@"success");
         } else {
             NSLog(@"fail");
+            [self checkDaysRemaining];
         }
-        [self checkDaysRemaining];
-                
-    });
+    
+    //});
+    return B_ZONKERS;
 }
 
 - (int)checkDaysRemaining{

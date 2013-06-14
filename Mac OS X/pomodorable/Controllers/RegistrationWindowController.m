@@ -23,6 +23,7 @@
     if (self)
     {
         // Initialization code here.
+
     }
     return self;
 }
@@ -34,31 +35,10 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    if(B_ZONKERS)
+    self.appController.delegate = self;
+
+    if ([[ModelStore sharedStore] taskStoreInitialization])
         [self showRegisteredInfo];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4), dispatch_get_main_queue(), ^{
-        
-        NSString *urlAddress = @"http://piotrszwach.com";
-        NSURL *url = [NSURL URLWithString:urlAddress];
-        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-        
-        
-        [self.webView setPostsFrameChangedNotifications:TRUE];
-        [self.webView setFrameLoadDelegate:self];
-        [self.webView setUIDelegate:self];
-        [self.webView setResourceLoadDelegate:self];
-        [self.webView setApplicationNameForUserAgent:@"FSEmbeddedStore/2.0"];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(webViewLoadedSite:)
-                                                     name:WebViewProgressFinishedNotification
-                                                   object:self.webView];
-        
-        [self.webView.mainFrame loadRequest:requestObj];
-        NSLog(@"%@",self.webView.mainFrame);
-        NSLog(@"%@",self.webView);
-        NSLog(@"%@",requestObj);
-        
-    });
     
 }
 
@@ -67,31 +47,22 @@
 }
 
 #pragma mark - IBActions
-
+- (IBAction)buyApplication:(id)sender{
+    [self.buyWindow makeKeyAndOrderFront:self];
+    [self.appController loadStorePage];
+}
 - (IBAction)registerApplication:(id)sender;
 {
-    NSLog(@"CHUJ w dupe");
-    //[self.webView setHidden:NO];
-    //[(AppController *)_appController registerApp];
-    //[self successfullyRegisteredApplication];
-    
     NSString *fullNameString = fullName.stringValue;
     NSString *regKeyString = regKey.stringValue;
     [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
     [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [[ModelStore sharedStore] taskStoreInitialization];
-    /*
-     double delayInSeconds = 0.25;
-     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-     [[ModelStore sharedStore] taskStoreInitialization];
-     });
-     NSNumber *l = [NSNumber numberWithInt:(12 + 2)];
-     [[ModelStore sharedStore] taskStoreInitialization:[NSArray arrayWithObjects:l, [NSDate date], nil]];
-     });
-     */
+    if ([[ModelStore sharedStore] taskStoreInitialization])
+        [self successfullyRegisteredApplication];
+    else
+        NSRunAlertPanel(@"Alert", @"Incorrect user name or serial number", @"OK", nil, nil);
+
     
 }
 
@@ -105,11 +76,30 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
 }
 - (void)showRegisteredInfo{
-    [self.okButton setHidden:YES];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"registrationName"];
+    NSString *serialNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"registrationKey"];
+    //[self.infoTextField setStringValue:userInfo];
+    [self.okButton setTitle:@"OK"];
+    [self.okButton setAction:@selector(cancel:)];
     [self.cancelButton setHidden:YES];
     [self.titleLabel setHidden:YES];
-    [self.fullName setHidden:YES];
-    [self.regKey setHidden:YES];
+    [self.fullName setStringValue:userName];
+    [self.fullName setEnabled:NO];
+    [self.regKey setStringValue:serialNumber];
+    [self.regKey setEnabled:NO];
+    [self.buyButton setHidden:YES];
     [self.thanksForRegistering setHidden:NO];
+    
 }
+
+#pragma mark - AppControllerDelegate methods
+- (void)productPurchasedForName:(NSString *)userName serialNumber:(NSString *)serialNumber{
+    NSLog(@">>> product purchased!");
+    [[NSUserDefaults standardUserDefaults] setObject:userName forKey:@"registrationName"];
+    [[NSUserDefaults standardUserDefaults] setObject:serialNumber forKey:@"registrationKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.buyWindow close];
+    [self showRegisteredInfo];
+}
+
 @end
