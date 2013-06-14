@@ -84,11 +84,16 @@
     [self.cancelButton setHidden:YES];
     [self.titleLabel setHidden:YES];
     [self.fullName setStringValue:userName];
-    [self.fullName setEnabled:NO];
+    //[self.fullName setEnabled:NO];
+    [self.fullName setEditable:NO];
     [self.regKey setStringValue:serialNumber];
-    [self.regKey setEnabled:NO];
+    //[self.regKey setEnabled:NO];
+    [self.regKey setEditable:NO];
     [self.buyButton setHidden:YES];
-    [self.thanksForRegistering setHidden:NO];
+    [self.titleLabel setTitleWithMnemonic:NSLocalizedString(@"Thank you for registering!", @"Thank you for registering!")];
+    
+}
+- (void)setProperTitle{
     
 }
 
@@ -99,7 +104,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:serialNumber forKey:@"registrationKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self.buyWindow close];
-    [self showRegisteredInfo];
+    [self successfullyRegisteredApplication];
 }
 
 @end

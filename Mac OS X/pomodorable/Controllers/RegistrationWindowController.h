@@ -14,7 +14,6 @@
 
 @property (strong) IBOutlet NSTextField *fullName;
 @property (strong) IBOutlet NSTextField *regKey;
-@property (strong) IBOutlet NSTextField *thanksForRegistering;
 @property (strong) IBOutlet NSTextField *titleLabel;
 @property (strong) IBOutlet NSButton *okButton;
 @property (strong) IBOutlet NSButton *cancelButton;

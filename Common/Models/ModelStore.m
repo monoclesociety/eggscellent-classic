@@ -74,6 +74,7 @@
         NSLog(@"veryfikingRegCode: %@ forName: %@", k, s);
         if (B_ZONKERS) {
             NSLog(@"success");
+            [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
         } else {
             NSLog(@"fail");
             [self checkDaysRemaining];

@@ -367,8 +367,11 @@
 // to hide all items
 - (void)removeAllItems{
     for (Activity *a in arrayController.arrangedObjects){
+        a.completed = [NSDate date];
         a.removed = [NSNumber numberWithBool:YES];
         [a save];
+        [[[ModelStore sharedStore] managedObjectContext] deleteObject:a];
+        [[ModelStore sharedStore] save];
     }
     
 }
@@ -538,11 +541,13 @@
 
 - (void)pomodoroExpired:(NSNotificationCenter *)note
 {
-    
+    [trialButton setHidden:NO];
+    [noTaskLabel setTitleWithMnemonic:NSLocalizedString(@"Buy the app to continue using!", @"Buy the app to continue using!")];
 }
 - (void)pomodoroRegistered:(NSNotificationCenter *)note
 {
     [trialButton setHidden:YES];
+    [noTaskLabel setTitleWithMnemonic:NSLocalizedString(@"Click on + button to add a new task", @"Click on + button to add a new task")];
 }
 
 - (void)ActivityModifiedCompletion:(NSNotification *)note
