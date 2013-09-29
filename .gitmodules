@@ -10,3 +10,6 @@
 [submodule "Vendor/cocoafob"]
 	path = Vendor/cocoafob
 	url = git://github.com/monoclesociety/cocoafob.git
+[submodule "Vendor/MagicalRecord"]
+	path = Vendor/MagicalRecord
+	url = git@github.com:magicalpanda/MagicalRecord.git
