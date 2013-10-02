@@ -43,9 +43,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroPaused:) name:EGG_PAUSE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroResume:) name:EGG_RESUME object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroRegistered:) name:EGG_REGISTERED object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pomodoroExpired:) name:EGG_EXPIRED object:nil];
-        
         //set up Activity notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActivityModifiedCompletion:) name:ACTIVITY_MODIFIED_COMPLETION object:nil];
         
@@ -117,24 +114,9 @@
         
         startButton.toolTip = NSLocalizedString(@"Start a Task (⌘ Enter)", @"Start a Task (⌘ Enter)");
         addTaskButton.toolTip = NSLocalizedString(@"Add a new task (⌘ N)", @"Add a new task (⌘ N)");
-        trialButton.toolTip = NSLocalizedString(@"Register the app", @"Register the app");
         
         currentClippedRow = -1;
         firstRun = YES;
-        
-#ifdef CLASSIC_APP
-        if(B_ZONKERS)
-            [trialButton setHidden:YES];
-        else {
-            int days = [[ModelStore sharedStore] checkDaysRemaining];
-            if(days > 0)
-                trialButton.title = [NSString stringWithFormat:NSLocalizedString(@"Trial mode: %i days left", @"Trial mode: %i days left"),days];
-            else
-                trialButton.title = NSLocalizedString(@"Trial expired!", @"Trial expired!");
-        }
-#else
-        [trialButton setHidden:YES];
-#endif
     }
 }
 
@@ -537,17 +519,6 @@
 - (void)pomodoroResume:(NSNotificationCenter *)note
 {
     [self changeButtonToStart:NO];
-}
-
-- (void)pomodoroExpired:(NSNotificationCenter *)note
-{
-    [trialButton setHidden:NO];
-    [noTaskLabel setTitleWithMnemonic:NSLocalizedString(@"Buy the app to continue using!", @"Buy the app to continue using!")];
-}
-- (void)pomodoroRegistered:(NSNotificationCenter *)note
-{
-    [trialButton setHidden:YES];
-    [noTaskLabel setTitleWithMnemonic:NSLocalizedString(@"Click on + button to add a new task", @"Click on + button to add a new task")];
 }
 
 - (void)ActivityModifiedCompletion:(NSNotification *)note

@@ -37,8 +37,8 @@
     [super awakeFromNib];
     self.appController.delegate = self;
 
-    if ([[ModelStore sharedStore] taskStoreInitialization])
-        [self showRegisteredInfo];
+//    if ([[ModelStore sharedStore] taskStoreInitialization])
+//        [self showRegisteredInfo];
     
 }
 
@@ -62,14 +62,13 @@
         [self successfullyRegisteredApplication];
     else
         NSRunAlertPanel(@"Alert", @"Incorrect user name or serial number", @"OK", nil, nil);
-
-    
 }
 
 - (IBAction)cancel:(id)sender;
 {
     [self.window close];
 }
+
 - (void)successfullyRegisteredApplication{
     B_ZONKERS = YES;
     [self showRegisteredInfo];

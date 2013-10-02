@@ -7,7 +7,7 @@
 //
 #import "ModelStore.h"
 #import "AppDelegate.h"
-#import <CocoaFobARC/CFobLicVerifier.h>
+//#import <CocoaFobARC/CFobLicVerifier.h>
 
 @implementation ModelStore
 
@@ -31,10 +31,6 @@
 {
     if(self = [super init])
     {
-
-        [self performSelector:@selector(taskStoreInitialization)
-                   withObject:nil
-                   afterDelay:(arc4random() % 4)];
         
     }
     return self;
@@ -42,45 +38,45 @@
 
 - (BOOL)taskStoreInitialization
 {
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        
-//---------------------------------        
-//---------------------------------        
-        NSString *s = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationKey"];
-        NSString *k = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationName"];
-        NSString *pubKey;
-        CFobLicVerifier *verifier;
-        NSMutableString *pubKeyBase64 = [NSMutableString string];
-        [pubKeyBase64 appendString:@"MIHxMIGpBgcqhkjOOAQBMIGdAkEA67kg0KCdLQDFNxAOhQSkpahjtc/F88Xb+7n1\n"];
-        [pubKeyBase64 appendString:@"eOVy0ZeU8Hk2/PU9vw5e6Fxq00v1chd2LnsbtXswn/4gb1zu+wIVAIwG5ah41VTM\n"];
-        [pubKeyBase64 appendString:@"xNfFSFzukg0KIUy7AkEA0OpFvt0NltD8DoBSczQXeqkZcwfvO9tkZc+HoRdbUnul\n"];
-        [pubKeyBase64 appendString:@"ytCVG06//YlvefKgQvpFUOWG6c973Up98xztq40nrgNDAAJAVVQvs91kjFARH51Q\n"];
-        [pubKeyBase64 appendString:@"MYDyIV8x6AsDokx+44VzAd5MHHxA8Oq0WHqXWNAbwq/gyUdM/EX7YdnpXHXThcUw\n"];
-        [pubKeyBase64 appendString:@"0EqEwQ==\n"];
-        
-        pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
-        
-        verifier = [[CFobLicVerifier alloc] init];
-        NSError *err = nil;
-        if (![verifier setPublicKey:pubKey error:&err])
-        {
-            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
-            exit(EXIT_FAILURE);
-        }
-        
-        //@"GAWAE-FC2FV-PAZT9-VVR9J-EZY38-DN48J-N82CN-A779C-CR4CS-V3DCF-K6W4G-9ZPML-7J3L7-K5ZJL-S9U9"
-        //@"Kyle Kinkade"
-        B_ZONKERS = [verifier verifyRegCode:s forName:k error:&err];
-        NSLog(@"veryfikingRegCode: %@ forName: %@", k, s);
-        if (B_ZONKERS) {
-            NSLog(@"success");
-            [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
-        } else {
-            NSLog(@"fail");
-            [self checkDaysRemaining];
-        }
-    
-    //});
+//    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (arc4random() % 2) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        
+////---------------------------------        
+////---------------------------------        
+//        NSString *s = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationKey"];
+//        NSString *k = [[NSUserDefaults standardUserDefaults] stringForKey:@"registrationName"];
+//        NSString *pubKey;
+//        CFobLicVerifier *verifier;
+//        NSMutableString *pubKeyBase64 = [NSMutableString string];
+//        [pubKeyBase64 appendString:@"MIHxMIGpBgcqhkjOOAQBMIGdAkEA67kg0KCdLQDFNxAOhQSkpahjtc/F88Xb+7n1\n"];
+//        [pubKeyBase64 appendString:@"eOVy0ZeU8Hk2/PU9vw5e6Fxq00v1chd2LnsbtXswn/4gb1zu+wIVAIwG5ah41VTM\n"];
+//        [pubKeyBase64 appendString:@"xNfFSFzukg0KIUy7AkEA0OpFvt0NltD8DoBSczQXeqkZcwfvO9tkZc+HoRdbUnul\n"];
+//        [pubKeyBase64 appendString:@"ytCVG06//YlvefKgQvpFUOWG6c973Up98xztq40nrgNDAAJAVVQvs91kjFARH51Q\n"];
+//        [pubKeyBase64 appendString:@"MYDyIV8x6AsDokx+44VzAd5MHHxA8Oq0WHqXWNAbwq/gyUdM/EX7YdnpXHXThcUw\n"];
+//        [pubKeyBase64 appendString:@"0EqEwQ==\n"];
+//        
+//        pubKey = [CFobLicVerifier completePublicKeyPEM:pubKeyBase64];
+//        
+//        verifier = [[CFobLicVerifier alloc] init];
+//        NSError *err = nil;
+//        if (![verifier setPublicKey:pubKey error:&err])
+//        {
+//            //OH MY GAWD WHAT DO WE DO NOW????? DO WE QUIT APP??? WHY IS BEAR DRIVING
+//            exit(EXIT_FAILURE);
+//        }
+//        
+//        //@"GAWAE-FC2FV-PAZT9-VVR9J-EZY38-DN48J-N82CN-A779C-CR4CS-V3DCF-K6W4G-9ZPML-7J3L7-K5ZJL-S9U9"
+//        //@"Kyle Kinkade"
+//        B_ZONKERS = [verifier verifyRegCode:s forName:k error:&err];
+//        NSLog(@"veryfikingRegCode: %@ forName: %@", k, s);
+//        if (B_ZONKERS) {
+//            NSLog(@"success");
+//            [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
+//        } else {
+//            NSLog(@"fail");
+//            [self checkDaysRemaining];
+//        }
+//    
+//    //});
     return B_ZONKERS;
 }
 
