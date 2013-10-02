@@ -94,8 +94,10 @@ static EggTimer *currentTimer;
             [[NSNotificationCenter defaultCenter] postNotificationName:EGG_STOP object:self];
         }
         else
+        {
+            status = TimerStatusStopped;
             [[NSNotificationCenter defaultCenter] postNotificationName:EGG_COMPLETE object:self];
-        
+        }
         
         [myTimer invalidate]; 
         return;
