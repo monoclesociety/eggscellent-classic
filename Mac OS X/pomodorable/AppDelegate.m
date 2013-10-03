@@ -91,11 +91,6 @@ void *kContextActivePanel = &kContextActivePanel;
     //get sync type
     [self setupTaskSyncing];
     
-    //Sparkle framework updating (for non-app store build)
-#ifdef CLASSIC_APP
-    [SUUpdater sharedUpdater];
-#endif
-    
     //load helper window if it's turned on in preferences
     BOOL shouldLoadHelperWindow = [[NSUserDefaults standardUserDefaults] boolForKey:@"displayMonitorWindow"];
     [self loadHelperWindow:shouldLoadHelperWindow withNormalSize:YES];
@@ -600,7 +595,12 @@ void *kContextActivePanel = &kContextActivePanel;
         [a refresh];
         
         TimerType timerType = TimerTypeShortBreak;
-        if(breakCounter == 3)
+        
+        //checking that we don't loop past 4, plus for that crappy bug
+        int breakCounterTimeStamp = [breakCounterDate timeIntervalSince1970];
+        int currentTimeStamp = [[NSDate date] timeIntervalSince1970];
+        int timeStampDiff = currentTimeStamp - breakCounterTimeStamp;
+        if(breakCounter == 3 && timeStampDiff < 14400)
         {
             timerType = TimerTypeLongBreak;
             breakCounter = 0;
@@ -610,6 +610,7 @@ void *kContextActivePanel = &kContextActivePanel;
         [EggTimer setCurrentTimer:p];
         [p start];
         
+        breakCounterDate = [NSDate date];
         breakCounter++;
         
 //        if(robotOnline)

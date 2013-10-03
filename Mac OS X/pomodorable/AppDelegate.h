@@ -52,7 +52,9 @@
     SGHotKey    *hotKeyToggleHoverWindow;
     SGHotKey    *hotKeyToggleNoteWindow;
     
-    int         breakCounter;
+    int                breakCounter;
+    NSDate            *breakCounterDate;
+    
     AVAudioPlayer     *windUpSound;
     AVAudioPlayer     *tickSound;
     AVAudioPlayer     *pomodoroCompleteSound;
