@@ -156,9 +156,9 @@ static TaskSyncController *singleton;
                                [existingActivity.completed description],
                                nil];
                 
-              existingActivity.name = name;
+            existingActivity.name = name;
             existingActivity.plannedCount = [NSNumber numberWithInt:plannedCount];
-            existingActivity.removed = [NSNumber numberWithBool:NO];
+            [existingActivity secretSetRemoved:[NSNumber numberWithBool:NO]];
             
             BOOL completedBool = (existingActivity.completed);
             BOOL statusBool = [status boolValue];

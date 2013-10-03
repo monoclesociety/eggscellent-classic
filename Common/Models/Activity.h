@@ -52,6 +52,7 @@ typedef enum
 - (NSNumber *)externalInterruptionCount;
 
 - (void)secretSetCompleted:(NSDate *)completed;
+- (void)secretSetRemoved:(NSNumber *)removed;
 - (void)refresh;
 - (BOOL)save;
 @end

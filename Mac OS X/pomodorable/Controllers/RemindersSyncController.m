@@ -97,7 +97,9 @@
         return;
 
     EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:activity.sourceID] lastObject];
-    reminder.completed = (activity.completed);
+    
+    BOOL completed = (activity.completed || [activity.removed boolValue]);
+    reminder.completed = completed;
     reminder.title = activity.name;
     
     lameSyncActivityHack = YES;

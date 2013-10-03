@@ -85,13 +85,6 @@
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(completed == nil && removed == 0) OR (completed > %@ AND removed == 0)", today, nil];
         arrayController.fetchPredicate = predicate;
         
-#ifdef CLASSIC_APP
-        NSString *title = NSLocalizedString(@"Check for updates...", @"Check for updates...");
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title action:@selector(checkForUpdates:) keyEquivalent:@""];
-        item.target = [SUUpdater sharedUpdater];
-        [optionsMenu insertItem:item atIndex:4];
-#endif
-        
         //set target and action of double click to this class
         [itemsTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
         

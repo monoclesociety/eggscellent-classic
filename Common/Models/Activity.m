@@ -16,6 +16,9 @@
 - (NSDate *)primitiveCompleted;
 - (void)setPrimitiveCompleted:(NSDate *)completed;
 
+- (NSNumber *)primitiveRemoved;
+- (void)setPrimitiveRemoved:(NSNumber *)removed;
+
 - (NSString *)primitiveName;
 - (void)setPrimitiveName:(NSString *)name;
 @end
@@ -120,6 +123,22 @@ static Activity *singleton;
     [self willChangeValueForKey:@"completed"];
     [self setPrimitiveCompleted:completed];
     [self didChangeValueForKey:@"completed"];
+}
+
+- (void)setRemoved:(NSNumber *)inRemoved
+{
+    [self willChangeValueForKey:@"removed"];
+    [self setPrimitiveRemoved:inRemoved];
+    [self didChangeValueForKey:@"removed"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:self];
+}
+
+- (void)secretSetRemoved:(NSNumber *)removed
+{
+    [self willChangeValueForKey:@"removed"];
+    [self setPrimitiveRemoved:removed];
+    [self didChangeValueForKey:@"removed]"];
 }
 
 @end

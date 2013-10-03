@@ -123,7 +123,7 @@
         return;
     
     NSString *scriptName = @"OmniFocusChangeTodo";
-    NSString *statusString = (activity.completed) ? @"true" : @"false";
+    NSString *statusString = (activity.completed || [activity.removed boolValue]) ? @"true" : @"false";
     NSString *activityID = [activity.sourceID copy];
     NSString *nameString = activity.name;
     [[ScriptManager sharedManager] executeScript:scriptName withParameters:[NSArray arrayWithObjects:activityID, statusString, nameString, nil]];
