@@ -26,6 +26,8 @@
 	<false/>
 	<key>displayMonitorWindow</key>
 	<true/>
+	<key>hideMonitorAnimation</key>
+	<false/>
 	<key>autoCompleteTasks</key>
 	<false/>
 	<key>HOTKEY_EXTERNAL_INTERRUPTION</key>

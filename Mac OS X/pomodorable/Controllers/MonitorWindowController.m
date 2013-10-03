@@ -240,7 +240,10 @@
             animationView.frames = arr;
             
             AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-            [appDelegate.windUpSound performSelectorInBackground:@selector(play) withObject:nil];
+            
+            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+                [appDelegate.windUpSound performSelectorInBackground:@selector(play) withObject:nil];
+            
             animationView.animationTag = -1;
             [animationView start];
         }
@@ -248,7 +251,8 @@
         case 1001:
         {
             //play first hatch
-            [hatchSound1 performSelectorInBackground:@selector(play) withObject:nil];
+            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+                [hatchSound1 performSelectorInBackground:@selector(play) withObject:nil];
             animationView.frameRate = 30;
             NSMutableArray *arr = [NSMutableArray array];
             [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/4_egg_nudge_1"]];
@@ -266,7 +270,8 @@
         case 1002:
         {
             //play second hatch
-            [hatchSound2 performSelectorInBackground:@selector(play) withObject:nil];
+            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+                [hatchSound2 performSelectorInBackground:@selector(play) withObject:nil];
             animationView.frameRate = 30;
             NSMutableArray *arr = [NSMutableArray array];
             [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/6_egg_nudge_2"]];
@@ -284,7 +289,8 @@
         case 1003:
         {
             //play third hatch
-            [hatchSound3 performSelectorInBackground:@selector(play) withObject:nil];
+            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+                [hatchSound3 performSelectorInBackground:@selector(play) withObject:nil];
             animationView.frameRate = 30;
             NSMutableArray *arr = [NSMutableArray array];
             [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/8_egg_nudge_3"]];

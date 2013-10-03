@@ -119,6 +119,7 @@
 {
     [itemsTableView deselectAll:self];
     [self populateListSubMenu];
+    [startButton becomeFirstResponder];
 }
 
 - (void)viewDidAppear

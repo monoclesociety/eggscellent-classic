@@ -188,7 +188,7 @@
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" id="177">
-                    <rect key="frame" x="-3" y="185" width="215" height="17"/>
+                    <rect key="frame" x="-3" y="165" width="215" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="When I return after being away:" id="178">
                         <font key="font" metaFont="system"/>
@@ -215,7 +215,7 @@
                     </textFieldCell>
                 </textField>
                 <matrix verticalHuggingPriority="750" selectionByRect="NO" id="179">
-                    <rect key="frame" x="217" y="119" width="244" height="58"/>
+                    <rect key="frame" x="217" y="99" width="244" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     <size key="cellSize" width="244" height="18"/>
@@ -260,7 +260,7 @@
                     </connections>
                 </button>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="210">
-                    <rect key="frame" x="12" y="103" width="456" height="5"/>
+                    <rect key="frame" x="12" y="90" width="456" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -279,15 +279,27 @@
                     </connections>
                 </button>
                 <button id="247">
-                    <rect key="frame" x="215" y="212" width="180" height="18"/>
+                    <rect key="frame" x="215" y="212" width="157" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="keep visual timer on top " bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="248">
+                    <buttonCell key="cell" type="check" title="hide visual animation" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="248">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="toggleMonitorWindowOnTop:" target="-2" id="252"/>
-                        <binding destination="29" name="value" keyPath="values.monitorWindowOnTop" id="251"/>
+                        <binding destination="29" name="value" keyPath="values.hideMonitorAnimation" id="VZC-ZB-eAW"/>
+                    </connections>
+                </button>
+                <button id="ZTm-ap-UiN">
+                    <rect key="frame" x="215" y="183" width="180" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="keep visual timer on top " bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="OVP-6Z-mty">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleMonitorWindowOnTop:" target="-2" id="ttv-GO-z21"/>
+                        <binding destination="29" name="value" keyPath="values.monitorWindowOnTop" id="XaS-IL-ZNV"/>
                     </connections>
                 </button>
             </subviews>

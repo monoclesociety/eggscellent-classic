@@ -451,7 +451,7 @@ void *kContextActivePanel = &kContextActivePanel;
         a.completed = [NSDate date];
         a.plannedCount = [NSNumber numberWithInt:1];
         
-        [[ModelStore sharedStore] save];;
+        [[ModelStore sharedStore] save];
     }
     
     self.hotKeyExternalInterrupt = [self hotKeyWithKey:HOTKEY_EXTERNAL_INTERRUPTION withSelector:@selector(externalInterruptionKeyed:)];
