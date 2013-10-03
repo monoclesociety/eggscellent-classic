@@ -126,6 +126,7 @@
     hatchSound3 = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     hatchSound3.volume = .5;
     [hatchSound3 prepareToPlay];
+
 }
 
 #pragma mark - IBActions
@@ -313,11 +314,26 @@
 - (void)PomodoroRequested:(NSNotification *)note
 {
     [self.window makeKeyAndOrderFront:nil];
-    
-    [activityNameLabel setNeedsLayout:YES];
-    [activityNameLabel setNeedsDisplay:YES];
 
     Activity *a = [Activity currentActivity];
+    self.currentActivity = a;
+    
+    NSDictionary *bindingOptions = @{
+                                     NSContinuouslyUpdatesValueBindingOption : @YES };
+    [ribbonView bind:@"plannedPomodoroCount"
+            toObject:self
+         withKeyPath:@"currentActivity.plannedCount"
+             options:bindingOptions];
+    
+    [ribbonView bind:@"completePomodoroCount"
+            toObject:self
+         withKeyPath:@"currentActivity.completedEggs.@count"
+             options:bindingOptions];
+    
+    [ribbonView bind:@"completed"
+            toObject:a
+         withKeyPath:@"completed"
+             options:bindingOptions];
     
     //make *damn* sure the button is stopped.
     [stopButton setAttributedTitle:stopString];
@@ -329,12 +345,11 @@
     [mainView.layer removeAllAnimations]; 
     
     //populate activity name
-    activityNameLabel.stringValue = a.name;
-    
-    //populate ribbon view
-    ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-    ribbonView.completePomodoroCount = (int)[a.completedEggs count];
-    [ribbonView setNeedsDisplay:YES];
+    //activityNameLabel.stringValue = a.name;
+    [activityNameLabel bind:@"stringValue"
+                   toObject:self
+                withKeyPath:@"currentActivity.name"
+                    options:bindingOptions];
     
     //populate pomodoro counts
     [self updatePomodoroCount];
@@ -386,15 +401,7 @@
 {
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
-    {   
-        
-        //update ribbon UI
-        Activity *a = [Activity currentActivity];
-        ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-        ribbonView.completePomodoroCount = (int)[a.completedEggs count];
-        ribbonView.completed = (a.completed);
-
-        [ribbonView setNeedsDisplay:YES];
+    {
         [self updatePomodoroCount];
         
         NSMutableArray *arr = [NSMutableArray arrayWithCapacity:60];

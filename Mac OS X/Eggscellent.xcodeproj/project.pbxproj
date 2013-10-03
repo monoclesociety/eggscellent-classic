@@ -312,6 +312,7 @@
 		3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
 		3DAA1E5616D4278600287DA8 /* NSAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */; };
 		3DB1DAF615DEBBBD002D06B3 /* hiddenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */; };
+		3DBE67FC17FE3629006EFBD8 /* NSAutoRefreshTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE67FB17FE3629006EFBD8 /* NSAutoRefreshTextField.m */; };
 		3DC3BDB9172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */; };
 		3DC3BDBA172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */; };
 		3DCDCC3616E110D2001B55EB /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCDCC3516E110D2001B55EB /* CalendarController.m */; };
@@ -699,6 +700,8 @@
 		3DAA1E5416D4278500287DA8 /* NSAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAnimatedImageView.h; sourceTree = "<group>"; };
 		3DAA1E5516D4278600287DA8 /* NSAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAnimatedImageView.m; sourceTree = "<group>"; };
 		3DB1DAF515DEBBBD002D06B3 /* hiddenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiddenLogo.png; sourceTree = "<group>"; };
+		3DBE67FA17FE3629006EFBD8 /* NSAutoRefreshTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAutoRefreshTextField.h; sourceTree = "<group>"; };
+		3DBE67FB17FE3629006EFBD8 /* NSAutoRefreshTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAutoRefreshTextField.m; sourceTree = "<group>"; };
 		3DC3BDB7172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSVerticallyCenteredTextFieldCell.h; path = Vendor/RSVerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
 		3DC3BDB8172DA2BE00E5CFD2 /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSVerticallyCenteredTextFieldCell.m; path = Vendor/RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
 		3DCDCC3416E110D2001B55EB /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
@@ -1668,6 +1671,8 @@
 				3D6F856016DB1E0A0037A95C /* MSButtonCell.m */,
 				AE01DF4A1764E320005F1A0D /* NSTextFieldPastable.h */,
 				AE01DF4B1764E320005F1A0D /* NSTextFieldPastable.m */,
+				3DBE67FA17FE3629006EFBD8 /* NSAutoRefreshTextField.h */,
+				3DBE67FB17FE3629006EFBD8 /* NSAutoRefreshTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2598,6 +2603,7 @@
 				F48A5B961466F68400BFD7B2 /* PanelController.m in Sources */,
 				F48A5B9D1466F6BB00BFD7B2 /* BackgroundView.m in Sources */,
 				F48A5B9E1466F6BB00BFD7B2 /* Panel.m in Sources */,
+				3DBE67FC17FE3629006EFBD8 /* NSAutoRefreshTextField.m in Sources */,
 				F48A5B9F1466F6BB00BFD7B2 /* StatusItemView.m in Sources */,
 				F4E884A3146713F20004DADB /* OverviewViewController.m in Sources */,
 				F4D439C4146B2C67005EA5F9 /* OverviewTableCellView.m in Sources */,

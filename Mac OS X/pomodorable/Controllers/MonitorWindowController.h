@@ -22,7 +22,7 @@
     //general items
     IBOutlet NSView                 *growmatoView;
     IBOutlet NSView                 *containerView;
-    IBOutlet TaskRibbonView      *ribbonView;
+    IBOutlet TaskRibbonView         *ribbonView;
     IBOutlet NSTextField            *pomodoroCount;
     IBOutlet NSTextField            *plannedPomodoroCount;
     
@@ -46,10 +46,10 @@
     AVAudioPlayer                   *hatchSound3;
     
     double                          _timeEstimated;
-    
-    //non view members
-    Activity                        *currentActivity;
 }
+@property (strong) Activity *currentActivity;
+@property (strong) NSString *currentName;
+
 
 - (IBAction)addExternalInterruption:(id)sender;
 - (IBAction)addInternalInterruption:(id)sender;

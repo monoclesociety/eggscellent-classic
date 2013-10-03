@@ -110,4 +110,22 @@
     }
 }
 
+- (void)setPlannedPomodoroCount:(int)aPlannedPomodoroCount
+{
+    plannedPomodoroCount = aPlannedPomodoroCount;
+    [self setNeedsDisplay:YES];
+}
+
+- (void)setCompletePomodoroCount:(int)aCompletePomodoroCount
+{
+    completePomodoroCount = aCompletePomodoroCount;
+    [self setNeedsDisplay:YES];
+}
+
+- (void)setCompleted:(NSDate *)aCompleted
+{
+    completed = aCompleted;
+    [self setNeedsDisplay:YES];
+}
+
 @end

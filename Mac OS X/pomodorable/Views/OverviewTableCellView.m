@@ -205,10 +205,10 @@
     a.plannedCount = [NSNumber numberWithInt:[a.plannedCount intValue] + delta];
     pomodoroCounterView.plannedCount = a.plannedCount;
     
-    //set ribbon value
-    ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-    ribbonView.completePomodoroCount = (int)[a.completedEggs count];
-    [ribbonView setNeedsDisplay:YES];
+//    //set ribbon value
+//    ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
+//    ribbonView.completePomodoroCount = (int)[a.completedEggs count];
+//    [ribbonView setNeedsDisplay:YES];
     
     [a save];
 }
@@ -258,7 +258,7 @@
     [a save];
 
     ribbonView.completed = completedDate;
-    [ribbonView setNeedsDisplay:YES];
+
 
     if(a == [Activity currentActivity] && [EggTimer currentTimer].status == TimerStatusRunning)
     {
@@ -304,12 +304,6 @@
 
         a.plannedCount = [NSNumber numberWithInt:amount];
         pomodoroCounterView.plannedCount = a.plannedCount;
-
-        //set ribbon value
-        ribbonView.plannedPomodoroCount = [a.plannedCount intValue];
-        ribbonView.completePomodoroCount = (int)[a.completedEggs count];
-        [ribbonView setNeedsDisplay:YES];
-
         [a save];
         
         return;
