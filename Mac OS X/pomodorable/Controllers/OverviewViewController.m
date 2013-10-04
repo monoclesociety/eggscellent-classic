@@ -384,32 +384,32 @@
     switch([currentTimer status])
     {
         case TimerStatusPaused:
-            NSLog(@"inside paused");
+            //NSLog(@"inside paused");
             [currentTimer resume];
             break;
             
         case TimerStatusRunning:
-            NSLog(@"inside running");
+            //NSLog(@"inside running");
             [currentTimer stop];
             break;
             
         case TimerStatusStopped:
         default:
-            NSLog(@"inside default");
+            //NSLog(@"inside default");
             //set the selected activity as the currentActivity
             selectedIndex = [itemsTableView selectedRow];
             if(selectedIndex < 0)
             {
-                NSLog(@"bad selected Index");
+                //NSLog(@"bad selected Index");
                 return;
             }
             
             Activity *a = [arrayController.arrangedObjects objectAtIndex:selectedIndex];
-            if(!a)
-                NSLog(@"no activity");
+//            if(!a)
+//                NSLog(@"no activity");
             EggTimer *pomo = [a crackAnEgg];
-            if(!pomo)
-                NSLog(@"no pomo");
+//            if(!pomo)
+//                NSLog(@"no pomo");
             [pomo startAfterDelay:EGG_REQUEST_DELAY];
             break;
     }
