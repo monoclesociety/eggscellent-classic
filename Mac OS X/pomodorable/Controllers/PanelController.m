@@ -157,23 +157,23 @@
     [panel setFrame:statusRect display:YES];
     [panel makeKeyAndOrderFront:nil];
     
-    NSTimeInterval openDuration = OPEN_DURATION;
+//    NSTimeInterval openDuration = OPEN_DURATION;
     
-    NSEvent *currentEvent = [NSApp currentEvent];
-    if ([currentEvent type] == NSLeftMouseDown)
-    {
-        NSUInteger clearFlags = ([currentEvent modifierFlags] & NSDeviceIndependentModifierFlagsMask);
-        BOOL shiftPressed = (clearFlags == NSShiftKeyMask);
-        BOOL shiftOptionPressed = (clearFlags == (NSShiftKeyMask | NSAlternateKeyMask));
-        if (shiftPressed || shiftOptionPressed)
-        {
-            openDuration *= 10;
-            
-//            if (shiftOptionPressed)
-//                NSLog(@"Icon is at %@\n\tMenu is on screen %@\n\tWill be animated to %@",
-//                      NSStringFromRect(statusRect), NSStringFromRect(screenRect), NSStringFromRect(panelRect));
-        }
-    }
+//    NSEvent *currentEvent = [NSApp currentEvent];
+//    if ([currentEvent type] == NSLeftMouseDown)
+//    {
+//        NSUInteger clearFlags = ([currentEvent modifierFlags] & NSDeviceIndependentModifierFlagsMask);
+//        BOOL shiftPressed = (clearFlags == NSShiftKeyMask);
+//        BOOL shiftOptionPressed = (clearFlags == (NSShiftKeyMask | NSAlternateKeyMask));
+//        if (shiftPressed || shiftOptionPressed)
+//        {
+//            openDuration *= 10;
+//            
+////            if (shiftOptionPressed)
+////                NSLog(@"Icon is at %@\n\tMenu is on screen %@\n\tWill be animated to %@",
+////                      NSStringFromRect(statusRect), NSStringFromRect(screenRect), NSStringFromRect(panelRect));
+//        }
+//    }
     
     [overviewController viewWillAppear];
 

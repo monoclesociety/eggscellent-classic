@@ -103,6 +103,7 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     [fetchRequest setPredicate:predicate];
     
+    fetchRequest.fetchBatchSize = 20;
     
     return fetchRequest;
 }
