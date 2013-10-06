@@ -17,12 +17,26 @@
     self = [super init];
     if (self)
     {
+#ifdef __MAC_10_9
         // Initialize self.
+        self.mainStore = [[EKEventStore alloc] init];//WithAccessToEntityTypes:EKEntityMaskReminder];
+        [self.mainStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+            
+            if(granted)
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(storeChanged:)
+                                                         name:EKEventStoreChangedNotification
+                                                       object:_mainStore];
+        }];
+#else
         self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(storeChanged:)
                                                      name:EKEventStoreChangedNotification
                                                    object:_mainStore];
+#endif
+
     }
     return self;
 }
