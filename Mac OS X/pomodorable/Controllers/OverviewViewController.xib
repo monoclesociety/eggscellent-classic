@@ -390,7 +390,7 @@ DQ
                 </button>
             </subviews>
         </customView>
-        <arrayController mode="entity" entityName="Activity" usesLazyFetching="YES" fetchPredicateFormat="" automaticallyPreparesContent="YES" preservesSelection="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" id="26">
+        <arrayController mode="entity" entityName="Activity" fetchPredicateFormat="" automaticallyPreparesContent="YES" preservesSelection="NO" avoidsEmptySelection="NO" id="26">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="33"/>
                 <binding destination="-2" name="sortDescriptors" keyPath="self.activitySortDescriptors" id="428"/>
