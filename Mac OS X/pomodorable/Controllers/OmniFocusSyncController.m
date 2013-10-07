@@ -8,12 +8,6 @@
 
 #import "OmniFocusSyncController.h"
 
-@interface OmniFocusSyncController (private)
-
-- (int)getOmniFocusPlannedCountFromContextWithID:(NSString *)contextID;
-
-@end
-
 @implementation OmniFocusSyncController
 @synthesize syncThread;
 
@@ -88,8 +82,7 @@
             NSNumber *status = [NSNumber numberWithBool:completed]; //for now defaulting to incomplete
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
             
-            NSNull *plannedCount = [NSNull null];
-            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
+            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
             
             [self syncWithDictionary:syncDictionary];
         }
@@ -127,30 +120,6 @@
     NSString *activityID = [activity.sourceID copy];
     NSString *nameString = activity.name;
     [[ScriptManager sharedManager] executeScript:scriptName withParameters:[NSArray arrayWithObjects:activityID, statusString, nameString, nil]];
-}
-
-- (int)getOmniFocusPlannedCountFromContextWithID:(NSString *)contextID
-{
-    int result = 0;
-    NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:@"OmniFocusGetTaskContext" withParameter:contextID];
-    
-    //if this is null, then things isn't running.
-    DescType descType = [ed descriptorType];
-    if(descType == 'null')
-        return 0;
-    
-    int count = (int)[ed numberOfItems];
-    
-    int i = 1;
-    for(; i <= count; i++)
-    {
-        NSAppleEventDescriptor *item = [ed descriptorAtIndex:i];
-        int itemIntValue = [[item stringValue] intValue];
-        if(itemIntValue > result)
-            result = itemIntValue;
-    }
-    
-    return result;
 }
 
 - (NSString *)appID

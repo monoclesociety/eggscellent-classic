@@ -53,15 +53,15 @@
 }
 - (IBAction)registerApplication:(id)sender;
 {
-    NSString *fullNameString = fullName.stringValue;
-    NSString *regKeyString = regKey.stringValue;
-    [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
-    [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if ([[ModelStore sharedStore] taskStoreInitialization])
-        [self successfullyRegisteredApplication];
-    else
-        NSRunAlertPanel(@"Alert", @"Incorrect user name or serial number", @"OK", nil, nil);
+//    NSString *fullNameString = fullName.stringValue;
+//    NSString *regKeyString = regKey.stringValue;
+//    [[NSUserDefaults standardUserDefaults] setObject:fullNameString forKey:@"registrationName"];
+//    [[NSUserDefaults standardUserDefaults] setObject:regKeyString forKey:@"registrationKey"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//    if ([[ModelStore sharedStore] taskStoreInitialization])
+//        [self successfullyRegisteredApplication];
+//    else
+//        NSRunAlertPanel(@"Alert", @"Incorrect user name or serial number", @"OK", nil, nil);
 }
 
 - (IBAction)cancel:(id)sender;
@@ -69,10 +69,11 @@
     [self.window close];
 }
 
-- (void)successfullyRegisteredApplication{
-    B_ZONKERS = YES;
-    [self showRegisteredInfo];
-    [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
+- (void)successfullyRegisteredApplication
+{
+//    B_ZONKERS = YES;
+//    [self showRegisteredInfo];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:EGG_REGISTERED object:nil];
 }
 - (void)showRegisteredInfo{
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"registrationName"];

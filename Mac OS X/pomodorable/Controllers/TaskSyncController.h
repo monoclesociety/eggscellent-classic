@@ -29,6 +29,4 @@
 - (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;
 - (BOOL)syncWithDictionary:(NSDictionary *)dictionary;
 
-- (int)countFromString:(NSString *)countString;
-
 @end

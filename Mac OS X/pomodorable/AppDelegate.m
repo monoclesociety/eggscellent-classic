@@ -442,14 +442,13 @@ void *kContextActivePanel = &kContextActivePanel;
             [[NSUserDefaults standardUserDefaults] setValue:[d valueForKey:s] forKey:s];
         }
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"http://www.eggscellentapp.com/beta/eggscellent.xml" forKey:@"SUFeedURL"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRunComplete"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
         Activity *a = [Activity activity];
         a.name = NSLocalizedString(@"Open Eggscellent for the first time", @"Open Eggscellent for the first time");
         a.completed = [NSDate date];
         a.plannedCount = [NSNumber numberWithInt:1];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRunComplete"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
         [[ModelStore sharedStore] save];
     }
@@ -854,13 +853,13 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)loadHelperWindow:(BOOL)shouldLoad withNormalSize:(BOOL)normalSize;
 {
+    if(!monitorWindowController)
+    {
+        monitorWindowController = [[MonitorWindowController alloc] init];
+    }
+    
     if(shouldLoad)
     {
-        if(!monitorWindowController)
-        {
-            monitorWindowController = [[MonitorWindowController alloc] init];
-        }
-        
         EggTimer *currentTimer = [EggTimer currentTimer];
         if(currentTimer && currentTimer.status == TimerStatusRunning)
             [monitorWindowController.window makeKeyAndOrderFront:nil];

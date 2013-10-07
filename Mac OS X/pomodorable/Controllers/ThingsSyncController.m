@@ -8,12 +8,6 @@
 
 #import "ThingsSyncController.h"
 
-@interface ThingsSyncController (private)
-
-- (int)getThingsPlannedCountInTagArray:(NSArray *)tagArray;
-
-@end
-
 @implementation ThingsSyncController
 @synthesize syncThread;
 
@@ -70,8 +64,7 @@
         
         NSAppleEventDescriptor *IDs = [ed descriptorAtIndex:1];
         NSAppleEventDescriptor *names = [ed descriptorAtIndex:2];
-        NSAppleEventDescriptor *tiggles = [ed descriptorAtIndex:3];
-        NSAppleEventDescriptor *statuses = [ed descriptorAtIndex:4];
+        NSAppleEventDescriptor *statuses = [ed descriptorAtIndex:3];
         
         int count = (int)[IDs numberOfItems];
 
@@ -90,33 +83,11 @@
             
             //set up status
             NSString *statusString = [[statuses descriptorAtIndex:i] stringValue]; //0 = incomplete, 1 = complete, 2++ whatever we need to account for
-            NSNumber *status = [NSNumber numberWithInt:0]; //by default mark as complete
-            if([statusString isEqualToString:@"tdcm"])
-            {
-                status = [NSNumber numberWithInt:1];
-            }
-            else if([statusString isEqualToString:@"tdcl"])
-            {
-                status = [NSNumber numberWithInt:2];//TODO: We currently aren't handling cancelled items.
-            }
-            if(!status)
-                status = [NSNumber numberWithInt:0];
-            
-            //set up tags
-            NSAppleEventDescriptor *itemTags = [tiggles descriptorAtIndex:i];
-            int tagCount = (int)[itemTags numberOfItems];
-            NSMutableArray *tagArray = [NSMutableArray arrayWithCapacity:tagCount];
-            int x = 1;
-            for(; x <= tagCount; x++)
-            {
-                [tagArray addObject:[[itemTags descriptorAtIndex:x] stringValue]];
-            }
-            
-            NSNull *plannedCount = [NSNull null];
+            NSNumber *status = [NSNumber numberWithInt:([statusString isEqualToString:@"tdcm"]) ? 1 : 0];
             
             //set up source and piece it all together
             NSNumber *source = [NSNumber numberWithInt:ActivitySourceThings];
-            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
+            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
             
             [self performSelectorOnMainThread:@selector(syncWithDictionary:) withObject:syncDictionary waitUntilDone:YES];
         }
@@ -162,18 +133,6 @@
         NSString *scriptName = @"ThingsChangeTodo";
         [[ScriptManager sharedManager] executeScript:scriptName withParameters:activity];
     }
-}
-
-- (int)getThingsPlannedCountInTagArray:(NSArray *)tagArray
-{
-    int plannedCount = 0;
-    for(NSString *tag in tagArray)
-    {            
-        int currentPlannedCount = [self countFromString:tag];
-        if(currentPlannedCount > plannedCount)
-            plannedCount = currentPlannedCount;
-    }
-    return plannedCount;
 }
 
 @end

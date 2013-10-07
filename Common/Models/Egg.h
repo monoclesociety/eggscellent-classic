@@ -28,7 +28,7 @@ typedef enum
 @property (nonatomic, strong) NSNumber * externalInterruptions;
 @property (nonatomic, strong) NSNumber * timeEstimated;
 @property (nonatomic, strong) NSNumber * timeElapsed;
-@property (nonatomic, strong) Activity *activity;
+@property (nonatomic, strong) Activity * activity;
 
 + (Egg *)lastEgg;
 + (Egg *)newEgg;

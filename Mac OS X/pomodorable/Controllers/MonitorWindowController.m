@@ -313,13 +313,13 @@
 
 - (void)PomodoroRequested:(NSNotification *)note
 {
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"displayMonitorWindow"])
     [self.window makeKeyAndOrderFront:nil];
 
     Activity *a = [Activity currentActivity];
     self.currentActivity = a;
     
-    NSDictionary *bindingOptions = @{
-                                     NSContinuouslyUpdatesValueBindingOption : @YES };
+    NSDictionary *bindingOptions = @{ NSContinuouslyUpdatesValueBindingOption : @YES };
     [ribbonView bind:@"plannedPomodoroCount"
             toObject:self
          withKeyPath:@"currentActivity.plannedCount"
@@ -375,7 +375,7 @@
     _timeEstimated = (double)egg.timeEstimated;
     if(egg.type == TimerTypeEgg)
     {
-        [self.window makeKeyAndOrderFront:nil];
+       // [self.window makeKeyAndOrderFront:nil];
         
         //create first quarter
         [self createQuarterForSequence:@"egg_sequences/3_egg_tick_Q1"];

@@ -78,11 +78,10 @@
              {
                  NSString *ID = reminder.calendarItemExternalIdentifier;
                  NSString *name = reminder.title;
-                 NSNull *plannedCount = [NSNull null];
                  NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
                  NSNumber *status = [NSNumber numberWithBool:reminder.completed];
                  
-                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",plannedCount, @"plannedCount", source, @"source", nil];
+                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
                  
                  [self syncWithDictionary:syncDictionary];
              }

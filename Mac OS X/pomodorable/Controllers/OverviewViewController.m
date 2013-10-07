@@ -190,8 +190,12 @@
     NSTableRowView *rowView = [itemsTableView rowViewAtRow:row makeIfNecessary:NO];
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:row];
-    result.textField.stringValue = a.name;
-    result.selected = rowView.selected;
+    
+    if([a isKindOfClass:[Activity class]])
+    {
+        result.textField.stringValue = a.name;
+        result.selected = rowView.selected;
+    }
     
     return result;
 }
@@ -207,6 +211,9 @@
     previousSelectedRow = (int)[aTableView selectedRow];
     
     Activity *a = (Activity *)[arrayController.arrangedObjects objectAtIndex:rowIndex];
+    if(![a isKindOfClass:[Activity class]])
+        return NO;
+    
     if((a.completed))
         return YES;
     
@@ -340,16 +347,18 @@
     //search for this comment in git, you'll get the code for multiple deletion.
     //NOTE: This code was written for when multiple selection was considered. this will delete all selected rows.
 }
+
 // to hide all items
-- (void)removeAllItems{
-    for (Activity *a in arrayController.arrangedObjects){
+- (void)removeAllItems
+{
+    for (Activity *a in arrayController.arrangedObjects)
+    {
         a.completed = [NSDate date];
         a.removed = [NSNumber numberWithBool:YES];
         [a save];
         [[[ModelStore sharedStore] managedObjectContext] deleteObject:a];
         [[ModelStore sharedStore] save];
     }
-    
 }
 
 - (IBAction)pinPanel:(id)sender;
