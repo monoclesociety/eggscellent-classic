@@ -555,7 +555,9 @@
 
 - (void)taskManagerSyncCompleted:(NSNotification *)note
 {
-    [arrayController rearrangeObjects];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [arrayController rearrangeObjects];
+    });
 }
 
 #pragma mark - custom methods

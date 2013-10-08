@@ -112,7 +112,6 @@ static TaskSyncController *singleton;
             newActivity.sourceID = ID;
             
             [newActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
-//            newActivity.completed = [status boolValue] ? [NSDate date] : nil; //this could be a 0, 1 or 2. right now if it is 1 or 2, it's completed :-P
             
             //add ID to the ID dictionary, to keep it safe
             result = YES;
