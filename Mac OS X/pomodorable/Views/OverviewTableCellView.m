@@ -282,6 +282,7 @@
 {
     Activity *a = (Activity *)self.objectValue;
     a.name = self.textField.stringValue;
+    [a save];
     
     if(!a.sourceID)
        [[TaskSyncController currentController] saveNewActivity:a];

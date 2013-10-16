@@ -14,6 +14,7 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize privateManagedObjectContect = __privateManagedObjectContext;
 
 + (ModelStore *)sharedStore;
 {
@@ -47,8 +48,15 @@
     __block NSError *error = nil;
 
     [__managedObjectContext performBlock:^{
+        
         [__managedObjectContext save:&error];
+        
+        [__privateManagedObjectContext performBlock:^{
+            NSError *err;
+            [__privateManagedObjectContext save:&err];
+            
         }];
+    }];
     return (!error);
 }
 
@@ -231,8 +239,12 @@
     {
         return nil;
     }
+    
+    __privateManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    __privateManagedObjectContext.persistentStoreCoordinator = coordinator;
+    
     __managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [__managedObjectContext setPersistentStoreCoordinator:coordinator];
+    __managedObjectContext.parentContext = __privateManagedObjectContext;
     
     return __managedObjectContext;
 }

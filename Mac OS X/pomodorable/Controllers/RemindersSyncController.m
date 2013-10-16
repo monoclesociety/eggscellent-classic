@@ -21,12 +21,7 @@
         // Initialize self.
         self.mainStore = [[EKEventStore alloc] init];//WithAccessToEntityTypes:EKEntityMaskReminder];
         [self.mainStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-            
-            if(granted)
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(storeChanged:)
-                                                         name:EKEventStoreChangedNotification
-                                                       object:_mainStore];
+
         }];
 #else
         self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
@@ -36,6 +31,11 @@
                                                      name:EKEventStoreChangedNotification
                                                    object:_mainStore];
 #endif
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(storeChanged:)
+                                                     name:EKEventStoreChangedNotification
+                                                   object:_mainStore];
 
     }
     return self;
@@ -52,8 +52,7 @@
     NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil 
                                                                                      ending:nil
                                                                                   calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
-    
-    
+
     //get the date for 12AM today.
     NSDate *today = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];

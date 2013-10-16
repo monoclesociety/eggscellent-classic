@@ -25,9 +25,7 @@ typedef enum
 @class Egg;
 @class EggTimer;
 @interface Activity : MSManagedObject
-{
-    
-}
+
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * details;
 @property (nonatomic, strong) NSString * meta;

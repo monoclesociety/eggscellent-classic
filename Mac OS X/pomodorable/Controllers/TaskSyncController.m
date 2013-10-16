@@ -68,12 +68,13 @@ static TaskSyncController *singleton;
 
 - (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;
 {
-    NSManagedObjectContext *moc = [ModelStore sharedStore].managedObjectContext;
-    [moc performBlockAndWait:^{
+    NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    pmoc.parentContext = [ModelStore sharedStore].managedObjectContext;
+    [pmoc performBlockAndWait:^{
         
         NSError *error;
         NSFetchRequest *fetchRequest = [[ModelStore sharedStore] fetchRequestForFilteredActivities];
-        NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
+        NSArray *results = [pmoc executeFetchRequest:fetchRequest error:&error];
         
         for(Activity *a in results)
         {
@@ -82,11 +83,15 @@ static TaskSyncController *singleton;
             {
                 if(![activityIDs valueForKey:a.sourceID] && (!a.completed))
                 {
-                    a.removed = [NSNumber numberWithBool:YES];
+                    [a secretSetRemoved:[NSNumber numberWithBool:YES]];
                 }
             }
         }
         
+        error = nil;
+        [pmoc save:&error];
+        
+        [[ModelStore sharedStore] save];
     }];
 }
 
