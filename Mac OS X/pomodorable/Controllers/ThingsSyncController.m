@@ -17,6 +17,7 @@
     if (self)
     {
         self.syncThread = nil;
+        source = ActivitySourceThings;
     }
     return self;
 }
