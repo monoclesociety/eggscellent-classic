@@ -65,6 +65,14 @@ static TaskSyncController *singleton;
 
 #pragma mark - helper methods
 
+- (void)prepare
+{
+    self.importedIDs = [NSMutableDictionary dictionary];
+    tasksChanged = NO;
+    currentCount = 0;
+    syncCount = 0;
+}
+
 - (void)completeActivities;
 {
     NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];

@@ -44,12 +44,11 @@
 
 - (void)superSync;
 {
-    if(syncCount)
+    if(self.importedIDs)
         return;
     
-    self.importedIDs = [NSMutableDictionary dictionary];
-    tasksChanged = NO;
-    
+    [self prepare];
+
     // Create the predicate. eventStore is an instance variable.
     NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil 
                                                                                      ending:nil
@@ -69,6 +68,8 @@
     
     [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders)
     {
+        syncCount = (int)reminders.count;
+
         for(EKReminder *reminder in reminders)
         {
             [importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];

@@ -32,9 +32,9 @@
     if ([runningApps1 count] == 0 && [runningApps2 count] == 0)
         return NO;
     
-    if(!importedIDs)
+    if(!self.importedIDs)
     {
-        [super sync];
+        [self prepare];
         self.syncThread = [[NSThread alloc] initWithTarget:self selector:@selector(threadSync) object:nil];
         [self.syncThread start];
     }
@@ -69,10 +69,10 @@
         NSAppleEventDescriptor *names   = [ed descriptorAtIndex:2];
         NSAppleEventDescriptor *completeds   = [ed descriptorAtIndex:3];
         
-        int count = (int)[IDs numberOfItems];
+        syncCount = (int)[IDs numberOfItems];
         
         int i = 1;
-        for(; i <= count; i++)
+        for(; i <= syncCount; i++)
         {
             //setup name and id
             NSString *ID = [[IDs descriptorAtIndex:i] stringValue];

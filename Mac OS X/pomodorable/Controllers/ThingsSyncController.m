@@ -29,9 +29,9 @@
     if([[NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.culturedcode.things"] count] == 0)
         return NO;
     
-    if(!importedIDs)
+    if(!self.importedIDs)
     {
-        [super sync];
+        [self prepare];
         self.syncThread = [[NSThread alloc] initWithTarget:self selector:@selector(threadSync) object:nil];
         [self.syncThread start];
     }

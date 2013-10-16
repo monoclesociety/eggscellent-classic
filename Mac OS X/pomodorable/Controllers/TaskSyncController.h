@@ -29,6 +29,7 @@
 - (void)syncActivity:(Activity *)activity;
 - (void)saveNewActivity:(Activity *)activity;
 - (void)cleanUpSync;
+- (void)prepare;
 
 - (void)completeActivities;
 - (void)syncWithDictionary:(NSDictionary *)dictionary;
