@@ -18,11 +18,11 @@
     self = [super init];
     if (self)
     {
+        source = ActivitySourceOmniFocus;
         self.syncThread = nil;
     }
     return self;
 }
-
 
 - (BOOL)sync
 {
@@ -46,9 +46,11 @@
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"applescriptAppicationNotInFolder" object:@"OmniFocus"];
 }
+
 - (void)threadSync
 {
-    @autoreleasepool {
+    @autoreleasepool
+    {
         NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:@"OmniFocusGetTodos"];
         
         if(!ed)
@@ -80,17 +82,10 @@
             BOOL completed = b ? YES : NO;
             
             NSNumber *status = [NSNumber numberWithBool:completed]; //for now defaulting to incomplete
-            NSNumber *source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
-            
-            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
+            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
             
             [self syncWithDictionary:syncDictionary];
         }
-        
-        [self completeActivitiesForSource:ActivitySourceOmniFocus withDictionary:importedIDs];
-        [self cleanUpSync];
-        
-        self.importedIDs = nil;
     }
 }
 

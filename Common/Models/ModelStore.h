@@ -25,6 +25,6 @@
 - (NSArray *)allWithClassName:(NSString *)className;
 
 - (NSFetchRequest *)fetchRequestForFilteredActivities;
-- (BOOL)activityExistsForSourceID:(NSString *)sourceID;
+- (NSFetchRequest *)activityExistsForSourceID:(NSString *)sourceID;
 
 @end

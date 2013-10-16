@@ -116,7 +116,7 @@
     return fetchRequest;
 }
 
-- (BOOL)activityExistsForSourceID:(NSString *)sourceID
+- (NSFetchRequest *)activityExistsForSourceID:(NSString *)sourceID
 {
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -127,14 +127,8 @@
     [fetchRequest setIncludesPropertyValues:NO];
     [fetchRequest setIncludesSubentities:NO];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID == %@", sourceID, nil]];
-    
-    __block NSUInteger count = -1;
-    [self.managedObjectContext performBlockAndWait:^{
-        NSError *error = nil;
-        count = [self.managedObjectContext countForFetchRequest: fetchRequest error: &error];
-    }];
-    
-    return (count != 0);
+        
+    return fetchRequest;
 }
 
 #pragma mark - core data stack

@@ -32,6 +32,8 @@ static TaskSyncController *singleton;
     if (self)
     {
         self.importedIDs = nil;
+        syncCount = 0;
+        currentCount = 0;
     }
     return self;
 }
@@ -43,15 +45,12 @@ static TaskSyncController *singleton;
 
 - (void)cleanUpSync
 {
-    [[ModelStore sharedStore] save];
     
-    if(tasksChanged)
-        [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED_WITH_CHANGES object:self];
 }
 
 - (void)dealloc
 {
-    [self cleanUpSync];
+    [[ModelStore sharedStore] save];
 }
 
 - (void)syncActivity:(Activity *)activity
@@ -66,7 +65,7 @@ static TaskSyncController *singleton;
 
 #pragma mark - helper methods
 
-- (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;
+- (void)completeActivities;
 {
     NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     pmoc.parentContext = [ModelStore sharedStore].managedObjectContext;
@@ -81,7 +80,7 @@ static TaskSyncController *singleton;
             int sourceInt = [a.source intValue];
             if(sourceInt == source)
             {
-                if(![activityIDs valueForKey:a.sourceID] && (!a.completed))
+                if(![importedIDs valueForKey:a.sourceID] && (!a.completed))
                 {
                     [a secretSetRemoved:[NSNumber numberWithBool:YES]];
                 }
@@ -92,62 +91,70 @@ static TaskSyncController *singleton;
         [pmoc save:&error];
         
         [[ModelStore sharedStore] save];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(tasksChanged)
+                [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED_WITH_CHANGES object:self];
+            
+            self.importedIDs = nil;
+            currentCount = 0;
+            syncCount = 0;
+        });
     }];
 }
 
-- (BOOL)syncWithDictionary:(NSDictionary *)dictionary
+- (void)syncWithDictionary:(NSDictionary *)dictionary
 {
-    __block BOOL result;
-    
     NSManagedObjectContext *moc = [ModelStore sharedStore].managedObjectContext;
-    
-    NSNumber *status            = [dictionary objectForKey:@"status"];
-    NSString *ID                = [dictionary objectForKey:@"ID"];
-    NSString *name              = [dictionary objectForKey:@"name"];
-    NSNumber *source            = [dictionary objectForKey:@"source"];
-    
-    //do a check to see if the item already exists
-    if(![[ModelStore sharedStore] activityExistsForSourceID:ID])
-    {
-        [moc performBlockAndWait:^{
-            
-            Activity *newActivity = [Activity activity];
-            newActivity.source = source;
+    NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    pmoc.parentContext = moc;
+    [pmoc performBlock:^{
+        
+        NSError *err = nil;
+        NSNumber *status            = [dictionary objectForKey:@"status"];
+        NSString *ID                = [dictionary objectForKey:@"ID"];
+        NSString *name              = [dictionary objectForKey:@"name"];
+
+        //check for
+        NSFetchRequest *fetchRequest = [[ModelStore sharedStore] activityExistsForSourceID:ID];
+        NSUInteger count = [pmoc countForFetchRequest:fetchRequest error:&err];
+        
+        if(!count)
+        {
+            Activity *newActivity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+                                                                  inManagedObjectContext:pmoc];
+            newActivity.source = [NSNumber numberWithInteger:source];
             newActivity.name = name;
             newActivity.sourceID = ID;
-            
+            newActivity.plannedCount = [NSNumber numberWithInt:1];
             [newActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
-            
-            //add ID to the ID dictionary, to keep it safe
-            result = YES;
-            
-        }];
-    }
-    else
-    {
-        [moc performBlockAndWait:^{
-            
+        
+            tasksChanged = YES;
+        }
+        else
+        {
             NSError *error;
             
             // Create the fetch request for the entity.
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
             
             // Edit the entity name as appropriate.
-            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:moc];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:pmoc];
             
             //set up the fetchRequest
             [fetchRequest setEntity:entity];
             [fetchRequest setIncludesSubentities:NO];
             [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID == %@", ID, nil]];
 
-            NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
+            NSArray *results = [pmoc executeFetchRequest:fetchRequest error:&error];
             Activity *existingActivity = [results objectAtIndex:0];
+            
             
             NSString *munge = [NSString stringWithFormat:@"%@%@%@", existingActivity.name,
                                [existingActivity.removed stringValue],
                                [existingActivity.completed description],
                                nil];
-                
+            
             existingActivity.name = name;
             [existingActivity secretSetRemoved:[NSNumber numberWithBool:NO]];
             
@@ -158,21 +165,26 @@ static TaskSyncController *singleton;
                 [existingActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
 
             NSString *alter  = [NSString stringWithFormat:@"%@%@%@", existingActivity.name,
-                               [existingActivity.removed stringValue],
-                               [existingActivity.completed description],
-                               nil];
-            BOOL different = ![munge isEqualToString:alter];
-            result = different;
+                                [existingActivity.removed stringValue],
+                                [existingActivity.completed description],
+                                nil];
             
-        }];
-    }
-    
-    [importedIDs setValue:ID forKey:ID];
-    
-    if(result)
-        tasksChanged = YES;
-    
-    return result;
+            BOOL different = ![munge isEqualToString:alter];
+            if(different)
+                tasksChanged = YES;
+        }
+        
+        [importedIDs setValue:ID forKey:ID];
+        
+        [pmoc save:&err];
+        [[ModelStore sharedStore] save];
+        
+        currentCount++;
+        if(currentCount == syncCount)
+        {
+            [self completeActivities];
+        }
+    }];
 }
 
 @end

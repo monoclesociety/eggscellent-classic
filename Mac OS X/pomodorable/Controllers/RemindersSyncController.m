@@ -17,6 +17,7 @@
     self = [super init];
     if (self)
     {
+        source = ActivitySourceReminders;
 #ifdef __MAC_10_9
         // Initialize self.
         self.mainStore = [[EKEventStore alloc] init];//WithAccessToEntityTypes:EKEntityMaskReminder];
@@ -43,9 +44,10 @@
 
 - (void)superSync;
 {
+    if(syncCount)
+        return;
+    
     self.importedIDs = [NSMutableDictionary dictionary];
-    
-    
     tasksChanged = NO;
     
     // Create the predicate. eventStore is an instance variable.
@@ -65,7 +67,8 @@
                                                                                                  calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
     
     
-    [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders) {
+    [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders)
+    {
         for(EKReminder *reminder in reminders)
         {
             [importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
@@ -77,15 +80,14 @@
              {
                  NSString *ID = reminder.calendarItemExternalIdentifier;
                  NSString *name = reminder.title;
-                 NSNumber *source = [NSNumber numberWithInt:ActivitySourceReminders];
                  NSNumber *status = [NSNumber numberWithBool:reminder.completed];
                  
-                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
+                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
                  
                  [self syncWithDictionary:syncDictionary];
              }
              
-             [self completeActivitiesForSource:ActivitySourceReminders withDictionary:importedIDs];
+             [self completeActivities];
              [self cleanUpSync];
          }];
     }];

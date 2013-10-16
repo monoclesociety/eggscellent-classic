@@ -66,11 +66,11 @@
         NSAppleEventDescriptor *names = [ed descriptorAtIndex:2];
         NSAppleEventDescriptor *statuses = [ed descriptorAtIndex:3];
         
-        int count = (int)[IDs numberOfItems];
+        syncCount = (int)[IDs numberOfItems];
 
         tasksChanged = NO;
         int i = 1;
-        for(; i <= count; i++)
+        for(; i <= syncCount; i++)
         {
             //set up id and name
             NSString *ID = [[IDs descriptorAtIndex:i] stringValue];
@@ -82,20 +82,14 @@
                 name = @"";
             
             //set up status
-            NSString *statusString = [[statuses descriptorAtIndex:i] stringValue]; //0 = incomplete, 1 = complete, 2++ whatever we need to account for
+            NSString *statusString = [[statuses descriptorAtIndex:i] stringValue];
             NSNumber *status = [NSNumber numberWithInt:([statusString isEqualToString:@"tdcm"]) ? 1 : 0];
             
             //set up source and piece it all together
-            NSNumber *source = [NSNumber numberWithInt:ActivitySourceThings];
-            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", source, @"source", nil];
+            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
             
-            [self performSelectorOnMainThread:@selector(syncWithDictionary:) withObject:syncDictionary waitUntilDone:YES];
+            [self syncWithDictionary:syncDictionary];
         }
-        
-        [self completeActivitiesForSource:ActivitySourceThings withDictionary:importedIDs];
-        [self cleanUpSync];
-
-        self.importedIDs = nil;
     }
 }
 

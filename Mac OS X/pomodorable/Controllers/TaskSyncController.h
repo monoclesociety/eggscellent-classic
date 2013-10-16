@@ -13,8 +13,12 @@
 #define SYNC_COMPLETED_WITH_CHANGES @"SYNC_COMPLETED_WITH_CHANGES"
 @interface TaskSyncController : NSObject
 {
-    BOOL tasksChanged;
+    ActivitySource source;
     NSMutableDictionary *importedIDs;
+    
+    int syncCount;
+    int currentCount;
+    BOOL tasksChanged;
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;
 
@@ -26,7 +30,7 @@
 - (void)saveNewActivity:(Activity *)activity;
 - (void)cleanUpSync;
 
-- (void)completeActivitiesForSource:(ActivitySource)source withDictionary:(NSDictionary *)activityIDs;
-- (BOOL)syncWithDictionary:(NSDictionary *)dictionary;
+- (void)completeActivities;
+- (void)syncWithDictionary:(NSDictionary *)dictionary;
 
 @end
