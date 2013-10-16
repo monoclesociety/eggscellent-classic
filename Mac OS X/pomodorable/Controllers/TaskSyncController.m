@@ -34,6 +34,9 @@ static TaskSyncController *singleton;
         self.importedIDs = nil;
         syncCount = 0;
         currentCount = 0;
+
+        self.pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        self.pmoc.parentContext = [ModelStore sharedStore].managedObjectContext;
     }
     return self;
 }
@@ -75,13 +78,11 @@ static TaskSyncController *singleton;
 
 - (void)completeActivities;
 {
-    NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    pmoc.parentContext = [ModelStore sharedStore].managedObjectContext;
-    [pmoc performBlockAndWait:^{
+    [self.pmoc performBlockAndWait:^{
         
         NSError *error;
         NSFetchRequest *fetchRequest = [[ModelStore sharedStore] fetchRequestForFilteredActivities];
-        NSArray *results = [pmoc executeFetchRequest:fetchRequest error:&error];
+        NSArray *results = [self.pmoc executeFetchRequest:fetchRequest error:&error];
         
         for(Activity *a in results)
         {
@@ -96,7 +97,7 @@ static TaskSyncController *singleton;
         }
         
         error = nil;
-        [pmoc save:&error];
+        [self.pmoc save:&error];
         
         [[ModelStore sharedStore] save];
         
@@ -113,10 +114,7 @@ static TaskSyncController *singleton;
 
 - (void)syncWithDictionary:(NSDictionary *)dictionary
 {
-    NSManagedObjectContext *moc = [ModelStore sharedStore].managedObjectContext;
-    NSManagedObjectContext *pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    pmoc.parentContext = moc;
-    [pmoc performBlock:^{
+    [self.pmoc performBlock:^{
         
         NSError *err = nil;
         NSNumber *status            = [dictionary objectForKey:@"status"];
@@ -125,12 +123,12 @@ static TaskSyncController *singleton;
 
         //check for
         NSFetchRequest *fetchRequest = [[ModelStore sharedStore] activityExistsForSourceID:ID];
-        NSUInteger count = [pmoc countForFetchRequest:fetchRequest error:&err];
+        NSUInteger count = [self.pmoc countForFetchRequest:fetchRequest error:&err];
         
         if(!count)
         {
             Activity *newActivity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
-                                                                  inManagedObjectContext:pmoc];
+                                                                  inManagedObjectContext:self.pmoc];
             newActivity.source = [NSNumber numberWithInteger:source];
             newActivity.name = name;
             newActivity.sourceID = ID;
@@ -147,14 +145,14 @@ static TaskSyncController *singleton;
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
             
             // Edit the entity name as appropriate.
-            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:pmoc];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.pmoc];
             
             //set up the fetchRequest
             [fetchRequest setEntity:entity];
             [fetchRequest setIncludesSubentities:NO];
             [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"sourceID == %@", ID, nil]];
 
-            NSArray *results = [pmoc executeFetchRequest:fetchRequest error:&error];
+            NSArray *results = [self.pmoc executeFetchRequest:fetchRequest error:&error];
             Activity *existingActivity = [results objectAtIndex:0];
             
             
@@ -184,7 +182,7 @@ static TaskSyncController *singleton;
         
         [importedIDs setValue:ID forKey:ID];
         
-        [pmoc save:&err];
+        [self.pmoc save:&err];
         [[ModelStore sharedStore] save];
         
         currentCount++;

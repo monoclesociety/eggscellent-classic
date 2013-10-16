@@ -14,13 +14,12 @@
 @interface TaskSyncController : NSObject
 {
     ActivitySource source;
-    NSMutableDictionary *importedIDs;
-    
     int syncCount;
     int currentCount;
     BOOL tasksChanged;
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;
+@property (strong) NSManagedObjectContext *pmoc;
 
 + (TaskSyncController *)currentController;
 + (void)setCurrentController:(TaskSyncController *)controller;

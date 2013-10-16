@@ -72,7 +72,7 @@
 
         for(EKReminder *reminder in reminders)
         {
-            [importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
+            [self.importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
         }
         
         [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
