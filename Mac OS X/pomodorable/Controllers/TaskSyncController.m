@@ -97,8 +97,8 @@ static TaskSyncController *singleton;
         }
         
         error = nil;
-        [self.pmoc save:&error];
         
+        [self.pmoc save:&error];
         [[ModelStore sharedStore] save];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -182,8 +182,7 @@ static TaskSyncController *singleton;
         
         [importedIDs setValue:ID forKey:ID];
         
-        [self.pmoc save:&err];
-        [[ModelStore sharedStore] save];
+        
         
         currentCount++;
         if(currentCount == syncCount)
