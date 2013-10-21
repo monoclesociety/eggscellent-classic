@@ -90,9 +90,6 @@
                       
                       [self syncWithDictionary:syncDictionary];
                   }
-                  
-                  [self completeActivities];
-                  [self cleanUpSync];
               }];
          }];
         
@@ -116,28 +113,21 @@
     if([activity.source intValue] != source)
         return;
     
-    __block NSManagedObjectID *objID = activity.objectID;
-    [self.pmoc performBlock:^{
+    dispatch_async(queue, ^{
         
-        NSError *error = nil;
-        Activity *a = (Activity *)[self.pmoc existingObjectWithID:objID error:&error];
+        EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:activity.sourceID] lastObject];
         
-        if(!error)
-        {
-            EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:a.sourceID] lastObject];
-            
-            BOOL completed = (activity.completed || [a.removed boolValue]);
-            reminder.completed = completed;
-            reminder.title = a.name;
-            
-            lameSyncActivityHack = YES;
-            [_mainStore saveReminder:reminder commit:YES error:NULL];
-            
-            [self.pmoc save:&error];
-            [[ModelStore sharedStore] save];
-        }
+        BOOL completed = (activity.completed || [activity.removed boolValue]);
+        reminder.completed = completed;
+        reminder.title = activity.name;
         
-    }];
+        lameSyncActivityHack = YES;
+        [_mainStore saveReminder:reminder commit:YES error:NULL];
+        
+        [[ModelStore sharedStore] save];
+        
+    });
+
 }
 
 - (void)saveNewActivity:(Activity *)activity;

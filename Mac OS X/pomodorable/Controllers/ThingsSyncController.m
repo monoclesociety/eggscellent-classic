@@ -96,27 +96,20 @@
     if([activity.source intValue] != source)
         return;
     
-    __block NSManagedObjectID *objID = activity.objectID;
-    [self.pmoc performBlock:^{
+    dispatch_async(queue, ^{
         
-        NSError *error = nil;
-        Activity *a = (Activity *)[self.pmoc existingObjectWithID:objID error:&error];
+        NSString *scriptName = @"ThingsAddTodo";
+        NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:activity.name];
         
-        if(!error)
-        {
-            NSString *scriptName = @"ThingsAddTodo";
-            NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:a.name];
-            
-            //Things gives us an ID back, so let's save it to the activity
-            NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
-            a.source = [NSNumber numberWithInt:ActivitySourceThings];
-            a.sourceID = [ID stringValue];
-            
-            [self.pmoc save:&error];
-            [[ModelStore sharedStore] save];
-        }
+        //Things gives us an ID back, so let's save it to the activity
+        NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        activity.source = [NSNumber numberWithInt:ActivitySourceThings];
+        activity.sourceID = [ID stringValue];
+
+        [[ModelStore sharedStore] save];
         
-    }];
+    });
+
 }
 
 - (void)syncActivity:(Activity *)activity

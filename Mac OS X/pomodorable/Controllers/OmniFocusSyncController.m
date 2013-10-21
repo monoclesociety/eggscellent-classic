@@ -92,28 +92,20 @@
     if([activity.source intValue] != source)
         return;
     
-    __block NSManagedObjectID *objID = activity.objectID;
-    [self.pmoc performBlock:^{
+    dispatch_async(queue, ^{
         
-        NSError *error = nil;
-        Activity *a = (Activity *)[self.pmoc existingObjectWithID:objID error:&error];
-    
-        if(!error)
-        {
-            NSString *scriptName = @"OmniFocusAddTodos";
-            NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:a.name];
-            
-            //Things gives us an ID back, so let's save it to the activity
-            NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
-            NSString *idValue = [ID stringValue];
-            a.sourceID = idValue;
-            a.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
-            
-            [self.pmoc save:&error];
-            [[ModelStore sharedStore] save];
-        }
-
-    }];
+        NSString *scriptName = @"OmniFocusAddTodos";
+        NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:activity.name];
+        
+        //Things gives us an ID back, so let's save it to the activity
+        NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+        NSString *idValue = [ID stringValue];
+        activity.sourceID = idValue;
+        activity.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
+        
+        [[ModelStore sharedStore] save];
+        
+    });
 }
 
 - (void)syncActivity:(Activity *)activity
