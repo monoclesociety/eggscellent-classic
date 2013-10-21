@@ -9,7 +9,6 @@
 #import "OmniFocusSyncController.h"
 
 @implementation OmniFocusSyncController
-@synthesize syncThread;
 
 #pragma mark - OmniFocus synchronization methods
 
@@ -19,7 +18,6 @@
     if (self)
     {
         source = ActivitySourceOmniFocus;
-        self.syncThread = nil;
     }
     return self;
 }
@@ -35,8 +33,7 @@
     if(!self.importedIDs)
     {
         [self prepare];
-        self.syncThread = [[NSThread alloc] initWithTarget:self selector:@selector(threadSync) object:nil];
-        [self.syncThread start];
+        [self superSync];
     }
 
     return YES;
@@ -47,10 +44,10 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"applescriptAppicationNotInFolder" object:@"OmniFocus"];
 }
 
-- (void)threadSync
+- (void)superSync
 {
-    @autoreleasepool
-    {
+    dispatch_async(queue, ^{
+        
         NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:@"OmniFocusGetTodos"];
         
         if(!ed)
@@ -86,22 +83,37 @@
             
             [self syncWithDictionary:syncDictionary];
         }
-    }
+        
+    });
 }
 
 - (void)saveNewActivity:(Activity *)activity;
 {
-    @autoreleasepool
-    {
-        NSString *scriptName = @"OmniFocusAddTodos";
-        NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:activity.name];
+    if([activity.source intValue] != source)
+        return;
+    
+    __block NSManagedObjectID *objID = activity.objectID;
+    [self.pmoc performBlock:^{
         
-        //Things gives us an ID back, so let's save it to the activity
-        NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
-        NSString *idValue = [ID stringValue];
-        activity.sourceID = idValue;
-        activity.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
-    }
+        NSError *error = nil;
+        Activity *a = (Activity *)[self.pmoc existingObjectWithID:objID error:&error];
+    
+        if(!error)
+        {
+            NSString *scriptName = @"OmniFocusAddTodos";
+            NSAppleEventDescriptor *ed = [[ScriptManager sharedManager] executeScript:scriptName withParameter:a.name];
+            
+            //Things gives us an ID back, so let's save it to the activity
+            NSAppleEventDescriptor *ID = [ed descriptorForKeyword:'seld'];
+            NSString *idValue = [ID stringValue];
+            a.sourceID = idValue;
+            a.source = [NSNumber numberWithInt:ActivitySourceOmniFocus];
+            
+            [self.pmoc save:&error];
+            [[ModelStore sharedStore] save];
+        }
+
+    }];
 }
 
 - (void)syncActivity:(Activity *)activity

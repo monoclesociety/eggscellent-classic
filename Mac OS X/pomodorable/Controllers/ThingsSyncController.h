@@ -10,9 +10,4 @@
 #import "TaskSyncController.h"
 
 @interface ThingsSyncController : TaskSyncController
-{
-    NSThread *syncThread;
-}
-@property (strong, nonatomic) NSThread *syncThread;
-
 @end

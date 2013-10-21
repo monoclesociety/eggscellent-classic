@@ -37,6 +37,8 @@ static TaskSyncController *singleton;
 
         self.pmoc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         self.pmoc.parentContext = [ModelStore sharedStore].managedObjectContext;
+        
+        queue = dispatch_queue_create("com.monoclesociety.eggscellent.sync", NULL);
     }
     return self;
 }
@@ -78,6 +80,9 @@ static TaskSyncController *singleton;
 
 - (void)completeActivities;
 {
+    if(!importedIDs.count)
+        return;
+    
     [self.pmoc performBlockAndWait:^{
         
         NSError *error;

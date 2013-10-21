@@ -17,6 +17,8 @@
     int syncCount;
     int currentCount;
     BOOL tasksChanged;
+    
+    dispatch_queue_t queue;
 }
 @property (strong, nonatomic) NSMutableDictionary *importedIDs;
 @property (strong) NSManagedObjectContext *pmoc;

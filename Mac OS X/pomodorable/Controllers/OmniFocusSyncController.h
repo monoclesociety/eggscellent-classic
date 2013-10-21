@@ -10,8 +10,4 @@
 #import "TaskSyncController.h"
 
 @interface OmniFocusSyncController : TaskSyncController
-{
-}
-@property (strong, nonatomic) NSThread *syncThread;
-
 @end

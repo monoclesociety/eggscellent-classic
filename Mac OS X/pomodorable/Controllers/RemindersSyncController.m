@@ -20,9 +20,12 @@
         source = ActivitySourceReminders;
 #ifdef __MAC_10_9
         // Initialize self.
-        self.mainStore = [[EKEventStore alloc] init];//WithAccessToEntityTypes:EKEntityMaskReminder];
+        self.mainStore = [[EKEventStore alloc] init];
         [self.mainStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-
+            
+            NSLog(@"Error: %@", [error description]);
+            NSLog(@"Granted: %@", granted ? @"YES" : @"NO");
+            
         }];
 #else
         self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
@@ -48,50 +51,52 @@
         return;
     
     [self prepare];
-
-    // Create the predicate. eventStore is an instance variable.
-    NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil 
-                                                                                     ending:nil
-                                                                                  calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
-
-    //get the date for 12AM today.
-    NSDate *today = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [calendar setLocale:[NSLocale currentLocale]];
-    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
-    NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
-    today = [calendar dateFromComponents:nowComponents];
-    NSPredicate *completedPredicate = [_mainStore predicateForCompletedRemindersWithCompletionDateStarting:today
-                                                                                                    ending:nil
-                                                                                                 calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
     
-    
-    [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders)
-    {
-        syncCount = (int)reminders.count;
-
-        for(EKReminder *reminder in reminders)
-        {
-            [self.importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
-        }
+    dispatch_async(queue, ^{
+       
+        // Create the predicate. eventStore is an instance variable.
+        NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
+                                                                                         ending:nil
+                                                                                      calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
         
-        [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
+        //get the date for 12AM today.
+        NSDate *today = [NSDate date];
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        [calendar setLocale:[NSLocale currentLocale]];
+        [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+        NSDateComponents *nowComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+        today = [calendar dateFromComponents:nowComponents];
+        NSPredicate *completedPredicate = [_mainStore predicateForCompletedRemindersWithCompletionDateStarting:today
+                                                                                                        ending:nil
+                                                                                                     calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
+        
+        [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders)
          {
              for(EKReminder *reminder in reminders)
              {
-                 NSString *ID = reminder.calendarItemExternalIdentifier;
-                 NSString *name = reminder.title;
-                 NSNumber *status = [NSNumber numberWithBool:reminder.completed];
-                 
-                 NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
-                 
-                 [self syncWithDictionary:syncDictionary];
+                 [self.importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
              }
              
-             [self completeActivities];
-             [self cleanUpSync];
+             [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
+              {
+                  syncCount = (int)reminders.count;
+                  for(EKReminder *reminder in reminders)
+                  {
+                      NSString *ID = reminder.calendarItemExternalIdentifier;
+                      NSString *name = reminder.title;
+                      NSNumber *status = [NSNumber numberWithBool:reminder.completed];
+                      
+                      NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
+                      
+                      [self syncWithDictionary:syncDictionary];
+                  }
+                  
+                  [self completeActivities];
+                  [self cleanUpSync];
+              }];
          }];
-    }];
+        
+    });
 }
 
 - (BOOL)sync
@@ -108,17 +113,31 @@
 
 - (void)syncActivity:(Activity *)activity
 {
-    if([activity.source intValue] != ActivitySourceReminders)
+    if([activity.source intValue] != source)
         return;
-
-    EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:activity.sourceID] lastObject];
     
-    BOOL completed = (activity.completed || [activity.removed boolValue]);
-    reminder.completed = completed;
-    reminder.title = activity.name;
-    
-    lameSyncActivityHack = YES;
-    [_mainStore saveReminder:reminder commit:YES error:NULL];
+    __block NSManagedObjectID *objID = activity.objectID;
+    [self.pmoc performBlock:^{
+        
+        NSError *error = nil;
+        Activity *a = (Activity *)[self.pmoc existingObjectWithID:objID error:&error];
+        
+        if(!error)
+        {
+            EKReminder *reminder = (EKReminder *)[[_mainStore calendarItemsWithExternalIdentifier:a.sourceID] lastObject];
+            
+            BOOL completed = (activity.completed || [a.removed boolValue]);
+            reminder.completed = completed;
+            reminder.title = a.name;
+            
+            lameSyncActivityHack = YES;
+            [_mainStore saveReminder:reminder commit:YES error:NULL];
+            
+            [self.pmoc save:&error];
+            [[ModelStore sharedStore] save];
+        }
+        
+    }];
 }
 
 - (void)saveNewActivity:(Activity *)activity;
