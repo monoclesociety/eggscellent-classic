@@ -65,6 +65,11 @@
         NSAppleEventDescriptor *statuses = [ed descriptorAtIndex:3];
         
         syncCount = (int)[IDs numberOfItems];
+        if(!syncCount)
+        {
+            [self completeActivities];
+            return;
+        }
 
         tasksChanged = NO;
         int i = 1;

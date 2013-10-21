@@ -70,8 +70,8 @@
                                                                                                         ending:nil
                                                                                                      calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
         
-        [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders)
-         {
+        [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders){
+            
              for(EKReminder *reminder in reminders)
              {
                  [self.importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
@@ -80,6 +80,12 @@
              [_mainStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders)
               {
                   syncCount = (int)reminders.count;
+                  if(!syncCount)
+                  {
+                      [self completeActivities];
+                      return;
+                  }
+                  
                   for(EKReminder *reminder in reminders)
                   {
                       NSString *ID = reminder.calendarItemExternalIdentifier;
@@ -91,6 +97,7 @@
                       [self syncWithDictionary:syncDictionary];
                   }
               }];
+            
          }];
         
     });

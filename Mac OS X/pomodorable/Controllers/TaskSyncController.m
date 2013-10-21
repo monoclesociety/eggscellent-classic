@@ -80,9 +80,6 @@ static TaskSyncController *singleton;
 
 - (void)completeActivities;
 {
-    if(!importedIDs.count)
-        return;
-    
     [self.pmoc performBlockAndWait:^{
         
         NSError *error;
@@ -104,15 +101,18 @@ static TaskSyncController *singleton;
         error = nil;
         
         [self.pmoc save:&error];
-        [[ModelStore sharedStore] save];
-        
+
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[ModelStore sharedStore] save];
+            
             if(tasksChanged)
                 [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_COMPLETED_WITH_CHANGES object:self];
             
             self.importedIDs = nil;
             currentCount = 0;
             syncCount = 0;
+            
         });
     }];
 }

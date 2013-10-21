@@ -67,6 +67,11 @@
         NSAppleEventDescriptor *completeds   = [ed descriptorAtIndex:3];
         
         syncCount = (int)[IDs numberOfItems];
+        if(!syncCount)
+        {
+            [self completeActivities];
+            return;
+        }
         
         int i = 1;
         for(; i <= syncCount; i++)
