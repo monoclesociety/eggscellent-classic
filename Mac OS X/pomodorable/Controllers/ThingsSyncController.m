@@ -98,8 +98,6 @@
 
 - (void)saveNewActivity:(Activity *)activity;
 {
-    if([activity.source intValue] != source)
-        return;
     
     dispatch_async(queue, ^{
         

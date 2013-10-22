@@ -96,6 +96,12 @@ static TaskSyncController *singleton;
                     [a secretSetRemoved:[NSNumber numberWithBool:YES]];
                 }
             }
+            else
+            {
+                //if this is NOT from the source BUT it is completed, we leave
+                //it alone, otherwise, it goes away.
+                [a secretSetRemoved:[NSNumber numberWithBool:(!a.completed)]];
+            }
         }
         
         error = nil;

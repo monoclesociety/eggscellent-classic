@@ -18,23 +18,23 @@
     if (self)
     {
         source = ActivitySourceReminders;
-#ifdef __MAC_10_9
-        // Initialize self.
-        self.mainStore = [[EKEventStore alloc] init];
-        [self.mainStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-            
-            NSLog(@"Error: %@", [error description]);
-            NSLog(@"Granted: %@", granted ? @"YES" : @"NO");
-            
-        }];
-#else
-        self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(storeChanged:)
-                                                     name:EKEventStoreChangedNotification
-                                                   object:_mainStore];
-#endif
+        if([self.mainStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+        {
+            // Initialize self.
+            self.mainStore = [[EKEventStore alloc] init];
+            [self.mainStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+                
+                NSLog(@"Error: %@", [error description]);
+                NSLog(@"Granted: %@", granted ? @"YES" : @"NO");
+                
+            }];
+        }
+        else
+        {
+            NSLog(@"creating main store...");
+            self.mainStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskReminder];
+        }
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(storeChanged:)
@@ -49,11 +49,21 @@
 {
     if(self.importedIDs)
         return;
-    
+
     [self prepare];
     
-    dispatch_async(queue, ^{
-       
+    dispatch_queue_t q;
+    if([self.mainStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    {
+        q = queue;
+    }
+    else
+    {
+        q = dispatch_get_main_queue();
+    }
+    
+    dispatch_async(q, ^{
+        
         // Create the predicate. eventStore is an instance variable.
         NSPredicate *predicate = [_mainStore predicateForIncompleteRemindersWithDueDateStarting:nil
                                                                                          ending:nil
@@ -69,9 +79,9 @@
         NSPredicate *completedPredicate = [_mainStore predicateForCompletedRemindersWithCompletionDateStarting:today
                                                                                                         ending:nil
                                                                                                      calendars:[NSArray arrayWithObject:[self defaultCalendar]]];
-        
+
         [_mainStore fetchRemindersMatchingPredicate:completedPredicate completion:^(NSArray *reminders){
-            
+
              for(EKReminder *reminder in reminders)
              {
                  [self.importedIDs setObject:reminder.calendarItemExternalIdentifier forKey:reminder.calendarItemExternalIdentifier];
