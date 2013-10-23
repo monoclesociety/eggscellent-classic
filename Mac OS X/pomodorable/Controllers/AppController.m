@@ -49,21 +49,21 @@
 
 - (void)didReceiveOrder:(FsprgOrder *)order
 {
-    NSEnumerator *e = [[order orderItems] objectEnumerator];
-    FsprgOrderItem *item = nil;
-    NSString *userName;
-    NSString *serialNumber;
-    while (item = [e nextObject]) {
-            userName = [[item license] licenseName];
-            serialNumber = [[item license] firstLicenseCode];
-            if ([[[item productName] lowercaseString] rangeOfString:@"upgrade"].location != NSNotFound) {
-                NSLog(@"Upgrade purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
-            } else {
-                NSLog(@"Full purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
-            }
-    }
-    [self.delegate productPurchasedForName:userName serialNumber:serialNumber];
-    
+//    NSEnumerator *e = [[order orderItems] objectEnumerator];
+//    FsprgOrderItem *item = nil;
+//    NSString *userName;
+//    NSString *serialNumber;
+//    while (item = [e nextObject]) {
+//            userName = [[item license] licenseName];
+//            serialNumber = [[item license] firstLicenseCode];
+//            if ([[[item productName] lowercaseString] rangeOfString:@"upgrade"].location != NSNotFound) {
+//                NSLog(@"Upgrade purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
+//            } else {
+//                NSLog(@"Full purchase:\nName: %@\nSerial #: %@", userName, serialNumber);
+//            }
+//    }
+//    [self.delegate productPurchasedForName:userName serialNumber:serialNumber];
+//    
 }
 
 - (NSView *)viewWithFrame:(NSRect)frame forOrder:(FsprgOrder *)order
