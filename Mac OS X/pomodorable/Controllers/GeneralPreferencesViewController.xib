@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4511" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4511"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferencesViewController">
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" id="6">
-                    <rect key="frame" x="56" y="64" width="67" height="17"/>
+                    <rect key="frame" x="56" y="59" width="67" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Task time:" id="7">
                         <font key="font" metaFont="system"/>
@@ -32,7 +32,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="8">
-                    <rect key="frame" x="266" y="64" width="82" height="17"/>
+                    <rect key="frame" x="266" y="59" width="82" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Small break:" id="9">
                         <font key="font" metaFont="system"/>
@@ -41,7 +41,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="10">
-                    <rect key="frame" x="269" y="23" width="79" height="17"/>
+                    <rect key="frame" x="269" y="18" width="79" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Long break:" id="11">
                         <font key="font" metaFont="system"/>
@@ -72,14 +72,23 @@
                     </connections>
                 </button>
                 <popUpButton verticalHuggingPriority="750" id="126" userLabel="Pomodoro Time Selection">
-                    <rect key="frame" x="126" y="57" width="100" height="26"/>
+                    <rect key="frame" x="126" y="52" width="100" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="55" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="55" imageScaling="proportionallyDown" inset="2" selectedItem="136" id="127">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="127">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="128">
                             <items>
-                                <menuItem title="20" tag="20" id="129">
+                                <menuItem title="5" tag="5" id="129">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="10" tag="10" id="T1t-7r-ifF">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="15" tag="15" id="zhA-ep-1mk">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="20" state="on" tag="20" id="Njb-sZ-CtK">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                                 <menuItem title="25" tag="25" id="130">
@@ -94,7 +103,14 @@
                                 <menuItem title="50" tag="50" id="135">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
-                                <menuItem title="55" state="on" tag="55" id="136"/>
+                                <menuItem title="55" tag="55" id="136"/>
+                                <menuItem title="60" tag="60" id="9Di-Zj-R3F"/>
+                                <menuItem title="65" tag="65" id="IRN-zx-xsu"/>
+                                <menuItem title="70" tag="70" id="o3k-J0-jp7"/>
+                                <menuItem title="75" tag="75" id="5fH-fL-bfh"/>
+                                <menuItem title="80" tag="80" id="M5G-Xu-fzM"/>
+                                <menuItem title="85" tag="85" id="nVv-it-vYx"/>
+                                <menuItem title="90" tag="90" id="Sup-ny-tkC"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -103,23 +119,23 @@
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" id="256">
-                    <rect key="frame" x="49" y="23" width="74" height="17"/>
+                    <rect key="frame" x="16" y="18" width="107" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pause time:" id="268">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pause (seconds):" id="268">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" id="257" userLabel="Pomodoro Time Selection">
-                    <rect key="frame" x="126" y="17" width="100" height="26"/>
+                    <rect key="frame" x="126" y="12" width="100" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="none" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="258">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="258">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="259">
                             <items>
-                                <menuItem title="none" state="on" id="267" userLabel="Menu Item - 0">
+                                <menuItem title="none" id="267" userLabel="Menu Item - 0">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                                 <menuItem title="5" tag="5" id="266">
@@ -138,11 +154,11 @@
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" id="138" userLabel="Short Break Selection">
-                    <rect key="frame" x="352" y="57" width="100" height="26"/>
+                    <rect key="frame" x="353" y="52" width="100" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="30" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="30" imageScaling="proportionallyDown" inset="2" selectedItem="149" id="139">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="139">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="140">
                             <items>
                                 <menuItem title="5" tag="5" id="148">
@@ -154,7 +170,13 @@
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                                 <menuItem title="25" tag="25" id="144"/>
-                                <menuItem title="30" state="on" tag="30" id="149"/>
+                                <menuItem title="30" tag="30" id="149"/>
+                                <menuItem title="35" tag="35" id="ZkR-EJ-Yda"/>
+                                <menuItem title="40" tag="40" id="F0K-Ly-Pbt"/>
+                                <menuItem title="45" tag="45" id="gK9-t1-UcR"/>
+                                <menuItem title="50" tag="50" id="gK9-7H-FaX"/>
+                                <menuItem title="55" tag="55" id="CNo-gu-pvr"/>
+                                <menuItem title="60" tag="60" id="Sd7-B4-1IY"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -163,23 +185,29 @@
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" id="150" userLabel="Long Break Selection">
-                    <rect key="frame" x="353" y="17" width="100" height="26"/>
+                    <rect key="frame" x="353" y="11" width="100" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="5" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="5" imageScaling="proportionallyDown" inset="2" id="151">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="151">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="152">
                             <items>
-                                <menuItem title="5" state="on" tag="5" id="154">
+                                <menuItem title="5" tag="5" id="154">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                                 <menuItem title="10" tag="10" id="155"/>
-                                <menuItem title="15" tag="15" id="156"/>
+                                <menuItem title="15" state="on" tag="15" id="156"/>
                                 <menuItem title="20" tag="20" id="157">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                                 <menuItem title="25" tag="25" id="158"/>
                                 <menuItem title="30" tag="30" id="153"/>
+                                <menuItem title="35" tag="35" id="DIc-hq-AVJ"/>
+                                <menuItem title="40" tag="40" id="J4M-Oi-Z5T"/>
+                                <menuItem title="45" tag="45" id="2I4-s6-ucg"/>
+                                <menuItem title="50" tag="50" id="Wb9-4D-MFy"/>
+                                <menuItem title="55" tag="55" id="8oP-Tm-fyx"/>
+                                <menuItem title="60" tag="60" id="VR1-X0-nt6"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -260,7 +288,7 @@
                     </connections>
                 </button>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="210">
-                    <rect key="frame" x="12" y="90" width="456" height="5"/>
+                    <rect key="frame" x="12" y="87" width="456" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

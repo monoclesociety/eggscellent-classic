@@ -70,7 +70,6 @@
 		3D0FDD2716ECED5800815B2C /* MSButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F856016DB1E0A0037A95C /* MSButtonCell.m */; };
 		3D0FDD2816ECED5800815B2C /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCDCC3516E110D2001B55EB /* CalendarController.m */; };
 		3D0FDD2916ECED5800815B2C /* CalendarPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD73F8A16E3299600B6D994 /* CalendarPreferencesViewController.m */; };
-		3D0FDD2B16ECED5800815B2C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */; };
 		3D0FDD2C16ECED5800815B2C /* InstantMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D29146315BB0A0200F19BED /* InstantMessage.framework */; };
 		3D0FDD2D16ECED5800815B2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD48E5415BA4BD900492EF4 /* AVFoundation.framework */; };
 		3D0FDD2E16ECED5800815B2C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40841D15712DFF00A8469B /* EventKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -245,7 +244,6 @@
 		3D0FDDDA16ECED5800815B2C /* CalendarPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD73F8B16E3299600B6D994 /* CalendarPreferencesViewController.xib */; };
 		3D0FDDDB16ECED5800815B2C /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D88F86C16EA42FB00265052 /* calendar.png */; };
 		3D0FDDDD16ECED5800815B2C /* helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DD61E57158A4A54001947B1 /* helper.app */; };
-		3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */; };
 		3D1564E315697BC200D70EBB /* ThingsSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E215697BC100D70EBB /* ThingsSyncController.m */; };
 		3D1564EA15697C9700D70EBB /* OmniFocusSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564E915697C9700D70EBB /* OmniFocusSyncController.m */; };
 		3D1564ED15697CA600D70EBB /* RemindersSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1564EC15697CA600D70EBB /* RemindersSyncController.m */; };
@@ -551,44 +549,6 @@
 		F4FBA62414BB8A06000A44FF /* ribbon8.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FBA62314BB8A06000A44FF /* ribbon8.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3D0FDCDB16ECEBD600815B2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
-		3D0FDCDD16ECEBD600815B2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
-			remoteInfo = "Sparkle Test App";
-		};
-		3D0FDCDF16ECEBD600815B2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 612279D90DB5470200AB99EA;
-			remoteInfo = "Sparkle Unit Tests";
-		};
-		3D0FDCE116ECEBD600815B2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
-			remoteInfo = BinaryDelta;
-		};
-		3D0FDCE316ECEBD600815B2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55C14BB7136EEF1500649790;
-			remoteInfo = finish_installation;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		3D0FDDDC16ECED5800815B2C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -606,7 +566,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3D0FDDDF16ECED5800815B2C /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +592,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		3D0FDDE316ECED5800815B2C /* Eggscellent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggscellent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
@@ -1009,7 +967,6 @@
 			files = (
 				3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */,
 				3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */,
-				3D0FDD2B16ECED5800815B2C /* Sparkle.framework in Frameworks */,
 				3D0FDD2C16ECED5800815B2C /* InstantMessage.framework in Frameworks */,
 				3D0FDD2D16ECED5800815B2C /* AVFoundation.framework in Frameworks */,
 				3D0FDD2E16ECED5800815B2C /* EventKit.framework in Frameworks */,
@@ -1061,18 +1018,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D0FDCD416ECEBD600815B2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */,
-				3D0FDCDE16ECEBD600815B2C /* Sparkle Test App.app */,
-				3D0FDCE016ECEBD600815B2C /* Sparkle Unit Tests.octest */,
-				3D0FDCE216ECEBD600815B2C /* BinaryDelta */,
-				3D0FDCE416ECEBD600815B2C /* finish_installation.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3D1564E515697BCF00D70EBB /* Things */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,7 +1505,6 @@
 				3DD61E5A158A4A55001947B1 /* helper */,
 				F48A5B331465F38500BFD7B2 /* Frameworks */,
 				F48A5B311465F38500BFD7B2 /* Products */,
-				3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2075,12 +2019,6 @@
 			mainGroup = F48A5B251465F38500BFD7B2;
 			productRefGroup = F48A5B311465F38500BFD7B2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3D0FDCD416ECEBD600815B2C /* Products */;
-					ProjectRef = 3D0FDCD316ECEBD600815B2C /* Sparkle.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F48A5B2F1465F38500BFD7B2 /* Eggscellent */,
@@ -2089,44 +2027,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3D0FDCDC16ECEBD600815B2C /* Sparkle.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sparkle.framework;
-			remoteRef = 3D0FDCDB16ECEBD600815B2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3D0FDCDE16ECEBD600815B2C /* Sparkle Test App.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Sparkle Test App.app";
-			remoteRef = 3D0FDCDD16ECEBD600815B2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3D0FDCE016ECEBD600815B2C /* Sparkle Unit Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Sparkle Unit Tests.octest";
-			remoteRef = 3D0FDCDF16ECEBD600815B2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3D0FDCE216ECEBD600815B2C /* BinaryDelta */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = BinaryDelta;
-			remoteRef = 3D0FDCE116ECEBD600815B2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3D0FDCE416ECEBD600815B2C /* finish_installation.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = finish_installation.app;
-			remoteRef = 3D0FDCE316ECEBD600815B2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3D0FDD3A16ECED5800815B2C /* Resources */ = {
