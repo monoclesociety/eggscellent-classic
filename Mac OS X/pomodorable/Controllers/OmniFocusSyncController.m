@@ -24,8 +24,8 @@
 
 - (BOOL)sync
 {
-    NSArray *runningApps1 = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.omnigroup.OmniFocus"];
-    NSArray *runningApps2 = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.omnigroup.OmniFocus.MacAppStore"];
+    NSArray *runningApps1 = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.omnigroup.OmniFocus2"];
+    NSArray *runningApps2 = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.omnigroup.OmniFocus2.MacAppStore"];
     
     if ([runningApps1 count] == 0 && [runningApps2 count] == 0)
         return NO;
@@ -125,7 +125,7 @@
 
 - (NSString *)appID
 {
-    return @"com.omnigroup.omnifocus";
+    return @"com.omnigroup.OmniFocus2";
 }
 
 @end
