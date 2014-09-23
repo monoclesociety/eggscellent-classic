@@ -1,4 +1,4 @@
 eggscellent
 ===========
 
-Add Omnifucos 2 sync support, Downlad at <http://pan.baidu.com/s/1jGoT094>
+Add Omnifucos 2 sync support, Downlad at <https://github.com/devon/eggscellent/releases>
