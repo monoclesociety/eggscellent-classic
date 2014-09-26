@@ -14,8 +14,8 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<array>
-		<string>com.omnigroup.omnifocus.macappstore</string>
-		<string>com.omnigroup.omnifocus</string>
+		<string>com.omnigroup.OmniFocus2.MacAppStore</string>
+		<string>com.omnigroup.OmniFocus2</string>
 		<string>com.culturedcode.things</string>
 		<string>com.skype.skype</string>
 		<string>com.adiumx.adiumx</string>
