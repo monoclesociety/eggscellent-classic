@@ -8,6 +8,8 @@
 
 #import "TaskSyncController.h"
 
+NSString * const kPlannedCountKey = @"kPlannedCountKey";
+
 @implementation TaskSyncController
 @synthesize importedIDs;
 
@@ -128,10 +130,12 @@ static TaskSyncController *singleton;
     [self.pmoc performBlock:^{
         
         NSError *err = nil;
-        NSNumber *status            = [dictionary objectForKey:@"status"];
-        NSString *ID                = [dictionary objectForKey:@"ID"];
-        NSString *name              = [dictionary objectForKey:@"name"];
-
+        NSNumber *status = [dictionary objectForKey:@"status"];
+        NSString *ID = [dictionary objectForKey:@"ID"];
+        NSString *name = [dictionary objectForKey:@"name"];
+        NSNumber *plannedCount = [dictionary objectForKey:kPlannedCountKey];
+        plannedCount = @(MAX(1, [plannedCount integerValue]));
+        
         //check for
         NSFetchRequest *fetchRequest = [[ModelStore sharedStore] activityExistsForSourceID:ID];
         NSUInteger count = [self.pmoc countForFetchRequest:fetchRequest error:&err];
@@ -143,7 +147,7 @@ static TaskSyncController *singleton;
             newActivity.source = [NSNumber numberWithInteger:source];
             newActivity.name = name;
             newActivity.sourceID = ID;
-            newActivity.plannedCount = [NSNumber numberWithInt:1];
+            newActivity.plannedCount = plannedCount;
             [newActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
         
             tasksChanged = YES;
@@ -173,6 +177,7 @@ static TaskSyncController *singleton;
                                nil];
             
             existingActivity.name = name;
+            existingActivity.plannedCount = @(MAX([existingActivity.plannedCount integerValue], [plannedCount integerValue]));
             [existingActivity secretSetRemoved:[NSNumber numberWithBool:NO]];
             
             BOOL completedBool = (existingActivity.completed);
