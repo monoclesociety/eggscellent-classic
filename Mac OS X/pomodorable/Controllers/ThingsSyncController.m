@@ -63,6 +63,7 @@
         NSAppleEventDescriptor *IDs = [ed descriptorAtIndex:1];
         NSAppleEventDescriptor *names = [ed descriptorAtIndex:2];
         NSAppleEventDescriptor *statuses = [ed descriptorAtIndex:3];
+        NSAppleEventDescriptor *tagNames = [ed descriptorAtIndex:4];
         
         syncCount = (int)[IDs numberOfItems];
         if(!syncCount)
@@ -88,12 +89,33 @@
             NSString *statusString = [[statuses descriptorAtIndex:i] stringValue];
             NSNumber *status = [NSNumber numberWithInt:([statusString isEqualToString:@"tdcm"]) ? 1 : 0];
             
+            //set up the tags
+            NSNumber *plannedCount = [self extractPlannedCountFromTagNames:[[tagNames descriptorAtIndex:i] stringValue]];
+            
             //set up source and piece it all together
-            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
+            NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", plannedCount, kPlannedCountKey, nil];
             
             [self syncWithDictionary:syncDictionary];
         }
     });
+}
+
+- (NSNumber *)extractPlannedCountFromTagNames:(NSString *)tagNames
+{
+    //TagNames contains a csv tags list
+    tagNames = [tagNames lowercaseString];
+    NSArray *tags = [tagNames componentsSeparatedByString:@","];
+    
+    NSInteger plannedCount = 1;
+    for (NSString *tag in tags) {
+        BOOL tagContainsEggs = [tag rangeOfString:@"eggs"].location != NSNotFound;
+        BOOL tagContainsPomodoro = [tag rangeOfString:@"pomodoro"].location != NSNotFound;
+        if (tagContainsEggs || tagContainsPomodoro) {
+            plannedCount = MAX(plannedCount, [tag integerValue]);
+        }
+    }
+    
+    return @(MIN(plannedCount, MAX_EGG_COUNT));
 }
 
 - (void)saveNewActivity:(Activity *)activity;

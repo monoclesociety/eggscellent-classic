@@ -11,6 +11,9 @@
 #import "ModelStore.h"
 
 #define SYNC_COMPLETED_WITH_CHANGES @"SYNC_COMPLETED_WITH_CHANGES"
+
+extern NSString * const kPlannedCountKey;
+
 @interface TaskSyncController : NSObject
 {
     ActivitySource source;
